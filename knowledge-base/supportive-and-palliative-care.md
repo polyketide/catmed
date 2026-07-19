@@ -61,9 +61,24 @@
 
 ## 6. Safe feeding (aspiration risk)
 
-With a pharyngeal/laryngeal mass, impaired swallowing and possible aspiration: whether soft or pureed food is safer is the veterinarian's call. **Offer small amounts frequently, raise the food bowl, keep the cat upright for a while after eating, and do not rush or let it bolt food.** When refusal of food or difficulty swallowing begins to worsen, do not force-feed; hand over to the veterinarian for assessment (weight-gain drugs or a different mode of nutritional support may be needed).
+With a pharyngeal/laryngeal mass, impaired swallowing and possible aspiration: whether soft or pureed food is safer is the veterinarian's call. **Offer small amounts frequently, keep the cat upright for a while after eating, and do not rush or let it bolt food.** When refusal of food or difficulty swallowing begins to worsen, do not force-feed; hand over to the veterinarian for assessment (weight-gain drugs or a different mode of nutritional support may be needed).
 
-> ⚠️ **Not yet verified — flagged 2026-07-20**: the specific measures above (**raising the food bowl**, and any assumption that **thicker consistency is inherently safer**) are carried over from the original draft and have **no feline evidence on file in this knowledge base**. In human dysphagia research, thickened liquids reduce aspiration but *increase* residue and the risk of dehydration, so "thicker is safer" is not unconditionally true; whether that transfers to cats is unestablished. **Verify with the attending veterinarian before relying on either measure.**
+### 6.1 Two measures that were removed from the advice above, and why (checked 2026-07-20)
+
+An earlier draft of this section also advised **raising the food bowl** and implied that **thicker food is safer**. Both were carried over unexamined. On checking, neither has feline evidence, and both have evidence pointing the other way in the species that have been studied.
+
+**Raising the food bowl — no feline data, and demonstrated harm in dogs.**
+- A PubMed search for elevated/raised feeding and aspiration in cats returns **no study at all**. This is a genuine gap, not a null result.
+- The veterinary tradition of elevated feeding comes from **megaoesophagus**, where gravity is used to help a bolus down a dysmotile oesophagus. That is a mechanically different problem from pharyngeal/laryngeal obstruction, and the transfer is an assumption, not a finding. Even within megaoesophagus it is not reliable: in one canine case report the dog aspirated repeatedly **"despite receiving conventional treatments including elevated feeding"** (PMID 27853047).
+- More importantly, a raised bowl is **not a harmless default**. In a prospective cohort of 1,637 large and giant breed dogs, **having a raised feeding bowl was a significant risk factor for gastric dilatation-volvulus**, with approximately **20% of GDV cases in large breeds and 52% in giant breeds attributed to it** (Glickman 2000, PMID 11128539). ⚠️ Cats are not a GDV-prone species, so this does **not** transfer as a GDV risk to cats. What it does establish is that raising the bowl changes feeding mechanics in ways that can cause harm, so it should not be recommended on intuition alone.
+
+**"Thicker is safer" — true on the immediate surrogate, false on the hard endpoint.**
+Two arms of the same human randomised programme in patients with dementia or Parkinson's disease who aspirated thin liquids answer this in opposite directions, and the pairing is the whole point:
+- On the **immediate** measure (elimination of aspiration during videofluoroscopy), thicker won: honey-thick performed best, then nectar-thick, then chin-down posture (Logemann 2008, PMID 18230864).
+- On the **3-month hard endpoint** (pneumonia), the advantage disappeared. Cumulative incidence was 0.098 for chin-down posture vs 0.116 for thickened liquids (HR 0.84, 95% CI 0.49–1.45, P = 0.53) — and *within* the thickened arms, the **thicker** consistency did numerically worse: honey-thick 0.150 vs nectar-thick 0.084 (HR 0.50, P = 0.083). Thickened liquids also cost more in **dehydration (6% vs 2%), urinary tract infection (6% vs 3%) and fever (4% vs 2%)** (Robbins 2008, PMID 18378947).
+
+> **∴ "Thicker is safer" holds only on the surrogate endpoint that is easiest to observe, and reverses on the outcome that matters.** This is the same failure mode this knowledge base documents throughout: an intervention that visibly fixes the sign while not improving — or worsening — the outcome.
+> ⚠️ Both findings are **human and canine; no feline study exists for either measure.** They are enough to withdraw the advice as unfounded, but not enough to assert the opposite for cats. **Consistency and bowl height are the attending veterinarian's call, made on this patient's swallow.**
 
 ---
 
@@ -121,7 +136,11 @@ Low → high: **nebulisation / hiding in food ≈ transdermal (ear gels: mirtaza
 > 正文中的表述仅为解读；**如需引用，请引用下方原文条目**。
 > 非英文文献保留其原始语言标题并标注语种。
 
+- Glickman LT, et al. Non-dietary risk factors for gastric dilatation-volvulus in large and giant breed dogs. *J Am Vet Med Assoc* 2000;217(10):1492-9. PMID 11128539. [DOI](https://doi.org/10.2460/javma.2000.217.1492)
 - Baez JL, et al. A prospective investigation of the prevalence and prognostic significance of weight loss and changes in body condition in feline cancer patients. *J Feline Med Surg* 2007;9(5):411-7. PMID 17451991. [DOI](https://doi.org/10.1016/j.jfms.2007.02.005)
+- Logemann JA, et al. A randomized study of three interventions for aspiration of thin liquids in patients with dementia or Parkinson's disease. *J Speech Lang Hear Res* 2008;51(1):173-83. PMID 18230864. [DOI](https://doi.org/10.1044/1092-4388(2008/013))
+- Robbins J, et al. Comparison of 2 interventions for liquid aspiration on pneumonia incidence: a randomized trial. *Ann Intern Med* 2008;148(7):509-18. PMID 18378947. [DOI](https://doi.org/10.7326/0003-4819-148-7-200804010-00007)
+- Kanemoto Y, et al. Long-term management of a dog with idiopathic megaesophagus and recurrent aspiration pneumonia by use of an indwelling esophagostomy tube for suction of esophageal content and esophagogastric tube feeding. *J Vet Med Sci* 2016;79(1):188-191. PMID 27853047. [DOI](https://doi.org/10.1292/jvms.16-0374)
 - Evangelista MC, et al. Facial expressions of pain in cats: the development and validation of a Feline Grimace Scale. *Sci Rep* 2019;9(1):19128. PMID 31836868. [DOI](https://doi.org/10.1038/s41598-019-55693-8)
 
 > 以下两条为**已确认与正文不符的旧 PMID**，保留原文记录以存证，请勿引用：
@@ -137,6 +156,29 @@ Low → high: **nebulisation / hiding in food ≈ transdermal (ear gels: mirtaza
 > The sentences below are **verbatim excerpts from the source literature**, untranslated.
 > The prose in the body above is my interpretation; **if you need to cite, cite the original sentences here**, and go back to the source to check the context.
 > Only sentences carrying specific load-bearing conclusions are excerpted; this is not a full abstract. For the complete context, retrieve the source by PMID/DOI.
+
+**PMID 11128539** · Glickman LT 2000
+> Factors significantly associated with an increased risk of GDV were increasing age, having a first-degree relative with a history of GDV, having a faster speed of eating, and having a raised feeding bowl.
+> Approximately 20 and 52% of cases of GDV among the large breed and giant breed dogs, respectively, were attributed to having a raised feed bowl.
+> Cumulative incidence of GDV during the study was 6% for large breed and giant breed dogs.
+> 1,637 dogs > or = 6 months old of the following breeds: Akita, Bloodhound, Collie, Great Dane, Irish Setter, Irish Wolfhound, Newfoundland, Rottweiler, Saint Bernard, Standard Poodle, and Weimaraner.
+> ⚠️ Species note: this cohort is large and giant breed dogs. Cats are not a GDV-prone species; the finding is cited in the body only as evidence that a raised bowl alters feeding mechanics and is not a harmless default, **not** as a GDV risk transferred to cats.
+
+**PMID 18230864** · Logemann JA 2008
+> Immediate elimination of aspiration on thin liquids occurred most often with honey-thickened liquids for patients in each diagnostic category, followed by nectar-thickened liquids and chin-down posture.
+> This randomized clinical trial included 711 patients ages 50 to 95 years who aspirated on thin liquids as assessed videofluorographically.
+> The longer-term impact of short-term prevention of aspiration requires further study.
+
+**PMID 18378947** · Robbins J 2008
+> The 3-month cumulative incidence of pneumonia was 0.098 and 0.116 in the chin-down posture and thickened-liquid groups, respectively (hazard ratio, 0.84 [95% CI, 0.49 to 1.45]; P = 0.53).
+> The 3-month cumulative incidence of pneumonia was 0.084 in the nectar-thick liquid group compared with 0.150 in the honey-thick liquid group (hazard ratio, 0.50 [CI, 0.23 to 1.09]; P = 0.083).
+> More patients assigned to thickened liquids than those assigned to the chin-down posture intervention had dehydration (6% vs. 2%), urinary tract infection (6% vs. 3%), and fever (4% vs. 2%).
+> No definitive conclusions about the superiority of any of the tested interventions can be made.
+> ⚠️ Read together with PMID 18230864, which is the same research programme: honey-thick was best at eliminating aspiration immediately, yet had the highest 3-month pneumonia incidence of the three arms. The surrogate and the outcome disagree.
+
+**PMID 27853047** · Kanemoto Y 2016
+> Despite receiving conventional treatments including elevated feeding, the dog showed repeated regurgitation and aspiration pneumonia, consequently developing weight loss and severe malnutrition.
+> ⚠️ n=1 canine case report of idiopathic megaoesophagus. Cited only to show that elevated feeding is the conventional measure *for megaoesophagus* and can fail even there; it is not evidence about pharyngeal/laryngeal masses in cats.
 
 **PMID 17451991** · Baez JL 2007
 > Muscle mass was reduced at all three sites assessed in 91% of the patients.
