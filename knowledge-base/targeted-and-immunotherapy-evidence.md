@@ -1,77 +1,77 @@
-# 猫淋巴瘤 · 靶向治疗与免疫治疗证据地图（宠物医学知识库）
+# Feline Lymphoma · Evidence Map for Targeted Therapy and Immunotherapy (veterinary knowledge base)
 
-> 生成 2026-07-16 · 文献检索（PubMed + Consensus）· 非诊断非处方
-> **一句话结论：截至目前，猫淋巴瘤没有任何有 solid 临床数据的靶向药或免疫疗法（含 CAR-T）。这些新疗法大多停在"仅犬获批/犬实验"或"猫临床前"阶段。猫淋巴瘤的循证治疗仍是常规化疗（COP/CHOP/口服洛莫司汀-苯丁酸氮芥）± 放疗。**
+> Generated 2026-07-16 · Literature search (PubMed + Consensus) · Not diagnostic, not a prescription
+> **One-line conclusion: as of now, no targeted agent or immunotherapy (CAR-T included) has solid clinical data in feline lymphoma. Most of these newer modalities stop at "approved/tested in dogs only" or "feline preclinical". The evidence-based treatment of feline lymphoma remains conventional chemotherapy (COP/CHOP, or oral lomustine–chlorambucil) ± radiotherapy.**
 
-## 1. 靶向药
+## 1. Targeted agents
 
-### 1.1 Verdinexor（Laverdia-CA1 / KPT-335）——核输出抑制剂(XPO1/SINE)，口服
-| 项 | 内容 |
+### 1.1 Verdinexor (Laverdia-CA1 / KPT-335) — nuclear export inhibitor (XPO1/SINE), oral
+| Item | Content |
 |---|---|
-| 机制 | 选择性核输出抑制剂，恢复肿瘤抑制蛋白核内定位→细胞周期停滞/凋亡 |
-| 批准 | **仅犬**：美国 FDA 条件性批准用于**犬**淋巴瘤 |
-| 犬数据 | Sadowski 2018（BMC Vet Res，58 犬 B/T 淋巴瘤）：单药口服 **ORR 37%，T 细胞亚组 ORR 71%**；耐受良好，最常见 1-2 级厌食。Vlodaver 2024（8 犬皮肤 T 淋巴瘤）：75% CR/PR/SD、中位进展 56 天、定位姑息。Primarizky 2025：体外犬淋巴瘤系与阿霉素/长春新碱协同（临床前） |
-| **猫数据** | **PubMed "verdinexor cats lymphoma" = 0 篇。无任何猫临床疗效数据。** 不能凭 solid data 用于猫 |
-| 副作用 | 犬：厌食/呕吐/体重下降/嗜睡（多轻度） |
+| Mechanism | Selective inhibitor of nuclear export; restores nuclear localisation of tumour suppressor proteins → cell-cycle arrest / apoptosis |
+| Approval | **Dogs only**: US FDA conditional approval for **canine** lymphoma |
+| Canine data | Sadowski 2018 (BMC Vet Res; 58 dogs, B/T lymphoma): single-agent oral **ORR 37%, T-cell subgroup ORR 71%**; well tolerated, most common toxicity grade 1–2 anorexia. Vlodaver 2024 (8 dogs, cutaneous T-cell lymphoma): 75% CR/PR/SD, median time to progression 56 days, positioned as palliative. Primarizky 2025: synergy with doxorubicin/vincristine in canine lymphoma cell lines (preclinical) |
+| **Feline data** | **A PubMed search for "verdinexor cats lymphoma" returns 0 records — no published feline clinical efficacy data exists.** Note this is absence of evidence, not evidence of absence: the drug has not been studied in cats, which is not the same as having been shown ineffective. Either way, it cannot be used in cats on the strength of solid data |
+| Adverse effects | Dogs: anorexia / vomiting / weight loss / lethargy (mostly mild) |
 
-### 1.2 Toceranib（Palladia）——多靶点 TKI(VEGFR/PDGFR/KIT)，口服
-- **不是淋巴瘤药**。猫的循证适应是**口腔鳞癌(SCC)/肥大细胞瘤/乳腺癌**。
-- 若确诊为**上皮癌**，它是**有猫 solid 数据的靶向选项**：Wiles 2016（口腔 SCC，MST 123 vs 45 天，+NSAID 更佳）。详见毒性谱知识库。
-- 若为淋巴瘤 → 无预期获益（适应证错配）。
+### 1.2 Toceranib (Palladia) — multi-target TKI (VEGFR/PDGFR/KIT), oral
+- **Not a lymphoma drug.** Its evidence-based feline indications are **oral squamous cell carcinoma (SCC) / mast cell tumour / mammary carcinoma**.
+- If the diagnosis turns out to be **a carcinoma**, this is **the targeted option that does have solid feline data**: Wiles 2016 (oral SCC, MST 123 vs 45 days; better with an added NSAID). See the drug-toxicity knowledge base for detail.
+- If the diagnosis is lymphoma → no expected benefit (indication mismatch).
 
-### 1.3 其他
-- **Rabacfosadine (Tanovea)**：犬淋巴瘤获批（本质是细胞毒前药，非典型靶向）；猫数据有限，且**猫有致死性肺纤维化关联报告**——不作猫常规选项。
-- BTK 抑制剂（依鲁替尼类）：猫无临床数据。
+### 1.3 Others
+- **Rabacfosadine (Tanovea)**: approved for canine lymphoma (essentially a cytotoxic prodrug rather than a true targeted agent); feline data are limited, and there are **reports associating it with fatal pulmonary fibrosis in cats** — not a routine feline option.
+- BTK inhibitors (the ibrutinib class): no published feline clinical data.
 
-## 2. 免疫治疗
+## 2. Immunotherapy
 
-### 2.1 免疫检查点抑制剂（抗 PD-1 / PD-L1）
-| 项 | 内容 |
+### 2.1 Immune checkpoint inhibitors (anti-PD-1 / PD-L1)
+| Item | Content |
 |---|---|
-| 靶点验证 | Maekawa 2023（PLOS ONE）：确定猫 PD-L1 序列、建立猫 PD-L1 免疫组化；**猫肿瘤确实表达 PD-L1**（鳞癌 5/5=100%、乳腺癌 80%、纤维肉瘤 100%、肾癌 100%）→ 靶点存在 |
-| 抗体研发 | Nishibori 2023（Sci Rep）：研制出**抗猫 PD-1 单抗**(1A1-2)、鼠-猫嵌合体，体外增强 IFN-γ。Nishibori 2025：进一步做 Fc 沉默改造 |
-| **临床状态** | Nishibori 2025 原文明确：**"猫的 ICI 研究仍有限，尚无任何猫肿瘤的临床试验"**。即：**抗体已造出、靶点已验证，但没有临床数据、无临床应用** |
-| 对照 | 犬：已有犬化抗 PD-L1（如 Gilvetmab，2023 条件性批准用于犬黑色素瘤/肥大细胞瘤）。猫落后犬一个身位 |
+| Target validation | Maekawa 2023 (PLOS ONE): determined the feline PD-L1 sequence and established PD-L1 immunohistochemistry for feline tumours; **feline tumours do express PD-L1** (SCC 5/5 = 100%, mammary carcinoma 80%, fibrosarcoma 100%, renal carcinoma 100%) → the target exists |
+| Antibody development | Nishibori 2023 (Sci Rep): generated an **anti-feline PD-1 monoclonal antibody** (1A1-2) and a mouse–feline chimera; enhanced IFN-γ in vitro. Nishibori 2025: further engineered for Fc silencing |
+| **Clinical status** | Nishibori 2025 states plainly that **research on ICIs in cats remains limited and no clinical trial in any feline tumour has yet been conducted**. That is: **the antibody has been built and the target validated, but there are no clinical data and no clinical application** |
+| Comparator | Dogs: caninized anti-PD-L1 agents already exist (e.g. Gilvetmab, conditionally approved in 2023 for canine melanoma / mast cell tumour). Cats trail dogs by one step |
 
-### 2.2 CAR-T 细胞疗法
-| 项 | 内容 |
+### 2.2 CAR-T cell therapy
+| Item | Content |
 |---|---|
-| 犬（实验性） | Panjwani 2016（Mol Ther）：**首例犬 CD20 CAR-T**，自体、耐受良好、抗肿瘤活性**微弱且短暂**（提示需稳定表达）。Yoshimoto 2024：PD-1/CD28 嵌合开关受体增强犬 CAR-T（临床前）。Rotolo 2024（综述）：犬作为 CAR-T 比较肿瘤学模型，面临制备难、持续性差、抗原逃逸等与人相同的挑战 |
-| **猫** | **PubMed 猫 CAR-T 检索 = 0。猫没有任何 CAR-T 临床或临床前数据。** |
-| 现实 | 即便在犬，CAR-T 仍是**研究阶段、非临床可及**；在猫更是空白。对猫目前不是现实选项 |
+| Dogs (experimental) | Panjwani 2016 (Mol Ther): **the first canine CD20 CAR-T**; autologous, well tolerated, antitumour activity **weak and transient** (suggesting stable expression is needed). Yoshimoto 2024: PD-1/CD28 chimeric switch receptor to enhance canine CAR-T (preclinical). Rotolo 2024 (review): the dog as a comparative-oncology model for CAR-T, facing the same manufacturing difficulty, poor persistence and antigen escape as in humans |
+| **Cats** | **A PubMed search for feline CAR-T returns 0 records — there are no published feline CAR-T clinical or preclinical data.** Again, untested rather than disproven |
+| Reality | Even in dogs, CAR-T remains **at the research stage and is not clinically accessible**; in cats it is a blank. It is not a realistic option for a cat at present |
 
-### 2.3 其他免疫调节（历史/低证据）
-- 干扰素、IL-2、自体肿瘤疫苗、NK 细胞——猫多为个案/低证据，无淋巴瘤 solid 数据。
+### 2.3 Other immunomodulation (historical / low-evidence)
+- Interferons, IL-2, autologous tumour vaccines, NK cells — in cats these are mostly case reports or low-grade evidence, with no solid data in lymphoma.
 
-## 3. 给主人的诚实落点
-1. **猫淋巴瘤当前无 solid-data 的靶向药或免疫疗法可用。** 不宜为猫去追一个在猫身上尚不存在的疗法——会耗时间、耗钱、耗患猫体力。
-2. **真正有猫数据、且现在就能用的**仍是：常规化疗（COP/CHOP，或全口服的洛莫司汀-苯丁酸氮芥）± 放疗；若确诊上皮癌则放疗为主 + toceranib（这是唯一有猫数据的"靶向"）。
-3. **趋势值得知道但不必等**：抗猫 PD-1/PD-L1 抗体已研发、靶点已验证，未来数年可能进入临床；但对有治疗时间压力的病例，它不是可依赖的选项。
+## 3. The honest bottom line for an owner
+1. **There is currently no solid-data targeted agent or immunotherapy available for feline lymphoma.** Chasing a therapy that does not yet exist for cats is not advisable — it costs time, money, and the patient's reserves.
+2. **What does have feline data and is available now** remains: conventional chemotherapy (COP/CHOP, or the all-oral lomustine–chlorambucil route) ± radiotherapy; and if a carcinoma is confirmed, radiotherapy-led treatment plus toceranib (the one "targeted" agent with feline data).
+3. **The trend is worth knowing but not worth waiting for**: anti-feline PD-1/PD-L1 antibodies have been developed and the target validated, and they may reach the clinic within some years; but for a case under time pressure, this is not something to rely on.
 
-## 4. 为什么猫缺新疗法：技术不成熟 还是 临床数据不够？
+## 4. Why cats lack newer therapies: immature technology, or insufficient clinical data?
 
-**结论：主要是"临床数据/商业开发不够"，不是"技术不成熟"——但按疗法分类，且有两个诚实的例外。**
+**Conclusion: chiefly "insufficient clinical data / commercial development", not "immature technology" — but this varies by modality, and there are two honest exceptions.**
 
-### 4.1 分三类
+### 4.1 Three categories
 
-| 类别 | 瓶颈性质 | 说明 |
+| Category | Nature of the bottleneck | Explanation |
 |---|---|---|
-| **抗体免疫治疗（抗 PD-1/PD-L1）** | **数据/商业为主** | "能否造出药"已解决：抗猫 PD-1/PD-L1 抗体已工程化、猫肿瘤表达 PD-L1（靶点验证，Maekawa 2023）。缺的是临床试验，没人做 |
-| **小分子靶向（verdinexor 等）** | **纯数据/商业缺口** | 小分子跨物种通用、无需"猫化"，狗已获批用于淋巴瘤；猫无数据纯因没人做猫试验/申请猫适应证。技术零障碍 |
-| **CAR-T** | **技术+数据都不成熟（例外）** | 即便在最领先的狗，CAR-T 仍是概念验证：制备复杂、昂贵、持续性差、反应微弱短暂（Panjwani 2016）。猫零起步。这一类"技术不成熟"是准确的 |
+| **Antibody immunotherapy (anti-PD-1/PD-L1)** | **Mainly data / commercial** | "Can the drug be made" is solved: anti-feline PD-1/PD-L1 antibodies have been engineered and feline tumours express PD-L1 (target validated, Maekawa 2023). What is missing is clinical trials — nobody is running them |
+| **Small-molecule targeted agents (verdinexor and similar)** | **A pure data / commercial gap** | Small molecules transfer across species and need no "felinization"; the dog approval for lymphoma already exists. The absence of feline data is purely because nobody has run feline trials or sought a feline indication. No technical barrier |
+| **CAR-T** | **Both technology and data are immature (the exception)** | Even in dogs, the most advanced species here, CAR-T is still proof-of-concept: complex manufacturing, expensive, poor persistence, weak and transient responses (Panjwani 2016). Cats are at zero. For this category "immature technology" is an accurate description |
 
-### 4.2 为什么抗体类是"钱和数据"问题而非"科学做不到"
-- **物种特异性的"税"**：小分子化疗（苯丁酸氮芥/多柔比星）跨物种通用，但**抗体必须"猫化"——狗的抗体不能直接给猫**。新造单抗"耗时、昂贵、物种特异"，是限制兽医普及的核心（González-Techera 2025）。∴ 猫**不自动继承狗的进展**，须专门再投资。
-- **市场经济**：人 > 狗 > 猫；无厂商把"猫淋巴瘤免疫治疗"排进优先级。系统综述归障碍为"物种适配、安全性、**经济考量**"（Fukushima 2026）；另一篇直指猫"**已获批产品有限**"（Wang 2025）。狗已有产品（抗 PD-L1 Gilvetmab、口服 Laverdia），猫落后一个身位——**投资顺序问题，非科学不能**。
+### 4.2 Why the antibody class is a money-and-data problem rather than "science can't do it"
+- **The species-specificity tax**: small-molecule chemotherapeutics (chlorambucil, doxorubicin) transfer across species, but **antibodies must be "felinized" — a canine antibody cannot simply be given to a cat**. Generating a new monoclonal is "time-consuming, expensive, and species-specific", which is the core constraint on veterinary uptake (González-Techera 2025). Therefore cats **do not automatically inherit canine progress**; a dedicated re-investment is required.
+- **Market economics**: humans > dogs > cats; no manufacturer has prioritised "feline lymphoma immunotherapy". A systematic review attributes the barriers to "species adaptation, safety, and **economic considerations**" (Fukushima 2026); another notes directly that cats have **limited approved products** (Wang 2025). Dogs already have products (anti-PD-L1 Gilvetmab, oral Laverdia) and cats trail by one step — **an ordering-of-investment problem, not a scientific impossibility**.
 
-### 4.3 两个必须诚实的 caveat
-1. **"造得出" ≠ "有效"**：狗的猫化…检查点抗体已做小型试验，但**疗效"仍不理想"**（尤其口腔黑色素瘤，Giuliano 2024）。∴ 不是"只要做试验猫就赢"——疗效关本身开放。
-2. **淋巴瘤恰非检查点强项**：人医检查点在霍奇金有效、在**侵袭性 B 细胞 NHL（猫淋巴瘤更像此类）疗效平平**；CAR-T 才是人 B 细胞淋巴瘤的强项，却在兽医技术最不成熟。**对路的疗法最不成熟，成熟的疗法最不对路。**
+### 4.3 Two caveats that must be stated honestly
+1. **"Can be built" ≠ "works"**: caninized checkpoint antibodies in dogs have been through small trials, but **efficacy remains "suboptimal"** (particularly in oral melanoma; Giuliano 2024). So it is not the case that "cats win as soon as someone runs the trial" — the efficacy question is itself open.
+2. **Lymphoma is precisely not a checkpoint-inhibitor strength**: in human medicine, checkpoint blockade works in Hodgkin lymphoma but performs **modestly in aggressive B-cell NHL (which feline lymphoma more closely resembles)**; CAR-T is the modality that excels in human B-cell lymphoma, and it is exactly the one that is least mature in veterinary medicine. **The therapy that fits is the least mature; the therapy that is mature does not fit.**
 
-### 4.4 一句话
-> 猫淋巴瘤缺免疫/靶向治疗，主因是"没人投钱为猫做 felinization + 临床试验"（数据/商业/物种特异性成本），**不是科学做不到**；CAR-T 是例外（技术本身也未成熟）。且即便补上数据，疗效对淋巴瘤也未必好。更根本地说：**猫是肿瘤治疗里的"治疗孤儿"**——落后于狗、狗落后于人，是经济与物种特异性门槛，非 feline 生物学不可攻克。
+### 4.4 In one sentence
+> Feline lymphoma lacks immunotherapy and targeted therapy chiefly because "nobody has funded felinization plus clinical trials for cats" (a data / commercial / species-specificity-cost problem), **not because the science cannot be done**; CAR-T is the exception, where the technology itself is also immature. And even once the data gap is filled, efficacy in lymphoma is not assured. More fundamentally: **cats are the therapeutic orphans of oncology** — behind dogs, which are behind humans — and this is an economic and species-specificity barrier, not an insurmountable feature of feline biology.
 
-## 参考（PMID/DOI）
+## References (PMID/DOI)
 - Sadowski AR, et al. Phase II study of the oral selective inhibitor of nuclear export (SINE) KPT-335 (verdinexor) in dogs with lymphoma. *BMC Vet Res* 2018;14(1):250. PMID 30143046. [DOI](https://doi.org/10.1186/s12917-018-1587-9)
 - Vlodaver EM et al. Verdinexor for canine epitheliotropic cutaneous T-cell lymphoma. *Vet Dermatol.* 2024.
 - Primarizky H et al. KPT-335 + doxorubicin/vincristine in canine lymphoma cell lines. *J Vet Med Sci.* 2025.
@@ -80,11 +80,11 @@
 - Panjwani MK et al. RNA-transfected CD20-specific CAR-T in dogs with B-cell lymphoma. *Mol Ther.* 2016.
 - Yoshimoto S et al. PD-1/CD28 chimeric switch receptor for canine CAR-T. *iScience.* 2024.
 - Rotolo A et al. CAR engineering in comparative oncology. *Clin Cancer Res.* 2024.
-- Giuliano A et al. Checkpoint Inhibitors in Dogs: Are We There Yet? *Cancers.* 2024.（犬猫化检查点抗体已试验但疗效"suboptimal"）
-- Fukushima A et al. Transposition of human oncology therapies to veterinary medicine: a systematic review. *Arq Bras Med Vet Zootec.* 2026.（障碍=物种适配/安全/经济）
-- González-Techera A et al. Adaptabodies: retargeting a predefined mAb with bispecific nanobodies. *Biotechnol J.* 2025.（新单抗"耗时、昂贵、物种特异"）
-- Wang J et al. Current Review of Monoclonal Antibody Therapeutics in Small Animal Medicine. *Animals.* 2025.（猫"已获批产品有限"）
-- Vilela T et al. Immunotherapy for breast cancer and feline mammary carcinoma. *BBA Rev Cancer.* 2024.（猫检查点分子作为治疗靶点的综述）
+- Giuliano A et al. Checkpoint Inhibitors in Dogs: Are We There Yet? *Cancers.* 2024. (caninized checkpoint antibodies have been trialled in dogs, but efficacy is "suboptimal")
+- Fukushima A et al. Transposition of human oncology therapies to veterinary medicine: a systematic review. *Arq Bras Med Vet Zootec.* 2026. (barriers = species adaptation / safety / economics)
+- González-Techera A et al. Adaptabodies: retargeting a predefined mAb with bispecific nanobodies. *Biotechnol J.* 2025. (new monoclonals are "time-consuming, expensive, species-specific")
+- Wang J et al. Current Review of Monoclonal Antibody Therapeutics in Small Animal Medicine. *Animals.* 2025. (cats have "limited approved products")
+- Vilela T et al. Immunotherapy for breast cancer and feline mammary carcinoma. *BBA Rev Cancer.* 2024. (review of feline checkpoint molecules as therapeutic targets)
 
 ---
 
@@ -95,7 +95,7 @@
 ## 参考文献（原文记录）
 
 > 本节标题、期刊、卷期页**一律为 PubMed 原文**，不翻译、不缩写。
-> 正文中的中文表述仅为解读；**如需引用，请引用下方原文条目**。
+> 正文中的表述仅为解读；**如需引用，请引用下方原文条目**。
 > 非英文文献保留其原始语言标题并标注语种。
 
 - Sadowski AR, et al. Phase II study of the oral selective inhibitor of nuclear export (SINE) KPT-335 (verdinexor) in dogs with lymphoma. *BMC Vet Res* 2018;14(1):250. PMID 30143046. [DOI](https://doi.org/10.1186/s12917-018-1587-9)
@@ -106,11 +106,10 @@
 
 ## 原文摘录（source excerpts）
 
-> 下列为**文献原文句子，逐字摘录**，未经翻译。
-> 正文中的中文是我的解读；**若要引用，请引用此处原文**，并回到原文核对上下文。
-> 仅摘录承载具体结论的句子，非全文摘要；完整语境请按 PMID/DOI 取原文。
+> The sentences below are **verbatim excerpts from the source literature**, untranslated.
+> The prose in the body above is my interpretation; **if you need to cite, cite the original sentences here**, and go back to the source to check the context.
+> Only sentences carrying specific load-bearing conclusions are excerpted; this is not a full abstract. For the complete context, retrieve the source by PMID/DOI.
 
-**以下文献无摘要或未取得原文，正文中文表述暂无原文可核：**
+**For the following references no abstract was available or the source was not retrieved; the statements in the body above have no original text on file against which to check them:**
 
 - PMID 30143046
-

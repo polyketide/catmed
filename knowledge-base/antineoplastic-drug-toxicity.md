@@ -1,45 +1,45 @@
-# 猫抗肿瘤/支持药物毒性谱（宠物医学知识库）
+# Toxicity Profiles of Antineoplastic and Supportive Drugs in Cats (veterinary knowledge base)
 
-> 生成 2026-07-16 · 循证核查（8 药 × 研究员 + 对抗验证）· 非诊断非处方 · 剂量以兽医处方为准
-> 评估轴：**肝 / 肾 / 不吃不喝(食欲-胃肠) / 骨髓抑制**（后者对正发烧/疑感染的病例=脓毒叠加风险）
-> 评估语境（本表设定的典型情境）：中老年猫、上气道储备低、发热/疑感染、肾功能未知——故"给药方式的应激"与"监测采血的风险"也计入权衡。
+> Generated 2026-07-16 · Evidence-checked (8 drugs × researcher + adversarial verification) · Not diagnostic, not a prescription · Dosing is the prescribing veterinarian's call
+> Axes assessed: **liver / kidney / anorexia-and-inappetence (GI) / myelosuppression** (the last one compounds sepsis risk in a patient who is febrile or has a suspected infection)
+> Assessment context (the typical scenario this table assumes): a middle-aged-to-older cat with low upper-airway reserve, fever or suspected infection, and unknown renal function — so "stress of administration" and "risk of monitoring blood draws" are weighed in as well.
 
-## 0. 一屏速览矩阵
+## 0. One-screen summary matrix
 
-| 药 | 途径 | 肝 | 肾 | 不吃不喝 | 骨髓抑制 | 一句话小结 |
+| Drug | Route | Liver | Kidney | Inappetence | Myelosuppression | One-line summary |
 |---|---|---|---|---|---|---|
-| **L-天冬酰胺酶** | 注射 SC/IM | 低（机制性高氨,非肝衰） | 低（直接）；**TLS**间接（需补液） | **低**（最温和） | **几乎无（0/43）** | 诸细胞毒药中最温和；防罕见过敏气道痉挛+大瘤体 TLS |
-| **泼尼松龙** | 口服 | 低（可逆糖原肝病） | 低（间接:糖尿/脱水） | **低,反促食欲** | **无**（应激白细胞象） | 净获益（缩瘤/消水肿）；代价=糖尿病~10%+**掩盖肺炎** |
-| **雾化类固醇** | 吸入(局部) | 极低 | 无 | 低 | 无 | 全身毒性最低；**选布地奈德避氟替卡松**；防给药应激 |
-| **苯丁酸氮芥** | **口服** | 中（可逆转氨酶↑ **III/IV 合计~10.7%**,非肝衰） | 低（非肾清除） | 低 | 中/低（多轻度） | **低级别淋巴瘤最划算**；发热/肺炎期慎骨髓抑制 |
-| **洛莫司汀** | **口服** | 低（猫6.8%,远低于犬） | 空白（未研究≠安全） | 低-轻 | **高**（剂量限制,谷值7-28天迟发） | 器官毒温和但**骨髓抑制是硬伤**；发热/肺炎期别启动；每周CBC采血悖论 |
-| **长春新碱** | 静注推注 | 低 | 低 | **中**（致吐,44%需换药） | 低-中 | 肝肾安全但**致吐×误吸**危险；可换长春碱(骨髓抑制略增) |
-| **多柔比星** | 静注输注 | 低（猫数据缺） | **高**（猫**靶器官**!进行性肾毒） | 中-高（厌食最常见） | 中 | **踩中肾衰+不吃不喝两条**；肾功能未知=硬门槛；此刻得不偿失 |
-| **托拉尼布** | **口服** | 中（有严重个案） | 低-中（近年数据安心） | 中（GI最常见毒性） | 低-中 | **适应证错配**（非淋巴瘤药）；发热期+诊断未定不建议 |
+| **L-asparaginase** | injection SC/IM | Low (mechanistic hyperammonemia, not hepatic failure) | Low (direct); **TLS** indirectly (needs fluids) | **Low** (gentlest) | **Near-absent (0/43)** | The gentlest of the cytotoxics; guard against rare hypersensitivity-related airway spasm and TLS with a large tumour burden |
+| **Prednisolone** | oral | Low (reversible glycogen hepatopathy) | Low (indirect: glycosuria/dehydration) | **Low, actually stimulates appetite** | **None** (stress leukogram) | Net benefit (tumour shrinkage / oedema resolution); the price is diabetes ~10% + **masking of pneumonia** |
+| **Nebulised corticosteroid** | inhaled (local) | Very low | None | Low | None | Lowest systemic toxicity; **choose budesonide over fluticasone**; guard against stress of administration |
+| **Chlorambucil** | **oral** | Moderate (reversible transaminase ↑, **grade III/IV combined ~10.7%**, not hepatic failure) | Low (not renally cleared) | Low | Moderate/low (mostly mild) | **Best value in low-grade lymphoma**; be cautious about myelosuppression during fever/pneumonia |
+| **Lomustine** | **oral** | Low (6.8% in cats, far below dogs) | No data (not studied ≠ safe) | Low to mild | **High** (dose-limiting; nadir delayed 7–28 days) | Organ toxicity is mild but **myelosuppression is the hard limit**; do not start during fever/pneumonia; note the weekly-CBC blood-draw paradox |
+| **Vincristine** | IV bolus | Low | Low | **Moderate** (emetogenic; 44% required a drug change) | Low to moderate | Hepatorenally safe but **emesis × aspiration** is the danger; can substitute vinblastine (slightly more myelosuppression) |
+| **Doxorubicin** | IV infusion | Low (feline data lacking) | **High** (the kidney is the **target organ** in cats; progressive nephrotoxicity) | Moderate to high (anorexia most common) | Moderate | **Hits two of the feared outcomes: renal failure and inappetence**; unknown renal function is a hard gate; not worth it at this moment |
+| **Toceranib** | **oral** | Moderate (severe individual cases reported) | Low to moderate (recent data reassuring) | Moderate (GI is the most common toxicity) | Low to moderate | **Indication mismatch** (not a lymphoma drug); not advised during fever with the diagnosis still open |
 
-## 1. 正面回答"最怕的三件事 + 脓毒"
+## 1. Answering the "three most feared outcomes + sepsis" directly
 
-- **肾衰竭**：真正踩中的只有**多柔比星**——猫的靶器官就是肾（进行性肾毒；较敏感标准下 34% 肌酐升高、26% 升至≥1.6、7% 因肾病死亡；VCOG 3 级 AKI 仅 4%，重度肾衰非多数结局但需高度盯防）。**可避开**（不用含多柔比星的 CHOP）。其余药均非肾毒；L-天冬酰胺酶的肾风险是间接的**肿瘤溶解综合征(TLS)**，靠补液+查磷/钾/肌酐可控。
-- **肝衰竭**：**没有一个药在猫会造成真正的暴发性肝衰**。"肝"相关的是：洛莫司汀（猫仅 6.8% 新发 ALT↑，远低于犬 48.8%）、苯丁酸氮芥（可逆转氨酶↑ III/IV 合计~10.7%，停药平均恢复~76 天）、泼尼松龙（可逆糖原肝病，猫 ALP 反应弱须看 ALT/胆红素）、托拉尼布（**有 2/14 严重肝毒性个案，需盯 ALT**）。均以监测+停药可逆为主。
-- **不吃不喝**：较高的是**长春新碱**（致吐,随机对照 44% 因胃肠毒性需换药 vs 长春碱 10.5%）、**多柔比星**（厌食最常见）、**托拉尼布**（GI 最常见毒性）；较低的是**苯丁酸氮芥、L-天冬酰胺酶**；**泼尼松龙反而促食欲**。⚠️关键：肿瘤猫的"不吃不喝"常是**肿瘤本身/发烧**（而非药物）所致，需与药物副作用区分。
-- **骨髓抑制→脓毒（因已发热/疑肺炎而叠加）**：最高**洛莫司汀**（剂量限制性，谷值迟发不可预测 7-28 天）；中等：苯丁酸氮芥/长春新碱/多柔比星/托拉尼布；**几乎为零：L-天冬酰胺酶（0/43）、泼尼松龙、雾化**。
+- **Renal failure**: the only real hit is **doxorubicin** — the kidney is the target organ in cats (progressive nephrotoxicity; under the more sensitive criteria, 34% had a creatinine rise, 26% rose to ≥1.6, 7% died of renal disease; VCOG grade 3 AKI was only 4%, so severe renal failure is not the majority outcome but warrants close watching). **This is avoidable** — do not use a doxorubicin-containing CHOP. None of the other drugs is nephrotoxic; L-asparaginase's renal risk is the indirect one of **tumour lysis syndrome (TLS)**, controllable with fluids plus monitoring of phosphate/potassium/creatinine.
+- **Hepatic failure**: **none of these drugs causes true fulminant hepatic failure in cats.** What is liver-related: lomustine (only 6.8% new-onset ALT ↑ in cats, far below the 48.8% in dogs), chlorambucil (reversible transaminase ↑, grade III/IV combined ~10.7%, mean recovery ~76 days after discontinuation), prednisolone (reversible glycogen hepatopathy; the feline ALP response is weak so watch ALT/bilirubin), toceranib (**2/14 severe hepatotoxicity cases, flagged as a "concern" — monitor ALT**). All are chiefly manageable by monitoring, and reversible on discontinuation.
+- **Inappetence**: higher with **vincristine** (emetogenic; in a randomised comparison 44% required a drug change for GI toxicity vs 10.5% for vinblastine), **doxorubicin** (anorexia most common), and **toceranib** (GI most common toxicity); lower with **chlorambucil and L-asparaginase**; **prednisolone in fact stimulates appetite**. ⚠️ Key point: in a cat with cancer, "not eating or drinking" is frequently caused by **the tumour itself or the fever** rather than by the drug, and the two must be distinguished.
+- **Myelosuppression → sepsis (compounded here by existing fever / suspected pneumonia)**: highest with **lomustine** (dose-limiting; the nadir is delayed and unpredictable at 7–28 days); moderate with chlorambucil / vincristine / doxorubicin / toceranib; **near zero with L-asparaginase (0/43), prednisolone, and nebulised steroid**.
 
-## 2. 两条贯穿所有药的原则
+## 2. Two principles that run through every drug
 
-1. **正在用的 L-天冬酰胺酶 + 泼尼松龙 + 雾化 = 最低毒性组合**——都不致所惧的器官衰竭，L-天冬酰胺酶几乎不压骨髓（对发烧的它是决定性优势）。"看呼吸、有效就继续"在毒性关是站得住的。
-2. **任何骨髓抑制性化疗（尤其洛莫司汀/多柔比星），都不该在发热40℃+疑误吸性肺炎的当下启动**——先控感染、退热、拿到肾功能基线，再谈。这一条在 8 个药的核查里高度一致。
+1. **The current L-asparaginase + prednisolone + nebulisation regimen is the lowest-toxicity combination available** — none of the three causes the organ failures feared here, and L-asparaginase is essentially non-myelosuppressive (a decisive advantage in a febrile patient). "Watch the breathing; continue if it works" holds up on the toxicity axis.
+2. **No myelosuppressive chemotherapy (lomustine and doxorubicin above all) should be started in the present setting of a 40 °C fever plus suspected aspiration pneumonia** — control the infection, bring the fever down, and obtain a baseline renal panel first. This principle was highly consistent across the checks on all 8 drugs.
 
-## 3. 关键出处（PMID）
-- L-天冬酰胺酶：Inazumi 2024（PMID 38825481，43猫，中性粒减少 0/43、高氨 10/12、高磷 P<0.001）；Blake 2016（26834270，猫 197 剂 HSR 0 例）；Calia 1996（8947875，猫 TLS 个案）。
-- 泼尼松龙：Nerhagen 2020（32716236，PIDM 9.7%）；Lowe 2008（18552328，糖原肝病）；Ployngam 2006（16579749，血浆容量+13.4%）。
-- 雾化类固醇：Reinero 2006（16496924，吸入抑 HPA 但不抑全身免疫）；Suissa 2013（24130228，氟替卡松严重肺炎 RR 2.01 vs 布地奈德 1.17）。
-- 苯丁酸氮芥：Pope 2015（29067174，56猫，肝毒 III/IV **~10.7%**、可逆；骨髓多轻度）；Kiselow 2008（18241108，CR56%/MST704d）；Lingard 2009（19576832，CR76%/18.9月，注：12/17 用此方案）；Al-Nadaf 2022（36155936，PK 非肾清除）。
-- 洛莫司汀：Rassnick 2001（11380027，中性粒谷值 7-28 天迟发）；Musser 2012（22772480，肝毒仅 6.8%）；Fan 2002（12118689，III/IV 骨髓 4.1%）；Heading 2011（犬对照 ALT↑48.8%/肝衰1.2%）。
-- 长春新碱：Krick 2012/2013（23157371，胃肠毒性换药 44.4% vs 长春碱 10.5%）；Lee 2025（40119555，COVP 低剂量多为1-2级）。
-- 多柔比星：Kopecny 2020（32779764，进行性肾毒 34% 肌酐↑、7% 因肾死亡、单药 vs CHOP OR 20）；O'Keefe 1992/1993（1432901/8263850，厌食6/6、肾组织学6/6）；Poirier 2002（脂质体仍 23% 肾毒）。
-- 托拉尼布：Merrick 2016（27041701，纯毒性；ALT↑7.2%、氮质血症14.5%、GI 21.8%）；Harper 2016（27090289，**严重肝毒 2/14, "concern"**）；Williams 2024（39287178，肾事件率低）；Wiles 2016（26755491，口腔 SCC MST 123 vs 45 天）。
+## 3. Key sources (PMID)
+- L-asparaginase: Inazumi 2024 (PMID 38825481; 43 cats; neutropenia 0/43; hyperammonemia in 10 of 12 cases with paired pre/post plasma ammonia; plasma phosphate significantly increased, P<0.001); Blake 2016 (26834270; 197 doses in cats, 0 HSR); Calia 1996 (8947875; TLS case report in a cat).
+- Prednisolone: Nerhagen 2020 (32716236; PIDM 9.7%); Lowe 2008 (18552328; glycogen hepatopathy); Ployngam 2006 (16579749; plasma volume +13.4%).
+- Nebulised corticosteroid: Reinero 2006 (16496924; inhaled route suppresses the HPA axis but not systemic immunity); Suissa 2013 (24130228; severe pneumonia RR 2.01 for fluticasone vs 1.17 for budesonide).
+- Chlorambucil: Pope 2015 (29067174; 56 cats; hepatotoxicity grade III/IV **~10.7%**, reversible; myelosuppression mostly mild); Kiselow 2008 (18241108; CR 56% / MST 704 d); Lingard 2009 (19576832; CR 76% / 18.9 months; note: 12/17 received this protocol); Al-Nadaf 2022 (36155936; PK — not renally cleared).
+- Lomustine: Rassnick 2001 (11380027; neutrophil nadir delayed 7–28 days); Musser 2012 (22772480; hepatotoxicity only 6.8%); Fan 2002 (12118689; grade III/IV myelosuppression 4.1%); Heading 2011 (canine comparator: ALT ↑ 48.8% / hepatic failure 1.2%).
+- Vincristine: Krick 2012/2013 (23157371; drug change for GI toxicity 44.4% vs 10.5% for vinblastine); Lee 2025 (40119555; low-dose COVP, mostly grade 1–2).
+- Doxorubicin: Kopecny 2020 (32779764; progressive nephrotoxicity, creatinine ↑ in 34%, 7% died of renal disease, single-agent vs CHOP OR 20); O'Keefe 1992/1993 (1432901/8263850; anorexia 6/6, renal histopathology 6/6); Poirier 2002 (liposomal formulation still 23% nephrotoxicity).
+- Toceranib: Merrick 2016 (27041701; toxicity-only study; ALT ↑ 7.2%, azotaemia 14.5%, GI 21.8%); Harper 2016 (27090289; **severe hepatotoxicity 2/14, "concern"**); Williams 2024 (39287178; low rate of renal events); Wiles 2016 (26755491; oral SCC, MST 123 vs 45 days).
 
-> **验证已吸收的更正**：苯丁酸氮芥肝毒性**不是**"全部 Grade IV"，而是 III/IV 合计~10.7%（分级细分未核实）；多柔比星肾毒性是"进行性/剂量强度相关"而非单纯累积剂量依赖；长春新碱过量个案的呼吸暂停属体外循环操作、不宜外推为"气道脆弱"。
+> **Corrections already absorbed during verification**: chlorambucil hepatotoxicity is **not** "all Grade IV" but grade III/IV combined ~10.7% (the split between grades was not verified); doxorubicin nephrotoxicity is "progressive / dose-intensity-related" rather than purely cumulative-dose-dependent; the apnoea in the vincristine overdose case report occurred during an extracorporeal circulation procedure and should not be extrapolated to "fragile airway".
 
 ---
 
@@ -54,7 +54,7 @@
 ## 参考文献（原文记录）
 
 > 本节标题、期刊、卷期页**一律为 PubMed 原文**，不翻译、不缩写。
-> 正文中的中文表述仅为解读；**如需引用，请引用下方原文条目**。
+> 正文中的表述仅为解读；**如需引用，请引用下方原文条目**。
 > 非英文文献保留其原始语言标题并标注语种。
 
 - Inazumi H, et al. Efficacy and adverse events of L-Asparaginase administration as a first-line treatment for feline large-cell gastrointestinal lymphoma. *J Vet Med Sci* 2024;86(7):727-736. PMID 38825481. [DOI](https://doi.org/10.1292/jvms.23-0453)
@@ -65,13 +65,12 @@
 
 ## 原文摘录（source excerpts）
 
-> 下列为**文献原文句子，逐字摘录**，未经翻译。
-> 正文中的中文是我的解读；**若要引用，请引用此处原文**，并回到原文核对上下文。
-> 仅摘录承载具体结论的句子，非全文摘要；完整语境请按 PMID/DOI 取原文。
+> The sentences below are **verbatim excerpts from the source literature**, untranslated.
+> The prose in the body above is my interpretation; **if you need to cite, cite the original sentences here**, and go back to the source to check the context.
+> Only sentences carrying specific load-bearing conclusions are excerpted; this is not a full abstract. For the complete context, retrieve the source by PMID/DOI.
 
 **PMID 38825481** · Inazumi H 2024
 > The most common adverse event was hyperammonemia, which occurred in 10 of 12 cases where we could compare plasma ammonia concentrations before and after the first dose of L-Asp.
 > This study included 43 cats.
 > Plasma phosphate concentrations were also significantly increased (P<0.001) within 24 hr after the first dose.
-> ⚠️ 正文引用的 `197, 1996, 2016, 8947875, 26834270` **未出现在摘要原文中** —— 可能出自全文（摘要不含），也可能有误；**引用前请取全文核对**。（注：原文若把数字拼写为英文单词，本检查会漏报。）
-
+> ⚠️ The figures `197, 1996, 2016, 8947875, 26834270` cited in the body **do not appear in the abstract text** — they may come from the full text (which the abstract does not contain), or may be erroneous; **retrieve the full text and verify before citing**. (Note: this check misses figures that the source spells out as English words.)

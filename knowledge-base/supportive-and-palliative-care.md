@@ -1,105 +1,109 @@
-# 猫肿瘤 支持治疗与姑息照护（宠物医学知识库）
+# Supportive and Palliative Care in Feline Cancer (veterinary knowledge base)
 
-> 生成 2026-07-16/17 · 循证核查（PubMed/Consensus）· 非诊断非处方，剂量以兽医处方为准
-> 定位：SOP 是"操作手册"，本文件是配套的"证据参考"。标注【已查证】/【推断/外推】/【未知】。
-> 贯穿主线：**低应激给药优先、误吸风险下的安全喂食、以呼吸+QOL 为北极星。**
+> Generated 2026-07-16/17 · Evidence-checked (PubMed/Consensus) · Not diagnostic, not a prescription; dosing is the prescribing veterinarian's call
+> Positioning: the SOP is the "operating manual"; this file is the companion "evidence reference". Claims are tagged 【verified】/【inferred / extrapolated】/【unknown】.
+> Running theme: **prefer low-stress routes of administration, feed safely under aspiration risk, and keep respiration + quality of life as the north star.**
 
 ---
 
-## 1. 食欲 / 增重（体重下降时）
+## 1. Appetite / weight gain (when weight is falling)
 
-**为什么重要**【已查证】：猫癌症患者 91% 有肌肉流失；**体况评分 BCS<5 中位生存 3.3 月 vs ≥5 的 16.7 月**（Baez 2007, JFMS, PMID 17552367 附近）。**肌肉消耗独立于 BMI 预后**（Martin 2013, JCO, 人；肌肉消耗可藏在"偏胖"个体里）。→ 盯**肌肉状态评分**（脊背/肩胛/头骨），不只盯秤。
+**Why this matters**【verified】: 91% of feline cancer patients have muscle loss; **a body condition score BCS <5 carries a median survival of 3.3 months vs 16.7 months for BCS ≥5** (Baez 2007, JFMS, PMID 17451991). **Muscle wasting is prognostic independently of BMI** (Martin 2013, JCO, human data; wasting can hide inside an apparently overweight individual). → Track the **muscle condition score** (spine / scapulae / skull), not just the scale.
 
-| 药 | 途径 | Solid 数据 |
+| Drug | Route | Solid data |
 |---|---|---|
-| **米氮平 mirtazapine（经皮 Mirataz，涂耳内侧）** ★最低应激 | 经皮，不用喂/不用扎 | RCT：体重减轻猫用后 **+3.9% vs 安慰剂 +0.4%**（Poole 2018, JVPT）；**淋巴瘤化疗猫 60%(12/20) 体重改善且兼止吐**（Ferro 2022, Animals）；CKD 猫显著增重、食欲↑（Quimby 2019, JFMS） |
-| **卡普罗瑞林 capromorelin（Elura 口服液，FDA 批准猫增重）** | 口服液，可混食 | RCT 55 天 **+6.8% vs 安慰剂**、+0.25kg（Wofford 2025, JFMS）；胃促生长素受体激动剂（Rathore 2023 综述） |
+| **Mirtazapine (transdermal Mirataz, applied to the inner pinna)** ★ lowest stress | transdermal; no pilling, no needle | RCT: cats with weight loss gained **+3.9% vs +0.4% on placebo** (Poole 2018, JVPT); **60% (12/20) of lymphoma cats on chemotherapy improved in weight, with concurrent antiemetic effect** (Ferro 2022, Animals); CKD cats gained weight significantly with increased appetite (Quimby 2019, JFMS) |
+| **Capromorelin (Elura oral solution, FDA-approved for weight gain in cats)** | oral solution, can be mixed into food | RCT over 55 days: **+6.8% vs placebo**, +0.25 kg (Wofford 2025, JFMS); a ghrelin receptor agonist (Rathore 2023, review) |
 
-**高热量康复处方食**：吞咽费劲时"每一口更值"；加温增香。**⚠️ 别硬灌**（诱发误吸+食物厌恶）。
-
----
-
-## 2. 止吐 / 恶心
-
-【已查证】**马罗匹坦(maropitant, Cerenia) 与 昂丹司琼(ondansetron) 在猫止吐效力相当**：单次 SC 均能在 24h 内控制呕吐/恶心，无显著差异（Karata Baykurt 2025 RCT, n=40；maropitant 1 mg/kg、ondansetron 0.4 mg/kg）。
-★**经皮马罗匹坦(涂耳内侧)** 是又一个低应激路径：4 mg/cat/日×5 天，6/8 猫呕吐减少、部分食欲改善（Boukaache 2022, Open Vet J，初步数据）。→ 对"不能喂药片"的猫尤其有用。
-- 止吐对上气道受累的猫尤其重要：呕吐 = 误吸风险，对气道储备低者可致命 → 有恶心迹象时早止吐。
+**High-calorie convalescence diets**: when swallowing is laborious, make every mouthful count; warm the food to raise its aroma. **⚠️ Do not force-feed** (this induces aspiration and food aversion).
 
 ---
 
-## 3. 疼痛评估（饲主在家就能用）★
+## 2. Antiemesis / nausea
 
-【已查证】**猫面部表情疼痛量表 Feline Grimace Scale (FGS)**：5 个动作单元（**耳位、眶紧张、口鼻紧张、胡须变化、头位**），各 0–2 分；**总分 >0.39/1.0 提示需镇痛**；验证充分（Evangelista 2019, Sci Rep, PMID 31896807）。
-- **饲主可靠使用**：cat caregivers 用 FGS 总分可靠性良好（ICC 0.65），与兽医评分无显著差异（Monteiro 2023, JFMS）。→ 免费在线工具 **felinegrimacescale.com**，可下载对照图。
-- 另有饲主用急性疼痛量表：cut-off 9、敏感度 96%（Rojsiripornchai 2025, Animals）。
-- **实用**：把 FGS 加进每日 QOL 追踪；猫疼痛的行为线索还有躲藏、弓背、不理毛、对触碰敏感、面部紧绷。
-
----
-
-## 4. 发烧 / 体温
-
-**标尺**【已查证】：猫正常 38.1–39.2℃；**>41℃=高热危象、立即送医**；**<37.5℃(体温偏低)同样急症、常更凶**（脓毒/休克/失代偿会掉温）。
-
-**发烧的三类来源（鉴别）**：
-1. **感染**（如肺炎、化脓性中耳炎）。误吸性肺炎的抗生素**不需额外抗厌氧覆盖**（人 Bai 2024/Yoshimatsu 2023 meta 无获益；犬误吸肺炎 氨苄西林-舒巴坦单药即可，加恩诺沙星无改善 Riffe 2025）。
-2. **肿瘤热(neoplastic fever)**【已查证】：肿瘤或宿主巨噬细胞释放 TNF/IL-1/IL-6/IFN → 前列腺素 → 下丘脑调定点上移；**排除性诊断**（Zell 2005；Johnson 1996）。人肿瘤患者约占 10%（Bainaud 2025）——猫无对应发生率。
-3. **肿瘤崩解/细胞死亡热**【已查证机制】：快速细胞死亡释放 **DAMPs → 无菌性炎症 → 致热细胞因子**（Huang 2024, Nat Rev Immunol；Murao 2021, Apoptosis）；**"干净凋亡"是免疫沉默/不致热,致热的是"量大来不及清理→继发性坏死"**（Chen 2025, Mol Cell）。与**肿瘤溶解综合征(TLS)**重叠（代谢紊乱→AKI）。→ L-天冬酰胺酶后 24–72h 发热与此相容；需查磷/钾/钙/尿酸/肾值。
-
-**管理**：⚠️**绝对禁用对乙酰氨基酚(猫致死)/NSAID**；物理降温要温和(别冰镇→寒战反效果)；退烧由兽医定。
-**耳温计**：比肛温精度低但低应激；**固定用无病变侧耳、看趋势>绝对值、去医院量肛温标定差值**。
+【verified】**Maropitant (Cerenia) and ondansetron are comparably effective as antiemetics in cats**: a single SC dose of either controlled vomiting/nausea within 24 h with no significant difference between them (Karata Baykurt 2025 RCT, n=40; maropitant 1 mg/kg, ondansetron 0.4 mg/kg).
+★ **Transdermal maropitant (applied to the inner pinna)** is another low-stress route: 4 mg/cat/day × 5 days, with reduced vomiting in 6/8 cats and improved appetite in some (Boukaache 2022, Open Vet J; preliminary data). → Particularly useful for a cat that cannot be given tablets.
+- Antiemesis matters especially in a cat with upper-airway involvement: vomiting means aspiration risk, which can be fatal where airway reserve is low → treat nausea early, at the first signs.
 
 ---
 
-## 5. 呼吸 / 氧疗
+## 3. Pain assessment (usable by the owner at home) ★
 
-【已查证】健康猫**居家静息呼吸中位约 27、睡眠约 20**；**>30 需警惕，持续 >40=红线**（是最可靠的居家窘迫指标）。
-- **判读要点**：数字之外看**费力程度**（腹式用力、张口、喘鸣、伸颈=窘迫）与**趋势**。
-- **家用氧气笼/浓缩机**：呼吸窘迫的即时缓冲、转运用氧；定位=支持性桥接，急性失代偿仍须送医。
-- **动态性上气道阻塞**的线索：**静息不喘、只在进食/舔毛/应激时喘鸣**→阻塞在负荷时才显；"喘鸣开始出现在静息"=余量变窄的预警。
-
----
-
-## 6. 进食安全（误吸风险）
-
-咽/喉部肿物+吞咽受损+可能误吸时：软食/糊状是否更安全需兽医定；**少量多次、抬高食盆、进食后直立片刻、别催别狼吞**。开始拒食/吞咽困难加重时别强喂，交兽医评估（可能需增重药、或评估营养支持方式）。
+【verified】**The Feline Grimace Scale (FGS)**: five action units (**ear position, orbital tightening, muzzle tension, whiskers change, head position**), each scored 0–2; **a total score >0.39 out of 1.0 indicates a need for analgesia**; thoroughly validated (Evangelista 2019, Sci Rep, PMID 31836868).
+- **Owners can use it reliably**: cat caregivers achieved good reliability on the FGS total score (ICC 0.65), with no significant difference from veterinary scores (Monteiro 2023, JFMS). → Free online tool at **felinegrimacescale.com**, with downloadable reference images.
+- A separate owner-administered acute pain scale exists: cut-off 9, sensitivity 96% (Rojsiripornchai 2025, Animals).
+- **In practice**: fold the FGS into the daily QoL tracking. Other behavioural cues of feline pain include hiding, a hunched posture, ceasing to groom, sensitivity to touch, and a tense face.
 
 ---
 
-## 7. 放射治疗的副作用（与化疗完全不同：局部、非骨髓抑制）
+## 4. Fever / body temperature
 
-【已查证】猫放疗**急性反应总体轻**：多为**一过性黏膜炎、照射区脱毛**（Vozenin 2018；Rohrer Bley 2022 "acute side effects mild"）。
-**晚期最需警惕骨坏死/瘘**：狗口腔 SBRT 骨坏死/口鼻瘘 **28.4%、与鳞癌显著相关**（Gualtieri 2024）；猫 FLASH 单次大剂量组 9–15 月 43% 上颌骨坏死（常规分割对照 0/9，Rohrer Bley 2022）。→ **病灶已有骨溶解者，放射性骨坏死风险更高**。
-- ⚠️ 上气道受累者特别提醒：**急性黏膜水肿可一过性加重狭窄气道**；每次照射需麻醉（另一层风险）。
-- 晚期放射组织损伤可用**高压氧(HBOT)**改善（El Hadji 2025，证据质量有限）。
+**The scale**【verified】: normal for a cat is 38.1–39.2 °C; **>41 °C = hyperthermic crisis, go to the clinic immediately**; **<37.5 °C (hypothermia) is equally an emergency and often the more ominous one** (sepsis, shock and decompensation all drive temperature down).
 
----
+**Three sources of fever (differential)**:
+1. **Infection** (pneumonia, suppurative otitis media, and so on). Antibiotics for aspiration pneumonia **do not require added anaerobic coverage** (in humans, the Bai 2024 and Yoshimatsu 2023 meta-analyses found no benefit; in canine aspiration pneumonia, ampicillin-sulbactam monotherapy sufficed and adding enrofloxacin gave no improvement, Riffe 2025).
+2. **Neoplastic fever**【verified】: the tumour or host macrophages release TNF/IL-1/IL-6/IFN → prostaglandins → an upward shift of the hypothalamic set point; **a diagnosis of exclusion** (Zell 2005; Johnson 1996). It accounts for roughly 10% of fevers in human cancer patients (Bainaud 2025) — there is no corresponding feline incidence figure.
+3. **Tumour-lysis / cell-death fever**【mechanism verified】: rapid cell death releases **DAMPs → sterile inflammation → pyrogenic cytokines** (Huang 2024, Nat Rev Immunol; Murao 2021, Apoptosis); **"clean" apoptosis is immunologically silent and non-pyrogenic — what causes fever is volume outpacing clearance, leading to secondary necrosis** (Chen 2025, Mol Cell). This overlaps with **tumour lysis syndrome (TLS)** (metabolic derangement → AKI). → A fever 24–72 h after L-asparaginase is compatible with this; check phosphate/potassium/calcium/urate and renal values.
 
-## 8. 生活质量(QoL) 评估工具
-
-【已查证】猫 QoL 工具多但**经验证的少**：系统综述在 96 篇中仅 12 篇用了经验证工具（Doit 2021, Vet J）；饲主"愿以寿命换 QoL"。
-- 肿瘤专用 HRQoL 问卷（Lynch 2011, VCO）：98% 饲主认为准确反映其宠物 QoL。
-- 化疗单药 vs 多药，饲主感知 QoL 无差异（Bianchi 2021）。
-- **实用做法**：用一张**多维居家清单**（呼吸/进食/体重-肌肉/体温/疼痛FGS/精神/活动/好坏日子），记趋势——"连续几天坏日子多于好日子"是关键决策信号（见 SOP §5.4）。
+**Management**: ⚠️ **Paracetamol is absolutely contraindicated (lethal in cats), as are NSAIDs**; physical cooling should be gentle (do not pack in ice — shivering is counterproductive); antipyresis is the veterinarian's decision.
+**Aural thermometers**: less accurate than rectal but lower stress; **use the same unaffected ear each time, watch the trend rather than the absolute value, and calibrate the offset against a rectal reading at the clinic**.
 
 ---
 
-## 9. 给药方式的应激/风险阶梯（对气道脆弱/怕应激的猫）
+## 5. Respiration / oxygen therapy
 
-低 → 高：**雾化吸入 / 藏食 ≈ 经皮(耳凝胶：米氮平、马罗匹坦、部分止吐/加巴喷丁) < 皮下注射 < 口服药片(咽部肿物者偏高，误吸风险) < 静脉点滴**。每加一种药都问："能不能用更不折腾它的方式给？"（详见 SOP §5.2）
+【verified】In healthy cats the **median resting respiratory rate at home is about 27, and about 20 during sleep**; **>30 warrants attention, and a sustained >40 is the red line** (this is the most reliable at-home indicator of distress).
+- **How to read it**: beyond the number, watch the **effort** (abdominal effort, open-mouth breathing, stridor, neck extension = distress) and the **trend**.
+- **Home oxygen cage / concentrator**: an immediate buffer during respiratory distress and oxygen for transport; positioned as a supportive bridge — acute decompensation still requires the clinic.
+- Clues to **dynamic upper-airway obstruction**: **no distress at rest, with stridor only during eating, grooming or stress** → the obstruction only shows itself under load. Stridor beginning to appear *at rest* is the warning that the margin has narrowed.
 
 ---
 
-## 参考文献（PMID/DOI；本页所据）
-- 增重：Poole 2018 JVPT（mirtazapine 透皮 RCT）；Ferro 2022 Animals（淋巴瘤猫 mirtazapine）；Quimby 2019 JFMS；Wofford 2025 JFMS（capromorelin RCT）；Rathore 2023 Vet Res Commun。
-- 预后/体况：Baez 2007 JFMS（BCS<5 MST 3.3 vs 16.7 月）；Martin 2013 JCO（肌肉消耗独立预后，人）。
-- 止吐：Karata Baykurt 2025 J Hellenic Vet Med Soc（maropitant vs ondansetron RCT）；Boukaache 2022 Open Vet J（透皮 maropitant）。
-- 疼痛：Evangelista 2019 Sci Rep PMID 31896807（FGS 验证）；Monteiro 2023 JFMS（饲主可用）；Rojsiripornchai 2025 Animals。
-- 发烧：Zell 2005 Support Care Cancer；Johnson 1996 Palliat Med；Bainaud 2025 Cancer Invest；Huang 2024 Nat Rev Immunol；Murao 2021 Apoptosis；Chen 2025 Mol Cell。
-- 误吸肺炎抗生素：Bai 2024 Chest；Yoshimatsu 2023 J Clin Med（meta）；Riffe 2025 JAVMA（犬）。
-- 放疗毒性：Vozenin 2018 CCR；Rohrer Bley 2022 CCR；Gualtieri 2024 Radiat Res（犬）；El Hadji 2025 Radiat Oncol（HBOT，人）。
-- QoL：Doit 2021 Vet J；Lynch 2011 VCO；Bianchi 2021 Open Vet J。
+## 6. Safe feeding (aspiration risk)
 
-> 说明：部分发生率/机制引用为**人/犬数据外推**（已在正文标注），猫特异数据缺乏处按"外推"处理，勿当猫实测。
+With a pharyngeal/laryngeal mass, impaired swallowing and possible aspiration: whether soft or pureed food is safer is the veterinarian's call. **Offer small amounts frequently, raise the food bowl, keep the cat upright for a while after eating, and do not rush or let it bolt food.** When refusal of food or difficulty swallowing begins to worsen, do not force-feed; hand over to the veterinarian for assessment (weight-gain drugs or a different mode of nutritional support may be needed).
+
+> ⚠️ **Not yet verified — flagged 2026-07-20**: the specific measures above (**raising the food bowl**, and any assumption that **thicker consistency is inherently safer**) are carried over from the original draft and have **no feline evidence on file in this knowledge base**. In human dysphagia research, thickened liquids reduce aspiration but *increase* residue and the risk of dehydration, so "thicker is safer" is not unconditionally true; whether that transfers to cats is unestablished. **Verify with the attending veterinarian before relying on either measure.**
+
+---
+
+## 7. Adverse effects of radiotherapy (entirely unlike chemotherapy: local, non-myelosuppressive)
+
+【verified】Acute reactions to radiotherapy in cats are **mild overall**: mostly **transient mucositis and alopecia within the irradiated field** (Vozenin 2018; Rohrer Bley 2022, "acute side effects mild").
+**The late effect to watch is osteonecrosis / fistula**: in dogs receiving oral SBRT, osteonecrosis or oronasal fistula occurred in **28.4% and was significantly associated with squamous cell carcinoma** (Gualtieri 2024); in cats, a single-large-dose FLASH group showed 43% maxillary osteonecrosis at 9–15 months (vs 0/9 in the conventionally fractionated control, Rohrer Bley 2022). → **Where the lesion has already caused osteolysis, the risk of radiation osteonecrosis is higher.**
+- ⚠️ A specific caution where the upper airway is involved: **acute mucosal oedema can transiently worsen an already narrowed airway**; and each fraction requires anaesthesia (a further layer of risk).
+- Late radiation tissue injury may be improved by **hyperbaric oxygen therapy (HBOT)** (El Hadji 2025; evidence quality limited).
+
+---
+
+## 8. Quality-of-life (QoL) assessment tools
+
+【verified】Feline QoL instruments are numerous but **few are validated**: a systematic review found that only 12 of 96 papers used a validated instrument (Doit 2021, Vet J); owners report willingness to trade lifespan for quality of life.
+- An oncology-specific HRQoL questionnaire (Lynch 2011, VCO): 98% of owners felt it accurately reflected their pet's QoL.
+- Single-agent versus multi-agent chemotherapy showed no difference in owner-perceived QoL (Bianchi 2021).
+- **In practice**: use a **multidimensional at-home checklist** (respiration / eating / weight and muscle / temperature / pain by FGS / demeanour / activity / good days vs bad days) and record the trend — "bad days outnumbering good days for several days running" is the key decision signal (see SOP §5.4).
+
+---
+
+## 9. The stress/risk ladder of administration routes (for a cat with a fragile airway or low stress tolerance)
+
+Low → high: **nebulisation / hiding in food ≈ transdermal (ear gels: mirtazapine, maropitant, some antiemetics, gabapentin) < subcutaneous injection < oral tablets (higher for a cat with a pharyngeal mass, aspiration risk) < intravenous infusion**. For every drug added, ask: "is there a way to give this that troubles the cat less?" (see SOP §5.2)
+
+---
+
+## References (PMID/DOI; the basis for this page)
+- Weight gain: Poole 2018 JVPT (transdermal mirtazapine RCT); Ferro 2022 Animals (mirtazapine in lymphoma cats); Quimby 2019 JFMS; Wofford 2025 JFMS (capromorelin RCT); Rathore 2023 Vet Res Commun.
+- Prognosis / body condition: Baez 2007 JFMS, PMID 17451991 (BCS <5, MST 3.3 vs 16.7 months); Martin 2013 JCO (muscle wasting as an independent prognostic factor, human).
+- Antiemesis: Karata Baykurt 2025 J Hellenic Vet Med Soc (maropitant vs ondansetron RCT); Boukaache 2022 Open Vet J (transdermal maropitant).
+- Pain: Evangelista 2019 Sci Rep, PMID 31836868 (FGS validation); Monteiro 2023 JFMS (owner-usable); Rojsiripornchai 2025 Animals.
+- Fever: Zell 2005 Support Care Cancer; Johnson 1996 Palliat Med; Bainaud 2025 Cancer Invest; Huang 2024 Nat Rev Immunol; Murao 2021 Apoptosis; Chen 2025 Mol Cell.
+- Antibiotics in aspiration pneumonia: Bai 2024 Chest; Yoshimatsu 2023 J Clin Med (meta-analysis); Riffe 2025 JAVMA (canine).
+- Radiotherapy toxicity: Vozenin 2018 CCR; Rohrer Bley 2022 CCR; Gualtieri 2024 Radiat Res (canine); El Hadji 2025 Radiat Oncol (HBOT, human).
+- QoL: Doit 2021 Vet J; Lynch 2011 VCO; Bianchi 2021 Open Vet J.
+
+> Note: some incidence figures and mechanisms cited here are **extrapolated from human or canine data** (flagged as such in the body). Where feline-specific data are lacking, treat the claim as extrapolation, not as a feline measurement.
+
+> ⚠️ **PMID correction, 2026-07-20**: two PMIDs in the original draft were wrong, and the verbatim reference records below are what exposed them. `17552367` resolves to Blumberg MS et al., "Sleep, development, and human health" (*Sleep* 2007) — not Baez; the correct PMID for Baez 2007 JFMS is **17451991**. `31896807` resolves to Netto GJ, "Editorial" (*Mod Pathol* 2020) — not Evangelista; the correct PMID for the FGS validation paper is **31836868** (digits transposed). Both were re-checked against PubMed on 2026-07-20; **the figures quoted in the body (91% muscle loss, 3.3 vs 16.7 months, the five action units, the >0.39 cut-off) were confirmed correct against the abstracts** — only the identifiers were wrong.
 
 ---
 
@@ -114,9 +118,13 @@
 ## 参考文献（原文记录）
 
 > 本节标题、期刊、卷期页**一律为 PubMed 原文**，不翻译、不缩写。
-> 正文中的中文表述仅为解读；**如需引用，请引用下方原文条目**。
+> 正文中的表述仅为解读；**如需引用，请引用下方原文条目**。
 > 非英文文献保留其原始语言标题并标注语种。
 
+- Baez JL, et al. A prospective investigation of the prevalence and prognostic significance of weight loss and changes in body condition in feline cancer patients. *J Feline Med Surg* 2007;9(5):411-7. PMID 17451991. [DOI](https://doi.org/10.1016/j.jfms.2007.02.005)
+- Evangelista MC, et al. Facial expressions of pain in cats: the development and validation of a Feline Grimace Scale. *Sci Rep* 2019;9(1):19128. PMID 31836868. [DOI](https://doi.org/10.1038/s41598-019-55693-8)
+
+> 以下两条为**已确认与正文不符的旧 PMID**，保留原文记录以存证，请勿引用：
 - Blumberg MS, et al. Sleep, development, and human health. *Sleep* 2007;30(5):549-50. PMID 17552367. [DOI](https://doi.org/10.1093/sleep/30.5.549)
 - Netto GJ. Editorial. *Mod Pathol* 2020;33(2):178. PMID 31896807. [DOI](https://doi.org/10.1038/s41379-019-0438-y)
 
@@ -126,11 +134,17 @@
 
 ## 原文摘录（source excerpts）
 
-> 下列为**文献原文句子，逐字摘录**，未经翻译。
-> 正文中的中文是我的解读；**若要引用，请引用此处原文**，并回到原文核对上下文。
-> 仅摘录承载具体结论的句子，非全文摘要；完整语境请按 PMID/DOI 取原文。
+> The sentences below are **verbatim excerpts from the source literature**, untranslated.
+> The prose in the body above is my interpretation; **if you need to cite, cite the original sentences here**, and go back to the source to check the context.
+> Only sentences carrying specific load-bearing conclusions are excerpted; this is not a full abstract. For the complete context, retrieve the source by PMID/DOI.
 
-**以下文献无摘要或未取得原文，正文中文表述暂无原文可核：**
+**PMID 17451991** · Baez JL 2007
+> Muscle mass was reduced at all three sites assessed in 91% of the patients.
+> Feline cancer patients having a BCS <5 had a median survival time (MST) of 3.3 months compared to that of 16.7 months for cats with a BCS of > or = 5 (P=0.008).
+> Fifty-seven cats with neoplasia were evaluated.
+> Fat mass was reduced in both sites assessed in 60% of the patients.
 
-- PMID 17552367, PMID 31896807
-
+**PMID 31836868** · Evangelista MC 2019
+> Five action units (AU) were identified: ear position, orbital tightening, muzzle tension, whiskers change and head position.
+> The FGS detected response to analgesic treatment (scores after analgesia were lower than before) and a cut-off score was determined (total pain score > 0.39 out of 1.0).
+> The FGS is a valid and reliable tool for acute pain assessment in cats.
