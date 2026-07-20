@@ -191,8 +191,14 @@ def trimmed_view(frag: str) -> dict:
     """The fields the agent actually needs, which is what a local pipeline would
     hand over. Everything else in a PubMed record is overhead for this purpose."""
     art = ET.fromstring(frag)
+    # itertext(), never .text — an AbstractText node containing any inline markup
+    # (superscripts, italics, formulae) has its remainder in tail text, and .text
+    # silently returns only the fragment before the first child. Measured on one
+    # 2026 record: .text yielded 1130 of 3814 characters and dropped a whole
+    # second node entirely. Silent truncation of a source is precisely the
+    # failure this project exists to prevent.
     abstract = " ".join(
-        (t.text or "") for t in art.iter("AbstractText")
+        "".join(t.itertext()) for t in art.iter("AbstractText")
     ).strip()
     authors = []
     for a in art.iter("Author"):

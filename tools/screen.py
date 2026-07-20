@@ -126,6 +126,58 @@ def screen(frag: str) -> tuple[bool, str]:
     return True, "kept"
 
 
+def cmd_survey(args) -> int:
+    """Stage 1 of real use: title-level triage.
+
+    Prints one line per candidate — no abstracts. This is where the token saving
+    actually lands in practice: a survey of 40 candidates costs less than pulling
+    three full records, and the agent still chooses which to open. Nothing is
+    dropped; the full list is always printed (see SOP section 2 on ranking versus
+    truncation).
+    """
+    cited = set(pmids_from_kb())
+    pool, seen = [], set()
+    for q in args.query:
+        try:
+            ids = esearch(q, args.retmax)
+        except Exception as exc:
+            print(f"  SEARCH-ERROR {q!r}: {exc}", file=sys.stderr)
+            continue
+        new = [p for p in ids if p not in seen]
+        seen.update(new)
+        pool.extend(new)
+        time.sleep(SLEEP)
+    if not pool:
+        sys.exit("no candidates")
+    records = efetch(pool)
+    for pmid in pool:
+        frag = records.get(pmid)
+        if frag is None:
+            print(f"  {pmid}  (not returned by efetch)")
+            continue
+        v = trimmed_view(frag)
+        mark = "*" if pmid in cited else " "     # already in the knowledge base
+        has_abs = "A" if v["abstract"].strip() else "-"
+        print(f"{mark}{has_abs} {pmid}  {(v['year'] or '????'):>4}  "
+              f"{(v['journal'] or '?')[:28]:28s}  {v['title'][:88]}")
+    print("")
+    print(f"{len(pool)} candidates  (* = already cited here, A = has abstract)")
+    return 0
+
+
+def cmd_show(args) -> int:
+    """Stage 2: full trimmed view for the handful worth opening."""
+    records = efetch(args.pmids)
+    for pmid in args.pmids:
+        frag = records.get(pmid)
+        if frag is None:
+            print(f"--- {pmid}: NOT RETURNED ---")
+            continue
+        print(json.dumps(trimmed_view(frag), ensure_ascii=False, indent=1))
+        print()
+    return 0
+
+
 def cmd_measure(args) -> int:
     queries = ([l.strip() for l in Path(args.queries).read_text().splitlines() if l.strip()]
                if args.queries else DEFAULT_QUERIES)
@@ -209,6 +261,13 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
+    ps = sub.add_parser("survey")
+    ps.add_argument("query", nargs="+")
+    ps.add_argument("--retmax", type=int, default=20)
+    ps.set_defaults(fn=cmd_survey)
+    ph = sub.add_parser("show")
+    ph.add_argument("pmids", nargs="+")
+    ph.set_defaults(fn=cmd_show)
     p = sub.add_parser("measure")
     p.add_argument("--queries", help="file of one query per line")
     p.add_argument("--retmax", type=int, default=15)

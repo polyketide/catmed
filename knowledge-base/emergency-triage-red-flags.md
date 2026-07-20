@@ -6,11 +6,35 @@
 
 ---
 
-## 0. The one finding that matters most for triage
+## 0. The findings that matter most for triage
 
-**Delay is measurable, and it shows up in outcomes.** In cats with urethral obstruction, those that developed severe anaemia — the worse-outcome group — **had a significantly longer duration of clinical signs before presentation (P = 0.001)**, and while every cat in the uncomplicated group survived to discharge, **4/17 (23.5%) in the severe-anaemia group were euthanised (P = 0.013)** (Beer 2016, PMID 26748857).
+### 0.1 Most deaths from urethral obstruction are decisions, not the disease
 
-⚠️ This is an association in a small retrospective case-control study (17 cases, 30 controls), not proof that delay *caused* the worse outcome — longer duration may equally mark a more severe obstruction from the outset. **Do not present it to an owner as "waiting caused this".** It is, however, the most direct feline evidence available that time-to-presentation and outcome move together, and it is a sound basis for the triage principle that reassurance which produces delay is the primary harm.
+In UK primary care, **1293 cases arose among 237,825 male cats** (incidence risk 0.54%, 95% CI 0.51–0.57). Of the 1108 with full records, **329 (29.6%) died during the episode — and 285 of those 329 (88.0%) involved euthanasia** (Beeston 2022, PMID 35199370).
+
+> **⭐ This is the number an owner is deciding without.** Nearly nine in ten deaths from a treatable obstruction are a decision made in a consulting room, usually about cost, recurrence and prognosis, and usually without anyone quantifying any of the three. It is the same shape as arterial thromboembolism (§1.1), and it is the clearest illustration of what this knowledge base is for: the medicine is not the bottleneck; the information available at the moment of decision is.
+>
+> This is **not** an argument that those euthanasias were wrong. Recurrence is real and the costs are real. It is an argument that the decision deserves the actual figures, which §0.2 now supplies.
+
+**What recurrence actually looks like**, since it is the usual reason given: on long-term follow-up of 39 cats, re-obstruction occurred in **8/22 (36%) idiopathic**, 3/10 (30%) urolithiasis and 3/7 (43%) urethral plug cases; recurrent lower urinary tract signs affected **20/39 (51%)**. Re-obstruction was the commonest reason for euthanasia, performed in **8/39 (21%)** (Gerber 2008, PMID 17719255). ⚠️ n=39 with follow-up, referral population, 2008 — read it as an order of magnitude, not a rate to quote.
+
+**And recurrence does not cost more per episode**: in 601 cats, there was **no difference in catheterisation or hospitalisation duration between initial and recurrent obstruction**, so "it will only get more expensive each time" is not supported (Skinner 2026, PMID 42187200).
+
+### 0.2 Delay is measurable — and the strongest evidence runs through the owner
+
+Cats presenting with a **recurrent** obstruction were **less likely to be azotaemic on arrival than first-timers (P = 0.015)**, in 601 cats across multiple centres. The authors' reading: *"which might be due to increased caregiver vigilance"* (Skinner 2026, PMID 42187200).
+
+> **An owner who has seen it before recognises it sooner, and the cat arrives in better metabolic shape.** That is the delay-outcome link seen from the other end, and it is the closest thing to a natural experiment available here: the disease is the same, the recognition is what changed.
+
+Why arriving azotaemic matters: azotaemic cats were **1.92× more likely to need longer catheterisation** (95% CI 1.40–2.65; P <0.001) and **1.81× more likely to have a longer hospitalisation** (95% CI 1.28–2.57; P <0.001). Encouragingly, azotaemia resolved within 48 h in **89/127 (70.1%)** of those affected (Skinner 2026).
+
+Corroborating, in a smaller series: cats developing severe anaemia had a **significantly longer duration of clinical signs before presentation (P = 0.001)**, and while every uncomplicated cat survived to discharge, **4/17 (23.5%) of the severe-anaemia group were euthanised (P = 0.013)** (Beer 2016, PMID 26748857).
+
+⚠️ **All of this is observational.** Earlier presentation and milder disease travel together; neither study randomised anything, and "caregiver vigilance" is the authors' proposed explanation rather than a measured variable. Longer duration may equally mark an obstruction that was more severe from the outset. **Do not tell an owner that waiting caused this.** What it does support is the triage principle that reassurance which produces delay is the harm to guard against — now resting on 601 cats and a plausible mechanism rather than on 17.
+
+### 0.3 One finding to raise with the vet, not with the owner
+
+Antibiotics were given in **641/1108 (57.9%)** of primary-care UO cases "despite minimal evidence in the clinical records of bacterial cystitis" (Beeston 2022). ⚠️ Prescribing decisions belong to the attending clinician, who has information no record review has. Recorded here because it is the kind of pattern only a cross-case view surfaces — not as a criticism of any individual case.
 
 ---
 
@@ -55,7 +79,7 @@ Cats presenting to an emergency room in respiratory distress are unambiguously a
 | **Open-mouth breathing in a cat** | ⚠️ **No direct feline study located.** Searches for open-mouth breathing as a severity marker in cats returned nothing usable. It is standard veterinary teaching that cats, unlike dogs, do not pant benignly, but this knowledge base has not sourced it. | Give the caution. Do **not** attach a figure, and do not say "studies show". Say it is standard clinical teaching that has not been quantified here. |
 | **Anorexia ~2 days → hepatic lipidosis** | ⚠️ **No direct evidence located for the time threshold.** Searches for the duration of anorexia preceding feline hepatic lipidosis returned no usable quantitative study. The disease is well described; the specific "2 days" threshold is **not sourced here**. ⚠️ This claim currently appears in the agent's Triage section and must be softened there or sourced. | Advise being seen for a cat that has stopped eating. Do **not** state a numeric threshold as though established. |
 | **Permethrin / pyrethroid toxicosis** | ⚠️ **Only weak sources located**: a 2-cat case report of adjunctive lipid emulsion (Kuo 2013, PMID 23855545) and a correspondence letter (Sparkes 2016, PMID 27154944). No case series or incidence data retrieved. | Keep the caution — feline permethrin sensitivity is a well-known species difference and dog spot-on products applied to cats are a recognised hazard. But this file does not yet evidence it; do not cite figures. |
-| **Urethral obstruction — overall survival** | ⚠️ **Not located.** What was found addresses subgroups: severe anaemia (Beer 2016) and iatrogenic urinary tract tears, where prevalence was 0.92% and affected cats were significantly less likely to survive to discharge (Manchester 2023, PMID 38244269). A general survival figure for feline UO was not retrieved. | Treat as an emergency (uncontroversial). Do not quote a survival rate. |
+| **Urethral obstruction — overall survival** | ✅ **Located 2026-07-20** (this row previously read "not retrieved"). Primary-care cohort: 29.6% died during the episode, 88.0% of those by euthanasia (Beeston 2022) — see §0.1. Subgroup data remain relevant: severe anaemia (Beer 2016) and iatrogenic tears at 0.92% prevalence with worse survival (Manchester 2023, PMID 38244269). | Treat as an emergency (uncontroversial). The survival figure may now be quoted — with its denominator, and with the euthanasia fraction, which is the part that changes what an owner does. |
 
 > **Why they stay.** Absence of a retrieved study is absence of evidence, not evidence that the sign is benign — the same rule this knowledge base applies everywhere else. For a triage screen the asymmetry is decisive: an unnecessary consultation costs money, while a missed urethral obstruction costs the cat. **What is not permitted is dressing an unsourced caution in borrowed authority.**
 
@@ -95,7 +119,7 @@ Every study above is **human medicine**. No veterinary equivalent was found: sea
 
 ## 4. Gaps worth closing next
 
-- Feline urethral obstruction: overall survival to discharge, and any quantified relationship between time-to-presentation and outcome.
+- ~~Feline urethral obstruction: overall survival, and any quantified relationship between time-to-presentation and outcome.~~ **Closed 2026-07-20** — Beeston 2022 supplies the cohort outcome, Skinner 2026 the presentation-timing link via caregiver recognition (§0). Still open underneath it: whether earlier presentation *causes* the milder presentation, which no observational design here can settle.
 - Any quantitative basis for the anorexia-duration threshold in hepatic lipidosis.
 - Open-mouth breathing in cats as a severity marker — prevalence and outcome association.
 - Permethrin toxicosis in cats: a case series, incidence, and outcome with treatment.
@@ -124,6 +148,9 @@ Every study above is **human medicine**. No veterinary equivalent was found: sea
 - Beer KS, Drobatz KJ. Severe anemia in cats with urethral obstruction: 17 cases (2002-2011). *J Vet Emerg Crit Care (San Antonio)* 2016;26(3):393-7. PMID 26748857. [DOI](https://doi.org/10.1111/vec.12437)
 - Sparkes A, Bessant C, Bates N. Permethrin risk to cats. *Vet Rec* 2016;178(19):480. PMID 27154944. [DOI](https://doi.org/10.1136/vr.i2524)
 - Gilday C, Guieu L. Prognostic value of lactate in cats presented in respiratory distress to the emergency room. *Front Vet Sci* 2022;9:918029. PMID 36176706. [DOI](https://doi.org/10.3389/fvets.2022.918029)
+- Gerber B, Eichenberger S, Reusch CE. Guarded long-term prognosis in male cats with urethral obstruction. *J Feline Med Surg* 2008;10(1):16-23. PMID 17719255. [DOI](https://doi.org/10.1016/j.jfms.2007.06.007)
+- Beeston D, et al. Occurrence and clinical management of urethral obstruction in male cats under primary veterinary care in the United Kingdom in 2016. *J Vet Intern Med* 2022;36(2):599-608. PMID 35199370. [DOI](https://doi.org/10.1111/jvim.16389)
+- Skinner VJ, et al. Azotaemia and outcomes in male cats with initial and recurrent urethral obstruction: a multicentre, retrospective study of 601 cats (2020-2024). *J Feline Med Surg* 2026;28(7):1098612X261457846. PMID 42187200. [DOI](https://doi.org/10.1177/1098612X261457846)
 - Manchester RB, Hess RS, Reineke EL. Difficult catheterization and previous urethral obstruction are associated with lower urinary tract tears in cats with urethral obstruction. *J Am Vet Med Assoc* 2023;262(2):187-192. PMID 38244269. [DOI](https://doi.org/10.2460/javma.23.07.0419)
 
 > 以下为**人医文献**，用于评估「面向使用者的分诊工具」这一功能本身；跨物种外推的边界见正文 §3.4。
@@ -173,6 +200,31 @@ Every study above is **human medicine**. No veterinary equivalent was found: sea
 > Within 2 years of follow-up, 23/255 (9.0%) cats had died with ATE, 44/255 (17.3%) cats had died with CHF and 12/255 (4.7%) cats had experienced a sudden death, with 141/255 (55.3%) cats still alive at the end of 2 years.
 > No multivariable models were generated for risks of dying a sudden death owing to the low event rate, but syncope at presentation and arrhythmias on auscultation were associated with sudden death on univariable analysis.
 > Asymptomatic cats have a reduced risk of all three types of death.
+
+**PMID 17719255** · Gerber B 2008
+> Of the 22 cats with idiopathic urethral obstruction, eight (36%) re-obstructed after 3-728 days (median 17 days).
+> Of 10 cats with urolithiasis, three (30%) re-obstructed after 10, 13 and 472 days, respectively.
+> Of the seven cats with urethral plugs, three (43%) re-obstructed after 4, 34 and 211 days, respectively.
+> Recurrent signs of lower urinary tract disease including obstruction were common in cats with urethral obstruction (20/39; 51%) and occurred in the same frequency irrespective of the primary cause of the obstruction.
+> Recurrent obstruction (14/39; 36%) was the most common reason for euthanasia and was performed in 8/39 (21%) cats.
+> Forty-five male cats with urethral obstruction or lower urinary tract signs referable to urethral obstruction were included in the study.
+
+**PMID 35199370** · Beeston D 2022
+> From the study cohort of 237 825 male cats, there were 1293 incident cases.
+> The estimated UO incidence risk during 2016 was 0.54 (95% CI: 0.51-0.57).
+> Death during a UO episode was 329/1108 (29.6%), and 285/329 (88.0%) deaths involved euthanasia.
+> Overall repeat catheterization rate was 253/854 (29.6%).
+> Antibiotics were administered to 641/1108 (57.9%) cases.
+> Antibiotics were commonly prescribed in cats for treatment of UO despite minimal evidence in the clinical records of bacterial cystitis.
+> Repeat catheterization was common and case fatality rate during a UO episode was high.
+
+**PMID 42187200** · Skinner VJ 2026
+> Cats were less likely to be azotaemic on presentation if they had a history of UO (P = 0.015) or LUTS (P = 0.014).
+> Azotaemic cats were 1.92 times more likely to undergo a longer duration of catheterisation compared with non-azotaemic cats (95% confidence interval [CI] 1.40-2.65; P <0.001) and 1.81 times more likely to have a longer hospitalisation (95% CI 1.28-2.57; P <0.001).
+> Resolution of azotaemia was achieved in less than 48 h in 89/127 (70.1%) cats that were azotaemic on presentation (95% CI 61.3-77.9).
+> Cats are less likely to present with azotaemia during recurrent UO episodes, which might be due to increased caregiver vigilance.
+> There was no difference in catheterisation and hospitalisation duration between cats with initial and recurrent UO.
+> ⚠️ "Increased caregiver vigilance" is the authors' proposed explanation for an observed association, not a measured variable. Cited in §0.2 as such.
 
 **PMID 26748857** · Beer KS 2016
 > Cats in the UO-A group had a significantly longer duration of clinical signs (P = 0.001), and were more likely to have a history of previous urethral obstruction (P = 0.011), have a heart murmur (P = 0.002), have a gallop rhythm (P = 0.005), and have lower blood pressure (P = 0.007) compared to those in the UO group.
