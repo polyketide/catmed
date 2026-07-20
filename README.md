@@ -1,6 +1,6 @@
 # catmed
 
-**An evidence-first sub-agent for veterinary × human medical analysis, a cited feline-medicine knowledge base, and the tooling that keeps its citations honest.**
+**Owner-facing feline medicine guides where every figure traces to a published sentence — plus the verified knowledge base behind them, and the tooling that proves the citations on every commit.**
 
 [![citation integrity](https://github.com/polyketide/catmed/actions/workflows/citation-integrity.yml/badge.svg)](https://github.com/polyketide/catmed/actions/workflows/citation-integrity.yml)
 [![licence: MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
@@ -14,12 +14,18 @@
 > can still fail. Currently **180 papers, 623 verbatim excerpts, 0 unmatched** — knowledge base and owner guides alike.
 > Contributions welcome in English, 中文 or 日本語 — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
+**Read it here → https://polyketide.github.io/catmed/** (中文，手机可读). The guides are the product. The agents are how they get made.
+
 > ⚠️ **Not medical advice.** Everything here is literature-referenced material for discussing options with a licensed veterinarian. It does not diagnose, prescribe, or replace your vet.
 > ⚠️ **医療アドバイスではありません。** 本リポジトリの内容は、獣医師と選択肢を検討するための文献参照資料です。診断・処方・獣医師の代替にはなりません。
 > ⚠️ **不是医疗建议。** 所有内容是供你与执业兽医共同审阅的循证参考，不下诊断、不开处方、不能替代兽医。
 
 ```
-.claude/agents/medical.md              # the sub-agent definition
+.claude/agents/
+  ├── medical.md                       # research agent: full tools, unrestricted topics
+  └── cat-owner-triage.md              # owner-facing agent: Read/Grep/Glob ONLY, so it
+                                       #   CANNOT search literature and must answer from
+                                       #   the knowledge base or decline (see below)
 knowledge-base/                        # analysis-facing notes (English, with verbatim source excerpts)
   ├── feline-disease-frequency.md        # what cats present with and die of — decides what gets written next
   ├── chronic-kidney-disease.md
@@ -36,14 +42,49 @@ guides/                                # owner-facing guides, Markdown + PDF (Ch
   ├── feline-ckd-owner-guide.zh.{md,pdf}         # every figure carries an inline PMID
   ├── feline-lymphoma-all-types-owner-guide.zh.{md,pdf}
   └── feline-nasal-lymphoma-owner-guide.zh.{md,pdf}
-docs/                                  # engineering SOPs
-  └── LITERATURE-PIPELINE-SOP.md       # offloading literature retrieval to a local node (design, not yet built)
-tools/                                 # citation-integrity and rendering scripts
+docs/                                  # engineering SOPs — the methodology record
+  ├── LITERATURE-PIPELINE-SOP.md       # every defect found, and the rule it produced
+  └── kb-exceptions.md                 # suppressed checks, each with a written reason
+tools/                                 # citation-integrity, checking and rendering
+  ├── pubmed_archive.py                # fetch / verify the raw record archive
+  ├── dr_drill.py                      # Leg 1: every excerpt vs its source, + self-test
+  ├── check_kb_hygiene.py              # orphan citations, empty blocks, coverage drift
+  ├── build_site.py                    # static site
   ├── rebuild_references.py
   ├── fetch_fulltext.py
   ├── extract_source_excerpts.py
   └── render_markdown.py
 ```
+
+---
+
+## What this actually is, and what it is not
+
+**The product is the documents. The agents are production tooling.**
+
+That is worth stating plainly because the repository layout suggests otherwise, and because the obvious reading of "a medical AI agent" is wrong here in a way that matters.
+
+Nothing valuable in this project came from a chat exchange. It came from slow, adversarial, verified passes over literature — finding twelve misattributed figures, catching a verification pass that had *deleted three real findings* as unsourced, discovering that the checker was monolingual while half the corpus is Chinese, and discovering that the most rigorously verified material was the least read while the only material with readers had no verification at all. **None of that is a thing you can ask a chatbot for.** It is what a pipeline produces when it is run against itself repeatedly.
+
+So the layers are:
+
+| Layer | Who it is for | Where |
+|---|---|---|
+| **Owner guides** | cat owners, no medical background | [the site](https://polyketide.github.io/catmed/), and `guides/` |
+| **Knowledge base** | vets, researchers | `knowledge-base/` — English, with verbatim excerpts and explicit gaps |
+| **Agents** | maintainer, contributors | `.claude/agents/` — how the above gets made and checked |
+
+### The owner-facing agent is deliberately crippled, and this is the most important design decision here
+
+`cat-owner-triage.md` declares `tools: Read, Grep, Glob`. It cannot search PubMed, cannot browse, cannot run commands. It answers from the knowledge base or it declines.
+
+**This replaced a rule that did not work.** The same restriction was first written into the `medical` agent as prose — a dedicated section, then promoted to a rule explicitly outranking every other rule in the file. It was tested both times with one question about a diabetic cat, a condition the knowledge base does not cover. **Both times the agent searched PubMed live and answered in full.** On the second attempt it wrote *"this project has no diabetes file"* and then answered anyway.
+
+It was not malfunctioning. The rest of the definition asks — correctly — for thoroughness toward a frightened owner, and no sentence outranks that pull in practice. So the restriction moved out of the prose and into the tool list, where compliance is not a judgement call.
+
+**The general form of that lesson runs through this whole repository: a constraint enforced by the thing it constrains is not a constraint.** The citation discipline became real when CI enforced it rather than the maintainer remembering. The scope limit became real when the capability was removed rather than requested. See `docs/LITERATURE-PIPELINE-SOP.md` §3f.
+
+**Why cripple it at all?** Because a model that answers fluently about any feline disease is indistinguishable, to the owner reading it, from one that answers correctly — and this project's single distinguishing property is that it says where the evidence runs out. Sounding limited is the feature.
 
 ---
 

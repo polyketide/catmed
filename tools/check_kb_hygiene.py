@@ -20,6 +20,13 @@ was silent, not failing.** A silent checker reads as coverage.
                 verified-looking paper that verifies nothing. Five existed; four
                 had body claims resting on them.
 
+  coverage      A knowledge-base file the agent definition does not name, or a
+                file it names that does not exist. The agent's scope boundary
+                lists what it may advise from; a hardcoded list drifts the moment
+                an entry is added, and it drifts silently in the dangerous
+                direction — verified material sitting unused, or believed
+                coverage that was renamed away.
+
   pii           Generic secret/PII scan — absolute home paths, private-range IP
                 addresses, unexpected e-mail addresses. **Deliberately generic.**
                 This repository also screens for named private entities (a
@@ -31,7 +38,7 @@ Exceptions live in docs/kb-exceptions.md, each with a written reason, so that
 suppressing a check is a reviewable edit rather than an invisible one.
 
 Usage:
-  check_kb_hygiene.py [orphans|empty-blocks|pii|all]     # default: all
+  check_kb_hygiene.py [orphans|empty-blocks|coverage|pii|all]   # default: all
 Exit code 1 if any check fails. Standard library only.
 """
 from __future__ import annotations
@@ -65,11 +72,11 @@ def load_exceptions() -> dict[str, set[str]]:
         - orphans: 17552367 — a wrong PMID retained as evidence of the typo
 
     The reason after the em dash is for humans; this only needs check and id."""
-    out: dict[str, set[str]] = {"orphans": set(), "empty-blocks": set(), "pii": set()}
+    out: dict[str, set[str]] = {"orphans": set(), "empty-blocks": set(), "coverage": set(), "pii": set()}
     if not EXCEPTIONS.exists():
         return out
     for line in EXCEPTIONS.read_text(encoding="utf-8").splitlines():
-        m = re.match(r"-\s*(orphans|empty-blocks|pii):\s*(\S+)", line.strip())
+        m = re.match(r"-\s*(orphans|empty-blocks|coverage|pii):\s*(\S+)", line.strip())
         if m:
             out[m.group(1)].add(m.group(2))
     return out
@@ -192,9 +199,47 @@ def check_pii() -> list[str]:
     return problems
 
 
+AGENT = REPO / ".claude" / "agents" / "medical.md"
+
+
+def check_coverage(exc: set[str]) -> list[str]:
+    """The agent's scope boundary names the files it may advise from. A hardcoded
+    list drifts the moment someone adds a knowledge-base entry — and it drifts
+    silently in the dangerous direction: a file exists, the agent does not know
+    it may use it, so verified material sits unused; or a file is renamed and the
+    agent believes it has coverage it no longer has.
+
+    The list in the agent is explicitly a snapshot with the directory declared
+    authoritative, which limits the damage. This check keeps the snapshot true."""
+    if not AGENT.exists():
+        return []
+    text = AGENT.read_text(encoding="utf-8")
+    listed = set(re.findall(r"`([a-z0-9-]+\.md)`", text))
+    actual = {f.name for f in sorted(KB.glob("*.md"))}
+    problems = []
+    for name in sorted(actual - listed):
+        if name in exc:
+            continue
+        problems.append(
+            f".claude/agents/medical.md: knowledge-base/{name} exists but is not "
+            f"named anywhere in the agent definition. Add it to the Scope boundary "
+            f"table, or the agent will decline questions it actually has verified "
+            f"material for.")
+    for name in sorted(listed - actual):
+        if name.startswith(("feline-", "chronic-", "emergency-", "supportive-",
+                            "antineoplastic-", "targeted-", "hyperthyroidism-",
+                            "upper-airway-", "evidence-")) and name not in exc:
+            problems.append(
+                f".claude/agents/medical.md references knowledge-base/{name}, "
+                f"which does not exist. The agent believes it has coverage it "
+                f"does not have.")
+    return problems
+
+
 CHECKS = {
     "orphans": lambda e: check_orphans(e["orphans"]),
     "empty-blocks": lambda e: check_empty_blocks(e["empty-blocks"]),
+    "coverage": lambda e: check_coverage(e.get("coverage", set())),
     "pii": lambda e: check_pii(),
 }
 
