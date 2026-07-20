@@ -96,6 +96,20 @@ Leg 2 found a real defect on its first run — `--limit` was applied after the a
 
 **Leg 4 — Grade enforcement.** Inject a local-model summary into the position where a raw payload belongs, and assert the pipeline refuses it. The `## 原文摘录` section is this project's core asset; the guard preventing a paraphrase from reaching it must be tested adversarially, not trusted.
 
+### What building the legs taught, beyond the legs themselves
+
+These generalise past this pipeline; a later drill or checker should be held to them.
+
+**A detector must be shown a fault — and must also be shown a non-fault.** The existing rule (prove it catches what it exists to catch) has a twin that is easier to forget: prove it *admits* the clean case. A leg that rejects everything passes the first test and is worthless. Leg 4 therefore asserts an untouched control record is admitted before it asserts six forgeries are refused. Both halves are load-bearing: one rules out false negatives, the other false positives.
+
+**A stronger defence and a regression can look identical from the test's seat.** After the grade gate went in, Leg 1's self-test failed — not because anything broke, but because a corrupted payload was now stopped at the gate rather than surfacing later as an excerpt mismatch. The fault was caught *earlier*, and the test only knew how to look *later*. Read that failure wrongly and the obvious "fix" is to weaken the gate. **When a test starts failing right after a defence is added, establish which of the two moved before changing either.** The durable form: findings are keyed by what was found, and an earlier-layer rejection counts as a finding rather than as silence.
+
+**Put the gate on the path, not beside it.** `gate_record()` runs inside the archive loader, so a record that fails it is never available to excerpt verification at all. Had it been a separate audit command, every consumer would have been free to skip it, and one eventually would. A gate that only reports is a gate standing beside an open door.
+
+**Layer the checks, because no single one survives a determined forgery.** Schema alone admits well-formed fabrication. Identity alone admits a genuine record relabelled as another paper. A self-declared grade is only a claim. The six attack shapes Leg 4 uses are worth reusing as a checklist whenever a new artefact type gains admission to the excerpt path: prose substituted for payload; the same with the hash recomputed; well-formed XML that is not the expected document type; a genuine payload attributed to the wrong identifier; a record self-declaring a lower grade; and hint text merged into the payload — that last one erasing the boundary rather than crossing it.
+
+**Retroactive enforcement should reject, not grandfather.** Applying the gate to 63 already-fetched records rejected all of them for declaring no grade. Re-fetching was cheap; an exemption would have been permanent. An artefact that does not say what it is should not be read as evidence, including one that predates the rule.
+
 ### Traps this environment has already produced
 
 Both were hit today, while merely *checking whether the node was free*. Both would have produced a confident wrong answer:
