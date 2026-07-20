@@ -113,3 +113,9 @@
 **For the following references no abstract was available or the source was not retrieved; the statements in the body above have no original text on file against which to check them:**
 
 - PMID 30143046
+
+**PMID 30143046** · Sadowski AR 2018
+> Fifty-eight dogs with naïve or progressive B-cell and T-cell lymphoma were enrolled in this clinical trial.
+> Treatment with single-agent, orally administered KPT-335 resulted in an objective response rate (ORR) of 37%, of which dogs with T-cell lymphoma had an ORR of 71%.
+> KPT-335 was well tolerated in all dose groups with grade 1-2 anorexia being the most common adverse event.
+> ⚠️ Canine data (dogs with lymphoma). Any application to feline disease is extrapolation, not a feline measurement.

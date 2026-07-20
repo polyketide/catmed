@@ -224,11 +224,32 @@
 > ⚠️ **The ranges overlap almost completely, and the median comparison conceals it.** Lymphoma AGP spans 50.00–2,825.40 µg/mL; control spans undetectable–536.20. A cat with lymphoma can sit at 50 µg/mL, below the control median. **The group difference is real; the individual test is not discriminating.** Cited in the body accordingly.
 > ⚠️ 16 lymphoma cats vs 25 controls, and controls had a median age of 3.0 years against 9.0 for the lymphoma group — the groups differ in age as well as in disease.
 
+**PMID 26755491** · Wiles V 2017
+> The overall biological response rate in group 1 was 56.5%.
+> Median survival time of toceranib-treated cats was significantly longer at 123 days compared with 45 days in cats not treated with toceranib ( P = 0.01).
+> Administration of NSAIDs was also associated with significantly improved survival time ( P = 0.0038) among all cats.
+
+**PMID 28168776** · Evans BJ 2018
+> This retrospective study evaluated treatment outcomes in 64 cats with splenic MCT.
+> Median tumor specific survival (MTSS) was: 856, 853, 244, 365 days for groups A, B, C, and D, respectively.
+> However, comparing cats that had splenectomy (A and B) versus those that did not (C and D), the MTSS was 856 and 342 days, respectively (p=0.008).
+> Splenectomy (+/- chemotherapy) significantly prolongs survival in cats with mast cell tumors.
+
+**PMID 28556532** · Finotello R 2018
+> One-hundred and 9 cats with newly diagnosed LGL lymphoma that underwent initial staging (including hematology, serum biochemistry, thoracic radiographs and abdominal ultrasound), and followed-up were retrospectively evaluated.
+> Median time to progression (MTTP) was 5 days, and median survival time (MST) 21 days.
+> MST was significantly shorter in the case of substage b, circulating neoplastic cells, lack of chemotherapy administration, and lack of treatment response.
+
 **PMID 29067174** · Pope KV 2015
 > Median overall survival was 1317 days.
 > Medical records from 56 cats were evaluated.
 > Median progression-free survival was 1078 days.
 > ⚠️ **FALSE POSITIVE resolved 2026-07-20.** `76` and `18.9` belong to **Lingard 2009 (PMID 19576832)** — "CR 76%, median remission 18.9 months" — attributed correctly in the body and cited in the same sentence as this paper. Sentence-level attribution filed them here.
+
+**PMID 29172873** · Berger EP 2018
+> Results Case data from 50 cats with cutaneous (n = 22), splenic/hepatic (visceral) (n = 10), gastrointestinal (n = 17) or other (n = 1) mast cell neoplasia were received.
+> Clinical benefit was seen in 80% (40/50), including 86% (19/22) with cutaneous, 80% (8/10) with visceral and 76% (13/17) with gastrointestinal involvement.
+> Conclusions and relevance Toceranib appears to be well tolerated in feline patients with mast cell neoplasia.
 
 **PMID 29393723** · Teng KT 2018
 > In total, 2609 cats met the selection criteria from 4020 cats screened.
@@ -242,6 +263,16 @@
 > ⚠️ **Typo in the source, reproduced here verbatim as required**: the CI for BCS 5 is printed "95% CI 11.5-1.76" in both the PubMed record and the PMC deposit. Read in context it can only be 1.15-1.76 — an interval whose lower bound exceeds its upper bound and its own point estimate is not an interval. **Do not silently correct it when quoting; state that the published value is malformed.**
 > ⚠️ Full text is not retrievable: PMC (PMC11104206) holds the abstract only, and the publisher blocks automated requests. Everything above is abstract-sourced and Leg 1 checks it.
 
+**PMID 29473768** · Rossi F 2019
+> Fifty-nine cats were included; 38 underwent a finely fractionated protocol and 21 a coarsely fractionated protocol.
+> When only first-occurrence cases were included, median PFI was significantly longer in the finely fractionated group compared with the coarsely fractionated group (1430 vs 540 days; P = 0.007).
+> Cats with first-occurrence ISSs appear to benefit from postoperative finely fractionated radiotherapy.
+
+**PMID 30244666** · Sabattini S 2019
+> Cutaneous mast cell tumors (cMCTs) account for approximately 20% of skin neoplasms in cats.
+> Tumors were classified as high grade if there were >5 mitotic figures in 10 fields (400×) and at least 2 of the following criteria: tumor diameter >1.5 cm, irregular nuclear shape, and nucleolar prominence/chromatin clusters.
+> According to this scheme, the 15 (24%) high-grade cMCTs had significantly reduced survival time (median, 349 days; 95% CI, 0-739 days) as compared with the 48 low-grade tumors (median not reached; P < .001).
+
 **PMID 31113336** · Dagher E 2019
 > ⚠️ The figure `2020` cited in the body **does not appear in the abstract text** — it may come from the full text (which the abstract does not contain), or may be erroneous; **retrieve the full text and verify before citing**. (Note: this check misses figures that the source spells out as English words.)
 
@@ -250,16 +281,64 @@
 > Using four immunoglobulin primer sets (IGH-VDJ, IGH-DJ, Kde, and IGL), clonal immunoglobulin rearrangements were detected in 87% (33/38) of the presumed B-cell neoplasms.
 > ⚠️ The figure `2024` cited in the body **does not appear in the abstract text** — it may come from the full text (which the abstract does not contain), or may be erroneous; **retrieve the full text and verify before citing**. (Note: this check misses figures that the source spells out as English words.)
 
+**PMID 31756259** · Marconato L 2020
+> Overall median progression-free interval (PFI) was poor with 70 days (95% CI: 48;93).
+> In 8 of the 27 (29.6%) cats in group B, however, severe toxicity (grade 3) occurred.
+> With the overall poor outcome and high occurrence of acute toxicity, we cannot recommend the use of this accelerated radiation protocol combined with anti-angiogenic therapy for oral SCC in cats.
+
+**PMID 31788484** · Chocteau F 2019
+> This retrospective study included 395 female cats with a surgically removed mammary carcinoma, with a 2-year follow-up.
+> Invasiveness (distinction between in situ and invasive FMCs), the pathologic tumor size (pT), lymphovascular invasion (LVI), and the pathologic nodal stage (pN) defined a 5-stage system: Stage 0 (FMCs in situ), Stage I (pT1, LVI-, pN0-pNX), Stage II (pT2, LVI-, pN0-pNX), Stage IIIA (pT1, LVI+ and/or pN+), and Stage IIIB (pT2, LVI+ and/or pN+), where pT1 was ≤20 mm, pT2 was >20 mm, and pNX corresponded to unsampled draining lymph node.
+> Higher histological stages were associated with reduced disease-free interval, overall survival, and specific survival.
+
+**PMID 32684120** · Horta RS 2021
+> This prospective study included owned cats, diagnosed (cytologically) with multicentric or mediastinal lymphoma and treated with the LOPH (lomustine, vincristine [Oncovin; Antibióticos do Brasil], prednisolone and hydroxydaunorubicin [doxorubicin]) protocol.
+> Complete response was reported in 81% (n = 17/21), while three had partial remission and one had no response.
+> The MST (lymphoma-related survival) for the 21 cats was 214 days.
+> The LOPH protocol was well tolerated by cats with lymphoma and persistent FeLV viremia, and resulted in a better MST than similar studies with other protocols.
+
+**PMID 32954630** · Chocteau F 2021
+> In this cohort of 344 dogs and 342 cats with surgically removed stage I to III invasive MCs, with a minimal follow-up of 2 years, we calculated the 1-year CS, that is, the probability for patients that have survived 1 year, to survive or to die from cancer during the subsequent year.
+> The 1-year conditional specific survival probabilities were 59% and 48% at diagnosis of invasive MC respectively in dogs and cats, and 80% and 52% in 1-year surviving dogs and cats respectively, suggesting that 1-year surviving dogs were relatively protected from cancer-related death, whereas feline MCs remained life-threatening cancers for longer periods of time.
+> ⚠️ Mixed canine-feline cohort (344 dogs, 342 cats). The feline-specific conditional-survival figures are 48% (at diagnosis) and 52% (in 1-year survivors); the dog figures (59%, 80%) are given alongside for comparison, not as feline data.
+
 **PMID 33140523** · Petrucci GN 2020
 > ⚠️ The figure `2019` cited in the body **does not appear in the abstract text** — it may come from the full text (which the abstract does not contain), or may be erroneous; **retrieve the full text and verify before citing**. (Note: this check misses figures that the source spells out as English words.)
+
+**PMID 33176543** · Smallwood K 2021
+> The medical records of 13 cats treated with lomustine, methotrexate and cytarabine for relapsed high-grade feline lymphoma, at a single institution between 2013 and 2018, were examined.
+> In cats that received (or in which there was intention to treat with) all three drugs, 6/13 (46%) demonstrated a complete or partial response to chemotherapy.
+> The median progression-free survival was 61 days (range 16-721 days).
 
 **PMID 33660305** · Yoshikawa H 2021
 > Cats that underwent second DRT course at time of recurrence lived significantly longer than cats that received 1 RT course (either DRT or PRT [median OST 824 days (95% CI: 237-1410 days) vs 434 days (95% CI: 277-591 days); p = .028]).
 > In multivariate modeling, cats received definitive-intent treatment (DRT; FRT/SRT) had significantly longer median PFS (504 days, [95% confidence interval (CI): 428-580 days] vs PRT 198 days [95% CI: 62-334 days]; p = 0.006) and median OST [721 days (95% CI: 527-915 days) vs 284 days (95% CI: 0-570 days); p = 0.001]).
 
+**PMID 33881389** · Cleary M 2022
+> Animal owners who experience the death of a beloved family pet or companion animal may experience feelings of grief and loss that are synonymous with the death of a human.
+> This systematic review synthesized 19 qualitative papers from 17 studies that explored the psychosocial impact of bereavement and grieving the loss of a pet.
+> The analysis revealed five themes: Their Relationship; Their Grief; Their Guilt; Their Supports; and Their Future.
+> ⚠️ HUMAN data: a qualitative systematic review of human bereavement/grief psychology after the death of a companion animal (pets generally, not feline-specific). Cited in the body as human-grief context, not as feline clinical evidence.
+
+**PMID 33924569** · Littlewood K 2021
+> Our study explored the ways in which end-of-life decisions were being made by owners of older and chronically ill cats in New Zealand and the role of their veterinarian in the process.
+> Qualitative data were gathered via retrospective semi-structured interviews with 14 cat owners using open-ended questions.
+> Four were animal-centered themes: cat behavior change, pain was a bad sign, signs of ageing are not good, and the benefits of having other people see what owners often could not.
+
+**PMID 33941335** · Doit H 2021
+> This systematic review aimed to explore the published literature to identify the number and range of QoL assessment tools available to researchers and veterinary professionals, by discovering tools which have already been used in published studies.
+> A total of 1138 manuscripts were identified, of which 96 met all criteria.
+> Forty of 96 manuscripts contained an assessment of QoL, using one of 32 unique tools identified.
+> Only eight of the structured tools were validated, and of these, three could be applied to healthy cats; the remainder being specific to a disease or being hospitalised.
+
 **PMID 34167339** · Ray M 2021
 > The '2021 AAFP Feline Senior Care Guidelines' are authored by a Task Force of experts in feline clinical medicine and serve as an update and extension of those published in 2009.
 > ⚠️ **FALSE POSITIVE, resolved 2026-07-20.** The figures `21, 259` were flagged here. Both belong to **Mortier 2024 (PMID 38967102)** — "259 apparently healthy" cats, "21% ... were not considered healthy" — quoted verbatim in that paper's own excerpt block, from the PMC full text. The AAFP guidelines and Mortier are cited in one body sentence. `2024` is a citation year. Nothing was ever unverified.
+
+**PMID 34328359** · Lucroy MD 2022
+> In total, 117 cats met the inclusion criteria and received 422 doses of autologous cancer vaccine.
+> Six (5.1%) cats had seven reported AEs, with the majority of these (85.7%) being characterized as grade 1 or 2 (mild) and resolving without medical intervention.
+> AEs were infrequent in cats treated with an adjuvanted whole-cell autologous cancer vaccine under typical field use conditions.
 
 **PMID 34374109** · Freiche V 2021
 > The Ki-67 20%- and 30%-thresholds discriminated between LGITL and LPE within both the epithelium (specificity >95%) and lamina propria (specificity >95%), respectively.
@@ -271,6 +350,11 @@
 > ROC (receiver operating characteristic) analysis showed an AUC (area under the curve) value of 0.98 (< 0.0001) for the lymphoma group and 0.86 (< 0.001) for the solid tumor group, at 95% confidence interval.
 > At the chosen cutoff value the sensitivity was 0.83 and the specificity was 0.95 for lymphoma.
 > ⚠️ Check passed: AUC 0.98, sensitivity 0.83 and specificity 0.95 all match the body text.
+
+**PMID 34724255** · Gruen ME 2021
+> Frunevetmab, a felinized antinerve growth factor monoclonal antibody, effectively decreases osteoarthritis (OA) pain in cats.
+> Significant improvement with frunevetmab over placebo occurred at days 28 and 56 for the client specific outcome measures (CSOM) questionnaire (success rates and total scores [NNT of 9 and ES of 0.3 at day 56]); at days 28 and 56 for owner-assessed global treatment response; and at days 56 and 84 for veterinarian-assessed joint pain (ES of 0.18 at day 56).
+> Adverse events did not differ between groups, except skin disorders which collectively occurred significantly more frequently in frunevetmab treated (32/182 cats) vs placebo (8/93 cats).
 
 **PMID 35188694** · Reczynska AI 2022
 > Negative prognostic factors included cribriform lysis (MST 121 vs. 876 days, P = 0.0009) and intracalvarial involvement (MST 100 vs. 438 days, P = 0.0007).
@@ -294,6 +378,11 @@
 > Intestinal tissue specimens endoscopically collected from 50 cats at Japan Small Animal Medical Center (JSAMC) between 2018 and 2020 were examined.
 > ⚠️ **A previous ⚠️ marker here was a FALSE POSITIVE and has been removed.** It flagged the figures `85, 2024` as unverified against this abstract. Those figures belong to Wolfesberger 2024 (PMID 38943798) and are correctly attributed in the body; they were mis-assigned to this PMID because both citations appear in the same sentence. `extract_source_excerpts.py` attributes figures by sentence, so a sentence carrying two citations can hang one paper's numbers on the other. Check attribution before treating such a flag as a real gap.
 
+**PMID 36649089** · Monteiro BP 2023
+> A total of 3039 responses were received with 1262 completed answers from 66 countries (86%, 11.1% and 2.9% identified as female, male or other, respectively).
+> The ICC single (caregivers) was 0.65, 0.69, 0.58, 0.37, 0.38 and 0.65, respectively, for AU ears, eyes, muzzle, whiskers, head and sum of scores.
+> Total FGS scores had good reliability when used by cat caregivers, regardless of demographic variables, showing the potential applicability of the instrument to improve feline pain management and welfare worldwide.
+
 **PMID 36655881** · Rodriguez-Piza I 2023
 > Median PFS and OS were 909 days (range 23-1484) and 909 days (range 23-2423), respectively.
 > **【PMC full text retrieved and checked】**
@@ -303,12 +392,27 @@
 > No cases had lymphoma documented in a location other than the primary site.
 > ⚠️ ⚠️ The abstract and the body of this paper contradict each other: the abstract states "Pretreatment with steroids was associated with longer OS (p = 0.003)", whereas the Results section states "Age, breed, sex, retroviral status, anatomical location, anaemia at presentation, debulking surgery and pretreatment with corticosteroids did not affect PFS or OS." Any citation of this point must state the contradiction.
 
+**PMID 36701405** · Maekawa N 2023
+> We first determined the complete coding sequence of feline PD-L1 and PD-L2, and found that the deduced amino acid sequences of feline PD-L1/PD-L2 share high sequence identities (66-83%) with orthologs in other mammalian species.
+> Finally, immunohistochemistry using CL1Mab-7 also showed PD-L1 expression in feline squamous cell carcinoma (5/5, 100%), mammary adenocarcinoma (4/5, 80%), fibrosarcoma (5/5, 100%), and renal cell carcinoma (2/2, 100%) tissues.
+> ⚠️ Molecular/in-vitro and IHC characterization study (cell lines and banked tissue), not a clinical trial in live cats with disease.
+
 **PMID 36851461** · Sampaio F 2023
 > Immunophenotyping was inconclusive in 54% RSC and 19% CB.
+
+**PMID 37130034** · Marsilio S 2023
+> Lymphoplasmacytic enteritis (LPE) and low-grade intestinal T cell lymphoma (LGITL) are common diseases in older cats, but their diagnosis and differentiation remain challenging.
+> To date, no single diagnostic criterion or known biomarker reliably differentiates inflammatory lesions from neoplastic lymphoproliferations in the intestinal tract of cats and a diagnosis currently is established by integrating all available clinical and diagnostic data.
+> Histopathology remains the mainstay to better differentiate LPE from LGITL in cats with chronic enteropathy.
 
 **PMID 37768060** · Eigner DR 2023
 > The '2023 AAFP/IAAHPC Feline Hospice and Palliative Care Guidelines' are authored by a Task Force of experts in feline hospice and palliative care convened by the American Association of Feline Practitioners and the International Association for Animal Hospice and Palliative Care.
 > ⚠️ **FALSE POSITIVE, resolved 2026-07-20.** The figure `93` was flagged here. It is the willingness-to-trade proportion of **Reynolds 2010 (PMID 20738770)**, already marked "Check passed" in that paper's own excerpt block — where the source spells it "Ninety-three percent", so a numeric match misses it twice over. The two are cited in one body sentence. `2010` is a citation year. Nothing was ever unverified.
+
+**PMID 37835664** · Žagar Ž 2023
+> A comprehensive search of three electronic databases and relevant paper reference lists identified 139 studies meeting the inclusion criteria.
+> Based on the current literature, toceranib phosphate appears to be the most efficacious TKI in cats, especially against MCTs.
+> Exploring the clinical use of TKIs in mammary carcinomas holds promise.
 
 **PMID 38152842** · Moore AS 2023
 > On multivariate analysis, 40 cats that achieved CR had a median survival time of 341 days (78 days for PR, 45 days for NR); PFS times were also significantly affected by lymphocyte:monocyte L:M ratio (>3.4 = 700 days vs. ≤3.4 = 126 days) and B-cell versus T-cell phenotype (220 days vs. 42 days, respectively).
@@ -332,6 +436,34 @@
 > Median age of the 259 apparently healthy cats was 10 years (range, 7-18 years).
 > ⚠️ Check passed: 259 apparently healthy cats, median age 10 years.
 
+**PMID 39073984** · Ferrer-Jorda E 2024
+> In total, 21 cats were enrolled over a 4-year period.
+> Nineteen cats achieved a complete response (CR) and two cats a partial response (PR) for an overall response rate of 100%.
+> The overall survival was 453 days for a median follow-up of 341 days (range 191-989).
+> Of the cats, 62% had grade 3 or 4 toxicities, but no deaths due to the treatment were documented.
+
+**PMID 39212426** · Del Portillo Miguel I 2024
+> A total of 17 cats with cytologically or histopathologically confirmed mammary adenocarcinoma (gross disease) were prospectively enrolled.
+> Clinical benefit was seen in 12 (64.7%) cats and an objective response was seen in six (35.2%) cats.
+> The median progression-free survival and median overall survival time were 91 days (range 30-158) and 145 days (range 31-234), respectively.
+
+**PMID 39287178** · Williams K 2024
+> In total, 32 cats treated with toceranib for malignancies were analyzed.
+> None of the 32 cats developed progressive proteinuria or azotemia during the follow-up period (median 56 days; range 56-336).
+> The incidence of proteinuria, renal azotemia and hypertension in cats treated with toceranib for neoplasia appears to be low.
+
+**PMID 39346958** · Ruiz-Perez CA 2024
+> Two cats with cytologically confirmed lymphoma and nine presumably cancer-free cats were included in this analysis.
+> Both cancer-diagnosed subjects had somatic copy number variants (a "cancer signal") identified in cell-free DNA, suggesting the current presence of cancer in these subjects.
+> This study lays the foundation for future studies to fully validate this type of testing for use in clinical practice.
+> ⚠️ Body claim's "Nu.Q canine-only" figure concerns a different assay/paper, not this PMID; not addressed in this abstract.
+
+**PMID 39631169** · Cockey JR 2025
+> 6 healthy cats were used in this study.
+> Chimeric antigen receptor T cells were engineered by transduction with an FIV-based lentiviral system to express a human CD19 CAR.
+> Feline CD19 CAR T cells demonstrated specific cytotoxicity against human CD19+ target cells.
+> ⚠️ In vitro proof-of-concept using feline T cells engineered against a human CD19 target; not a feline tumor model or in-vivo study.
+
 **PMID 40119555** · Pui Yung Anna L 2025
 > Progression-free survival was 264 days (range, 6-1486 days), the disease-free interval was 812 days (range, 39-1486 days) and the median survival time for all cats was 412 days (range, 7-1772 days).
 > Complete response was achieved in 59% of the cases, and partial response was observed in 17%.
@@ -348,3 +480,14 @@
 **PMID 40591622** · Biezus G 2025
 > The median survival time following FeLV diagnosis was 30 days for the FeLV+P group.
 > In total, 176 cats were selected: 116 with progressive infection (FeLV+P), 30 with regressive infection (FeLV+ R), and 30 FeLV-negative cats (Control).
+
+**PMID 40974651** · Nishibori S 2025
+> Immune checkpoint inhibitors (ICIs) have revolutionized cancer treatment in humans; however, research on ICIs in cats remains limited, and no clinical trials have been conducted for feline neoplastic diseases.
+> We engineered two 1A1-2-fIgG1 mutants with amino acid substitutions in the constant region to reduce the interactions between the Fc fragment and C1q or FcγRs and mitigate these effector functions.
+> These mutations successfully abolished the binding to CD64, CD32, and CD16 while preserving the affinity for FcRn, which is essential in maintaining the half-life of antibodies in the blood.
+> ⚠️ In vitro/molecular antibody-engineering study; no cats with disease were treated. Abstract explicitly states no clinical trials of ICIs in cats have been conducted.
+
+**PMID 42375287** · Ueno H 2026
+> Twenty-six cats were treated, 11 of which underwent reirradiation after clinical progression.
+> The median overall survival was significantly longer in the reirradiation group than in the nonreirradiation group (562 vs. 58 days, p < 0.001).
+> Two cats developed grade 3 late toxicities (cutaneous or oral-cutaneous-nasal fistulas) associated with bone lysis and short inter-treatment intervals.

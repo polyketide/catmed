@@ -262,6 +262,19 @@ Immediately after the pass above — the same day, the next commit — a retriev
 
 **The rule this establishes:** a misattribution verdict has two halves — *this paper is not the source* and *the real source verifies it*. The checker can only ever suggest the first. **Confirming the first does not establish the second, and clearing a flag on the first alone silently converts a real gap into an apparent verification.** Both halves must be shown, per figure, against the excerpt block of the paper the body actually names. Bulk-clearing on a checker's verdict would have written two false verifications into the knowledge base on this pass alone.
 
+### ⚠️ A verification pass that can only clear or delete will erase true findings
+
+The two failures above produced **wrong flags** on figures that were verified all along — annoying, cheap to undo. On 2026-07-20 the same mechanism ran the other way and destroyed evidence.
+
+A 2026-07-19 pass checked three figures — `46–68%` and `25%` — against the paper they were filed under, did not find them, and **deleted them from the body as unverifiable**, leaving a note that they "do not appear in the source". The note was true and the conclusion was wrong. The figures belong to **Rossmeisl 2025 (PMID 40387432)**, cited in the same reference list: "23/50 (46%) of dogs with glioma and 15/22 (68%) with meningioma were classified as clinical responders" and "Decreases in tumor volumes occurred in approximately 25% of gliomas". Restored 2026-07-20 with correct attribution.
+
+**Why this is the expensive direction.** A wrong flag is visible — it sits in the file demanding work. A wrong deletion leaves nothing behind but a confident note explaining why nothing is there. It looks like diligence. Nobody re-checks it, because the file says it was already checked.
+
+**Rules.**
+1. **"Not in this source" and "not in any source" are different findings.** Never write the second after testing only the first. Before deleting a figure, search **every** PMID cited in the same sentence, paragraph and reference list for it.
+2. **A verification pass must be able to reattribute, not only clear or delete.** If the only two available verdicts are "confirmed" and "remove", every misfiled figure becomes a deletion, and the error rate of the filing step becomes the deletion rate of the checking step.
+3. **Deletions get the same scrutiny as assertions.** Removing a claim changes the knowledge base as much as adding one; it is simply harder to notice afterwards. Record what was deleted and on what evidence, so the decision stays auditable — this incident was only recoverable because the deleted figures were quoted in the note explaining their deletion.
+
 ### ⚠️ Verify a cross-reference points at something
 
 Writing the hypertension entry produced a citation to a section of a file that did not contain it — the emergency red-flag list lives in the agent definition, not in the knowledge-base file of nearly the same name. Nothing caught it: the excerpt check verifies quotations against sources, not claims about this repository's own contents.

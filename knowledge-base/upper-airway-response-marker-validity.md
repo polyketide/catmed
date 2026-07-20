@@ -39,7 +39,9 @@ The two cohorts differ enormously (65.4% vs 25.8%) → **no reliable recovery-pr
 
 ### 1.3 Mechanism: compression is reversible, infiltration is not — but "chronic" compression is a separate matter
 - Early compression is predominantly **demyelinating** (rat chronic compression model, PMID 15144876) → reversible.
-- But after **prolonged chronic compression, decompression "generally improves sensation but rarely reverses motor atrophy"** (PMID 29257018, JBJS 2017), attributed to persistent glial and perineurial scarring.
+- But after **prolonged chronic compression, "Late surgery for chronic nerve compression injuries usually improves sensation but rarely reverses motor atrophy"** (PMID 29257018, JBJS 2017) — the authors hypothesise "that a persistent glial scar after chronic nerve compression injury might account for poor motor recovery".
+  ⚠️ Quotation corrected 2026-07-20: this file previously rendered the sentence with "generally" inside quotation marks. The source word is **"usually"**. The meaning is unchanged; the quotation was not verbatim, and in a repository whose whole discipline is byte-exact citation that is the defect, not the synonym.
+  ⚠️ Mouse and rat models. The glial-scar mechanism is a hypothesis the authors set out to test, not an established explanation carried into cats.
 - Fifteen months after recurrent laryngeal nerve transection and ligation in dogs, **7 of the 8 dogs surviving the period showed anatomical regeneration** — but the clinical picture was synkinesis, and **the vocal fold still did not move** (PMID 6817274). **Anatomical regeneration ≠ functional recovery.**
 
 > **∴ Where voice loss has already persisted for months, the prior probability of motor recovery is low even if the tumour shrinks and the compression is relieved.**
@@ -61,8 +63,14 @@ The authors of the PLTL study write in their limitations that the response rate 
 
 Three independent lines of evidence:
 
-1. **Mechanism**: the feline nictitating membrane is maintained by smooth muscle alone, and requires only a "relatively small amount of sympathetic activity" to stay retracted (Paton 1970, PMID 5498516) → the threshold is very low and it is highly sensitive to systemic state. **Resolution of fever, improved hydration, or reduced pain are each sufficient on their own to let it return to position.**
-2. **Analogy (corrected 2026-07-19 after retrieving the full text — the 46–68% and 25% originally written here do not appear in the source)**: in 44 dogs with extra-axial brain tumours, of the 34 given steroids, **21 (62%) had subjective clinical improvement**; whereas peritumoral oedema volume actually decreased by >30% in only **17/44 (39%)**. The authors' own words: *"subjective improvement of clinical signs can be seen without significant decrease to the VPTE on imaging"* and *"the subjective clinical improvement with steroids was not systematically associated with a decreased of PTBE and some dogs had clinical improvement despite increased PTBE"* (PMID 39552196; PMC full text retrieved and checked).
+1. **Mechanism (⚠️ restated 2026-07-20 — the previous wording contradicted its own source).** Paton's conclusion is that the membrane "is held retracted by a relatively small amount of sympathetic activity, and that its protrusion is an active mechanism under voluntary control mediated by the **striated** muscles of the orbit" (Paton 1970, PMID 5498516). This file previously said the membrane "is maintained by **smooth muscle alone**" — **the source says the opposite about protrusion**, and the phrase was never in it. Withdrawn.
+   **The conclusion drawn from it survives, and by a shorter route.** Retraction needing only a small sympathetic input already makes the threshold low and the position sensitive to systemic state — so resolution of fever, improved hydration or reduced pain are each sufficient on their own to let the membrane return, with no tumour shrinkage required. That protrusion is additionally an *active, voluntarily mediated* movement makes the sign **less** tied to tumour volume, not more. **Withdrawing the mechanism as stated is not withdrawing the conclusion** — but the conclusion must now rest on what Paton actually wrote.
+   ⚠️ Multi-species work (cat, dog, rabbit); the quoted conclusion is general, not cat-isolated.
+2. **Analogy — now resting on two independent canine cohorts.** In 44 dogs with extra-axial brain tumours, of the 34 given steroids, **21 (62%) had subjective clinical improvement**; whereas peritumoral oedema volume actually decreased by >30% in only **17/44 (39%)**. The authors' own words: *"subjective improvement of clinical signs can be seen without significant decrease to the VPTE on imaging"* and *"the subjective clinical improvement with steroids was not systematically associated with a decreased of PTBE and some dogs had clinical improvement despite increased PTBE"* (PMID 39552196; PMC full text retrieved and checked).
+   **A second, larger cohort says the same thing and quantifies the divergence better.** In 50 dogs with glioma and 22 with meningioma treated with corticosteroids and anticonvulsants, **23/50 (46%) of gliomas and 15/22 (68%) of meningiomas were clinical responders**, while **decreases in tumour volume occurred in approximately 25% of gliomas** (Rossmeisl 2025, PMID 40387432). Responders did have significantly larger decreases in oedema than non-responders — so the clinical signs are not tracking *nothing*; they are tracking **oedema, which steroids relieve**, and not tumour burden, which mostly did not change.
+   ⚠️ **These three figures were deleted from this file on 2026-07-19 as unverifiable, and they were real.** The note that stood here read "the 46–68% and 25% originally written here do not appear in the source". They do not appear in PMID 39552196 — they appear in **PMID 40387432**, cited in the same reference list, and the check looked at only one candidate. **Restored 2026-07-20 with the correct attribution.**
+   **This is the third instance of the sentence-level attribution failure recorded in this repository, and the most expensive.** The first two produced wrong flags on figures that were verified all along. This one ran the other way: a check found a figure "absent from the source", concluded it was fabricated, and **erased a true finding**. A verification pass that can only clear or delete — and never reattribute — will convert every misfiled figure into a deletion. See `docs/LITERATURE-PIPELINE-SOP.md` §3c and the attribution sections of §7.
+   ⚠️ Canine data throughout this point. Cited as analogy for how clinical improvement and imaging response can diverge, not as feline measurement.
 3. **Confounding**: among cats with suppurative otitis media, Horner's syndrome occurred in **7/26 (27%)** (PMID 39344808) — a condition in which **54% had bilateral involvement** and **19/26 (73%) were clinically healed 60–240 days after myringotomy plus medical treatment**, so this is a confounder with a good prognosis rather than an ominous one.
    ⚠️ **One cat in that series "died a few hours after the procedure."** n=1, and the authors' own conclusion is that the technique is "practical, safe and efficient" — so this is not evidence against the procedure. It is recorded because this knowledge base tracks the cost of intervention as carefully as the cost of inaction (see `emergency-triage-red-flags.md` §3), and a feline peri-procedural death belongs in that ledger even when the series concludes the procedure is safe. Obstruction of the auditory tube by a mass will almost inevitably bring secondary middle ear inflammation — and **antibiotics plus steroids are precisely the standard treatment for that inflammation**, which is enough to explain improvement of the nictitating membrane on its own, **without ever invoking the hypothesis of tumour shrinkage**.
 
@@ -316,14 +324,37 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 **PMID 2376249** · Sanchis J 1990
 > The inspiratory time over total time (TI/Ttot) was higher in the patients (0.42; SD 0.04) than in HC (0.37; SD 0.04) (p less than 0.001), and tidal volume (VT) over TI was lower in patients (0.37; SD 0.07 l.s-1) than in HC (0.43; SD 0.09 l.s-1) (p less than 0.01).
 
+**PMID 3768681** · Matthews B 1986
+> Two pathways were found: one group of fibres leaves the superior cervical ganglion in the internal carotid nerve, joins the auricular branch of the vagus nerve at the jugular foramen and passes via this nerve to the facial nerve, which it joins in the facial canal just central to the stylomastoid foramen.
+> A second, apparently smaller group of fibres travels in the internal carotid nerve, crosses the roof of the tympanic bulla in the tympanic plexus, enters the middle cranial cavity through the foramen lacerum and passes with the greater superficial petrosal nerve to join the facial nerve at the geniculate ganglion.
+> ⚠️ Feline data (title specifies "in the cat"), consistent with the body's claim that the tympanic-plexus sympathetic fibres run at the roof of the bulla, and separately at the jugular foramen.
+
+**PMID 5498516** · Paton WD 1970
+> 1. When the movement of the nictitating membrane is recorded in the usual way, pulled out under load in cat, dog, or rabbit, end-plate-depolarizing drugs such as succinylcholine, decamethonium, nicotine, and 2268F, cause a retraction.
+> 6. It is suggested that in the normal conscious animal the nictitating membrane is held retracted by a relatively small amount of sympathetic activity, and that its protrusion is an active mechanism under voluntary control mediated by the striated muscles of the orbit.
+> ⚠️ Multi-species study (cat, dog, rabbit); the cited sentence is a general conclusion, not cat-isolated data.
+> ⚠️ The abstract supports "a relatively small amount of sympathetic activity" holding the membrane retracted, but the paper's own title and point 2 attribute active protrusion/retraction movements to striated (not smooth) muscle; the body's framing of retraction as maintained by "smooth muscle alone" is this reviewer's inference, not a phrase stated in the abstract.
+
 **PMID 6817274** · Crumley RL 1982
 > Reoperation at three months and again at 15 months revealed neural regeneration through the ligated site and reconstitution of the distal nerve in seven of the eight dogs surviving the 15-month period.
 
 **PMID 11397315** · Attali-Soussay K 2001
 > The most common clinical signs were exophthalmos (84%), conjunctival hyperemia (40%), protrusion of the nictitating membrane (28%), exposure keratitis (20%) and fundus abnormalities (20%).
 
+**PMID 15144876** · Gupta R 2004
+> In a previous study, we demonstrated that chronic compression of rat sciatic nerve, a model of compressive neuropathies, triggered dramatic Schwann cell proliferation and concurrent apoptosis.
+> Measures of myelin thickness revealed not only a greater than 6-fold increase in the number of axons with very thin (<5 microm thickness) myelin sheaths, but also a proportional decrease in the number of axons with the thick myelin sheaths characteristic of normal nerve.
+> These results confirm that an early consequence of chronic nerve compression (CNC) is local demyelination and remyelination, which may be the primary cause of alterations in nerve function during the early period post-compression.
+> ⚠️ Rat model (sciatic nerve chronic compression), not feline. Cited in the body as a mechanistic analogy for early/reversible demyelination.
+
 **PMID 16675613** · Robertshaw D 2006
 > ⚠️ **FLAG CORRECTED, not cleared, 2026-07-20.** The figures `30, 35` were flagged against this paper. They do not belong to it: the body sentence cites Robertshaw for the *nasal epithelium* heat-exchange mechanism, and attributes the panting thresholds (30 °C, 35 °C) to **Amini-Sereshki 1988**. But unlike the other misattributions resolved today, correcting the name does not clear the gap — **Amini-Sereshki 1988 has no excerpt block anywhere in this file and was never archived**, so those two figures remain genuinely unverified, now under the right paper. `1985, 1988` are citation years. **This is the one flag of the eight examined today that survived checking.**
+
+**PMID 19123077** · Fidan H 2008
+> Thirty-six rabbits were randomly divided into six groups.
+> Larynx lumen area of one week steroid group was significantly narrower and percentage of cross sectional area of larynx lumen to their own larynx tissues surrounded by thyroid cartilage and oesophagus was significantly larger than sham control.
+> Rebound oedema forms in larynx with abrupt cessation of steroid therapy in rabbits.
+> ⚠️ Rabbit model, not feline. Cited in the body as extrapolated evidence for rebound laryngeal narrowing after steroid cessation.
 
 **PMID 19538664** · Hardie RJ 2009
 > Cats with laryngeal paralysis (n=10).
@@ -335,6 +366,12 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 > Intraoperative and postoperative complications were seen in 21% (three of 14) and 50% (seven of 14) of cases, respectively.
 > ⚠️ **FALSE POSITIVE, resolved 2026-07-20.** The figure `10` was flagged here. It is the case count of **Hardie 2009 (PMID 19538664)** — "Of 10 cats", "all 10 cats" — quoted verbatim in that paper's own excerpt block. This is the mirror image of the note under PMID 19538664: one body sentence names both cohorts, and sentence-level attribution swapped them.
 
+**PMID 23725437** · Adamovich-Rippe KN 2013
+> An 8-week-old female domestic shorthair cat was treated for patent ductus arteriosus (PDA) with surgical ligation.
+> The cat was sedated, and examination of the larynx revealed left-sided laryngeal paralysis.
+> Seven months after PDA ligation, the cat was again sedated and the larynx examined.
+> The examination revealed persistent left arytenoid dysfunction, which was believed to be the result of permanent damage to the recurrent laryngeal nerve that was sustained during the surgical ligation of the PDA.
+
 **PMID 24028692** · Simpson KM 2013
 > Lesions were diagnosed as postganglionic (mydriasis within 20 min) or preganglionic (mydriasis between 20 and 45 min).
 > Lesion localization was diagnosed as postganglionic in eight (mean: 10 min [range: 6-18]) and preganglionic in two Golden Retrievers (20 and 24 min).
@@ -343,6 +380,12 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 **PMID 27379595** · Johnson LR 2016
 > CONCLUSIONS AND CLINICAL RELEVANCE Results indicated that 26 of 138 (19%) dogs examined because of cough alone had laryngeal dysfunction, which suggested that a complete laryngoscopic examination should be included in the diagnostic evaluation of dogs with cough.
 > ANIMALS 138 dogs with cough that did not have signs of upper airway disease.
+
+**PMID 29257018** · Zhu D 2017
+> A previously described model of chronic nerve compression injury was created in C57BL/6 mice and Sprague-Dawley rats, and the nerves were harvested early or late after electrophysiological confirmation of the injury.
+> Late surgery for chronic nerve compression injuries usually improves sensation but rarely reverses motor atrophy.
+> ⚠️ Mouse/rat model, not feline.
+> ⚠️ The body quotes this paper as saying decompression "generally improves sensation but rarely reverses motor atrophy"; the abstract's actual word is "usually," not "generally." Minor wording mismatch — the body's quotation marks overstate verbatim fidelity to this source.
 
 **PMID 29680402** · Dijkstra E 2018
 > The respiratory rate of the 88 clinically healthy adult (≥12 months) cats in the consultation room ranged 28-176breaths/min (median 64) with a calculated reference interval of 32-135breaths/min.
@@ -393,6 +436,13 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 > The duration of these clinical signs was described in 17 cats as ranging from 9 to 148 days (median 30).
 > ⚠️ Correction made on this basis: I had originally mis-recorded the 28% (coughing) as the figure for voice change. The true voice change figure is 2/18 = 11%.
 
+**PMID 37576831** · Kang DJ 2023
+> A 7-year-old castrated male American Shorthair cat presented with left-side Horner's syndrome and voice change.
+> The overall clinical presentation included dysphagia, intermittent coughing, unilateral miosis, and third eyelid protrusion of the left eye.
+> Laryngoscopy showed left-sided laryngeal paralysis.
+> Computed tomography (CT) identified a mass lesion invading outside of the left tympanic bulla with osteolysis.
+> It appears that these neurological signs occurred due to adenocarcinoma in the tympanic bulla, penetrating the jugular foramen and the hypoglossal canal and damaging the cranial nerve IX (glossopharyngeal nerve), X (vagus nerve), XI (accessory nerve), and XII (hypoglossal nerve) and the sympathetic nerve.
+
 **PMID 39267365** · Fruchter B 2024
 > Haws syndrome resolved in nine of the 10 cats within 37.7 ± 23 (12‒95) days but recurred in three of the nine cats 156‒182 days later.
 > Diarrhoea was noted in four of 10 cats; otherwise, the cats were systemically healthy.
@@ -418,3 +468,9 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 > However, the reduction of PTBE was not necessary to see improved clinical signs and dogs with worsening PTBE or no PTBE to start with also had improvement of clinical signs.
 > Notably, subjective improvement of clinical signs can be seen without significant decrease to the VPTE on imaging.
 > ⚠️ This entry was corrected on this basis: the "clinical response rate 46–68%, tumour shrinkage only about 25%" that I originally wrote does not appear in the source. The true figures are 21/34 (62%) subjective improvement and 17/44 (39%) with oedema reduced by >30%.
+
+**PMID 40387432** · Rossmeisl JH 2025
+> At follow-up, 23/50 (46%) of dogs with glioma and 15/22 (68%) with meningioma were classified as clinical responders, and 23/50 (46%) of gliomas and 14/22 (64%) of meningiomas had decreases in edema volume.
+> Decreases in tumor volumes occurred in approximately 25% of gliomas.
+> Peritumoral brain edema was decreased in 50%-60% of gliomas and meningiomas in dogs at follow-up, and amelioration of edema often was accompanied by improved neurological signs and QOL.
+> ⚠️ Canine data (dogs with gliomas/meningiomas), not feline. The packet lists no specific body-claim sentence for this citation beyond the reference entry itself; these excerpts cover the paper's principal quantitative findings for routing/verification purposes.

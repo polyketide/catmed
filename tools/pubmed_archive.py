@@ -66,19 +66,35 @@ def archive_dir(explicit: str | None) -> Path:
 # ------------------------------------------------------------ knowledge base IO
 
 def pmids_from_kb() -> dict[str, list[str]]:
-    """Every PMID cited in a source-excerpt section, mapped to the files citing it.
+    """Every PMID cited ANYWHERE in the knowledge base, mapped to the files citing it.
 
     This is the rebuild input. If a PMID reaches the archive without appearing
     here, the cache-not-truth split has been broken.
+
+    Scans the whole file, deliberately. Until 2026-07-20 this read only the
+    `## 原文摘录` section — i.e. the PMIDs that already had excerpt blocks — which
+    made the rebuild input circular: a paper was fetched only if it was already
+    archived, so a citation added to the body alone never entered the loop. It was
+    never fetched, so dr_drill.py never checked it, so nothing ever reported it
+    missing. The chain did not fail on those papers; it was silent about them,
+    which is worse, because a green Leg 1 then reads as coverage.
+
+    Measured when the bug was found: 119 PMIDs cited, 81 with excerpt blocks,
+    38 orphaned (32%). One of them (Teng 2018, PMID 29393723) had produced a
+    misfiled flag, a wrong conclusion, and a wasted retrieval request to the
+    operator — see docs/LITERATURE-PIPELINE-SOP.md §3c.
+
+    Two citation forms appear in the body and both are matched: `PMID 29393723`
+    in prose, and `(29393723, nine-point BCS)` in the per-topic index lines.
     """
     out: dict[str, list[str]] = {}
     for f in sorted(KB.glob("*.md")):
         text = f.read_text(encoding="utf-8")
-        if "## 原文摘录" not in text:
-            continue
-        excerpts = text.split("## 原文摘录", 1)[1]
-        for pmid in re.findall(r"\*\*PMID\s+(\d+)\*\*", excerpts):
-            out.setdefault(pmid, []).append(f.name)
+        found: list[str] = re.findall(r"PMID\s+(\d+)", text)
+        found += re.findall(r"\((\d{7,8}),", text)          # index-line form
+        for pmid in found:
+            if f.name not in out.setdefault(pmid, []):
+                out[pmid].append(f.name)
     return out
 
 
