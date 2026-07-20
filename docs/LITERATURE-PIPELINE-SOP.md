@@ -217,6 +217,12 @@ Established 2026-07-20, after a survey of documented gaps in feline medicine.
 
 **Before writing a section, confirm the abstract was read to its end.** The numeric cross-check catches the first defect (a figure with no excerpt) but is blind to the second: nothing flags a conclusion the source refutes in a sentence you never saw.
 
+### ⚠️ A flag is a hypothesis; check attribution before acting on it
+
+`extract_source_excerpts.py` assigns figures to citations **by sentence**. A sentence carrying two citations can therefore hang one paper's numbers on the other, and the resulting "figure not found in this abstract" warning is a false positive — the figure is real, verified, and attributed correctly in the body; only the flag is wrong.
+
+One such flag survived long enough to be put on a full-text retrieval list and to prompt an assertion that a load-bearing figure had never been verified. It had been verified continuously. **Before spending effort on a flag, confirm the figure actually belongs to the PMID it was filed under.** The cost of not doing so is not just wasted retrieval — it is a false claim about the state of the evidence base.
+
 ### ⚠️ Verify a cross-reference points at something
 
 Writing the hypertension entry produced a citation to a section of a file that did not contain it — the emergency red-flag list lives in the agent definition, not in the knowledge-base file of nearly the same name. Nothing caught it: the excerpt check verifies quotations against sources, not claims about this repository's own contents.
