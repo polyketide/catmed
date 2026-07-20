@@ -285,7 +285,7 @@ Every study above is **human medicine**. No veterinary equivalent was found: sea
 > ⚠️ n=2 case report. Carries no incidence, no denominator, and no comparison group. Cited in the body only as an acknowledgement that the hazard is documented, never as evidence of frequency or outcome.
 
 **PMID 27154944** · Sparkes A 2016
-> ⚠️ Correspondence/letter, no abstract available in the PubMed record. Listed for completeness; nothing in this file rests on it.
+> ⚠️ Correspondence/letter — **no source text available** in the PubMed record, which holds no abstract for it. Listed for completeness; nothing in this file rests on it. (The phrase "no source text available" is what `tools/check_kb_hygiene.py` looks for: an empty block is acceptable only when it declares that no claim depends on it.)
 
 ---
 

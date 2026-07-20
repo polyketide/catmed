@@ -9,3 +9,6 @@ __pycache__/
 # (docs/LITERATURE-PIPELINE-SOP.md section 3). This is a backstop in case
 # someone points --archive at the working tree.
 .catmed-archive/
+
+# Local Claude Code settings — machine-specific, contains absolute paths
+.claude/settings.local.json

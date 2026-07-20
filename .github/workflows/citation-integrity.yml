@@ -1,0 +1,108 @@
+name: citation integrity
+
+# What this enforces, and why it is the whole point of the repository.
+#
+# The knowledge base is prose plus verbatim source excerpts. The prose is
+# interpretation and a reviewer can argue with it. The excerpts are evidence and
+# nobody should have to take them on trust — so a machine re-derives them from
+# PubMed on every push and every pull request, including pull requests from
+# people none of us know.
+#
+# The archive of PubMed records lives OUTSIDE the repository by design
+# (docs/LITERATURE-PIPELINE-SOP.md §3): it is a cache, never a source of truth.
+# CI therefore starts with no archive at all and rebuilds it from the PMIDs
+# cited in the knowledge base. That is not a workaround. It means the
+# cache-is-rebuildable claim is tested continuously rather than asserted, and
+# it means excerpts are checked against what PubMed serves TODAY — so an
+# upstream record revision surfaces as a failure here instead of as silent
+# drift between this repository and the literature.
+#
+# Everything runs on the Python standard library. No dependencies to install,
+# nothing to pin, no supply chain.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  hygiene:
+    # No network. Runs even when PubMed is unreachable, so a contributor always
+    # gets structural feedback on their change.
+    name: structural checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Knowledge-base hygiene
+        # Orphaned citations, excerpt blocks with no source text, and a generic
+        # secret/PII sweep. Each of these was a real defect found by hand after
+        # a green Leg 1 — the checker was silent, not failing.
+        run: python3 tools/check_kb_hygiene.py
+
+  citation-integrity:
+    name: verbatim excerpt verification
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Rebuild the archive from the knowledge base
+        # The rebuild input is every PMID cited anywhere in knowledge-base/.
+        # PubMed is rate-limited and occasionally unavailable; retry rather than
+        # failing a contributor's pull request for an outage upstream. If all
+        # attempts fail the job fails loudly and says why, because a green tick
+        # that skipped verification is worse than a red one.
+        env:
+          CATMED_ARCHIVE: ${{ runner.temp }}/catmed-archive
+        run: |
+          for attempt in 1 2 3; do
+            if python3 tools/pubmed_archive.py fetch --archive "$CATMED_ARCHIVE"; then
+              exit 0
+            fi
+            echo "::warning::PubMed fetch attempt $attempt failed; retrying in $((attempt * 20))s"
+            sleep $((attempt * 20))
+          done
+          echo "::error::Could not reach PubMed after 3 attempts. This is an"
+          echo "::error::infrastructure failure, NOT a problem with the change"
+          echo "::error::under review. Re-run the job."
+          exit 1
+
+      - name: Verify archive integrity
+        # Re-hash every record: proves nothing rewrote the archive between the
+        # fetch above and the checks below.
+        env:
+          CATMED_ARCHIVE: ${{ runner.temp }}/catmed-archive
+        run: python3 tools/pubmed_archive.py verify --archive "$CATMED_ARCHIVE"
+
+      - name: Leg 1 — every excerpt against its source
+        # The load-bearing check. Any excerpt line that is not a byte-exact
+        # substring of the archived record is a hard failure.
+        env:
+          CATMED_ARCHIVE: ${{ runner.temp }}/catmed-archive
+        run: python3 tools/dr_drill.py leg1 --archive "$CATMED_ARCHIVE"
+
+      - name: Leg 1 self-test — prove the checker can fail
+        # A detector never shown a fault has not been shown to work. This
+        # corrupts a record on purpose and requires Leg 1 to notice. An earlier
+        # version of this test passed trivially because it only asserted that a
+        # corrupted run returns FAIL — which is true when the baseline already
+        # fails. It now requires a NEW finding attributable to the injection.
+        env:
+          CATMED_ARCHIVE: ${{ runner.temp }}/catmed-archive
+        run: python3 tools/dr_drill.py self-test --archive "$CATMED_ARCHIVE"

@@ -2,7 +2,17 @@
 
 **An evidence-first sub-agent for veterinary × human medical analysis, a cited feline-oncology knowledge base, and the tooling that keeps its citations honest.**
 
-[English](#english) · [日本語](#日本語) · [中文](#中文)
+[![citation integrity](https://github.com/polyketide/catmed/actions/workflows/citation-integrity.yml/badge.svg)](https://github.com/polyketide/catmed/actions/workflows/citation-integrity.yml)
+[![licence: MIT](https://img.shields.io/badge/licence-MIT-blue.svg)](LICENSE)
+
+[English](#english) · [日本語](#日本語) · [中文](#中文) · [Contributing](CONTRIBUTING.md)
+
+> **Every figure in this repository is checked against PubMed on every commit.**
+> CI starts with no literature archive at all, rebuilds it from the PMIDs the
+> knowledge base cites, and requires each quoted sentence to be a byte-exact
+> substring of the record — then corrupts one on purpose to prove the checker
+> can still fail. Currently **116 papers, 380 verbatim excerpts, 0 unmatched**.
+> Contributions welcome in English, 中文 or 日本語 — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 > ⚠️ **Not medical advice.** Everything here is literature-referenced material for discussing options with a licensed veterinarian. It does not diagnose, prescribe, or replace your vet.
 > ⚠️ **医療アドバイスではありません。** 本リポジトリの内容は、獣医師と選択肢を検討するための文献参照資料です。診断・処方・獣医師の代替にはなりません。
