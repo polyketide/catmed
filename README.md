@@ -11,7 +11,7 @@
 > CI starts with no literature archive at all, rebuilds it from the PMIDs the
 > knowledge base cites, and requires each quoted sentence to be a byte-exact
 > substring of the record — then corrupts one on purpose to prove the checker
-> can still fail. Currently **180 papers, 564 verbatim excerpts, 0 unmatched** — knowledge base and owner guides alike.
+> can still fail. Currently **180 papers, 623 verbatim excerpts, 0 unmatched** — knowledge base and owner guides alike.
 > Contributions welcome in English, 中文 or 日本語 — see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 > ⚠️ **Not medical advice.** Everything here is literature-referenced material for discussing options with a licensed veterinarian. It does not diagnose, prescribe, or replace your vet.
@@ -33,6 +33,7 @@ knowledge-base/                        # analysis-facing notes (English, with ve
   ├── feline-oncology-literature-survey.md
   └── upper-airway-response-marker-validity.md
 guides/                                # owner-facing guides, Markdown + PDF (Chinese)
+  ├── feline-ckd-owner-guide.zh.{md,pdf}         # every figure carries an inline PMID
   ├── feline-lymphoma-all-types-owner-guide.zh.{md,pdf}
   └── feline-nasal-lymphoma-owner-guide.zh.{md,pdf}
 docs/                                  # engineering SOPs
