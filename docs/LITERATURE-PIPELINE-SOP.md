@@ -11,7 +11,17 @@ Fetching literature is the largest token cost in this project and needs almost n
 
 Splitting these puts each on the right substrate. It also introduces heterogeneity into a project that is otherwise entirely Claude-authored: the knowledge base, the SOP, and the self-checks all come from the same model, which is a correlated set of eyes.
 
-⚠️ **The saving is an estimate, not a measurement.** In one working session roughly 60–90k tokens went to metadata retrieval alone. That is the number to beat, and the first implementation milestone is measuring it rather than assuming it.
+**Measured 2026-07-20** over the knowledge base's full citation set (63 PMIDs), via `tools/pubmed_archive.py measure`:
+
+| Representation | ~tokens | per record |
+|---|---|---|
+| Raw XML as PubMed sends it | 262,693 | 4,169 |
+| **MCP-equivalent payload + repeated legal notice = current baseline** | **57,590** | 858 |
+| Trimmed view the pipeline would hand over | **29,563** | 469 |
+
+**Saving against the real baseline: 1.9×, i.e. 49% of tokens removed.** An earlier draft of this file claimed 8.9×; that figure used raw XML as the baseline, which is not what the agent ever receives. The honest number is the smaller one.
+
+⚠️ **1.9× is a lower bound, and the part not measured is probably the larger part.** This measures only records that *survived* selection and were cited. It excludes search results (whose `query_translation` echo is pure overhead) and every candidate fetched but discarded — and filtering out candidates that should never reach the agent is precisely where local pre-filtering earns its keep. That saving is real but unquantified; do not claim it until it is measured.
 
 ## 2. The division of labour
 
@@ -67,6 +77,8 @@ Modelled on the sibling project's DR drill, whose governing idea is `runs ≠ wo
 - **Emit one machine-greppable verdict line per leg**, so the drill can be automated and its flatline detected.
 
 ### The legs
+
+**Status 2026-07-20: Leg 1 and its self-test are implemented in `tools/dr_drill.py` and both pass.** Legs 2–4 are still specification.
 
 **Leg 1 — Archive rebuild (the one that matters most).** Point the pipeline at an empty scratch archive and rebuild from the repository's committed PMID list alone. Assert every PMID resolves, and that the re-fetched payloads reproduce the verbatim excerpts currently in the knowledge base **byte-for-byte**. This simultaneously tests the §3 cache-not-truth split and the frozen-baseline invariant. If a PMID cannot be rebuilt because it exists only in the archive, that is the exact failure this design is meant to prevent — a `FAIL`, not a warning.
 
@@ -150,5 +162,5 @@ Borrow the patterns and the scar tissue. Do not share the code or the state dire
 
 1. ~~Is the node free?~~ **Resolved 2026-07-20 by measurement**: compute idle (0% utilisation), ~10.8 GB VRAM headroom, no competing job. Re-check before each run — and per §4a, distinguish *measured idle* from *failed to measure*.
 2. ~~Where does the archive live?~~ **Resolved: outside the repository**, with the rebuild inputs committed inside it (§3).
-3. Measure the current token cost properly, so the saving can be demonstrated rather than assumed. Still open, and still the first implementation milestone.
+3. ~~Measure the token cost.~~ **Done 2026-07-20: 1.9× against the real baseline** (§1). Still open: measure the discarded-candidate and search-overhead saving, which is the larger and currently unquantified half.
 4. Decide whether the local model is used at all in v1. Given that the installed 9B is a known-bad build with a 4096-token context, the honest default is **build the pipeline with no local model**, prove the deterministic path end to end, and add a model only if a measured need survives that. A pipeline that works with the model switched off is the one worth having anyway (§6).
