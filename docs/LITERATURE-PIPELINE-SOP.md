@@ -217,6 +217,12 @@ Established 2026-07-20, after a survey of documented gaps in feline medicine.
 
 **Before writing a section, confirm the abstract was read to its end.** The numeric cross-check catches the first defect (a figure with no excerpt) but is blind to the second: nothing flags a conclusion the source refutes in a sentence you never saw.
 
+### ⚠️ Verify a cross-reference points at something
+
+Writing the hypertension entry produced a citation to a section of a file that did not contain it — the emergency red-flag list lives in the agent definition, not in the knowledge-base file of nearly the same name. Nothing caught it: the excerpt check verifies quotations against sources, not claims about this repository's own contents.
+
+A cross-reference is a claim like any other, and internal ones are the easiest to get wrong precisely because they feel like navigation rather than assertion. **Resolve the path and confirm the target says what it is cited for.** A one-line glob over inline file references catches the broken-path class in seconds; the wrong-section class still needs reading.
+
 ### ⚠️ A web page is not a source
 
 Page-fetching tools return a *model's summary* of a page, not the page. Its wording is not the author's wording, and its figures have passed through a paraphrase. **Nothing obtained that way may enter `## 原文摘录` or be quoted as verbatim.** Use web search to find out *what to look for*; then retrieve the record properly and quote from that. When a figure exists only in a full text that was read through such a tool, cite nothing and record that the check was not performed — as `evidence-to-practice-gap.md` §2 does.

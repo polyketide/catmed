@@ -17,7 +17,15 @@ The company it keeps is the rest of the triad: hypertension was diagnosed concur
 
 ---
 
-## 2. Why it is found late: not equipment, and not ignorance
+## 2. Why it is found late: not equipment, not ignorance, and not news
+
+**The profession identified this in 2017 and named it in a consensus document.** The ISFM guidelines state: **"Despite being a common disease, routine blood pressure (BP) monitoring is generally performed infrequently, probably leading to underdiagnosis of feline hypertension in clinical practice"** (Taylor 2017, PMID 28245741). Their first two stated needs were to ensure BP **"is measured as accurately as possible with a reproducible technique"** and to **"identify and monitor patients at risk of developing hypertension"**.
+
+> **⭐ Six years later, the survey put a number on it: 29.1% (§ below).** The gap was not unrecognised, unnamed or unpublished — it was documented by the field's own consensus body, and then persisted. This is the pattern `evidence-to-practice-gap.md` describes, observed longitudinally in a single disease: knowing is not the binding constraint.
+
+⚠️ **What kind of document this is matters.** ISFM guidelines are a *consensus statement*, not a clinical practice guideline in the human-medicine sense — veterinary medicine largely does not produce the latter (see `evidence-to-practice-gap.md` §2). The authors are explicit about the limits: the recommendations rest on **"a comprehensive review of the currently available literature"**, and **"There are many areas where more data is required which, in the future, will serve to confirm or modify some of the recommendations in these Guidelines."** Read it as the field's best current position, expert judgement included — not as settled evidence.
+
+### 2.1 What the survey measured
 
 A survey of veterinary professionals (545 completing all questions, 85 most) found the obstacle is **not** access to instruments: **613 (97.3%) had access to a blood pressure monitor**, most to a Doppler (88.4%).
 
@@ -39,6 +47,18 @@ Yet **only 156 (29.1%) recommended blood pressure assessment to cat owners at le
 **⭐ And then the barriers that sit outside the clinic entirely**: difficulties **persuading the owner to bring their cat in for BP checks — 475 (86.2%)** — and **concerns over costs, 445 (80.8%)**.
 
 > **This is the one link in the chain this project can touch.** Equipment availability, cuff technique and consultation time are clinic-side problems that no information tool fixes. But 86.2% of practitioners report difficulty persuading owners that the check is worth making, and that is a question about *why it matters* — which is exactly what an owner arriving already informed changes. The rest of this file is the answer to "why bother", written for the person who has to decide whether to make the trip.
+
+---
+
+## 2.5 The damage is not only ocular
+
+This file has so far treated the eye as the visible consequence, because that is where the retrieved prevalence data sit. The consensus statement is broader: target organ damage affects **"eye, heart and vasculature, brain and kidneys"** (Taylor 2017).
+
+> **The brain matters for triage.** Neurological signs from hypertensive encephalopathy — including seizures — are a recognised presentation, which means a cat arriving with a first seizure may be arriving with an untreated blood pressure problem. The agent's own emergency screen (`.claude/agents/medical.md`, Triage §1) lists continuous seizures as a red flag; it now names hypertensive encephalopathy among the causes worth remembering, which it did not before this file existed.
+>
+> ⚠️ This knowledge base has **not** retrieved prevalence or outcome data for the cardiac, cerebral or renal consequences — only for the ocular ones (§1). Their absence here reflects what was searched, not their importance.
+
+On treatment, the consensus is that **"amlodipine besylate is the treatment of choice to manage feline hypertension and is effective in the majority of cats, but the dose needed to successfully manage hypertension varies between individuals"**, with some cats needing long-term adjuvant therapy. ⚠️ Recorded for context only — **dosing and drug selection are the attending veterinarian's decisions**, and the individual variation the guidelines note is precisely why this cannot be read off a page.
 
 ---
 
@@ -87,7 +107,8 @@ Chronic kidney disease was again the commonest concurrent diagnosis in cats with
 ## 6. Gaps worth closing next
 
 - Whether earlier detection of hypertension changes outcomes, as opposed to detecting damage earlier. Nothing retrieved tests this, and it is the same unanswered question as everywhere else in this repository.
-- The 2017 ISFM consensus guidelines on feline hypertension (PMID 28245741) were retrieved in the search but **not read for this file** — a consensus document deserves its own careful pass rather than a paragraph.
+- ~~The 2017 ISFM consensus guidelines were retrieved but not read.~~ **Read 2026-07-20** (§2, §2.5). Still open beneath it: the guidelines' therapeutic thresholds and targets were not extracted here, because the abstract does not carry them — that requires the full text and a separate pass.
+- Prevalence and outcome data for cardiac, cerebral and renal target organ damage. This file covers only the ocular consequences, which is what the searches returned, not a judgement that the others matter less.
 - Whether the barriers in §2 have shifted since 2023, and whether they differ outside the UK (90.8% of respondents were UK-based).
 - Hypertension secondary to diabetes mellitus, which appears in the search results and is not covered here.
 
@@ -100,6 +121,7 @@ Chronic kidney disease was again the commonest concurrent diagnosis in cats with
 > 本节标题、期刊、卷期页**一律为 PubMed 原文**，不翻译、不缩写。
 > 正文中的表述仅为解读；**如需引用，请引用下方原文条目**。
 
+- Taylor SS, et al. ISFM Consensus Guidelines on the Diagnosis and Management of Hypertension in Cats. *J Feline Med Surg* 2017;19(3):288-303. PMID 28245741. [DOI](https://doi.org/10.1177/1098612X17693500)
 - Bell ET, et al. The prevalence of ocular lesions associated with hypertension in a population of geriatric cats in Auckland, New Zealand. *N Z Vet J* 2014;62(1):21-9. PMID 24138677. [DOI](https://doi.org/10.1080/00480169.2013.823827)
 - Sarchese V, et al. Ocular fundus abnormalities in cats affected by systemic hypertension: Prevalence, characterization, and outcome of treatment. *Vet Ophthalmol* 2021;24(2):185-194. PMID 33512084. [DOI](https://doi.org/10.1111/vop.12862)
 - Kessels C, et al. Prevalence of persistent hypertension and situational hypertension in a population of elderly cats in The Netherlands. *J Feline Med Surg* 2023;25(6):1098612X231172629. PMID 37278217. [DOI](https://doi.org/10.1177/1098612X231172629)
@@ -113,6 +135,15 @@ Chronic kidney disease was again the commonest concurrent diagnosis in cats with
 
 > The sentences below are **verbatim excerpts from the source literature**, untranslated.
 > The prose in the body above is my interpretation; **if you need to cite, cite the original sentences here**.
+
+**PMID 28245741** · Taylor SS 2017
+> Despite being a common disease, routine blood pressure (BP) monitoring is generally performed infrequently, probably leading to underdiagnosis of feline hypertension in clinical practice.
+> The clinical consequences of hypertension can be severe, related to 'target organ damage' (eye, heart and vasculature, brain and kidneys), and early diagnosis followed by appropriate therapeutic management should help reduce the morbidity associated with this condition.
+> There is a need to: (i) ensure BP is measured as accurately as possible with a reproducible technique; (ii) identify and monitor patients at risk of developing hypertension; (iii) establish appropriate criteria for therapeutic intervention; and (iv) establish appropriate therapeutic targets.
+> Based on current data, amlodipine besylate is the treatment of choice to manage feline hypertension and is effective in the majority of cats, but the dose needed to successfully manage hypertension varies between individuals.
+> These Guidelines from the International Society of Feline Medicine (ISFM) are based on a comprehensive review of the currently available literature, and are aimed at providing practical recommendations to address the challenges of feline hypertension for veterinarians.
+> There are many areas where more data is required which, in the future, will serve to confirm or modify some of the recommendations in these Guidelines.
+> ⚠️ Consensus statement, not a clinical practice guideline: it incorporates expert judgement where evidence is limited, and says so itself in the final sentence above. Cited accordingly.
 
 **PMID 33512084** · Sarchese V 2021
 > A total of 225 cats were enrolled in the study, and the prevalence of fundus abnormalities was 58.6% (21.2%: grade 1; 18.2%: grade 2; 36.4%: grade 3; and 24.2%: grade 4).
