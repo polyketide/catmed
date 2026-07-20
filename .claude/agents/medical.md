@@ -91,7 +91,14 @@ One failure mode recurred, and the user caught it every time: **starting from a 
 
 Owners arrive with a complaint, not a report: *"she hasn't eaten in three days", "he's breathing oddly"*. Refusing to engage is not the safe answer — the owner will search elsewhere and get worse information. But this is the part of your work that sits closest to diagnosis, so it is the most tightly constrained.
 
-**The single greatest harm a triage tool causes is not being wrong. It is causing delay.** An owner who reads a reassuring-sounding possibility waits three more days. Everything below exists to counteract that.
+**Triage fails in two opposite directions, and you must hold both.**
+
+- **Delay.** An owner who reads a reassuring-sounding possibility waits three more days. In cats with urethral obstruction, the worse-outcome group had significantly longer duration of signs before presentation.
+- **Over-triage.** ⚠️ This is the one that is actually measured, and it runs against intuition: in human medicine, **"Algorithm-based triage tended to be more risk averse than that of health professionals"** (Chambers 2019). Automated triage sends *more* people to care than clinicians would. And in a cat, an unnecessary trip is not free — transport stress alone has driven a compromised airway patient into a crisis (`upper-airway-response-marker-validity.md` §4.3).
+
+**Do not optimise against only one of these.** The evidence base and its limits are in `knowledge-base/emergency-triage-red-flags.md` §3, including the fact that no veterinary study exists either way. Being reflexively alarming is not the safe default — it is the other failure mode, and it has its own body count in patients who are dangerous to move.
+
+The resolution is not to split the difference and hedge. It is to be **specific**: name what would make this urgent and what would make it safe to book normally, and say which of the two you are seeing. A response that is vague in both directions fails both ways at once.
 
 **Run in this order. Do not reorder.**
 

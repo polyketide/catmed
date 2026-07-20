@@ -61,13 +61,47 @@ Cats presenting to an emergency room in respiratory distress are unambiguously a
 
 ---
 
-## 3. Gaps worth closing next
+## 3. Does an owner-facing triage tool help or harm? — the evidence, including where it contradicts this project
+
+Searched 2026-07-20, because the entire Triage design rests on an assumption about which direction such tools push behaviour. **The assumption was partly wrong, and the correction runs opposite to what was expected.**
+
+### 3.1 The direction of error is over-triage, not delay
+
+A systematic review of 27 studies of digital symptom checkers and urgent-care triage services found: **"Algorithm-based triage tended to be more risk averse than that of health professionals."** (Chambers 2019, PMID 31375610)
+
+> **This contradicts the premise the Triage section was built on.** That section states that the primary harm of a triage tool is delay. In human medicine the measured tendency runs the other way — algorithmic triage sends *more* people to care than clinicians would, not fewer. A design tuned exclusively against delay is defending the flank that is not under attack.
+
+**Why this matters more in cats than in humans, and cuts both ways:**
+- Over-triage in human medicine costs money and clinic capacity. In cats it can cost more than that — **transport itself is a lethal risk item for a compromised patient**, documented in this knowledge base: a dog with laryngeal obstruction reached 42.5 °C and severe cyanosis from *the stress of transport plus the physical examination alone* (see `upper-airway-response-marker-validity.md` §4.3). For a cat with marginal airway reserve, an unnecessary trip is not a neutral cost.
+- ⚠️ **But the counter-argument is real and unresolved**: veterinary care is usually paid out of pocket and the patient cannot report symptoms, so owners' baseline may already lean toward waiting rather than over-attending. Whether the human-medicine direction of error transfers to owners and cats is **untested** — see §3.4.
+
+### 3.2 Triage accuracy is consistently better than diagnostic accuracy
+
+Across systematic reviews, the same asymmetry appears. In 10 studies: **"The diagnostic accuracy of the primary diagnosis was low across included studies (range: 19-37.9%)"** while **"Triage accuracy (range: 48.8-90.1%) was typically higher than diagnostic accuracy"** (Wallace 2022, PMID 35977992). In 14 studies: **"Overall diagnostic accuracy was deemed to be low and was almost always lower than that of the comparator"**, and **"most of the studies (9/13, 69 %) showed suboptimal triage accuracy overall"** (Riboli-Sasco 2023, PMID 37266983).
+
+> **This is independent support for the positioning decision.** These tools are measurably less bad at *sorting urgency* than at *naming the disease* — which is the distinction the agent is already built on. It is not a licence to relax: triage accuracy is still called suboptimal in two-thirds of studies, and Wallace 2022 concludes that **"reliance upon symptom checkers could pose significant patient safety hazards."**
+
+### 3.3 The feared psychological harms were not found; compliance is essentially unstudied
+
+A multicentre randomised controlled trial in emergency departments (363 patients) reported: **"Our study did not identify negative effects of SCA use commonly reported in the literature, such as increased anxiety or diminished trust in health care professionals."** It also found no benefit — **"We found no evidence that the SCA improved satisfaction with the patient-physician interaction or care in an acute care setting"** (Schmieding 2025, PMID 40173434).
+
+But the question that actually decides whether this feature is safe remains open: **"There was very limited evidence on patients' compliance with online triage advice"**, and **"Evidence on patient safety was weak"** (Chambers 2019). Whether people *act* on triage advice — the step on which every claimed benefit and every feared harm depends — has barely been measured in humans and not at all here.
+
+### 3.4 What this does not tell us
+
+Every study above is **human medicine**. No veterinary equivalent was found: searches for owner-facing veterinary triage or teletriage and time-to-presentation returned no usable outcome study. The transfer is unvalidated in both directions, and the differences are not trivial — an owner is a proxy reporter for a patient that hides illness, cost is usually unreimbursed, and out-of-hours veterinary access differs sharply from human emergency care.
+
+> **Net effect on this project**: the positioning (triage over diagnosis) gains support; the specific harm model (delay above all) does not, and has been corrected in the agent's Triage section rather than left standing. The honest summary is that **nobody knows whether owner-facing triage tools improve animal outcomes, and this project should not claim otherwise.**
+
+## 4. Gaps worth closing next
 
 - Feline urethral obstruction: overall survival to discharge, and any quantified relationship between time-to-presentation and outcome.
 - Any quantitative basis for the anorexia-duration threshold in hepatic lipidosis.
 - Open-mouth breathing in cats as a severity marker — prevalence and outcome association.
 - Permethrin toxicosis in cats: a case series, incidence, and outcome with treatment.
-- Whether owner-facing triage tools change time-to-presentation in veterinary settings, in either direction. **This is the question that would tell us whether this feature helps or harms**, and nothing was searched for it yet.
+- Whether owner-facing triage tools change time-to-presentation **in veterinary settings**. Searched 2026-07-20 — see §3. Human-medicine evidence exists and partly contradicts this project's assumptions; **no veterinary outcome study was found**, so the core question stands open.
+- Owner *compliance* with triage advice, in any species. This is the step every claimed benefit and every feared harm passes through, and Chambers 2019 found the human evidence on it "very limited".
+- Whether over-triage in cats carries measurable harm through transport stress specifically — the mechanism is documented in a single canine case (`upper-airway-response-marker-validity.md` §4.3) and nowhere quantified.
 
 ---
 
@@ -91,6 +125,13 @@ Cats presenting to an emergency room in respiratory distress are unambiguously a
 - Sparkes A, Bessant C, Bates N. Permethrin risk to cats. *Vet Rec* 2016;178(19):480. PMID 27154944. [DOI](https://doi.org/10.1136/vr.i2524)
 - Gilday C, Guieu L. Prognostic value of lactate in cats presented in respiratory distress to the emergency room. *Front Vet Sci* 2022;9:918029. PMID 36176706. [DOI](https://doi.org/10.3389/fvets.2022.918029)
 - Manchester RB, Hess RS, Reineke EL. Difficult catheterization and previous urethral obstruction are associated with lower urinary tract tears in cats with urethral obstruction. *J Am Vet Med Assoc* 2023;262(2):187-192. PMID 38244269. [DOI](https://doi.org/10.2460/javma.23.07.0419)
+
+> 以下为**人医文献**，用于评估「面向使用者的分诊工具」这一功能本身；跨物种外推的边界见正文 §3.4。
+- Chambers D, et al. Digital and online symptom checkers and health assessment/triage services for urgent health problems: systematic review. *BMJ Open* 2019;9(8):e027743. PMID 31375610. [DOI](https://doi.org/10.1136/bmjopen-2018-027743)
+- Wallace W, et al. The diagnostic and triage accuracy of digital and online symptom checker tools: a systematic review. *NPJ Digit Med* 2022;5(1):118. PMID 35977992. [DOI](https://doi.org/10.1038/s41746-022-00667-w)
+- Riboli-Sasco E, et al. Triage and Diagnostic Accuracy of Online Symptom Checkers: Systematic Review. *J Med Internet Res* 2023;25:e43803. PMID 37266983. [DOI](https://doi.org/10.2196/43803)
+- Wetzel AJ, et al. 'Better see a doctor?' Status quo of symptom checker apps in Germany: A cross-sectional survey with a mixed-methods design (CHECK.APP). *Digit Health* 2024;10:20552076241231555. PMID 38434790. [DOI](https://doi.org/10.1177/20552076241231555)
+- Schmieding ML, et al. Impact of a Symptom Checker App on Patient-Physician Interaction Among Self-Referred Walk-In Patients in the Emergency Department: Multicenter, Parallel-Group, Randomized, Controlled Trial. *J Med Internet Res* 2025;27:e64028. PMID 40173434. [DOI](https://doi.org/10.2196/64028)
 
 ---
 
@@ -155,3 +196,39 @@ Cats presenting to an emergency room in respiratory distress are unambiguously a
 
 **PMID 27154944** · Sparkes A 2016
 > ⚠️ Correspondence/letter, no abstract available in the PubMed record. Listed for completeness; nothing in this file rests on it.
+
+---
+
+> The excerpts below are from **human-medicine** sources, supporting §3 (does this feature help or harm). Species-transfer limits are stated in §3.4.
+
+**PMID 31375610** · Chambers D 2019
+> Algorithm-based triage tended to be more risk averse than that of health professionals.
+> Evidence on patient safety was weak.
+> Diagnostic accuracy varied between different systems but was generally low.
+> There was very limited evidence on patients' compliance with online triage advice.
+> We included 29 publications (27 studies).
+> Study participants generally expressed high levels of satisfaction, although in mainly uncontrolled studies.
+
+**PMID 35977992** · Wallace W 2022
+> The diagnostic accuracy of the primary diagnosis was low across included studies (range: 19-37.9%) and varied between individual symptom checkers, despite consistent symptom data input.
+> Triage accuracy (range: 48.8-90.1%) was typically higher than diagnostic accuracy.
+> Overall, the diagnostic and triage accuracy of symptom checkers are variable and of low accuracy.
+> Given the increasing push towards adopting this class of technologies across numerous health systems, this study demonstrates that reliance upon symptom checkers could pose significant patient safety hazards.
+> Of the 177 studies retrieved, 10 studies met the inclusion criteria.
+
+**PMID 37266983** · Riboli-Sasco E 2023
+> Overall diagnostic accuracy was deemed to be low and was almost always lower than that of the comparator.
+> Similarly, most of the studies (9/13, 69 %) showed suboptimal triage accuracy overall, with a few exceptions (4/13, 31%).
+> A total of 21,296 studies were identified, of which 14 (0.07%) were included.
+> All included studies had at least one area with unclear risk of bias according to the revised Quality Assessment of Diagnostic Accuracy Studies-2 tool.
+
+**PMID 38434790** · Wetzel AJ 2024
+> The SCA usage rate was 8%, and approximately 50% of SCA non-users were uninterested in trying SCAs.
+> They are already in use despite their poor accuracy and concerns that they may negatively affect primary care.
+> This study included 850 participants.
+
+**PMID 40173434** · Schmieding ML 2025
+> Our study did not identify negative effects of SCA use commonly reported in the literature, such as increased anxiety or diminished trust in health care professionals.
+> We found no evidence that the SCA improved satisfaction with the patient-physician interaction or care in an acute care setting.
+> A total of 363 patients were included in the intention-to-treat analysis of the primary outcome (intervention: n=173, control: n=190).
+> Patients in the intervention group were more likely to report that the SCA had a beneficial (66/164, 40.2%) rather than a detrimental (3/164, 1.8%) impact on the patient-physician interaction, with most reporting no effect (95/164, 57.9%).
