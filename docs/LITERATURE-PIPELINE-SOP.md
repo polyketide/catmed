@@ -21,7 +21,24 @@ Splitting these puts each on the right substrate. It also introduces heterogenei
 
 **Saving against the real baseline: 1.9×, i.e. 49% of tokens removed.** An earlier draft of this file claimed 8.9×; that figure used raw XML as the baseline, which is not what the agent ever receives. The honest number is the smaller one.
 
-⚠️ **1.9× is a lower bound, and the part not measured is probably the larger part.** This measures only records that *survived* selection and were cited. It excludes search results (whose `query_translation` echo is pure overhead) and every candidate fetched but discarded — and filtering out candidates that should never reach the agent is precisely where local pre-filtering earns its keep. That saving is real but unquantified; do not claim it until it is measured.
+### The discarded-candidate saving: measured, and mostly unavailable
+
+An earlier draft of this section guessed that the unmeasured half — candidates fetched and thrown away — would be the larger prize, on the theory that filtering them out before they reach the agent is where local screening earns its keep. **Measured 2026-07-20 via `tools/screen.py`, that guess was wrong in the way that matters.**
+
+Replaying ten real searches produced a 136-candidate pool, of which 12 are cited by the knowledge base:
+
+| Mode | Compression | Recall of cited papers |
+|---|---|---|
+| Field trimming only (lossless) | **1.8×** | **100%** |
+| Plus content screening | 2.9× | **66.7%** |
+
+**Content screening is rejected.** The extra 20 percentage points of compression cost four load-bearing sources, and the loss is silent — nothing downstream can notice a paper it was never shown. Among the discarded: the review that carries the entire lily section, dropped for "no quantitative signal" while supplying the two sentences that section rests on ("As little as 2 leaves or part of a single flower have resulted in deaths"; "Prognosis is excellent if fluid diuresis is started before anuric renal failure has developed").
+
+**The defect is the premise, not the thresholds.** Those rules encode *useful means quantitative*. This knowledge base's most load-bearing citations are frequently qualitative boundary statements — a dose that kills, a window in which prognosis is excellent — with no percentage, no p-value, nothing a pattern can match. The species rule fails the same way on the human-medicine literature cited deliberately in §3. Retuning the patterns would only change *which* load-bearing papers vanish.
+
+**What survives is the lossless part, and it replicates.** Field trimming measures 1.8× on this candidate pool and 1.9× on the cited set — two independent measurements agreeing. That is the real, bankable saving: strip `query_translation` echoes, repeated legal notices, affiliations, MeSH terms and keywords, and discard no paper at all.
+
+⚠️ 100% recall here is on the pool these queries produced. It is not proof the trimming is safe on queries it has not seen — only that dropping *nothing* cannot lose anything, which is the point.
 
 ## 2. The division of labour
 
@@ -180,5 +197,5 @@ Borrow the patterns and the scar tissue. Do not share the code or the state dire
 
 1. ~~Is the node free?~~ **Resolved 2026-07-20 by measurement**: compute idle (0% utilisation), ~10.8 GB VRAM headroom, no competing job. Re-check before each run — and per §4a, distinguish *measured idle* from *failed to measure*.
 2. ~~Where does the archive live?~~ **Resolved: outside the repository**, with the rebuild inputs committed inside it (§3).
-3. ~~Measure the token cost.~~ **Done 2026-07-20: 1.9× against the real baseline** (§1). Still open: measure the discarded-candidate and search-overhead saving, which is the larger and currently unquantified half.
+3. ~~Measure the token cost.~~ **Done 2026-07-20.** 1.9× on the cited set, 1.8× on a candidate pool — and the discarded-candidate saving I expected to be larger turned out to be mostly unavailable, because taking it costs recall (§1). The bankable figure is ~1.8–1.9×, from lossless field trimming.
 4. Decide whether the local model is used at all in v1. Given that the installed 9B is a known-bad build with a 4096-token context, the honest default is **build the pipeline with no local model**, prove the deterministic path end to end, and add a model only if a measured need survives that. A pipeline that works with the model switched off is the one worth having anyway (§6).
