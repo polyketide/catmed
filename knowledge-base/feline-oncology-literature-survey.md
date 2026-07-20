@@ -28,6 +28,7 @@
 - **Structured screening of older cats** is the most realistic form of "early detection" currently available: a 2-year cohort of 259 apparently healthy cats found **21% were already diseased at baseline**, with a **2-year cumulative incidence of new neoplasia of roughly 7%** (Mortier 2024, PMID 38967102); the **2021 AAFP Senior Care Guidelines** include neoplasia in the minimum database (PMID 34167339).
 - **Mammary tumours** have a high malignancy rate and progress quickly; early palpation and early excision (<3 cm) markedly improve prognosis.
 - **【emerging/unproven】**: feline cfDNA-NGS liquid biopsy is proof-of-concept only (2 lymphomas + 9 controls, Ruiz-Perez 2024, PMID 39346958); **circulating nucleosome Nu.Q has canine data only** (canine, extrapolated); there is no multi-cancer early-detection (MCED) product validated in cats.
+  ⚠️ **The Nu.Q clause carries no citation, found 2026-07-20.** The sentence cites Ruiz-Perez 2024 (PMID 39346958) for the cfDNA half; the Nu.Q half names no source, and Ruiz-Perez's abstract does not discuss Nu.Q. **This is an unsourced claim, and it is the awkward kind — a negative one.** "Canine data only" asserts an absence in the feline literature, which is exactly the class of statement this repository requires a documented search for rather than an assumption (see `emergency-triage-red-flags.md`, where open-mouth breathing is recorded as searched-for-and-not-found rather than simply absent). Until that search is run and recorded, treat the clause as **unverified**, not as an established gap.
 
 ## 2. Advances in diagnostic technique
 
@@ -68,6 +69,8 @@
 ## 4. Other common solid tumours
 
 - **Mammary carcinoma**: **radical mastectomy plus histological staging** is the core of treatment; prognosis rests on **tumour >2 cm, histological grade (MMEE), lymphovascular invasion (LVI), and pathological nodal stage** (Mills 2019; Dagher 2019, PMID 31113336); **adjuvant chemotherapy (doxorubicin or metronomic cyclophosphamide) has not shown a survival benefit** (Petrucci 2020, PMID 33140523) — do not promise one. Stage IV prognosis is weeks to months. Progesterone-receptor positivity is favourable.
+  - **⭐ Surviving the first year does not buy a cat what it buys a dog.** In one cohort of 344 dogs and 342 cats with surgically removed stage I–III invasive mammary carcinoma, the 1-year conditional specific survival was **59% (dogs) vs 48% (cats) at diagnosis** — but among those that had already survived a year, it rose to **80% in dogs and only 52% in cats** (Chocteau 2021, PMID 32954630). The authors' reading: 1-year surviving dogs "were relatively protected from cancer-related death, whereas feline MCs remained life-threatening cancers for longer periods of time."
+    **Why this belongs in a feline file rather than a comparative one.** Conditional survival is what an owner is actually asking when they say "she's made it a year, is she through the worst of it?" In dogs the honest answer shifts substantially; **in cats it barely moves — 48% to 52%.** Reassurance built on the canine pattern, or on general oncology intuition that surviving early means surviving, does not transfer. ⚠️ Mixed-species cohort; the 59%/80% figures are the dog comparison, quoted here only to show the size of the divergence. Surgically resected stage I–III only — not applicable to stage IV.
 - **Oral squamous cell carcinoma (FOSCC)**: **the worst prognosis of these (1-year survival <10%)**; where resectable, surgery, with margins the decisive factor (Iwata 2025); where unresectable, radiotherapy prolongs survival but **accelerated protocols carry ~30% grade 3 acute toxicity** (Marconato 2019); bone invasion can be treated with radiotherapy plus zoledronate; toceranib gives limited benefit only in the lingual subgroup.
 - **Feline injection-site sarcoma (FISS)**: **achieving clean margins with a wide/radical excision at the first surgery** is the single most important controllable factor; where margins are dirty, add radiotherapy (finely fractionated outperformed coarsely fractionated, PFI 1430 vs 540 days, Rossi 2019) or electrochemotherapy; roughly 10–25% develop pulmonary metastasis.
 - **Nasal planum / cutaneous SCC**: early-stage (T1/T2) disease is curable by surgery, electrochemotherapy or brachytherapy; ECT also achieves a high response rate in locally advanced disease (21 cats with T3/T4, ORR 100%, Ferrer-Jorda 2024); sun protection for white cats is primary prevention.
@@ -210,6 +213,11 @@
 > ⚠️ Check passed. Note: the source spells the figure out as the words "Ninety-three percent", so a purely numeric match would miss it — this is a known source of false positives in my flagging algorithm.
 
 **PMID 23076596** · Taylor SS 2012
+> Mean sTK activity for cats with lymphoma was 17.5 U/l (range 1.0-100.0 SD ± 27.4).
+> Mean sTK activity for healthy cats was 2.2 U/l (range 0.8-8.4, ± SD 1.7).
+> Mean sTK activity for cats with NHPN was 4.2 U/l (range 1.0-45.0, SD ± 8.6).
+> Mean sTK activity for the inflammatory group was 3.4 U/l (range 1.0-19.6, SD 3.9).
+> ⚠️ Excerpts added 2026-07-20; this block previously held only a flag and no source text. **The ranges overlap heavily** — lymphoma 1.0-100.0 against healthy 0.8-8.4 and non-haematopoietic neoplasia 1.0-45.0 — so like AGP (PMID 26512544), the group separation is real and the individual discrimination is not. The body's framing of TK as "diagnostic adjunct + response monitoring, not screening" is what these numbers support.
 > ⚠️ **FALSE POSITIVE, resolved 2026-07-20.** The figures `0.83, 0.95, 0.98` were flagged here. They are the TK1 ROC results of **Wang 2021 (PMID 34579716)**, quoted verbatim and marked "Check passed" in that paper's own excerpt block; the two papers are cited in one body sentence. `2013, 2021` are citation years, not data. Nothing was ever unverified.
 
 **PMID 26512544** · Winkel VM 2015
@@ -274,6 +282,11 @@
 > According to this scheme, the 15 (24%) high-grade cMCTs had significantly reduced survival time (median, 349 days; 95% CI, 0-739 days) as compared with the 48 low-grade tumors (median not reached; P < .001).
 
 **PMID 31113336** · Dagher E 2019
+> Survey data and histologic features of 342 feline invasive mammary carcinomas were analyzed with respect to overall and cancer-specific survival.
+> This retrospective study validates Mills et al's proposal to adapt the thresholds for mitotic counts to better assess the histological grade of the highly proliferative mammary carcinomas encountered in the cat.
+> The Elston and Ellis (EE) histologic grading system, originally developed for human breast cancer, is commonly used to grade feline mammary carcinomas, although it is not really adapted for this species, hence the need of a more relevant grading system.
+> ⚠️ Excerpts added 2026-07-20; this block previously held only a flag and no source text.
+> ⚠️ **A worked example of why this repository exists.** A grading system built for human breast cancer was carried into cats and used routinely — the authors say plainly it "is not really adapted for this species". What fixed it was not new biology but **re-thresholding the mitotic count for a more proliferative tumour**. The hazard ratios of the corrected system are modest (grade III HR 1.46, grade II HR 1.39 against grade I), and remain significant independently of tumour size and nodal stage.
 > ⚠️ The figure `2020` cited in the body **does not appear in the abstract text** — it may come from the full text (which the abstract does not contain), or may be erroneous; **retrieve the full text and verify before citing**. (Note: this check misses figures that the source spells out as English words.)
 
 **PMID 31478220** · Rout ED 2019
@@ -303,6 +316,11 @@
 > ⚠️ Mixed canine-feline cohort (344 dogs, 342 cats). The feline-specific conditional-survival figures are 48% (at diagnosis) and 52% (in 1-year survivors); the dog figures (59%, 80%) are given alongside for comparison, not as feline data.
 
 **PMID 33140523** · Petrucci GN 2020
+> The median DFI was 270, 226 and 372 days in groups 1, 2 and 3, respectively.
+> The median OS was 338 (group 1), 421 (group 2) and 430 (group 3) days.
+> The differences between groups were not significant (DFI P = .280 and OS P = .186).
+> In conclusion, adjuvant chemotherapy treatment did not improve survival and the overall benefit remains unproven.
+> ⚠️ Excerpts added 2026-07-20. The master-literature index asserts "no benefit from adjuvant mammary chemotherapy" for this PMID — **a finding, not a topic label, and it had no source text behind it until now.** The abstract does support it. Note what the numbers show: the point estimates favour metronomic cyclophosphamide + meloxicam (DFI 372, OS 430) over surgery alone, but n = 23 versus 80 and the differences are not significant. **"Not shown to help" is the claim; "shown not to help" is not.**
 > ⚠️ The figure `2019` cited in the body **does not appear in the abstract text** — it may come from the full text (which the abstract does not contain), or may be erroneous; **retrieve the full text and verify before citing**. (Note: this check misses figures that the source spells out as English words.)
 
 **PMID 33176543** · Smallwood K 2021

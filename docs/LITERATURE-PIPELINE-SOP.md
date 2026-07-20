@@ -94,6 +94,20 @@ The pipeline writes a raw archive that Claude reads directly. Requirements:
 2. **Widen `pmids_from_kb()` to scan the whole file**, not the excerpt section, so a body citation pulls its own paper into the archive. Until that lands, the orphan count is a standing figure to re-measure, not a one-off.
 3. **When a coverage check can only ever inspect what is already covered, it is measuring itself.** Ask of every checker: what would have to be true for this to stay green while being wrong?
 
+### ⚠️ An excerpt block with no excerpts counts as a checked paper
+
+Leg 1 reports two numbers — PMIDs and excerpts. A block consisting of a header and nothing but annotation lines increments the first and not the second. It reads as a verified paper and verifies nothing.
+
+**Found 2026-07-20: 5 such blocks.** Four had body claims resting on them, including `16675613`, cited for the nasal-epithelium heat-exchange mechanism — a citation with no evidence behind it, sitting in a file whose stated purpose is to record which claims lack support. The fifth (`27154944`, a *Vet Rec* letter with no abstract in the record) is legitimately empty and says so: "Listed for completeness; nothing in this file rests on it." **That is the distinction — an empty block is acceptable only when it states that nothing depends on it.**
+
+**Rule: any PMID cited for a body claim must carry at least one non-annotation excerpt line, or an explicit statement of why it cannot.** Add the count of zero-excerpt blocks to what gets reported alongside a Leg 1 pass; a rising PMID count with a flat excerpt count is the signature of this defect.
+
+### ⚠️ Index-line descriptors are claims when they state findings
+
+The master-literature index lists papers as `Author Year (PMID, descriptor)`. Most descriptors are topic labels — "splenic MCT", "LGL", "mammary staging" — and carry nothing. A few are findings: `33140523, no benefit from adjuvant mammary chemotherapy` asserts a negative result in four words, and had **no excerpt behind it** until 2026-07-20. It happens to be supported.
+
+**Screen index descriptors for finding-shaped language** (negation, comparison, percentages, "improves", "safe") and hold those to the same evidence standard as body prose. A claim does not become decorative by being placed in parentheses.
+
 ## 4. Frozen-baseline regression (the self-check)
 
 Adapted from the sibling project's flywheel rule for a domain with no ground-truth oracle: *lock a benchmark that never participates in training; only a run that does not degrade it counts as an improvement; if it degrades, stop, alert, and keep the old artefact.*

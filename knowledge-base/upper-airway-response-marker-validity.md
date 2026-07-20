@@ -348,6 +348,10 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 > ⚠️ Rat model (sciatic nerve chronic compression), not feline. Cited in the body as a mechanistic analogy for early/reversible demyelination.
 
 **PMID 16675613** · Robertshaw D 2006
+> Most heat exchange takes place at the nasal epithelial lining, and venous drainage can be directed to a special network of arteries at the base of the brain whereby countercurrent heat transfer can occur, which results in selective brain cooling.
+> Panting is a controlled increase in respiratory frequency accompanied by a decrease in tidal volume, the purpose of which is to increase ventilation of the upper respiratory tract, preserve alveolar ventilation, and thereby elevate evaporative heat loss.
+> The panting mechanism tends to be important in smaller mammalian species and in larger species is supplemented by sweating.
+> ⚠️ Excerpts added 2026-07-20. This block previously held **only a flag and no source text at all**, while the body cited it for the nasal-epithelium mechanism — so the claim had a citation and no evidence behind it. The first sentence above is that claim's actual support.
 > ⚠️ **FLAG CORRECTED, not cleared, 2026-07-20.** The figures `30, 35` were flagged against this paper. They do not belong to it: the body sentence cites Robertshaw for the *nasal epithelium* heat-exchange mechanism, and attributes the panting thresholds (30 °C, 35 °C) to **Amini-Sereshki 1988**. But unlike the other misattributions resolved today, correcting the name does not clear the gap — **Amini-Sereshki 1988 has no excerpt block anywhere in this file and was never archived**, so those two figures remain genuinely unverified, now under the right paper. `1985, 1988` are citation years. **This is the one flag of the eight examined today that survived checking.**
 
 **PMID 19123077** · Fidan H 2008
