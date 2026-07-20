@@ -30,7 +30,19 @@ Splitting these puts each on the right substrate. It also introduces heterogenei
 
 **The invariant**: the local side moves bytes, the Claude side makes claims. A local model may rank a paper as promising; it may never produce a sentence that ends up inside `## 原文摘录`.
 
-## 3. Storage contract
+## 3. Where the archive lives — and why that makes DR mandatory
+
+**Decided 2026-07-20: the raw API archive lives outside the repository.** Committing API dumps would bloat a public repo with material that is neither reviewable nor ours to redistribute.
+
+But leaving git means leaving git's protection, and that has one consequence that shapes everything else:
+
+> **The archive must be a cache, never a source of truth.** Whatever is required to rebuild it from scratch — the PMID list, the queries that produced it, the fetch parameters — **stays in the repository, version-controlled.** The archive holds bytes that can be re-fetched; the repo holds the instructions for re-fetching them.
+
+If that split holds, total loss of the archive costs time and API calls, not knowledge, and disaster recovery reduces to "re-run the fetch". If it does not hold — if some PMID exists only in the uncommitted archive — then a disk failure silently deletes part of the evidence base and nothing will announce it.
+
+**Therefore the recoverability of the archive is a property that must be tested, not assumed.** That is §4a.
+
+## 3b. Storage contract
 
 The pipeline writes a raw archive that Claude reads directly. Requirements:
 
@@ -46,6 +58,34 @@ Adapted from the sibling project's flywheel rule for a domain with no ground-tru
 Here the frozen baseline is **a subset of already-verified knowledge-base entries**. The pipeline must be able to re-derive, for each entry in that set, the same PMIDs and the same verbatim excerpt text. If it cannot, the pipeline has drifted and must halt rather than continue producing.
 
 This is what makes the loop safe to leave running: it has a way to detect its own corruption that does not depend on anyone reading its output.
+
+## 4a. Disaster-recovery drill
+
+Modelled on the sibling project's DR drill, whose governing idea is `runs ≠ works` applied to backups themselves: **prove the backup restores, not merely that it was written.** Two rules from it carry over unchanged:
+
+- **Each leg reports independently.** A leg that cannot run is `SKIP`, never a fabricated `PASS`.
+- **Emit one machine-greppable verdict line per leg**, so the drill can be automated and its flatline detected.
+
+### The legs
+
+**Leg 1 — Archive rebuild (the one that matters most).** Point the pipeline at an empty scratch archive and rebuild from the repository's committed PMID list alone. Assert every PMID resolves, and that the re-fetched payloads reproduce the verbatim excerpts currently in the knowledge base **byte-for-byte**. This simultaneously tests the §3 cache-not-truth split and the frozen-baseline invariant. If a PMID cannot be rebuilt because it exists only in the archive, that is the exact failure this design is meant to prevent — a `FAIL`, not a warning.
+
+**Leg 2 — Crash resume.** Kill the fetch process mid-run, re-dispatch the identical command, and assert it **resumes from its checkpoint rather than recomputing from zero**, and that already-fetched records are reused byte-identically rather than re-written.
+
+⚠️ Use a **controlled `kill -9`, not a real reboot.** The sibling project reasoned this out and the reasoning applies here with more force: that node has a history of unresolved crashes, so rebooting to test crash-recovery risks triggering the very fault, and the resume path exercised is the same either way.
+
+⚠️ **Design the crash window deliberately.** The sibling drill initially failed to test anything because the workload finished before the killer could fire — the run has to be slow enough that the kill lands mid-flight. Their fix was to enlarge the work items rather than to shorten the delay.
+
+**Leg 3 — Integrity detection.** Corrupt one archived record on purpose — flip a byte, truncate a payload, or edit a stored abstract — and assert the checksum pass reports it. **This is the leg that tests the tester.** Per the standing rule that a detector must be proven against a known state, an integrity checker that has never been shown corruption has not been shown to work; "no problems found" from such a checker means nothing.
+
+**Leg 4 — Grade enforcement.** Inject a local-model summary into the position where a raw payload belongs, and assert the pipeline refuses it. The `## 原文摘录` section is this project's core asset; the guard preventing a paraphrase from reaching it must be tested adversarially, not trusted.
+
+### Traps this environment has already produced
+
+Both were hit today, while merely *checking whether the node was free*. Both would have produced a confident wrong answer:
+
+- **`nvidia-smi` is absent from the non-interactive `PATH` on this WSL2 node**, so a naive remote busy-check returns `command not found`. A detector that treats "command failed" as "nothing is running" will report the node idle **exactly when it cannot see**. Any busy-check must distinguish *measured idle* from *failed to measure*, and must fail loudly on the latter.
+- **The notes described a hardware/model configuration that did not match the machine** — two 14B models that were never installed. Written infrastructure facts decay silently. Re-measure before depending on them; that is why §6 now carries a measurement date.
 
 ## 5. Operational rules, and the incidents behind them
 
@@ -85,12 +125,16 @@ The point is not the taxonomy; it is that an artefact must never be able to trav
 
 ⚠️ **Host addresses, usernames, and keys do not belong in this repository — it is public.** They live in the operator's local environment and in the sibling project's private notes. Read them from there at run time; do not transcribe them here, and do not let them reach a commit, a log file, or an error message that gets committed.
 
-What is safe to record, because it constrains design rather than granting access:
+What is safe to record, because it constrains design rather than granting access. **Measured on the node 2026-07-20, not taken from notes** — the sibling project's memory files described a planned configuration that does not match what is installed:
 
-- Hardware ceiling: RTX 3080 Laptop, 16 GB → 14B Q4 is the practical maximum; 32B+ overflows. This is why the local tier cannot be asked to do work requiring judgement.
-- Local model tiers available: a 14B instruct model for orchestration/tool-calling, a 14B distilled reasoning model. Neither is adequate to select or excerpt a source sentence.
+- Hardware: RTX 3080 Laptop, 16 GB. At the time of measurement: **utilisation 0%, but 5.5 GB of VRAM already resident** — that is the local model server holding a loaded model, not a competing job. Usable headroom is therefore ~10.8 GB, not 16.
+- **Installed models are a 9B and a 7B. There is no 14B on the node.** The notes claimed two 14B tiers; they were never installed. Any design assuming 14B capability is designing against a machine that does not exist.
+- **The resident 9B is a known-bad build.** The sibling project's log records it returning empty on roughly 75% of requests for digest-style prompts, with two days lost tuning input length before the cause was found. Its stated fix was "a non-broken model later" — that replacement has not happened. Its context window is also only 4096 tokens.
 - Access is over a private mesh network; the two machines use **different SSH usernames**, which has caused a real misconfiguration before. Confirm both before assuming either.
+- The node runs **WSL2**. `nvidia-smi` is not on the default non-interactive `PATH`; it lives under the WSL library directory and must be added explicitly.
 - A difficulty router already exists in the sibling project (`compute-node/runs/local-router/`), classifying tasks 1–5 and escalating only the hardest. Read it before writing anything new.
+
+> **Why this does not break the design — and is in fact the argument for it.** A pipeline that asked the local model to summarise or judge would have walked straight into a 75%-empty failure rate on a 4096-token context. This one asks it to move bytes and, at most, apply a crude filter that degrades gracefully to keyword matching. **The architecture is deliberately insensitive to local model quality, because no judgement was delegated to it.** Treat any local model output as optional; the pipeline must remain correct with the model switched off entirely.
 
 ## 7. Isolation from the sibling project
 
@@ -104,6 +148,7 @@ Borrow the patterns and the scar tissue. Do not share the code or the state dire
 
 ## 8. Before building — open questions
 
-1. **Is the node actually free?** The sibling project has a flywheel and an octocoral loop on it. Per §5, catmed's loop yields; it does not evict.
-2. Measure the current token cost properly, so the saving can be demonstrated rather than assumed.
-3. Decide where the raw archive lives — inside the repo (reviewable, but bloats a public repo with API dumps) or outside it (clean, but not version-controlled). **Not yet decided.**
+1. ~~Is the node free?~~ **Resolved 2026-07-20 by measurement**: compute idle (0% utilisation), ~10.8 GB VRAM headroom, no competing job. Re-check before each run — and per §4a, distinguish *measured idle* from *failed to measure*.
+2. ~~Where does the archive live?~~ **Resolved: outside the repository**, with the rebuild inputs committed inside it (§3).
+3. Measure the current token cost properly, so the saving can be demonstrated rather than assumed. Still open, and still the first implementation milestone.
+4. Decide whether the local model is used at all in v1. Given that the installed 9B is a known-bad build with a 4096-token context, the honest default is **build the pipeline with no local model**, prove the deterministic path end to end, and add a model only if a measured need survives that. A pipeline that works with the model switched off is the one worth having anyway (§6).
