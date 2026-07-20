@@ -234,6 +234,19 @@ Confirmed instances: `85`/`2024` belonged to Wolfesberger not Ii; `123` to Lai n
 - **`10`/`62.5` under PMID 35342739** was called a cross-match because `10` also appears elsewhere. It is that paper's own figure and nobody else's. **The gap is real.** Checking it did narrow the gap — the denominator "16 cats" *is* in the abstract, so only the numerator needs the full text.
 - **`30`/`35` under PMID 16675613** was correctly identified as belonging to another source — but that source, Amini-Sereshki 1988, **was never archived and has no excerpt block**. Correcting the attribution moved the flag; it did not clear it.
 
+### ⚠️ Check the half of the list you believe, not only the half you doubt
+
+Immediately after the pass above — the same day, the next commit — a retrieval list of "genuine gaps" was handed to the operator. **Three recommendations, three errors**, and all three had the same root: the eight flags I *doubted* were each checked against the body sentence; the five I *believed* were copied forward untouched.
+
+- **`2609` was listed as Baez 2007's gap. Baez enrolled 57 cats.** The body sentence reads "…(Baez 2007, PMID 17451991); … (Teng 2018, n=2609)" — it is Teng's sample size, and Teng 2018 was never archived. A second Amini-Sereshki. **Reading the Baez full text could never have produced that figure**, and the operator was asked to fetch it anyway.
+- **`270`/`832` (Winkel 2015) was requested from the operator although `fetch_fulltext.py` had already downloaded that paper into `~/.catmed-archive/fulltext/26512544.pdf` hours earlier.** The archive was never checked before asking.
+- **Baez and the heat-illness paper had both been supplied by the operator in an earlier batch and were sitting unread on disk.** The operator noticed the duplication before I did — macOS had appended `(1)` to the filenames, which is the filesystem saying so in plain sight.
+
+**Rules this establishes.**
+1. **A "confirmed gap" is a claim, and it decays.** Re-verify it against the body sentence at the moment of use, not at the moment it was first recorded. A list assembled before a round of edits describes the file as it was, not as it is.
+2. **Before asking a human to fetch anything, check `~/.catmed-archive/fulltext/` and the supplied-PDF directory.** Their time is the scarcest input to this pipeline and it was spent twice on files already held.
+3. **Skepticism aimed only at the findings you dislike is not skepticism.** The eight suspicious flags got a per-figure attribution check; the five plausible ones got none, and every error landed in the unchecked half. **Apply the check where you expect to find nothing** — that is the only place it can tell you something you did not already believe.
+
 **The rule this establishes:** a misattribution verdict has two halves — *this paper is not the source* and *the real source verifies it*. The checker can only ever suggest the first. **Confirming the first does not establish the second, and clearing a flag on the first alone silently converts a real gap into an apparent verification.** Both halves must be shown, per figure, against the excerpt block of the paper the body actually names. Bulk-clearing on a checker's verdict would have written two false verifications into the knowledge base on this pass alone.
 
 ### ⚠️ Verify a cross-reference points at something

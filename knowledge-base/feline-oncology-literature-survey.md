@@ -23,7 +23,8 @@
 **Where things stand**: cats have **no** clinically validated blood-based early-detection tool suitable for population screening; diagnosis is still "find a mass → cytology/histopathology + imaging".
 
 - **Serum TK1/TK** is the blood tumour marker with the strongest evidence, but it is essentially **specific to lymphoma**: AUC 0.98, sensitivity 0.83, specificity 0.95; it distinguishes lymphoma from IBD/inflammation and falls with treatment response (Wang 2021, PMID 34579716; Taylor 2013, PMID 23076596). Its role is diagnostic adjunct + response monitoring, not screening.
-- **α1-acid glycoprotein (AGP)** is a non-specific tumour/response marker (832 µg/mL at lymphoma diagnosis vs 270 in healthy cats, falling with remission; Winkel 2015, PMID 26512544); SAA has low sensitivity.
+- **α1-acid glycoprotein (AGP)** is a non-specific tumour/response marker (median 832.60 µg/mL at lymphoma diagnosis vs 269.85 in healthy cats, *P* < 0.001, returning to control-comparable values by 12 weeks of treatment; Winkel 2015, PMID 26512544); SAA has low sensitivity.
+  ⚠️ **Verified from the full text 2026-07-20, and the full text undercuts the screening reading of it.** The two distributions overlap almost entirely — lymphoma 50.00–2,825.40 µg/mL against control undetectable–536.20 — so **a single AGP value cannot classify an individual cat**, and a low result excludes nothing. What the data support is the *within-patient* use: a fall from that cat's own diagnostic value tracking treatment response. 16 lymphoma cats vs 25 controls, and the controls were much younger (median 3.0 vs 9.0 years), so age is not separated from disease here.
 - **Structured screening of older cats** is the most realistic form of "early detection" currently available: a 2-year cohort of 259 apparently healthy cats found **21% were already diseased at baseline**, with a **2-year cumulative incidence of new neoplasia of roughly 7%** (Mortier 2024, PMID 38967102); the **2021 AAFP Senior Care Guidelines** include neoplasia in the minimum database (PMID 34167339).
 - **Mammary tumours** have a high malignancy rate and progress quickly; early palpation and early excision (<3 cm) markedly improve prognosis.
 - **【emerging/unproven】**: feline cfDNA-NGS liquid biopsy is proof-of-concept only (2 lymphomas + 9 controls, Ruiz-Perez 2024, PMID 39346958); **circulating nucleosome Nu.Q has canine data only** (canine, extrapolated); there is no multi-cancer early-detection (MCED) product validated in cats.
@@ -91,7 +92,10 @@
 ## 7. Prognostic factors and survival (across tumour types)
 
 - **Treatment response (CR > PR > SD > PD)** is the strongest and the one modifiable factor (in lymphoma, CR 341 days vs PR 78 vs no response 45; Moore 2023).
-- **Body condition BCS <5**: median survival 3.3 vs 16.7 months (Baez 2007, PMID 17451991); on the nine-point scale, BCS correlates strongly with survival across the whole population, with both excessive thinness (<5) and extreme obesity (9) shortening lifespan (Teng 2018, n=2609).
+- **Body condition BCS <5**: median survival 3.3 vs 16.7 months (Baez 2007, PMID 17451991); on the nine-point scale, BCS correlates strongly with survival across the whole population, with both excessive thinness (<5) and extreme obesity (9) shortening lifespan (Teng 2018, n=2609 — ⚠️ **this paper is not archived in this repository and the figure is unverified**; see the note under PMID 17451991).
+- **⭐ But BCS is prognostic and blind at the same time, and the same paper shows both.** Baez's full text reports that among cats with **BCS ≥5 — the better-prognosis group — 72% (23/32) already had moderate to severe muscle wasting** at one or more site, and 91% of the whole cohort had muscle loss at all three sites assessed. A cat can score "optimal or overweight" and be substantially catabolic underneath.
+  **What this changes in practice**: BCS predicts survival, so it is worth recording — but a normal BCS is **not** evidence that wasting has been excluded, and the two must not be collapsed into one reassurance. The muscle-mass score is a separate, cheap, palpation-based assessment (temporal region, scapulae, hind limbs) and it is the one that detects what BCS misses. **Whether to score it, and how to act on it, is the attending veterinarian's call** — the useful owner-side move is to ask whether muscle mass was assessed separately from body condition, not to attempt scoring at home.
+  ⚠️ **Limits.** 57 cats, single referral oncology service, 1999–2001, scores assigned subjectively by one investigator and never tested for inter-observer reproducibility. The species contrast the authors draw (93% of cats vs 35% of dogs with muscle wasting) is across two different studies, not a matched comparison. Treat the direction as established and the proportions as approximate.
 - **Anaemia**: a consistently adverse prognostic factor across tumour types, which also **lowers the chemotherapy response rate** (L-asparaginase 57% vs 15%, Inazumi 2024).
 - **FeLV**: **progressive infection (median survival 30 days; 4–5× increase in hazard of death) must be distinguished from regressive infection (no direct effect)** (Biezus 2025, PMID 40591622).
 - **Clinical substage b** (systemic signs present) predicts a worse outcome.
@@ -175,7 +179,18 @@
 
 **PMID 17451991** · Baez JL 2007
 > Feline cancer patients having a BCS <5 had a median survival time (MST) of 3.3 months compared to that of 16.7 months for cats with a BCS of > or = 5 (P=0.008).
-> ⚠️ The figures `2018, 2609` cited in the body **do not appear in the abstract text** — they may come from the full text (which the abstract does not contain), or may be erroneous; **retrieve the full text and verify before citing**. (Note: this check misses figures that the source spells out as English words.)
+> **【Publisher full text retrieved and checked 2026-07-20 — source: publisher PDF】**
+> Fifty-seven cats with neoplasia were evaluated.
+> Muscle mass was reduced at all three sites assessed in 91% of the cancer patients.
+> When cats with BCS of ≥5 were evaluated with respect to muscle mass scores, 72% of cases (23/32) had evidence of moderate to severe muscle wasting at one or more anatomical location (score <2).
+> Even the majority cats with a normal or overweight BCS (72%) had evidence of significant muscle wasting at one or more anatomical location.
+> Ninety-three percent had some evidence of muscle wasting in the temporal region (score <3).
+> Likewise, only 35% of the dogs were found to have evidence of muscle wasting, as opposed to 93% of cases in this investigation.
+> Remission status was closely associated with BCS with a mean BCS of cats that were in remission of 5.2 ± 1.7 vs a mean BCS of 3.5 ± 2.2 for cats that were not in remission (P = 0.0014).
+> In addition to BCS, only having the diagnosis of SCC was independently associated with survival (hazards ratio = 0.8, P = 0.004 and 6.7, P = 0.001 for BCS and SCC, respectively).
+> ⚠️ **ATTRIBUTION CORRECTED, gap moved not closed, 2026-07-20.** The figure `2609` was flagged against this paper and was placed on a full-text retrieval list on that basis. **It is not in this paper and never could have been — Baez enrolled 57 cats.** The body sentence reads "…(Baez 2007, PMID 17451991); on the nine-point scale … (Teng 2018, n=2609)": 2609 is **Teng 2018's** sample size. Teng 2018 (PMID 29393723) **has no excerpt block anywhere in this repository and was never archived**, so `2609` remains genuinely unverified, now filed under the right paper. `2018` is a citation year. **This is the second instance of the Amini-Sereshki pattern** — see `upper-airway-response-marker-validity.md` under PMID 16675613, and the SOP section on the two halves of a misattribution verdict.
+> ⚠️ Body-weight MST is reported but **collapses within lymphoma**: "<3.3 kg was 3.9 months, 6.5 months for cats weighing ≥3.3 kg and ≤5 kg and 19.9 months for cats weighing >5 kg (P = 0.025)", yet "when only the patients with lymphoma were subgrouped … the difference in MST was not significant (P = 0.3)". Body weight is not cited in this file as a prognostic factor for that reason.
+> ⚠️ Design limits the authors state: BCS and the fat/muscle scores are **subjective**, scored by a single investigator (consistent, but never tested for inter-observer reproducibility), and the study "was not designed to evaluate whether or not cats were losing weight in the face of adequate nutritional intake" — so cachexia as a syndrome is inferred, not demonstrated.
 
 **PMID 20738770** · Reynolds CA 2010
 > Ninety-three percent of owners were willing to trade survival time for good QoL; 57% of these were willing to trade up to 6 months.
@@ -187,7 +202,16 @@
 > ⚠️ **FALSE POSITIVE, resolved 2026-07-20.** The figures `0.83, 0.95, 0.98` were flagged here. They are the TK1 ROC results of **Wang 2021 (PMID 34579716)**, quoted verbatim and marked "Check passed" in that paper's own excerpt block; the two papers are cited in one body sentence. `2013, 2021` are citation years, not data. Nothing was ever unverified.
 
 **PMID 26512544** · Winkel VM 2015
-> ⚠️ The figures `270, 832` cited in the body **do not appear in the abstract text** — they may come from the full text (which the abstract does not contain), or may be erroneous; **retrieve the full text and verify before citing**. (Note: this check misses figures that the source spells out as English words.)
+> **【Publisher full text retrieved and checked 2026-07-20 — source: publisher PDF】**
+> Median serum AGP and SAA concentrations were 269.85 µg/mL (range, very low or undetectable to 536.20 µg/mL) and 0.10 µg/mL (range, very low or undetectable to 0.96 µg/mL), respectively.
+> Median serum AGP and SAA concentrations were 832.60 µg/mL (range, 50.00 to 2,825.40 µg/mL) and 1.03 µg/mL (range, undetectable to 18.80 µg/mL), respectively.
+> Median serum AGP and SAA concentrations were significantly (P < 0.001 and P = 0.003, respectively) higher in cats with lymphoma at the time of diagnosis than in the control group.
+> Serum AGP concentration returned to a value comparable with that of the control group by 12 weeks of treatment.
+> The first consisted of 25 healthy adult (≥ 1 years old) privately owned cats and was used as a control group.
+> The second group consisted of 16 cats with lymphoma undergoing antineoplastic treatment.
+> ⚠️ Gap closed 2026-07-20. `270, 832` were flagged unverified and **were a real gap** — the values are 269.85 and 832.60, rounded in the body. Verified verbatim above.
+> ⚠️ **The ranges overlap almost completely, and the median comparison conceals it.** Lymphoma AGP spans 50.00–2,825.40 µg/mL; control spans undetectable–536.20. A cat with lymphoma can sit at 50 µg/mL, below the control median. **The group difference is real; the individual test is not discriminating.** Cited in the body accordingly.
+> ⚠️ 16 lymphoma cats vs 25 controls, and controls had a median age of 3.0 years against 9.0 for the lymphoma group — the groups differ in age as well as in disease.
 
 **PMID 29067174** · Pope KV 2015
 > Median overall survival was 1317 days.

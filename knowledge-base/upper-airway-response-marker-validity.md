@@ -134,6 +134,10 @@ SAVSNET primary-care surveillance in the UK, 2013–2018, 174 heat-related illne
 - **10/16 (62.5%) of the feline records documented no trigger**; among the **only 6 cases where a trigger was recorded**, all were **environmental** (PMID 35342739).
   ⚠️ Verification correction: this is **not** "16 cases, 100% environmental". The authors attribute the missing triggers to free-roaming and unwitnessed onset, and note that the literature **does contain rare reports of exertional HRI in cats after hunting in hot conditions**.
 - **Seasonality: cases occurred May–September, with 12/16 (75.0%) concentrated in June and July** (6 each).
+- **Age: median 10.4 years (range 0.4–19, IQR 4.6–14.2), and cats over 15 years made up 25% of feline cases** — significantly overrepresented against the VetCompass feline population (7.82%, *P* < 0.05). The authors attribute this to age-related decline in thermoregulation plus the higher prevalence of cardiac, respiratory and renal disease in old cats.
+- **⭐ The presenting signs invert the canine pattern, and this is the part an owner would get wrong.** Of the 14 feline cases with signs recorded, **lethargy was commonest (10/14), ahead of abnormal breathing (6/14)**; in dogs the order is reversed — abnormal breathing 72/134, lethargy 55/134, collapse 46/134 (Table 4, PMID 35342739).
+  ⚠️ **Why this matters for triage rather than for classification.** Heat illness in dogs is culturally encoded as a *breathing* emergency — panting, distress, collapse. In this dataset the commonest feline presentation is a cat that is simply flat. Combine that with the two findings above — no witnessed trigger in 62.5%, and a quarter of cases in cats over 15 — and the failure mode writes itself: **an old cat, indoors, no visible cause, "just quiet today".** An owner screening for laboured breathing sees nothing to act on.
+  ⚠️ **Limits, stated plainly.** 16 cats, 14 with signs recorded. Counts this small carry wide uncertainty and the lethargy-over-breathing ordering could reverse in another sample. It is a **reason not to use breathing as the sole heat-illness screen in cats**, not a validated feline sign ranking. Retrospective free-text clinical narratives also under-record signs nobody thought to type.
 
 ### 4.2 Canine quantitative data (counterintuitive)
 - Among exertional HRI cases, **372/551 (67.5%) followed nothing more than "a walk"**, with high-intensity activity accounting for only 17.6% (PMID 32751913) → **low-intensity activity is sufficient.** ✅ Verified against the publisher full text 2026-07-20.
@@ -357,7 +361,14 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 **PMID 35342739** ·  
 > Cases were defined as animals presented for consultation with strong evidence of current, or recent heat induced illness during the study period (2013–2018).
 > Results:  The HRI cases included 146 dogs, 16 cats, 8 guinea pigs, 3 rabbits and 1 ferret.
-> ⚠️ **Gap confirmed real and narrowed, 2026-07-20.** The figures `10, 62.5` genuinely belong to this paper — the body attributes them to no one else — so this is not one of today's misattributions. The **denominator is verified**: "16 cats" is quoted above from the abstract. What is not verified is the numerator: the 10/16 with no documented trigger, and the 6 with one. **Retrieve the full text before citing those two.**
+> **【Publisher full text retrieved and checked 2026-07-20 — source: publisher PDF】**
+> The clinical narrative did not include details of the inciting event or trigger of the HRI event for 56/174 (32.2%) cases; 44/146 (30.1%) of dogs, 10/16 (62.5%) of cats, 1/8 (12.5%) of guinea pigs, 1/3 (33.3%) of rabbits.
+> Environmental HRI was recorded as a trigger for the remaining 20/104 (19.6%) dogs, and for all cats (n = 6), guinea pigs (n = 7), rabbits (n = 2) and the ferret (n = 1).
+> The feline HRI cases were aged 0.4-19 years old (median = 10.4 years, IQR = 4.6-14.2 years).
+> Cats aged over 15 years old comprised 25% of the HRI cases, and the majority of events did not indicate the inciting trigger.
+> Only environmental HRI triggers were reported for all other species, although 62.5% of cats had no reported trigger, likely reflecting the free roaming indoor-outdoor lifestyle of the majority of UK cats.
+> ⚠️ Gap closed 2026-07-20. `10, 62.5` were flagged unverified and **were a real gap** — not one of that day's misattributions. The full text carries both verbatim. The denominator "16 cats" had already been verified from the abstract; the numerator now is too.
+> ⚠️ **Table 4 records the feline presenting signs (n = 14 cats with signs recorded), and they inverse the canine pattern**: lethargy 10, abnormal breathing 6, vomit 3, diarrhoea 1, hypersalivation 1, ataxia 1, haemorrhagic diarrhoea 1. In dogs the order is abnormal breathing 72, lethargy 55, collapsed 46. Tabulated data, not a prose sentence. Cited in the body accordingly.
 
 **PMID 35622759** · Hall EJ 2022
 > The median ambient temperature on days of HRI events was 16.9 °C.
