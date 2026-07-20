@@ -18,7 +18,8 @@ knowledge-base/                        # analysis-facing notes (English, with ve
   ├── upper-airway-response-marker-validity.md
   ├── emergency-triage-red-flags.md
   ├── evidence-to-practice-gap.md
-  └── hyperthyroidism-and-kidney-disease.md
+  ├── hyperthyroidism-and-kidney-disease.md
+  └── feline-hypertension.md
 guides/                                # owner-facing guides, Markdown + PDF (Chinese)
   ├── feline-lymphoma-all-types-owner-guide.zh.{md,pdf}
   └── feline-nasal-lymphoma-owner-guide.zh.{md,pdf}

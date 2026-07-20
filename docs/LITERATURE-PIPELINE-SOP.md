@@ -211,6 +211,12 @@ Established 2026-07-20, after a survey of documented gaps in feline medicine.
 
 **Order by how often the question is faced, not by how interesting it is.** This repository grew from one rare tumour, which was right for its origin and wrong as a plan: the commonest chronic diseases of older cats had no entry at all until deliberately addressed.
 
+### ⚠️ Read the whole abstract before writing from it
+
+`screen.py show` prints a full record; a shell pipeline that truncates the display does not truncate the source, but it does truncate what the writer sees. Writing the hypertension entry from a display-clipped abstract produced two defects in one pass: figures cited in the body whose sentences never reached the excerpt block, and — worse — a claim in the body that the unread remainder **contradicted**. The entry had argued fundic examination was the easier alternative to a blood pressure cuff; the same abstract went on to report that 73.1% of practitioners struggle to interpret ocular findings.
+
+**Before writing a section, confirm the abstract was read to its end.** The numeric cross-check catches the first defect (a figure with no excerpt) but is blind to the second: nothing flags a conclusion the source refutes in a sentence you never saw.
+
 ### ⚠️ A web page is not a source
 
 Page-fetching tools return a *model's summary* of a page, not the page. Its wording is not the author's wording, and its figures have passed through a paraphrase. **Nothing obtained that way may enter `## 原文摘录` or be quoted as verbatim.** Use web search to find out *what to look for*; then retrieve the record properly and quote from that. When a figure exists only in a full text that was read through such a tool, cite nothing and record that the check was not performed — as `evidence-to-practice-gap.md` §2 does.
