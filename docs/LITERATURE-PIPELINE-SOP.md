@@ -471,6 +471,34 @@ Clinicians were already served — English notes, three issue templates, §10 on
 
 **Rule: when a check fires on something you just added, decide which of the two is wrong before making the light go green.** The tempting fix — a suppression line — would have left a false rule in place for every future generated file.
 
+## 11. 待做 · Deferred — the language matrix
+
+Recorded 2026-07-21. Deferred deliberately, with the reasoning kept so it does not have to be re-derived.
+
+**Current state.** Owner material is Chinese only (4 guides, ~38k CJK characters). Analysis notes are English, with one Chinese translation (`hyperthyroidism-and-kidney-disease.zh.md`) and a Chinese clinician index. So today the project serves **Chinese owners** and **English-reading clinicians** well, and everyone else not at all.
+
+**Known future audiences: English and Japanese users.** Both are real rather than speculative — the disclaimers have been trilingual since the first README, and the project originated around Japanese clinical records.
+
+### What the translation contract already fixes
+
+The pattern is settled and was tested by the first translation, so this is not an open design question:
+
+1. **Excerpts are never translated.** `## 原文摘录` stays byte-identical in every language version, and the same Leg 1 run checks it. A translated excerpt is a second unverified rendering of text that already exists — precisely the failure this project was built against (§1 of `CONTRIBUTING.md`).
+2. **Prose is translated; interpretation may be re-expressed, evidence may not.**
+3. **Translations do not create new coverage.** `check_coverage` and `build_kb_index.py` both skip `*.zh.md`, since a translation is the same topic in another language — otherwise the agent would claim two coverages for one subject.
+4. **Naming: `<name>.<lang>.md`**, alongside the English original, inside the corpus so it is checked rather than beside it where it would not be.
+
+### The part that is genuinely undecided
+
+**Which artifacts get translated, and in what order** — and the honest answer is that it depends on who actually arrives, which is not yet known. Two failure modes to avoid:
+
+- **Translating everything.** Eleven notes × three languages is 33 documents to keep in sync, and drift between them is silent. The debt already recorded in `kb-exceptions.md` shows how fast that accumulates.
+- **Translating the wrong tier first.** The Chinese case is instructive in reverse: owner material came first because owners were the audience with no alternative. A clinician can read the English; an owner in another language cannot read anything.
+
+**Provisional order, to be revised when there is evidence about actual readers:** emergency guide → the disease guide for whichever condition that audience asks about most → clinician index → individual notes only on request.
+
+⚠️ **A translation is a claim about the source, and it decays the same way.** When an English file changes, every translation of it is stale and nothing currently detects that. **Before adding a second language, add a `stale-translation` check** modelled on `stale-pdf` — compare git commit times of `<name>.md` against `<name>.<lang>.md`. Doing it at two languages is cheap; doing it at three is a retrofit across a matrix.
+
 ## 10. ⭐ How professional critique enters — including when it has no citation
 
 Veterinarians, biologists and clinical pathologists are the readers most able to find what is wrong here, and the repository has to be able to take their input **without either dismissing it or laundering it into evidence it is not.**

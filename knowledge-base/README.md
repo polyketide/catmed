@@ -109,7 +109,7 @@ hypertension is the third member of the older-cat triad alongside chronic kidney
 
 these are the two commonest chronic diseases of older cats, they occur together, and each one *conceals* the other. An endocrine specialist watching thyroid hormone and a nephrologist watching creatinine can both be reading their own…
 
-*3 papers, 16 verbatim excerpts.*
+*3 papers, 16 verbatim excerpts.*  ·  **中文版: [`hyperthyroidism-and-kidney-disease.zh.md`](hyperthyroidism-and-kidney-disease.zh.md)**
 
 > ⚠️ **Stated gap:** Whether earlier detection of masked CKD changes outcomes, rather than merely predicting them. No study here tests that.
 

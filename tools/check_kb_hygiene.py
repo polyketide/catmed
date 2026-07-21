@@ -226,7 +226,12 @@ def check_coverage(exc: set[str]) -> list[str]:
     # README.md is the generated clinician index, not a knowledge file. It names
     # no condition and carries no excerpts, so requiring the agent to list it as
     # a covered topic would be asking the agent to claim coverage of an index.
-    actual = {f.name for f in sorted(KB.glob("*.md"))} - {"README.md"}
+    # Excluded: the generated index (names no condition), and `*.zh.md`
+    # translations (the same topic in another language, already declared by the
+    # English file). Requiring the agent to list a translation separately would
+    # make it claim two coverages for one subject.
+    actual = {f.name for f in sorted(KB.glob("*.md"))
+              if f.name != "README.md" and not f.name.endswith(".zh.md")}
     problems = []
     for name in sorted(actual - listed):
         if name in exc:
