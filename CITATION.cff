@@ -1,0 +1,34 @@
+cff-version: 1.2.0
+title: "catmed: an evidence-integration knowledge base for feline medicine, with byte-exact citation verification"
+message: >-
+  If you refer to this project — in a paper, a talk, a clinical resource or
+  another repository — please cite it as below. If you are citing a specific
+  clinical figure, cite the underlying paper (its PMID is given inline), not
+  this project: the whole point here is that the figures belong to their authors
+  and remain checkable against them.
+type: software
+authors:
+  - alias: polyketide
+    website: "https://github.com/polyketide"
+repository-code: "https://github.com/polyketide/catmed"
+url: "https://polyketide.github.io/catmed/"
+license: MIT
+abstract: >-
+  catmed holds evidence about feline medicine that is scattered across
+  publications, records where sources contradict one another, and states
+  explicitly where no evidence exists. Every figure in the corpus is bound to a
+  verbatim sentence from its source; a CI job rebuilds the literature archive
+  from scratch on every commit and requires each quoted sentence to be a
+  byte-exact substring of the archived PubMed record, then corrupts a record
+  deliberately to prove the checker can still fail. Owner-facing guides
+  (Chinese) and analysis notes for clinicians (English) are held to the same
+  verification. It is an evidence-integration project: it does not diagnose,
+  does not prescribe, and is not a substitute for a veterinarian.
+keywords:
+  - feline medicine
+  - veterinary evidence-based medicine
+  - citation verification
+  - reproducibility
+  - knowledge base
+  - chronic kidney disease
+  - triage

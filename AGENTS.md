@@ -46,6 +46,7 @@ python3 tools/dr_drill.py leg1        # every excerpt vs its source
 python3 tools/dr_drill.py self-test   # prove the checker can still fail
 python3 tools/test_tools.py           # unit tests for the checkers themselves
 python3 tools/export_agents.py --check # portable prompts still in sync
+python3 tools/build_kb_index.py --check # clinician index still matches the corpus
 ```
 
 The literature archive lives **outside** the repository at `~/.catmed-archive`.
@@ -143,5 +144,7 @@ not present that prompt to cat owners.
 | `tools/` | archive, checkers, site builder, agent export |
 | `.claude/agents/` | agent definitions (source of truth) |
 | `agents/` | generated portable prompts |
+| `knowledge-base/README.md` | generated index for clinicians — start here if you are a vet |
+| `.github/ISSUE_TEMPLATE/` | challenge a figure · clinical review · propose coverage |
 
 Published site: **https://polyketide.github.io/catmed/**

@@ -69,7 +69,7 @@ SKIP_DIRS = {".git", "__pycache__", ".venv", "node_modules"}
 # Every check name. load_exceptions() derives its accepted keys from this, so a
 # new check cannot ship with a suppression hatch that silently does nothing.
 CHECK_NAMES = ("orphans", "empty-blocks", "coverage", "stale-pdf",
-               "agents-sync", "pii")
+               "agents-sync", "kb-index", "pii")
 
 
 def load_exceptions() -> dict[str, set[str]]:
@@ -223,7 +223,10 @@ def check_coverage(exc: set[str]) -> list[str]:
         return []
     text = AGENT.read_text(encoding="utf-8")
     listed = set(re.findall(r"`([a-z0-9-]+\.md)`", text))
-    actual = {f.name for f in sorted(KB.glob("*.md"))}
+    # README.md is the generated clinician index, not a knowledge file. It names
+    # no condition and carries no excerpts, so requiring the agent to list it as
+    # a covered topic would be asking the agent to claim coverage of an index.
+    actual = {f.name for f in sorted(KB.glob("*.md"))} - {"README.md"}
     problems = []
     for name in sorted(actual - listed):
         if name in exc:
@@ -292,6 +295,28 @@ def check_stale_pdf(exc: set[str]) -> list[str]:
     return problems
 
 
+def _run_generator(script: str, label: str) -> list[str]:
+    """Run a generator's --check mode and surface its complaint verbatim."""
+    import subprocess
+    try:
+        r = subprocess.run([sys.executable, str(REPO / "tools" / script), "--check"],
+                           cwd=REPO, capture_output=True, text=True)
+    except OSError as exc_:
+        return [f"could not run {script} ({exc_})"]
+    if r.returncode == 0:
+        return []
+    return [l for l in (r.stdout + r.stderr).splitlines() if l.strip()]
+
+
+def check_kb_index(exc: set[str]) -> list[str]:
+    """knowledge-base/README.md drifted from the corpus it indexes.
+
+    It is the entry point a clinician meets first, and it states each file's
+    paper and excerpt counts. A stale index misreports the size of the evidence
+    base to exactly the readers most likely to check."""
+    return _run_generator("build_kb_index.py", "kb-index")
+
+
 def check_agents_sync(exc: set[str]) -> list[str]:
     """Portable agent prompts drifted from their Claude source.
 
@@ -316,6 +341,7 @@ CHECKS = {
     "coverage": lambda e: check_coverage(e.get("coverage", set())),
     "stale-pdf": lambda e: check_stale_pdf(e.get("stale-pdf", set())),
     "agents-sync": lambda e: check_agents_sync(e.get("agents-sync", set())),
+    "kb-index": lambda e: check_kb_index(e.get("kb-index", set())),
     "pii": lambda e: check_pii(e.get("pii", set())),
 }
 

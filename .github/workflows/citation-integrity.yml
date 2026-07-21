@@ -51,6 +51,14 @@ jobs:
         # already shipped real bugs. Runs offline, no archive needed.
         run: python3 tools/test_tools.py
 
+      - name: Generated artifacts still match their sources
+        # Portable agent prompts and the clinician index are generated. Two
+        # copies of anything drift; a drifted OWNER-FACING prompt is the
+        # dangerous kind, since a non-Claude host would run older safety rules.
+        run: |
+          python3 tools/export_agents.py --check
+          python3 tools/build_kb_index.py --check
+
       - name: Knowledge-base hygiene
         # Orphaned citations, excerpt blocks with no source text, and a generic
         # secret/PII sweep. Each of these was a real defect found by hand after
