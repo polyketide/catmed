@@ -69,7 +69,7 @@ SKIP_DIRS = {".git", "__pycache__", ".venv", "node_modules"}
 # Every check name. load_exceptions() derives its accepted keys from this, so a
 # new check cannot ship with a suppression hatch that silently does nothing.
 CHECK_NAMES = ("orphans", "empty-blocks", "coverage", "stale-pdf",
-               "agents-sync", "kb-index", "pii")
+               "stale-translation", "agents-sync", "kb-index", "pii")
 
 
 def load_exceptions() -> dict[str, set[str]]:
@@ -77,13 +77,29 @@ def load_exceptions() -> dict[str, set[str]]:
 
         - orphans: 17552367 — a wrong PMID retained as evidence of the typo
 
-    The reason after the em dash is for humans; this only needs check and id."""
-    out: dict[str, set[str]] = {"orphans": set(), "empty-blocks": set(), "coverage": set(), "pii": set()}
+    The reason after the em dash is for humans; this only needs check and id.
+
+    ⚠️ **Keys are derived from CHECK_NAMES, never hand-listed, and this function
+    is the reason that rule exists.** Both the key dict and the regex were once
+    typed out by hand, and every check added after that shipped with a
+    suppression hatch that silently did nothing: a `- stale-pdf: ...` line
+    parsed to nothing at all, while the check's own failure message instructed
+    the user to write exactly that. CI would have stayed red with no legitimate
+    way to accept a finding, and the refusal would have looked like the tool
+    being right.
+
+    That was reported as fixed on 2026-07-21 and **was not** — the edit did not
+    apply, the claim went into a commit message unverified, and three further
+    checks (`agents-sync`, `kb-index`, `stale-translation`) inherited the same
+    dead hatch. Caught by testing the suppression path of a new check rather
+    than only its detection path. **Test the escape hatch, not just the alarm.**
+    """
+    out: dict[str, set[str]] = {name: set() for name in CHECK_NAMES}
     if not EXCEPTIONS.exists():
         return out
     for line in EXCEPTIONS.read_text(encoding="utf-8").splitlines():
-        m = re.match(r"-\s*(orphans|empty-blocks|coverage|pii):\s*(\S+)", line.strip())
-        if m:
+        m = re.match(r"-\s*([a-z][a-z-]*):\s*(\S+)", line.strip())
+        if m and m.group(1) in out:
             out[m.group(1)].add(m.group(2))
     return out
 
@@ -252,6 +268,81 @@ def check_coverage(exc: set[str]) -> list[str]:
     return problems
 
 
+def last_commit(path: Path) -> int | None:
+    """Git commit time of a path, or None if never committed.
+
+    Deliberately git, not the filesystem: a fresh clone rewrites every mtime, so
+    an mtime comparison would pass vacuously everywhere except the machine the
+    files were last edited on — the opposite of what a check is for."""
+    import subprocess
+    try:
+        out = subprocess.run(
+            ["git", "log", "-1", "--format=%ct", "--", str(path.relative_to(REPO))],
+            cwd=REPO, check=True, capture_output=True, text=True).stdout.strip()
+        return int(out) if out else None
+    except (OSError, subprocess.CalledProcessError, ValueError):
+        return None
+
+
+TRANSLATION = re.compile(r"^(?P<stem>.+)\.(?P<lang>[a-z]{2}(?:-[A-Z]{2})?)\.md$")
+
+
+def translation_pairs() -> list[tuple[Path, Path, str]]:
+    """[(original, translation, lang)] for files that are genuinely translations.
+
+    A `*.zh.md` file is only a translation when `*.md` also exists. The four
+    owner guides are Chinese ORIGINALS with no English counterpart, and treating
+    them as translations of a non-existent source would fire on every commit —
+    a check that cries wolf is a check people learn to ignore."""
+    out = []
+    for d in ("knowledge-base", "guides"):
+        for f in sorted((REPO / d).glob("*.*.md")):
+            m = TRANSLATION.match(f.name)
+            if not m:
+                continue
+            orig = f.with_name(m.group("stem") + ".md")
+            if orig.exists():
+                out.append((orig, f, m.group("lang")))
+    return out
+
+
+def check_stale_translation(exc: set[str]) -> list[str]:
+    """A translation older than the original it renders.
+
+    Added 2026-07-21 BEFORE the second language rather than after, on the
+    reasoning in `docs/LITERATURE-PIPELINE-SOP.md` §11: this is cheap to add at
+    two languages and a matrix-wide retrofit at three.
+
+    **What goes stale is the prose, and only the prose.** The `## 原文摘录`
+    section is byte-identical across languages and Leg 1 already checks every
+    copy of it — so a stale translation never carries a wrong quotation. It
+    carries something subtler: an interpretation the English original has since
+    corrected. This repository has already corrected a mechanism claim that
+    contradicted its own source, and withdrawn a figure that turned out to be
+    unattributable. A translation frozen before either of those would still be
+    stating them, in a language whose readers cannot compare against the
+    original — which is exactly the audience with no way to notice.
+
+    Same family as `stale-pdf`: a derived artifact that does not update itself."""
+    problems = []
+    for orig, trans, lang in translation_pairs():
+        if trans.name in exc:
+            continue
+        t_o, t_t = last_commit(orig), last_commit(trans)
+        if t_o is None or t_t is None:
+            continue                      # uncommitted; nothing to compare yet
+        if t_o > t_t:
+            mins = (t_o - t_t) // 60
+            problems.append(
+                f"{trans.name} is {mins} min older than {orig.name}. The prose "
+                f"may now state something the original has corrected, and its "
+                f"readers are the ones who cannot check against the original. "
+                f"Re-translate the changed sections (excerpts stay byte-identical "
+                f"— never re-translate those), or add it to docs/kb-exceptions.md "
+                f"with a reason.")
+    return problems
+
+
 def check_stale_pdf(exc: set[str]) -> list[str]:
     """A committed PDF older than the Markdown it renders.
 
@@ -271,17 +362,6 @@ def check_stale_pdf(exc: set[str]) -> list[str]:
     every mtime, so mtime would make this check pass vacuously everywhere except
     the maintainer's own machine — which is the opposite of what a check is for.
     """
-    import subprocess
-
-    def last_commit(path: Path) -> int | None:
-        try:
-            out = subprocess.run(
-                ["git", "log", "-1", "--format=%ct", "--", str(path.relative_to(REPO))],
-                cwd=REPO, check=True, capture_output=True, text=True).stdout.strip()
-            return int(out) if out else None
-        except (OSError, subprocess.CalledProcessError, ValueError):
-            return None
-
     problems = []
     for md in sorted((REPO / "guides").glob("*.md")):
         pdf = md.with_suffix(".pdf")
@@ -345,6 +425,7 @@ CHECKS = {
     "empty-blocks": lambda e: check_empty_blocks(e["empty-blocks"]),
     "coverage": lambda e: check_coverage(e.get("coverage", set())),
     "stale-pdf": lambda e: check_stale_pdf(e.get("stale-pdf", set())),
+    "stale-translation": lambda e: check_stale_translation(e.get("stale-translation", set())),
     "agents-sync": lambda e: check_agents_sync(e.get("agents-sync", set())),
     "kb-index": lambda e: check_kb_index(e.get("kb-index", set())),
     "pii": lambda e: check_pii(e.get("pii", set())),

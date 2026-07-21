@@ -497,7 +497,17 @@ The pattern is settled and was tested by the first translation, so this is not a
 
 **Provisional order, to be revised when there is evidence about actual readers:** emergency guide → the disease guide for whichever condition that audience asks about most → clinician index → individual notes only on request.
 
-⚠️ **A translation is a claim about the source, and it decays the same way.** When an English file changes, every translation of it is stale and nothing currently detects that. **Before adding a second language, add a `stale-translation` check** modelled on `stale-pdf` — compare git commit times of `<name>.md` against `<name>.<lang>.md`. Doing it at two languages is cheap; doing it at three is a retrofit across a matrix.
+✅ **`stale-translation` was added 2026-07-21, before the second language rather than after.** It pairs `<name>.<lang>.md` with `<name>.md` by git commit time. Note what it deliberately does **not** flag: the four owner guides are Chinese *originals* with no English counterpart, and a check that fires on every commit is one people learn to ignore.
+
+**What actually goes stale is the prose, and only the prose.** `## 原文摘录` is byte-identical across languages and Leg 1 already checks every copy, so a stale translation never carries a wrong quotation. It carries something subtler: **an interpretation the original has since corrected** — and this repository has already corrected a mechanism claim that contradicted its own source, and withdrawn a figure that turned out to be unattributable. A translation frozen before either would still be stating them, **to the readers least able to notice**, since they are reading that language precisely because they cannot check the original.
+
+### ⚠️ And adding it exposed that four suppression hatches were dead
+
+Testing the new check's **escape hatch** — not only its alarm — showed that `- stale-translation: ...` in `kb-exceptions.md` parsed to nothing. So did `stale-pdf`, `agents-sync` and `kb-index`. `load_exceptions()` hand-listed its accepted keys, so every check added after that line was written shipped with a documented override that silently did nothing, while each check's own failure message instructed the user to write exactly that line.
+
+**This had been reported as fixed the previous day and was not.** The edit did not apply, and the claim went into a commit message unverified — a self-inflicted instance of §9a's own rule that a status claim decays and must be re-checked against the thing it describes. Now derived from `CHECK_NAMES`, with a test asserting every check name parses.
+
+**Rule: when adding a check, test the suppression path, not only the detection path.** A detector that cannot be overridden is one nobody can live with, and its refusal looks identical to the tool being right.
 
 ## 10. ⭐ How professional critique enters — including when it has no citation
 

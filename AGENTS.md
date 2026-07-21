@@ -84,6 +84,9 @@ disposable and checks excerpts against what PubMed serves *today*.
 - **Generated, never typed.** Reference lists, portable prompts and the site are
   produced by scripts from verified sources. Three of seven hand-typed reference
   entries were once wrong.
+- **Re-translate when you edit an original.** `stale-translation` pairs
+  `<name>.<lang>.md` with `<name>.md` by commit time. Excerpts stay
+  byte-identical — never re-translate those; only the prose goes stale.
 - **Rebuild the PDF when you edit a guide.** `check_kb_hygiene.py stale-pdf`
   enforces it. The PDF is the artifact owners download and forward, and it does
   not update itself.

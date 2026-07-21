@@ -332,22 +332,20 @@ class TestLoadExceptions(Fixture):
         """Catches a checker that dies on a repo with no exceptions file yet."""
         with _patched(hygiene, EXCEPTIONS=self.dir / "does-not-exist.md"):
             exc = hygiene.load_exceptions()
-        self.assertEqual(set(exc), {"orphans", "empty-blocks", "coverage", "pii"})
+        # Derived, not hard-coded: a literal set here would have to be edited
+        # every time a check is added, and the version that was hard-coded is
+        # what let four checks ship with dead suppression hatches.
+        self.assertEqual(set(exc), set(hygiene.CHECK_NAMES))
         self.assertTrue(all(v == set() for v in exc.values()))
 
-    def test_stale_pdf_exceptions_are_not_parseable(self):
-        """DOCUMENTS A DEFECT, does not endorse it — see the report for this suite.
-
-        `check_stale_pdf()` tells the user to 'add it to docs/kb-exceptions.md
-        with a reason', but load_exceptions()'s regex accepts only orphans /
-        empty-blocks / coverage / pii, and CHECKS looks the key up with
-        `exc.get("stale-pdf", set())`. So a `- stale-pdf: ...` line parses to
-        nothing and the suppression silently does not work.
-
-        If this test starts failing, the defect was fixed: delete the test."""
+    def test_stale_pdf_exception_actually_suppresses(self):
+        """REGRESSION, fixed 2026-07-21. This test previously asserted the
+        OPPOSITE — it documented that a `- stale-pdf:` line parsed to nothing
+        while check_stale_pdf's own failure message instructed users to write
+        exactly that. The hatch is now real; the assertion is inverted to keep
+        it that way."""
         exc = self._load("- stale-pdf: feline-ckd-owner-guide.zh.md — rebuilt next release\n")
-        self.assertNotIn("stale-pdf", exc)
-        self.assertTrue(all(v == set() for v in exc.values()))
+        self.assertEqual(exc["stale-pdf"], {"feline-ckd-owner-guide.zh.md"})
 
 
 # =============================================================================
@@ -572,6 +570,54 @@ class TestPage(Fixture):
     def test_navbar_present_by_default(self):
         """Catches content pages losing their route back to the index."""
         self.assertIn('href="index.html"', build_site.page("T", "<p>body</p>"))
+
+
+class TranslationPairs(unittest.TestCase):
+    """stale-translation: pairing logic and, critically, the suppression path."""
+
+    def test_zh_without_english_original_is_not_a_translation(self):
+        """Catches firing on the four owner guides, which are Chinese ORIGINALS.
+        A check that cries wolf on every commit is one people learn to ignore."""
+        names = [p.name for p in Path(hygiene.REPO, "guides").glob("*.zh.md")]
+        self.assertTrue(names, "expected Chinese owner guides to exist")
+        pairs = {t.name for _, t, _ in hygiene.translation_pairs()}
+        for n in names:
+            if not Path(hygiene.REPO, "guides", n[:-6] + ".md").exists():
+                self.assertNotIn(n, pairs,
+                                 f"{n} has no English original and must not be paired")
+
+    def test_pairs_require_the_original_to_exist(self):
+        """Every reported pair must have both halves on disk."""
+        for orig, trans, lang in hygiene.translation_pairs():
+            self.assertTrue(orig.exists() and trans.exists())
+            self.assertEqual(len(lang.split("-")[0]), 2)
+
+    def test_every_check_name_has_a_working_exception_key(self):
+        """REGRESSION, 2026-07-21. load_exceptions() hand-listed its keys, so
+        stale-pdf / agents-sync / kb-index / stale-translation all shipped with
+        a suppression hatch that parsed to nothing while their own failure
+        messages told users to write exactly that line. Reported fixed once
+        before it actually was. Test the escape hatch, not just the alarm."""
+        parsed = hygiene.load_exceptions()
+        for name in hygiene.CHECK_NAMES:
+            self.assertIn(name, parsed,
+                          f"{name} has no exception key; its documented "
+                          f"suppression would silently do nothing")
+
+    def test_exception_line_for_a_new_check_actually_parses(self):
+        """The end-to-end escape hatch, not just the key's presence."""
+        with tempfile.TemporaryDirectory() as d:
+            f = Path(d, "exc.md")
+            f.write_text("- stale-translation: foo.zh.md — because\n"
+                         "- not-a-real-check: bar — ignored\n", encoding="utf-8")
+            orig = hygiene.EXCEPTIONS
+            try:
+                hygiene.EXCEPTIONS = f
+                got = hygiene.load_exceptions()
+            finally:
+                hygiene.EXCEPTIONS = orig
+            self.assertEqual(got["stale-translation"], {"foo.zh.md"})
+            self.assertNotIn("not-a-real-check", got)
 
 
 if __name__ == "__main__":
