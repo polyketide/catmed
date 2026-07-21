@@ -1,6 +1,10 @@
 # Literature Pipeline SOP — offloading retrieval to a local node
 
-> Status: **design agreed 2026-07-20, not yet built.** Nothing here has been run. Treat every section as a specification to implement and verify, not as a description of working behaviour.
+> Status: **built and running, as of 2026-07-21.** Leg 1, the self-test, the hygiene checks, the generated-artifact checks and the unit tests all execute in CI on every push — from an empty archive, so the rebuild claim is re-proved each time rather than asserted.
+>
+> ⚠️ **This line read "design agreed, not yet built. Nothing here has been run." until 2026-07-21** — one day after the pipeline started passing in CI on someone else's hardware. A reader who trusted the header would have concluded that none of it worked. **A status header is a claim and it decays faster than anything else in a document**, because it is written once, at the moment of least knowledge, and never sits next to the thing it describes. It belongs in the same category as the counts in §1: state it, date it, and re-check it when the section under it changes.
+>
+> Sections still marked as unbuilt in their own text — the GPU-node offload of §2 and §6 — remain designs. **Everything else here describes behaviour that runs.**
 > Companion document: `.claude/agents/medical.md` §C, which states the rules binding the agent's own behaviour. This file covers engineering and operations.
 >
 > **Provenance of what follows.** Directly verified by reading the files: the hardware ceiling and model tiers, the existence of the sibling project's reading loop and its still-growing library index, and the presence of its node SOPs. **Reported by a survey subagent and not independently confirmed**: the internal structure of that reading loop (its stage breakdown, deduplication strategy, retry behaviour, and offline-digest mode) and the contents of the sibling project's error-handling SOPs. Those informed the patterns below and are believed accurate, but per this project's own rule that a report is a source rather than a fact, **read the originals before depending on any specific detail.**
@@ -412,6 +416,60 @@ The traceability defect was first written down as *"the guide bodies carry no in
 The claim had been made by grepping for `PMID` and finding none. **Absence of the expected representation was reported as absence of the thing.** That is the same shape as the monolingual checker in §3e and the per-file orphan rule in `check_kb_hygiene.py` — and it is worth noticing that it happened *while writing up those very lessons*.
 
 **The rule, since three instances is a pattern: when you find nothing, verify you searched for every form the thing takes before concluding it is not there.** The finding survived — 94% unattributed is still the defect — but its first statement was wrong in degree, and the correction is recorded in `docs/kb-exceptions.md` rather than quietly edited away.
+
+## 9a. ⭐ Read your own repository as a stranger, and test instead of theorising
+
+Established 2026-07-21. Everything in this section was found in one pass by asking a single question — *what would worry me if I met this repository for the first time?* — and then **actually walking the paths** rather than imagining them: running the newcomer's first command, invoking the owner agent on a live scenario, fetching the published pages, comparing commit times.
+
+**Four of the six findings were invisible from the inside**, and all four were about the boundary between this project and someone else — the artifact that leaves, the reader who arrives, the platform that hosts, the contributor who has no context.
+
+### 9a.1 ⚠️ The artifact that leaves your control is the one to verify hardest
+
+Every check here read Markdown. **The PDF — the thing an owner downloads, prints and forwards — had no verification at all**, and both lymphoma PDFs were about a day behind their sources.
+
+The gap was not cosmetic. Those sources had since gained 62 inline PMIDs and an 出处待核 flag on a survival figure traceable to no source. **The stale PDFs still presented that figure as authoritative.** A file in the repository can be corrected; a PDF already sitting in someone's downloads folder cannot.
+
+**Rule: rank verification effort by how far an artifact travels and how badly it updates, not by how easy it is to check.** `check_kb_hygiene.py stale-pdf` now enforces it, comparing **git commit times, not filesystem mtimes** — a fresh clone rewrites every mtime, so an mtime check would pass vacuously everywhere except the maintainer's own machine, which is the opposite of what a check is for.
+
+### 9a.2 ⚠️ An escape hatch that does not work is worse than none
+
+The new `stale-pdf` check told users to add a suppression to `docs/kb-exceptions.md`. **`load_exceptions()`'s hand-listed regex did not accept that name**, so the documented override parsed to nothing. Same defect for `pii`: exceptions were parsed and then discarded by a lambda that ignored its argument.
+
+**CI would have stayed red with no legitimate way to accept a finding — and the refusal would have looked like the tool being right.** Found by the unit tests written the same afternoon, not by use.
+
+**Rule: derive an override's accepted keys from the check registry, never hand-list them.** And when adding a check, test its suppression path, not only its detection path — a detector that cannot be overridden is a detector nobody can live with.
+
+### 9a.3 ⚠️ Test a port by removing the enforcement, not by installing the platform
+
+The agent definitions were exported for Codex, Cursor and others. The obvious test — run Codex — was unavailable, and would have been the **wrong test anyway**: it answers "can the platform read Markdown" (it can) rather than the question that matters.
+
+The owner agent's safety property is its **tool list**, and `AGENTS.md` is prose — the exact form that failed twice (§3f). So the real question is: *does the prompt hold when the enforcement is gone?* That is testable on any platform. The exported prompt was given to an agent with a **full toolset including web search** and asked the class of question that broke the prose version — dosing and treatment for a condition the corpus does not cover.
+
+It held: emergency screen first, all clinical questions declined, no web search, and it correctly surfaced the epidemiology that *is* covered while quoting that file's own unverified-assertion flag.
+
+**The host requirement was not weakened, and the result is recorded with its limits: n=1, one model, one phrasing, and this prompt is materially stronger than the version that failed.** In a component whose failure mode is a delayed veterinary visit, **one pass does not establish reliability** — it establishes that the next test is worth running.
+
+**Rule: when porting a safeguard, identify what enforced it, remove that, and test what remains. Ship the port with a stated host requirement, not with an assumption of equivalence.**
+
+### 9a.4 ⚠️ An agent's output is a publication surface
+
+Asked a live owner question, the triage agent ended its reply with the maintainer's full home directory. Useless to an owner — they are not on that machine — and it **walks around the named-entity screen entirely**, since that screen reads commits, not chat output.
+
+**Rule: forbid absolute paths in agent replies explicitly.** Tools return them; a model will pass them through unless told not to. Privacy discipline applied only to committed files has a hole exactly the width of the chat window.
+
+### 9a.5 A second audience needs an entry point, and it should lead with the gaps
+
+Clinicians were already served — English notes, three issue templates, §10 on citation-free clinical experience — but **eleven files had no index.** A vet asking "what does this cover, and what does it admit it cannot answer" had to open them one by one.
+
+`knowledge-base/README.md` is now generated by `tools/build_kb_index.py`, and it **leads with each file's stated gaps**. For a clinical reader those are the most useful column: the places where their knowledge outweighs anything written here, and the shortest route to a correctable claim. `CITATION.cff` closes the other gap, and says the thing that matters — **to cite a clinical figure, cite the underlying paper, not this repository.**
+
+**Rule: an index of an active corpus is generated and gated, never hand-maintained.** Both `kb-index` and `agents-sync` run in CI; a typed index of a corpus this active is wrong within a week, and it is wrong in the direction of overstating coverage.
+
+### 9a.6 The checker was wrong before the repository was
+
+`check_coverage` flagged the new generated index as a knowledge-base file the agent had failed to declare coverage for. **An index names no condition**, so the correct response was to fix the check, not to bend the repository around it.
+
+**Rule: when a check fires on something you just added, decide which of the two is wrong before making the light go green.** The tempting fix — a suppression line — would have left a false rule in place for every future generated file.
 
 ## 10. ⭐ How professional critique enters — including when it has no citation
 
