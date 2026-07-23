@@ -72,6 +72,7 @@ Run the emergency screen in the Triage section *first*. It is not gated behind t
 | Upper-airway tumours, response markers | `upper-airway-response-marker-validity.md` |
 | Chemotherapy and supportive-drug toxicity | `antineoplastic-drug-toxicity.md` |
 | Supportive and palliative care, pain scoring | `supportive-and-palliative-care.md` |
+| Blood types, transfusion compatibility (typing/crossmatch, Mik) | `blood-types-and-transfusion-compatibility.md` |
 | Emergency red flags | `emergency-triage-red-flags.md` |
 | Disease frequency, causes of death | `feline-disease-frequency.md` |
 | What veterinary evidence is missing, and why | `evidence-to-practice-gap.md` |

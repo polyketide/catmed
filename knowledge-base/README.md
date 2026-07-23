@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**11 files, 144 papers, 546 verbatim excerpts**, every one
+**12 files, 150 papers, 562 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -34,6 +34,7 @@ more than anything written here.
 | File | Papers | Excerpts |
 |---|---|---|
 | [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md) | 1 | 10 |
+| [`blood-types-and-transfusion-compatibility.md`](blood-types-and-transfusion-compatibility.md) | 6 | 16 |
 | [`chronic-kidney-disease.md`](chronic-kidney-disease.md) | 11 | 46 |
 | [`emergency-triage-red-flags.md`](emergency-triage-red-flags.md) | 21 | 85 |
 | [`evidence-to-practice-gap.md`](evidence-to-practice-gap.md) | 3 | 27 |
@@ -52,6 +53,12 @@ more than anything written here.
 **Toxicity Profiles of Antineoplastic and Supportive Drugs in Cats (veterinary knowledge base)**
 
 *1 papers, 10 verbatim excerpts.*
+
+### [`blood-types-and-transfusion-compatibility.md`](blood-types-and-transfusion-compatibility.md)
+
+**Feline Blood Types and Transfusion Compatibility — why an untyped transfusion can kill on the first unit**
+
+*6 papers, 16 verbatim excerpts.*
 
 ### [`chronic-kidney-disease.md`](chronic-kidney-disease.md)
 
