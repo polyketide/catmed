@@ -62,6 +62,7 @@ tools/                                 # citation-integrity, checking and render
   ├── fetch_fulltext.py
   ├── screen.py
   ├── render_markdown.py
+  ├── lab_reference_plot.py            # radar + position bars: labs vs reference range (data stays local)
   └── test_tools.py                    # unit tests for the checkers themselves
 ```
 
