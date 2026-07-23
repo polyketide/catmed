@@ -164,7 +164,7 @@ A **7-year-old neutered male dog with dysphonia and laryngeal obstruction** beca
 > **∴ The transport for every recheck, CT or biopsy must be entered into the decision as an independent lethal risk item, not treated as a neutral preliminary step.**
 
 ### 4.4 Mechanism: the vicious circle of heat
-Heat dissipation depends on driving airflow across the upper respiratory tract, with the principal heat exchange occurring at the **nasal epithelium** (PMID 16675613) — and that is exactly the segment which is obstructed. Cats begin to recruit panting at **30 °C, and more than half are panting at 35 °C** (Amini-Sereshki 1988; ⚠️ borrowed control data from healthy laboratory cats).
+Heat dissipation depends on driving airflow across the upper respiratory tract, with the principal heat exchange occurring at the **nasal epithelium** (PMID 16675613) — and that is exactly the segment which is obstructed. Cats begin to recruit panting at **30 °C, and more than half are panting at 35 °C** (Amini-Sereshki 1988, PMID 3401724; ⚠️ borrowed control data from healthy laboratory cats in paradoxical sleep).
 ⚠️ The mechanism is sound but **there is no direct empirical closure**; "increased activity after improvement precipitating a crisis" is **nowhere directly documented** in the literature. It is an **inference** synthesised from two verified facts, and must not be presented as "proven by the literature".
 
 ### 4.5 ⚠️ Steroid tapering: the peak of rebound laryngeal oedema is about **1 week after discontinuation**
@@ -291,6 +291,7 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 - Attali-Soussay K, et al. Retrobulbar tumors in dogs and cats: 25 cases. *Vet Ophthalmol* 2001;4(1):19-27. PMID 11397315. [DOI](https://doi.org/10.1046/j.1463-5224.2001.00123.x)
 - Gupta R, et al. Chronic nerve compression induces local demyelination and remyelination in a rat model of carpal tunnel syndrome. *Exp Neurol* 2004;187(2):500-8. PMID 15144876. [DOI](https://doi.org/10.1016/j.expneurol.2004.02.009)
 - Robertshaw D. Mechanisms for the control of respiratory evaporative heat loss in panting animals. *J Appl Physiol (1985)* 2006;101(2):664-8. PMID 16675613. [DOI](https://doi.org/10.1152/japplphysiol.01380.2005)
+- Amini-Sereshki L, Morrison AR. Release of heat-loss responses in paradoxical sleep by thermal loads and by pontine tegmental lesions in cats. *Brain Res* 1988;450(1-2):9-17. PMID 3401724. [DOI](https://doi.org/10.1016/0006-8993(88)91539-9)
 - Fidan H, et al. Oedema risk of endotracheal intubation in rabbits with cessation of steroid therapy. *Tuberk Toraks* 2008;56(4):414-21. PMID 19123077.
 - Hardie RJ, et al. Arytenoid lateralization for treatment of laryngeal paralysis in 10 cats. *Vet Surg* 2009;38(4):445-51. PMID 19538664. [DOI](https://doi.org/10.1111/j.1532-950X.2009.00547.x)
 - Thunberg B, Lantz GC. Evaluation of unilateral arytenoid lateralization for the treatment of laryngeal paralysis in 14 cats. *J Am Anim Hosp Assoc* 2010;46(6):418-24. PMID 21041335. [DOI](https://doi.org/10.5326/0460418)
@@ -352,7 +353,11 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 > Panting is a controlled increase in respiratory frequency accompanied by a decrease in tidal volume, the purpose of which is to increase ventilation of the upper respiratory tract, preserve alveolar ventilation, and thereby elevate evaporative heat loss.
 > The panting mechanism tends to be important in smaller mammalian species and in larger species is supplemented by sweating.
 > ⚠️ Excerpts added 2026-07-20. This block previously held **only a flag and no source text at all**, while the body cited it for the nasal-epithelium mechanism — so the claim had a citation and no evidence behind it. The first sentence above is that claim's actual support.
-> ⚠️ **FLAG CORRECTED, not cleared, 2026-07-20.** The figures `30, 35` were flagged against this paper. They do not belong to it: the body sentence cites Robertshaw for the *nasal epithelium* heat-exchange mechanism, and attributes the panting thresholds (30 °C, 35 °C) to **Amini-Sereshki 1988**. But unlike the other misattributions resolved today, correcting the name does not clear the gap — **Amini-Sereshki 1988 has no excerpt block anywhere in this file and was never archived**, so those two figures remain genuinely unverified, now under the right paper. `1985, 1988` are citation years. **This is the one flag of the eight examined today that survived checking.**
+> ⚠️ **FLAG CLEARED, 2026-07-23.** The panting thresholds 30 °C / 35 °C were flagged against Robertshaw, then correctly re-attributed to **Amini-Sereshki 1988** on 2026-07-20 — but that paper had no excerpt block and was never archived, so it was the one flag of eight that survived. It is now archived (PMID 3401724) and excerpted directly below, and the body figures match it: panting in 8% of episodes at 30 °C, more than half (52%) at 35 °C. `1985, 1988` remain citation years, not data.
+
+**PMID 3401724** · Amini-Sereshki L 1988 (cat thermoregulation — healthy laboratory cats)
+> In intact cats at 30 degrees C, panting occurred in 8% of the PS episodes; at 35 degrees C, in 52%, and at 40 degrees C, in 77%.
+> ⚠️ Healthy laboratory cats; "PS" = paradoxical (REM) sleep, so the percentages are of paradoxical-sleep episodes at each ambient temperature, not a clinical panting threshold. Cited in the body only as borrowed control data for the ambient temperature at which normal cats begin to pant (30 °C) and at which more than half pant (35 °C).
 
 **PMID 19123077** · Fidan H 2008
 > Thirty-six rabbits were randomly divided into six groups.

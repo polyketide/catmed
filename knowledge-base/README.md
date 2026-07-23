@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**11 files, 142 papers, 542 verbatim excerpts**, every one
+**11 files, 144 papers, 546 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -39,11 +39,11 @@ more than anything written here.
 | [`evidence-to-practice-gap.md`](evidence-to-practice-gap.md) | 3 | 27 |
 | [`feline-disease-frequency.md`](feline-disease-frequency.md) | 7 | 28 |
 | [`feline-hypertension.md`](feline-hypertension.md) | 5 | 47 |
-| [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md) | 53 | 171 |
+| [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md) | 54 | 174 |
 | [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md) | 3 | 16 |
 | [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md) | 11 | 28 |
 | [`targeted-and-immunotherapy-evidence.md`](targeted-and-immunotherapy-evidence.md) | 1 | 4 |
-| [`upper-airway-response-marker-validity.md`](upper-airway-response-marker-validity.md) | 26 | 80 |
+| [`upper-airway-response-marker-validity.md`](upper-airway-response-marker-validity.md) | 27 | 81 |
 
 ## The files
 
@@ -101,7 +101,7 @@ hypertension is the third member of the older-cat triad alongside chronic kidney
 
 **Feline Oncology: A Panoramic Survey of Recent Literature (veterinary knowledge base)**
 
-*53 papers, 171 verbatim excerpts.*
+*54 papers, 174 verbatim excerpts.*
 
 ### [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md)
 
@@ -129,7 +129,7 @@ these are the two commonest chronic diseases of older cats, they occur together,
 
 **Feline Upper-Airway Tumours: Validity of Response Markers, and the Recovery Kinetics of Voice Loss and Nictitating Membrane Protrusion**
 
-*26 papers, 80 verbatim excerpts.*
+*27 papers, 81 verbatim excerpts.*
 
 > ⚠️ **Stated gap:** The independent effect of humidity (no search returned quantitative data)
 

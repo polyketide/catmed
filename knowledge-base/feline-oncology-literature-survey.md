@@ -27,8 +27,8 @@
   ⚠️ **Verified from the full text 2026-07-20, and the full text undercuts the screening reading of it.** The two distributions overlap almost entirely — lymphoma 50.00–2,825.40 µg/mL against control undetectable–536.20 — so **a single AGP value cannot classify an individual cat**, and a low result excludes nothing. What the data support is the *within-patient* use: a fall from that cat's own diagnostic value tracking treatment response. 16 lymphoma cats vs 25 controls, and the controls were much younger (median 3.0 vs 9.0 years), so age is not separated from disease here.
 - **Structured screening of older cats** is the most realistic form of "early detection" currently available: a 2-year cohort of 259 apparently healthy cats found **21% were already diseased at baseline**, with a **2-year cumulative incidence of new neoplasia of roughly 7%** (Mortier 2024, PMID 38967102); the **2021 AAFP Senior Care Guidelines** include neoplasia in the minimum database (PMID 34167339).
 - **Mammary tumours** have a high malignancy rate and progress quickly; early palpation and early excision (<3 cm) markedly improve prognosis.
-- **【emerging/unproven】**: feline cfDNA-NGS liquid biopsy is proof-of-concept only (2 lymphomas + 9 controls, Ruiz-Perez 2024, PMID 39346958); **circulating nucleosome Nu.Q has canine data only** (canine, extrapolated); there is no multi-cancer early-detection (MCED) product validated in cats.
-  ⚠️ **The Nu.Q clause carries no citation, found 2026-07-20.** The sentence cites Ruiz-Perez 2024 (PMID 39346958) for the cfDNA half; the Nu.Q half names no source, and Ruiz-Perez's abstract does not discuss Nu.Q. **This is an unsourced claim, and it is the awkward kind — a negative one.** "Canine data only" asserts an absence in the feline literature, which is exactly the class of statement this repository requires a documented search for rather than an assumption (see `emergency-triage-red-flags.md`, where open-mouth breathing is recorded as searched-for-and-not-found rather than simply absent). Until that search is run and recorded, treat the clause as **unverified**, not as an established gap.
+- **【emerging/unproven】**: feline cfDNA-NGS liquid biopsy is proof-of-concept only (2 lymphomas + 9 controls, Ruiz-Perez 2024, PMID 39346958); **circulating nucleosome (Nu.Q) has canine data only** — 528 dogs vs 134 healthy, sensitivity 49.8% at 97% specificity (Wilson-Robles 2022, PMID 36045415); no feline nucleosome/Nu.Q cancer study was found (see note). There is no multi-cancer early-detection (MCED) product validated in cats.
+  ✅ **Search run and recorded, 2026-07-23 (flag cleared).** The two halves of this sentence now each have a basis. Canine: Wilson-Robles 2022 (PMID 36045415), quoted below. Feline absence: PubMed was searched for `nucleosome/Nu.Q × cat/feline × cancer/neoplasia/biomarker` in several forms on 2026-07-23 and returned **no feline study** — so "canine data only" is now a documented-search negative, not an assumption, matching the standard this repository requires for absence claims (cf. `emergency-triage-red-flags.md`). It remains an absence in the *indexed* literature; a commercial feline assay could exist unpublished.
 
 ## 2. Advances in diagnostic technique
 
@@ -177,6 +177,7 @@
 - Wolfesberger B, et al. Immunophenotype investigation in feline intestinal non-B-cell lymphoma. *J Comp Pathol* 2024;212:20-26. PMID 38943798. [DOI](https://doi.org/10.1016/j.jcpa.2024.05.004)
 - Mortier F, et al. Value of repeated health screening in 259 apparently healthy mature adult and senior cats followed for 2 years. *J Vet Intern Med* 2024;38(4):2089-2098. PMID 38967102. [DOI](https://doi.org/10.1111/jvim.17138)
 - Ruiz-Perez CA, et al. Proof-of-concept evaluation of next-generation sequencing-based liquid biopsy for non-invasive cancer detection in cats. *Front Vet Sci* 2024;11:1394686. PMID 39346958. [DOI](https://doi.org/10.3389/fvets.2024.1394686)
+- Wilson-Robles HM, et al. Evaluation of plasma nucleosome concentrations in dogs with a variety of common cancers and in healthy dogs. *BMC Vet Res* 2022;18(1):329. PMID 36045415. [DOI](https://doi.org/10.1186/s12917-022-03429-8)
 - Pui Yung Anna L, et al. Use of Cyclophosphamide, Vincristine, Prednisolone and Vinblastine for the Treatment of Large Cell Lymphoma in Cats. *J Vet Intern Med* 2025;39(2):e70066. PMID 40119555. [DOI](https://doi.org/10.1111/jvim.70066)
 - Lai NA, et al. Comparison of outcomes in feline intermediate- to large-cell lymphoma treated with CMOP (cyclophosphamide, mitoxantrone, vincristine and prednisolone) instead of CHOP (cyclophosphamide, doxorubicin, vincristine and prednisolone). *J Feline Med Surg* 2025;27(5):1098612X251335635. PMID 40443182. [DOI](https://doi.org/10.1177/1098612X251335635)
 - Biezus G, et al. Survival analysis and clinical abnormalities in cats with progressive or regressive feline leukemia virus (FeLV) infection in Brazil. *PLoS One* 2025;20(7):e0322691. PMID 40591622. [DOI](https://doi.org/10.1371/journal.pone.0322691)
@@ -474,7 +475,13 @@
 > Two cats with cytologically confirmed lymphoma and nine presumably cancer-free cats were included in this analysis.
 > Both cancer-diagnosed subjects had somatic copy number variants (a "cancer signal") identified in cell-free DNA, suggesting the current presence of cancer in these subjects.
 > This study lays the foundation for future studies to fully validate this type of testing for use in clinical practice.
-> ⚠️ Body claim's "Nu.Q canine-only" figure concerns a different assay/paper, not this PMID; not addressed in this abstract.
+> ⚠️ Body claim's "Nu.Q canine-only" figure concerns a different assay/paper (Wilson-Robles 2022, PMID 36045415, excerpted below), not this PMID; not addressed in this abstract.
+
+**PMID 36045415** · Wilson-Robles HM 2022 (canine — the source for "Nu.Q canine data only")
+> The nucleosome compartment is a relatively uninvestigated area of circulating tumor biomarkers in dogs.
+> The sensitivity of increased circulating nucleosome concentrations for the detection of cancer in all dogs was 49.8% with a specificity of 97% with an area under the curve of 68.74%.
+> A variety of tumor types may cause increased nucleosome concentrations in dogs.
+> ⚠️ Canine, 528 dogs vs 134 healthy. Cited only to source the "canine data only" clause; the feline half of that clause is a documented-search negative (no feline nucleosome/Nu.Q cancer study found on PubMed, 2026-07-23), not a figure from this paper.
 
 **PMID 39631169** · Cockey JR 2025
 > 6 healthy cats were used in this study.
