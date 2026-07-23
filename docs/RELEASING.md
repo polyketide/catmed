@@ -11,6 +11,38 @@ moves or disappears.
 
 ---
 
+## ⭐ First, decide whether you need a DOI at all — most of the time, not yet
+
+**A DOI is optional, and minting one is worth deferring until the project is
+stable.** This section exists because the DOI route is easy to treat as an
+obvious next step after `CITATION.cff`, and it is not one. Reasons to wait:
+
+1. **The `CITATION.cff` button already covers everyday citation, at zero risk.**
+   It is committed, it works now, and GitHub renders a "Cite this repository"
+   box from it. That is enough for most people who want to reference the project.
+2. **This project's real citation anchor is elsewhere.** The value here is that
+   every figure traces to a PubMed sentence — so the thing worth citing is the
+   *underlying paper*, and `CITATION.cff` says exactly that. A DOI only anchors
+   the integration layer, which is useful but rarely urgent.
+3. **A DOI is a permanent snapshot, and this corpus still changes often.**
+   Freezing a fast-moving tree gains little. Mint the first DOI when the project
+   has settled, or when an application or a citing author specifically asks for
+   one — not as a reflex.
+
+The permanence below is not a defect: it is the whole point of a DOI (a citation
+anchor a publisher cannot quietly retract). It is a reason to **time** the first
+release well, not a reason to avoid Zenodo. When that time comes, the rest of
+this document is the procedure.
+
+⚠️ **Note on the public-repo baseline.** Making a GitHub repository public
+already publishes irreversibly in practice — crawlers, forks and caches capture
+what you push, and a force-push only rewrites your own copy. Zenodo adds one more
+layer (you cannot rewrite even your copy), but it does not create the exposure
+from nothing. The privacy screen matters at *every* public push, not only at a
+release.
+
+---
+
 ## ⚠️ Read this before minting anything
 
 **A Zenodo deposit is permanent in a way a git commit is not.**

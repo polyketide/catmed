@@ -221,7 +221,7 @@ Roughly in order of usefulness:
 
 ## Releasing
 
-Tagging a release archives the tree to Zenodo and mints a DOI. **A Zenodo record is permanent in a way a git commit is not** — see [`docs/RELEASING.md`](docs/RELEASING.md), which is mostly about what to check before that becomes irreversible.
+**A DOI is optional, and usually worth deferring** until the project is stable — the `CITATION.cff` "Cite this repository" button already covers everyday citation at zero risk. When a release is actually wanted, tagging one archives the tree to Zenodo and mints a DOI, and **a Zenodo record is permanent in a way a git commit is not**. See [`docs/RELEASING.md`](docs/RELEASING.md) — it starts with how to decide whether you need a DOI at all, then covers what to check before it becomes irreversible.
 
 ## Licence
 
