@@ -39,21 +39,30 @@ knowledge-base/                        # analysis-facing notes (English, with ve
   ├── feline-oncology-literature-survey.md
   └── upper-airway-response-marker-validity.md
 guides/                                # owner-facing guides, Markdown + PDF (Chinese)
+  ├── feline-emergency-owner-guide.zh.{md,pdf}   # start-here triage — the top entry on the site
   ├── feline-ckd-owner-guide.zh.{md,pdf}         # every figure carries an inline PMID
   ├── feline-lymphoma-all-types-owner-guide.zh.{md,pdf}
   └── feline-nasal-lymphoma-owner-guide.zh.{md,pdf}
 docs/                                  # engineering SOPs — the methodology record
   ├── LITERATURE-PIPELINE-SOP.md       # every defect found, and the rule it produced
-  └── kb-exceptions.md                 # suppressed checks, each with a written reason
+  ├── kb-exceptions.md                 # suppressed checks, each with a written reason
+  ├── RELEASING.md                     # tagging, DOI, what to verify before it is irreversible
+  ├── PROJECT-PITCH.md
+  └── release-notes-v0.1.0.md
 tools/                                 # citation-integrity, checking and rendering
   ├── pubmed_archive.py                # fetch / verify the raw record archive
   ├── dr_drill.py                      # Leg 1: every excerpt vs its source, + self-test
   ├── check_kb_hygiene.py              # orphan citations, empty blocks, coverage drift
+  ├── build_kb_index.py                # regenerate the clinician index (knowledge-base/README*.md)
   ├── build_site.py                    # static site
+  ├── export_agents.py                 # regenerate the portable agent prompts from .claude/agents/
   ├── rebuild_references.py
-  ├── fetch_fulltext.py
+  ├── attribution_candidates.py
   ├── extract_source_excerpts.py
-  └── render_markdown.py
+  ├── fetch_fulltext.py
+  ├── screen.py
+  ├── render_markdown.py
+  └── test_tools.py                    # unit tests for the checkers themselves
 ```
 
 ---
