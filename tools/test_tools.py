@@ -620,5 +620,69 @@ class TranslationPairs(unittest.TestCase):
             self.assertNotIn("not-a-real-check", got)
 
 
+class TestDocsXref(Fixture):
+    """docs-xref: a filename referenced in docs/ that resolves to nothing.
+
+    Guards the one directory outside the corpus against pointing at a renamed or
+    deleted knowledge-base entry — the cross-reference rot no other check reaches."""
+
+    def _repo(self):
+        (self.dir / "docs").mkdir()
+        (self.dir / "knowledge-base").mkdir()
+        return _patched(hygiene, REPO=self.dir)
+
+    def test_valid_path_reference_passes(self):
+        """A `knowledge-base/x.md` pointer whose target exists must not fire."""
+        with self._repo():
+            (self.dir / "knowledge-base" / "real.md").write_text("x", encoding="utf-8")
+            (self.dir / "docs" / "sop.md").write_text(
+                "See `knowledge-base/real.md` for the evidence.", encoding="utf-8")
+            self.assertEqual(hygiene.check_docs_xref(set()), [])
+
+    def test_missing_path_reference_is_flagged(self):
+        """The whole reason the check exists: a renamed/deleted KB entry still
+        pointed at from docs/. If this starts passing on a real deletion, the
+        check has regressed."""
+        with self._repo():
+            (self.dir / "docs" / "sop.md").write_text(
+                "See `knowledge-base/gone.md`.", encoding="utf-8")
+            problems = hygiene.check_docs_xref(set())
+            self.assertEqual(len(problems), 1)
+            self.assertIn("gone.md", problems[0])
+
+    def test_bare_name_resolved_in_a_search_dir_passes(self):
+        """A bare `README.md` that exists at the repo root is not stale — the
+        check must not treat every backticked *.md as a knowledge-base file."""
+        with self._repo():
+            (self.dir / "README.md").write_text("x", encoding="utf-8")
+            (self.dir / "docs" / "pitch.md").write_text(
+                "See `README.md`.", encoding="utf-8")
+            self.assertEqual(hygiene.check_docs_xref(set()), [])
+
+    def test_bare_name_existing_nowhere_is_flagged(self):
+        with self._repo():
+            (self.dir / "docs" / "sop.md").write_text(
+                "See `nowhere.md`.", encoding="utf-8")
+            problems = hygiene.check_docs_xref(set())
+            self.assertEqual(len(problems), 1)
+            self.assertIn("nowhere.md", problems[0])
+
+    def test_unbackticked_filename_is_not_treated_as_a_reference(self):
+        """False-positive boundary: prose mentioning a bare foo.md with no
+        backticks is not a file reference and must not be flagged."""
+        with self._repo():
+            (self.dir / "docs" / "sop.md").write_text(
+                "A file named foo.md is described but not linked.", encoding="utf-8")
+            self.assertEqual(hygiene.check_docs_xref(set()), [])
+
+    def test_exception_suppresses_the_report(self):
+        """A forward-looking reference recorded in kb-exceptions.md is accepted."""
+        with self._repo():
+            (self.dir / "docs" / "sop.md").write_text(
+                "See `knowledge-base/planned.md`.", encoding="utf-8")
+            self.assertEqual(
+                hygiene.check_docs_xref({"knowledge-base/planned.md"}), [])
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

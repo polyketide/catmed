@@ -69,7 +69,8 @@ SKIP_DIRS = {".git", "__pycache__", ".venv", "node_modules"}
 # Every check name. load_exceptions() derives its accepted keys from this, so a
 # new check cannot ship with a suppression hatch that silently does nothing.
 CHECK_NAMES = ("orphans", "empty-blocks", "coverage", "stale-pdf",
-               "stale-translation", "agents-sync", "kb-index", "pii")
+               "stale-translation", "agents-sync", "kb-index", "pii",
+               "docs-xref")
 
 
 def load_exceptions() -> dict[str, set[str]]:
@@ -420,6 +421,53 @@ def check_agents_sync(exc: set[str]) -> list[str]:
     return [line for line in (r.stdout + r.stderr).splitlines() if line.strip()]
 
 
+# A markdown filename referenced from docs/. Explicit paths (`knowledge-base/x.md`)
+# must resolve at that path; a bare `x.md` in backticks may live in any of the
+# directories a doc legitimately points into. Bare names require the backticks —
+# an unquoted "foo.md" in prose is too ambiguous to treat as a file reference.
+DOC_XREF_DIRS = ("", "docs", "knowledge-base", "guides", ".claude/agents")
+DOC_XREF_PATH_RE = re.compile(
+    r"`?((?:knowledge-base|guides|docs|\.claude/agents)/[A-Za-z0-9._-]+\.md)`?")
+DOC_XREF_BARE_RE = re.compile(r"`([A-Za-z0-9._-]+\.md)`")
+
+
+def check_docs_xref(exc: set[str]) -> list[str]:
+    """A markdown file named in docs/ that resolves to nothing on disk.
+
+    docs/ sits OUTSIDE corpus_files(), so no other check here verifies that a
+    `knowledge-base/foo.md` pointer in the SOP still names a real file. When a
+    knowledge-base entry is renamed or removed, the prose pointing at it goes
+    stale silently — precisely the cross-reference rot §7a warns about, in the
+    one directory the corpus checks never reach. This closes it: an explicit
+    path must resolve at that path; a bare `name.md` must exist in one of the
+    directories a doc plausibly references. A reference that is intentionally
+    forward-looking goes in docs/kb-exceptions.md as `- docs-xref: name`."""
+    problems = []
+    docs_dir = REPO / "docs"
+    if not docs_dir.is_dir():
+        return problems
+    for f in sorted(docs_dir.glob("*.md")):
+        text = f.read_text(encoding="utf-8")
+        refs: dict[str, str] = {}                  # ref -> kind (first wins)
+        for m in DOC_XREF_PATH_RE.finditer(text):
+            refs.setdefault(m.group(1), "path")
+        for m in DOC_XREF_BARE_RE.finditer(text):
+            refs.setdefault(m.group(1), "bare")
+        for ref, kind in sorted(refs.items()):
+            if ref in exc:
+                continue
+            if kind == "path":
+                ok = (REPO / ref).is_file()
+            else:
+                ok = any((REPO / d / ref).is_file() for d in DOC_XREF_DIRS)
+            if not ok:
+                problems.append(
+                    f"{f.name}: references `{ref}`, which resolves to no file. "
+                    f"Point it at the current name, or record it in "
+                    f"docs/kb-exceptions.md as '- docs-xref: {ref}' with a reason.")
+    return problems
+
+
 CHECKS = {
     "orphans": lambda e: check_orphans(e["orphans"]),
     "empty-blocks": lambda e: check_empty_blocks(e["empty-blocks"]),
@@ -429,6 +477,7 @@ CHECKS = {
     "agents-sync": lambda e: check_agents_sync(e.get("agents-sync", set())),
     "kb-index": lambda e: check_kb_index(e.get("kb-index", set())),
     "pii": lambda e: check_pii(e.get("pii", set())),
+    "docs-xref": lambda e: check_docs_xref(e.get("docs-xref", set())),
 }
 
 

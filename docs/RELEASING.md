@@ -61,7 +61,7 @@ moment it can still matter.** Run it, and run the public checks, on the exact
 commit you are about to tag:
 
 ```bash
-python3 tools/check_kb_hygiene.py     # 8 checks incl. PII, staleness, generated artifacts
+python3 tools/check_kb_hygiene.py     # 9 checks incl. PII, staleness, generated artifacts, docs cross-refs
 python3 tools/test_tools.py           # unit tests for the checkers
 python3 tools/pubmed_archive.py fetch # rebuild the archive from cited PMIDs
 python3 tools/dr_drill.py leg1        # every excerpt vs its source

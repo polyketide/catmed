@@ -10,7 +10,7 @@ Format — the reason after the em dash is for humans, not the parser:
 - <check>: <id> — <reason>
 ```
 
-Valid check names: `orphans`, `empty-blocks`, `coverage`, `stale-pdf`, `stale-translation`, `agents-sync`, `kb-index`, `pii`. (This list is the human-facing mirror of `CHECK_NAMES` in `tools/check_kb_hygiene.py`; keep the two in step.)
+Valid check names: `orphans`, `empty-blocks`, `coverage`, `stale-pdf`, `stale-translation`, `agents-sync`, `kb-index`, `pii`, `docs-xref`. (This list is the human-facing mirror of `CHECK_NAMES` in `tools/check_kb_hygiene.py`; keep the two in step.) A `docs-xref` id is the referenced filename, e.g. a forward-looking pointer recorded as `- docs-xref: <name>.md — planned entry, not yet written`.
 
 Adding a line here is a normal part of a pull request when the exception is
 genuine. Adding one to make CI green when the defect is real is the failure this
