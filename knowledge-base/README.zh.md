@@ -42,7 +42,7 @@
 | [`evidence-to-practice-gap.md`](evidence-to-practice-gap.md) | 3 | 27 |
 | [`feline-disease-frequency.md`](feline-disease-frequency.md) | 7 | 28 |
 | [`feline-hypertension.md`](feline-hypertension.md) | 5 | 47 |
-| [`feline-lymphoma-treatment-currency.md`](feline-lymphoma-treatment-currency.md) | 2 | 11 |
+| [`feline-lymphoma-treatment-currency.md`](feline-lymphoma-treatment-currency.md) | 4 | 18 |
 | [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md) | 54 | 174 |
 | [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md) · [中文版](hyperthyroidism-and-kidney-disease.zh.md) | 3 | 16 |
 | [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md) | 11 | 28 |
