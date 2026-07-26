@@ -133,6 +133,7 @@ Owners frequently ask whether to "add something" for a low haematocrit or a stre
 - **Severity gate.** Mild anaemia (e.g. HCT in the high-20s%) rarely needs anaemia-specific therapy at all; ESAs and transfusion are for symptomatic or severe cases.
 - **Baseline before trend.** A single low value is not a falling value — compare against a prior HCT before reading decline (the same "did the patient change or the measurement change" check applied elsewhere on this page).
 - **The evidence-based anaemia treatments are prescription or procedural** (treat the cause, ESA, transfusion). **Over-the-counter "blood-building" supplements have no supporting evidence**, and iron is conditional and can harm when the anaemia is inflammatory.
+- **If the fork above lands on transfusion, compatibility is its own hazard.** A cat can die from its *first* transfusion: only AB-matched blood is safe, and AB-matching is necessary but not sufficient — see [`blood-types-and-transfusion-compatibility.md`](blood-types-and-transfusion-compatibility.md). **Type and crossmatch before the first unit**; "the donor looked healthy" tells you nothing.
 
 ### 10.2 Liver injury — establish that injury exists before asking whether a hepatoprotectant is indicated
 

@@ -36,6 +36,7 @@
 | 文件 | 论文数 | 逐字摘录 |
 |---|---|---|
 | [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md) | 1 | 10 |
+| [`assisted-feeding-and-feeding-tubes.md`](assisted-feeding-and-feeding-tubes.md) | 3 | 16 |
 | [`blood-types-and-transfusion-compatibility.md`](blood-types-and-transfusion-compatibility.md) | 6 | 16 |
 | [`chronic-kidney-disease.md`](chronic-kidney-disease.md) | 11 | 46 |
 | [`emergency-triage-red-flags.md`](emergency-triage-red-flags.md) | 21 | 85 |

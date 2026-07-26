@@ -34,6 +34,7 @@ Here the older reviews stop, and this is the hole a fact-check has to fill. *"On
 
 ## 1. What this means at the decision moment
 
+- **⭐ The prior question is whether to transfuse at all.** This file governs *compatibility* — it assumes the decision to give blood has already been made. Whether a given anaemia needs blood, an erythropoiesis-stimulating agent, or neither is a separate fork decided on **regeneration (reticulocyte count)** and severity, and it is set out in [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md) §10.1. Read that first; then this file for how to give blood safely.
 - **Never accept "any cat can donate, just transfuse."** For the recipient, the safe sequence is **blood type the recipient → type-matched donor → crossmatch (major) before the unit runs**, including a first-ever transfusion. Typing and crossmatch kits are commercially available (Griot-Wenk & Giger 1995; Taylor 2021).
 - **If a reaction begins, the response is time-critical and simple to start:** *"Immediate withdrawal of a transfusion and supportive care may save a patient"* (Griot-Wenk & Giger 1995). Signs of an acute haemolytic reaction during or just after a unit — collapse, fever, tachypnoea, pigmenturia — are a stop-the-bag emergency for the attending clinician.
 - **Type AB recipients are the tolerant exception, not the rule.** Transfusion of type A or B blood to type AB cats produced *"no apparent clinical transfusion reactions"* (Gurkan 2005) — but AB is rare, and this is a reason to type, not to skip typing.

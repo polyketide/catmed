@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**15 files, 161 papers, 602 verbatim excerpts**, every one
+**16 files, 164 papers, 618 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -34,6 +34,7 @@ more than anything written here.
 | File | Papers | Excerpts |
 |---|---|---|
 | [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md) | 1 | 10 |
+| [`assisted-feeding-and-feeding-tubes.md`](assisted-feeding-and-feeding-tubes.md) | 3 | 16 |
 | [`blood-types-and-transfusion-compatibility.md`](blood-types-and-transfusion-compatibility.md) | 6 | 16 |
 | [`chronic-kidney-disease.md`](chronic-kidney-disease.md) | 11 | 46 |
 | [`emergency-triage-red-flags.md`](emergency-triage-red-flags.md) | 21 | 85 |
@@ -56,6 +57,12 @@ more than anything written here.
 **Toxicity Profiles of Antineoplastic and Supportive Drugs in Cats (veterinary knowledge base)**
 
 *1 papers, 10 verbatim excerpts.*
+
+### [`assisted-feeding-and-feeding-tubes.md`](assisted-feeding-and-feeding-tubes.md)
+
+**Assisted Feeding in Cats — force-feeding vs a feeding tube, and the cost of waiting**
+
+*3 papers, 16 verbatim excerpts.*
 
 ### [`blood-types-and-transfusion-compatibility.md`](blood-types-and-transfusion-compatibility.md)
 
