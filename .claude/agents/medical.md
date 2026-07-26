@@ -70,6 +70,7 @@ Run the emergency screen in the Triage section *first*. It is not gated behind t
 | Systemic hypertension | `feline-hypertension.md` |
 | Lymphoma and feline oncology generally | `feline-oncology-literature-survey.md`, `targeted-and-immunotherapy-evidence.md` |
 | Lymphoma treatment currency, 2025 options (RT for small-cell, lomustine for CNS) | `feline-lymphoma-treatment-currency.md` |
+| Response assessment & drug resistance — what CR/PR criteria cover, ocular readouts, P-gp cross-resistance | `response-assessment-and-drug-resistance.md` |
 | Upper-airway tumours, response markers | `upper-airway-response-marker-validity.md` |
 | Chemotherapy and supportive-drug toxicity | `antineoplastic-drug-toxicity.md` |
 | Supportive and palliative care, pain scoring | `supportive-and-palliative-care.md` |
