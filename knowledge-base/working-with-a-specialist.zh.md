@@ -2,13 +2,45 @@
 
 > 生成于 2026-07-27 · **⚠️ 这不是证据文件**
 >
-> **等级声明（依 `docs/LITERATURE-PIPELINE-SOP.md` §10）：本文件记录的是一位长期与肿瘤专科教授配合的主人所提炼的实践方法，属"经验判断"，非文献结论。** 它**没有**、也不假装有对照研究支持；本项目检索未找到关于"主人如何与兽医专科沟通"的兽医学文献。
+> **等级声明（依 `docs/LITERATURE-PIPELINE-SOP.md` §10）：本文件的方法部分记录的是一位长期与肿瘤专科教授配合的主人所提炼的实践，属"经验判断"，非文献结论。** 具体做法（§1–§3）没有对照研究支持，也不假装有。
+>
+> ⚠️ **本文件的一处错误已于 2026-07-27 更正，且保留记录而非抹去。** 初版曾写"本项目检索未找到关于'主人如何与兽医专科沟通'的兽医学文献"。**那句话是未经检索的断言，不是检索结果**——检索日志建立后立即暴露了它。实际检索(`docs/search-log.jsonl`)得到 25 篇,其中三篇直接相关,**并且其中一条发现反过来支持了本文件 §1.2 的核心做法**。见 §0.1。
 > 记录它的理由：它可被检验、可被反驳、且对处境相同的人有用。**它随时可以被更好的做法或真实证据取代。**
 > ⚠️ 本文件不含任何可识别的机构、医师或病例信息。
 
 ---
 
-## 0. 它要解决的问题
+## 0. 已有的兽医学证据 —— 少，但其中一条很关键
+
+⚠️ **本节是 2026-07-27 更正时补入的。** 初版声称此领域无文献，那是未检索的断言。实际存在的证据不多，但并非没有，而且**有一条直接支持本文件 §1.2 的做法**。
+
+### 0.1 兽医自己对"沟通得好不好"的评价，与主人的感受不相关
+
+77 位主人与 14 位兽医的横断面研究，用医患共同决策量表(SDM-Q-9 兽医版)双向测量：
+
+- **64.9% 的主人偏好共同决策**
+- 主人版量表得分与**门诊满意度显著相关**(ρ = 0.526，p < 0.001)
+- ⭐ **但兽医版(SDM-Q-Doc)与主人版、以及与主人满意度，均无显著相关**(Ito 2022, PMID 35918681)
+
+> **⭐ 这条发现的含义:医师对"我和主人沟通得如何"的自我评价，测不到主人实际的体验。**
+> 也就是说，**指望"医师会把沟通管好"是没有依据的**——不是因为医师不用心，而是因为**他看不见那个差**。
+> **这正是 §1.2「让对方先说、自己主动塑造这次对话」为什么不是多此一举:那个缺口不会自动闭合。**
+
+### 0.2 沟通结构可以被测量地改变结果
+
+一项 1200 位犬主参与的随机对照(观看遵循 / 不遵循某沟通模型的问诊录像):遵循组的兽医在"技术熟练""关心我的宠物""表达清晰"等维度评分显著更高，主人**更可能遵从建议、更可能复诊**，且**批准完整治疗方案的可能性约为 1.4 倍**(Clark 2021, PMID 34843437)。
+
+> ⚠️ 这是**医师侧**的干预，不是主人侧；而且终点包含"预计花费"，商业动机需纳入解读。**它能支持的只有一句:问诊的结构会改变结果，不是无关紧要的礼节。**
+
+### 0.3 单次门诊装不下一个复杂疾病 —— 有实测
+
+748 份猫糖尿病主人问卷:确诊时**只有 46% 的兽医讲了如何识别血糖不稳，40% 讲了家庭血糖监测**；主人对"未被告知饮食对缓解的重要性"表示失望；**76% 认为自己找到的网站/论坛在学习中最有用**。作者结论:*"很难在单次问诊中和主人讨论这个复杂疾病的所有方面"*(Albuquerque 2019, PMID 31241424)。
+
+> **⭐ 这条量化了本项目 SOP §9b 说的"信息差 ②":主人不知道该问什么，不是他们的失职，而是单次门诊的结构性容量问题。**
+
+---
+
+## 0b. 它要解决的问题
 
 专科医师的时间是**这条链路上最稀缺的资源**。而主人手里通常有：一堆焦虑、一串零散疑问、以及"想把所有事都问一遍"的冲动。
 
@@ -144,6 +176,34 @@
 - 判断标准仍是 3.4 那一条:**医师能否在约 30 秒内找到本次最需要他判断的那件事。**
 
 > **⭐ 对本项目自身的含义:这条同样适用于 agent 的输出。** 把检索到的一切都倒给主人,和把三页资料倒给医师是同一个错误——**它把筛选的负担转嫁给了那个最没有能力承担它的人**(一个正在恐惧中的主人)。相关规则见 `.claude/agents/medical.md`。
+
+---
+
+## 参考文献
+
+- Ito Y, et al. The relationship between evaluation of shared decision-making by pet owners and veterinarians and satisfaction with veterinary consultations. *BMC Vet Res* 2022;18(1):296. PMID 35918681. [DOI](https://doi.org/10.1186/s12917-022-03401-6)
+- Clark JJ, Linder CM. Evaluation of a novel communication and consultation skills model (WISE COACH) on dog owner perceptions of veterinarians and projected spending on veterinary care. *J Am Vet Med Assoc* 2021;260(2):257-268. PMID 34843437. [DOI](https://doi.org/10.2460/javma.21.02.0096)
+- Albuquerque CS, et al. Priorities on treatment and monitoring of diabetic cats from the owners' points of view. *J Feline Med Surg* 2019;22(6):506-513. PMID 31241424. [DOI](https://doi.org/10.1177/1098612X19858154)
+
+---
+
+## 原文摘录（source excerpts）
+
+> 以下为**逐字原文摘录，未翻译**。正文是我的解读；**若需引用，请引用此处原句**并回到原文核对上下文。
+
+**PMID 35918681** · Ito Y 2022
+> Most pet owners (64.9%) preferred SDM in veterinary consultations.
+> The Spearman's correlation coefficient between the SDM-Q-9 and consultation satisfaction was 0.526 (p < 0.001), which was significant.
+> The SDM-Q-Doc was not significantly correlated with either the SDM-Q-9 or pet owner consultation satisfaction.
+
+**PMID 34843437** · Clark JJ 2021
+> Participants who viewed the WC video were significantly more likely to follow the veterinarian's recommendations, return to see the veterinarian, and recommend the veterinarian.
+> They were also approximately 1.4 times as likely to approve the full recommended treatment plan, and their projected total spending was approximately 15% higher than projected spending for participants who viewed the control video.
+
+**PMID 31241424** · Albuquerque CS 2019
+> At diagnosis, fewer than half of veterinarians discussed how to recognise unstable diabetes (46%) or home blood glucose monitoring (HBGM) (40%).
+> Websites/online forums that owners found themselves were most useful when learning about their cat's diabetes (76% agreed).
+> It is difficult to discuss all aspects of this complex disease with the owner in a single consultation; hence, it is important to involve the entire veterinary team in owner education and provide owners with informative material (eg, useful websites, printouts).
 
 ---
 
