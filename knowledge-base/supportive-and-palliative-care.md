@@ -125,6 +125,18 @@ Owners frequently ask whether to "add something" for a low haematocrit or a stre
    - **Oral iron is largely ineffective** here, because absorption is the step being blocked.
    - Worse, iron in an inflammatory setting carries **documented harm** — oxidative stress, aggravated inflammation, dysbiosis, and carcinogenic processes among the listed side effects (Malesza 2022, *Nutrients*, "the dark side of iron"). This matters most in exactly the cancer patients who present with ACD.
    - **The correct move is to treat the underlying disease, not to add iron.**
+
+   > **⭐ 10.1a — Does iron feed the tumour? The question owners actually ask, and it is a real one.**
+   >
+   > The concern that supplementing iron might help the cancer rather than the patient is **not folk anxiety — it is an active research question**, and what exists points the same way as the general caution above.
+   >
+   > - **Tumours are iron-avid by phenotype.** *"Cancer cells have a distinct phenotype of iron metabolism, which secures the much-needed iron for these metabolically active cells. In order to use this iron efficiently, cancer cells need to increase their iron supply and decrease iron loss"* (Vela 2020). Iron availability is part of what sustains them.
+   > - **In a mouse model, dietary iron plus inflammation produced more and larger tumours.** Iron-supplemented mice developed *"more and larger colonic tumors"*, with the authors concluding *"Oral iron therapy may be detrimental in inflammatory bowel disease since it may exacerbate colonic inflammation and increase colorectal cancer risk"* (Chua 2013).
+   > - **And the chemical form appears to matter.** *"both ferric citrate and ferric EDTA have been shown to promote tumor burden in murine models of colon cancer"*, and in gut epithelial cancer cells these forms — **but not ferrous sulfate** — activated oncogenic signalling; the authors call for *"Further scrutiny of safe oral iron use"* (Scheers 2018).
+   >
+   > ⚠️ **The limits, stated plainly, because this is the kind of finding that gets over-read.** All of it is **rodent and cell-culture work, in colorectal cancer**, where luminal iron meets gut epithelium directly. **No feline data exists**, and none of it shows that iron worsens lymphoma in a cat. It also does **not** make iron contraindicated in *confirmed* iron deficiency, where the deficiency is itself the problem.
+   >
+   > **What it does support is the ordering already stated above**: classify the anaemia first, supplement iron only on a confirmed iron panel, and treat "a blood-building supplement is at least harmless" as an assumption that the available evidence does not grant.
 2. **True iron deficiency** — the *only* sub-type where iron supplementation is right, and it must be **confirmed on an iron panel (serum iron, ferritin, TIBC)** first, not supplemented on assumption. ACD is a diagnosis of exclusion supported by characteristic iron-homeostasis changes; distinguishing it from coexisting iron deficiency is the whole diagnostic difficulty (Weiss 2019).
 3. **Marrow suppression** (chemotherapy, FeLV, myelophthisis) — supportive care; an erythropoiesis-stimulating agent (ESA) if severe.
 4. **Renal (reduced EPO)** — here there is feline evidence, but for a *prescription* agent, not a supplement: darbepoetin produced a response in 14/25 cats with CKD anaemia (target PCV/HCT ≥25%), with adverse effects including vomiting, hypertension, seizures, and fever (Chalhoub 2012, *JVIM*). ⚠️ This is **renal** anaemia data and does not transfer directly to tumour-related anaemia.
@@ -196,6 +208,9 @@ Owners frequently ask whether to "add something" for a low haematocrit or a stre
 - Evangelista MC, et al. Facial expressions of pain in cats: the development and validation of a Feline Grimace Scale. *Sci Rep* 2019;9(1):19128. PMID 31836868. [DOI](https://doi.org/10.1038/s41598-019-55693-8)
 - Weiss G, Ganz T, Goodnough LT. Anemia of inflammation. *Blood* 2019;133(1):40-50. PMID 30401705. [DOI](https://doi.org/10.1182/blood-2018-06-856500)
 - Malesza IJ, et al. The Dark Side of Iron: The Relationship between Iron, Inflammation and Gut Microbiota in Selected Diseases Associated with Iron Deficiency Anaemia-A Narrative Review. *Nutrients* 2022;14(17):3478. PMID 36079734. [DOI](https://doi.org/10.3390/nu14173478)
+- Vela D. Iron in the Tumor Microenvironment. *Adv Exp Med Biol* 2020;1259:39-51. PMID 32578170. [DOI](https://doi.org/10.1007/978-3-030-43093-1_3)
+- Chua ACG, et al. Dietary iron enhances colonic inflammation and IL-6/IL-11-Stat3 signaling promoting colonic tumor development in mice. *PLoS One* 2013;8(11):e78850. PMID 24223168. [DOI](https://doi.org/10.1371/journal.pone.0078850)
+- Scheers NM, et al. Ferric citrate and ferric EDTA but not ferrous sulfate drive amphiregulin-mediated activation of the MAP kinase ERK in gut epithelial cancer cells. *Oncotarget* 2018;9(24):17066-17077. PMID 29682205. [DOI](https://doi.org/10.18632/oncotarget.24899)
 - Chalhoub S, Langston CE, Farrelly J. The use of darbepoetin to stimulate erythropoiesis in anemia of chronic kidney disease in cats: 25 cases. *J Vet Intern Med* 2012;26(2):363-9. PMID 22296687. [DOI](https://doi.org/10.1111/j.1939-1676.2011.00864.x)
 - Tedesco DEA, Guerrini A. Use of Milk Thistle in Farm and Companion Animals: A Review. *Planta Med* 2022;89(6):584-607. PMID 36302565. [DOI](https://doi.org/10.1055/a-1969-2440)
 - Webb CB, Twedt DC, Fettman MJ, Mason G. S-adenosylmethionine (SAMe) in a feline acetaminophen model of oxidative injury. *J Feline Med Surg* 2003;5(2):69-75. PMID 12670431. [DOI](https://doi.org/10.1016/S1098-612X(02)00017-7)
@@ -245,6 +260,23 @@ Owners frequently ask whether to "add something" for a low haematocrit or a stre
 **PMID 36079734** · Malesza IJ 2022 (human/narrative review — harms of iron supplementation)
 > The primary means of IDA treatment is oral or parenteral iron supplementation. This can be burdened with numerous side effects such as oxidative stress, systemic and local-intestinal inflammation, dysbiosis, carcinogenic processes and gastrointestinal adverse events.
 > ⚠️ Human narrative review, and note the framing is about IDA treatment; cited for the documented harms of iron in an inflammatory milieu, which is why iron is not a harmless default in a cancer patient with ACD.
+
+**PMID 32578170** · Vela D 2020 (human/general — iron in the tumour microenvironment)
+> Cancer cells have a distinct phenotype of iron metabolism, which secures the much-needed iron for these metabolically active cells.
+> In order to use this iron efficiently, cancer cells need to increase their iron supply and decrease iron loss.
+> ⚠️ Review of human/general cancer biology. Cited for the iron-avid phenotype, not for any feline claim.
+
+**PMID 24223168** · Chua ACG 2013 (mouse — dietary iron and colonic tumours)
+> Six weeks post-DSS treatment, iron-supplemented mice developed more and larger colonic tumors compared with control mice.
+> Dietary iron and colonic inflammation synergistically activated colonic IL-6/IL-11-Stat3 signaling promoting tumorigenesis.
+> Oral iron therapy may be detrimental in inflammatory bowel disease since it may exacerbate colonic inflammation and increase colorectal cancer risk.
+> ⚠️ Mouse model of inflammation-associated COLORECTAL cancer. Does not establish anything about lymphoma, or about cats.
+
+**PMID 29682205** · Scheers NM 2018 (cell culture — iron form matters)
+> Ferric chelates may be used as oral iron supplements or phosphate binders but both ferric citrate and ferric EDTA have been shown to promote tumor burden in murine models of colon cancer.
+> Moreover, ferrous sulfate did not increase levels of cellular amphiregulin or EGFr.
+> Further scrutiny of safe oral iron use is merited.
+> ⚠️ Caco-2 / Hutu-80 gut epithelial cancer cell lines. In vitro; the chemical form of iron differed in effect.
 
 **PMID 22296687** · Chalhoub S 2012 (feline — darbepoetin in CKD anaemia)
 > Fourteen of 25 cats responded. Thirteen of those 14 cats received a dosage of 1 μg/kg/wk or higher. Presumptive adverse effects included vomiting, hypertension, seizures, and fever.
