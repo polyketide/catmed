@@ -749,5 +749,50 @@ class TestCorpusWatch(Fixture):
         self.assertTrue(hit, "the G-CSF row should match a plain sentence")
 
 
+class TestSearchLog(Fixture):
+    """search_log.py — the log exists to give NEGATIVE claims evidence.
+
+    A knowledge base that byte-checks every positive and accepts every "we
+    searched and found nothing" on trust is only half-verified."""
+
+    def setUp(self):
+        super().setUp()
+        import search_log
+        self.sl = search_log
+
+    def test_rejection_without_a_reason_is_refused(self):
+        """A PMID with no `why` records that you looked, not what you concluded —
+        and the reason is the only part a later reader cannot reconstruct."""
+        entry = {"ts": "2026-01-01", "q": "x", "db": "pubmed", "hits": 1,
+                 "kept": [], "recorded": "contemporaneous",
+                 "rejected": [{"pmid": "123", "why": ""}]}
+        bad = [r for r in entry["rejected"] if not r.get("why")]
+        self.assertTrue(bad, "an empty `why` must be detectable")
+
+    def test_recorded_field_distinguishes_reconstructed_from_contemporaneous(self):
+        """A log written from memory afterwards is weaker evidence than one
+        written at search time. Collapsing the two would reproduce exactly the
+        failure this repository exists to prevent."""
+        self.assertIn("contemporaneous", self.sl.RECORDED_VALUES)
+        self.assertIn("reconstructed", self.sl.RECORDED_VALUES)
+
+    def test_negative_claim_pattern_matches_the_phrasings_actually_used(self):
+        """If this regex stops matching, `negatives` silently reports full
+        coverage while claims go unbacked — a green light meaning nothing."""
+        for phrase in [
+            "No feline study addressing that specific combination was located",
+            "no head-to-head study comparing these strategies in cats was located",
+            "this file located no feline evidence",
+            "No veterinary equivalent was found",
+            "未检索到相关研究",
+        ]:
+            self.assertRegex(phrase, self.sl.NEGATIVE_CLAIM,
+                             f"stopped recognising: {phrase!r}")
+
+    def test_required_fields_include_the_reason_carrying_ones(self):
+        for k in ("q", "hits", "kept", "rejected", "recorded"):
+            self.assertIn(k, self.sl.REQUIRED)
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

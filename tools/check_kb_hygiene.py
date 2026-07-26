@@ -70,7 +70,7 @@ SKIP_DIRS = {".git", "__pycache__", ".venv", "node_modules"}
 # new check cannot ship with a suppression hatch that silently does nothing.
 CHECK_NAMES = ("orphans", "empty-blocks", "coverage", "stale-pdf",
                "stale-translation", "agents-sync", "kb-index", "pii",
-               "docs-xref")
+               "docs-xref", "search-log")
 
 
 def load_exceptions() -> dict[str, set[str]]:
@@ -468,6 +468,28 @@ def check_docs_xref(exc: set[str]) -> list[str]:
     return problems
 
 
+
+def check_search_log(exc: set[str]) -> list[str]:
+    """docs/search-log.jsonl is malformed, or claims a paper the archive lacks.
+
+    The log is what makes a NEGATIVE claim checkable — "no feline study was
+    located" is a research finding, and until it was logged it rested on
+    nothing an outside reader could audit. This gate gets it only as far as
+    well-formedness: whether a given claim is genuinely unsupported by the
+    literature is a judgement `search_log.py negatives` reports and a human
+    decides. A checker that pretended to settle that would be inventing
+    certainty, which is the failure this repository is built against."""
+    import subprocess
+    try:
+        r = subprocess.run([sys.executable, str(REPO / "tools" / "search_log.py"),
+                            "verify"], cwd=REPO, capture_output=True, text=True)
+    except OSError as exc_:
+        return [f"could not run search_log.py ({exc_})"]
+    if r.returncode == 0:
+        return []
+    return [l for l in (r.stdout + r.stderr).splitlines() if l.strip()]
+
+
 CHECKS = {
     "orphans": lambda e: check_orphans(e["orphans"]),
     "empty-blocks": lambda e: check_empty_blocks(e["empty-blocks"]),
@@ -478,6 +500,7 @@ CHECKS = {
     "kb-index": lambda e: check_kb_index(e.get("kb-index", set())),
     "pii": lambda e: check_pii(e.get("pii", set())),
     "docs-xref": lambda e: check_docs_xref(e.get("docs-xref", set())),
+    "search-log": lambda e: check_search_log(e.get("search-log", set())),
 }
 
 
