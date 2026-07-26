@@ -587,6 +587,30 @@ Clinicians were already served — English notes, three issue templates, §10 on
 
 **Rule: when a check fires on something you just added, decide which of the two is wrong before making the light go green.** The tempting fix — a suppression line — would have left a false rule in place for every future generated file.
 
+## 9b. ⭐ What value this actually delivers — four information gaps, and only three are closable
+
+Raised 2026-07-27 as an objection to the whole enterprise, and it is the strongest one available: *"we can never obtain what the clinic holds — the imaging system, the physical examination, the pathologist's slide, a specialist's pattern library built over a thousand cases. So we are working from scraps, and the owner has to record everything themselves."*
+
+**Half of that is true, and it is the less important half.** "Information gap" is one phrase covering four different things, and conflating them makes the project look either impossible or grandiose depending on which one you have in mind. Separated:
+
+| # | The gap | Closable? |
+|---|---|---|
+| **1** | **The owner physically holds documents they cannot read** — CT report, histopathology, clonality result, blood panel, discharge summary | **✅ Yes — and it is the largest.** The data is already in their hands. The gap is **interpretation, not access.** |
+| **2** | **They do not know what to ask, or what a result's error profile is** | **✅ Yes.** Nobody tells an owner that a negative PARR in cats carries a negative predictive value of 60%, so nobody asks what fraction of the sample was neoplastic. |
+| **3** | **They do not know what to record, until the moment it is needed** | **✅ Yes, and uniquely — it is prospective.** No one else in the chain designs an owner's data collection in advance. |
+| **4** | **The examination, the imaging systems, the pattern library** | **❌ No, and it must not be attempted.** This is why the decision is the clinician's. |
+
+> **⭐ The reframe that matters: this project is not short of data.** Owners routinely hold more documents than anyone has read to them. What is scarce is **a reader who has the reports, the owner's daily record and the literature at once, with no clock running.** The clinician has ten minutes and the strongest pattern library; this side has every document and unlimited time. **Different jobs — and this one is not the lesser, it is simply not diagnosis.**
+
+**A worked example, because the abstraction is easy to nod along to and miss.** An owner asked in April what it meant that cytology called a lymphoma high-grade while clonality testing found no clone in either lineage. **The report had been in their hands the whole time.** What was missing was two numbers — negative predictive value 60%, and a B-cell detection limit requiring the clone to be 90% of the sample. With those, a three-month-old report becomes a specific question to put to a pathologist. **That is gaps 1 and 2 closing together, and none of it required access to anything.**
+
+**Rules.**
+1. **Ask what documents already exist, early and explicitly.** Owners omit them by default, assuming they are unreadable or already understood by someone else. The largest available gain is routinely sitting unmentioned.
+2. **⭐ Work prospectively, not only retrospectively.** Often the highest-leverage output is *"start recording this now, so that in six weeks the question is answerable"* — an anchored score, weight alongside intake, interventions on the same timeline. **This is not record-keeping advice; it is manufacturing evidence that would otherwise never exist**, and it is the only gap nobody else in the chain even attempts.
+3. **Translate error profiles, not only findings.** "Result X" plus "how often X is wrong, in this species, in this setting" is a different and better object than either half. The second half is the part the owner could never have supplied.
+4. **⛔ Never let closing gaps 1–3 read as closing gap 4.** A well-integrated document set is still not an examination. Output ends in questions for the attending clinician — see §7a: *an owner armed with a sharper question is the goal; an owner armed with a counter-argument to their oncologist is a failure mode.*
+5. **Say which gap you are closing when you claim value.** "We help owners" is unfalsifiable. "We read the report they already hold and supply the test's error profile" is a claim that can be checked, and refused when untrue.
+
 ## 11. 待做 · Deferred — the language matrix
 
 Recorded 2026-07-21. Deferred deliberately, with the reasoning kept so it does not have to be re-derived.
