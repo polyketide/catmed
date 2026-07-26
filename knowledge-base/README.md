@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**18 files, 173 papers, 644 verbatim excerpts**, every one
+**19 files, 179 papers, 665 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -37,12 +37,13 @@ more than anything written here.
 | [`assisted-feeding-and-feeding-tubes.md`](assisted-feeding-and-feeding-tubes.md) | 3 | 16 |
 | [`blood-types-and-transfusion-compatibility.md`](blood-types-and-transfusion-compatibility.md) | 6 | 16 |
 | [`chronic-kidney-disease.md`](chronic-kidney-disease.md) | 11 | 46 |
+| [`does-doxorubicin-help-cats-cop-vs-chop.md`](does-doxorubicin-help-cats-cop-vs-chop.md) | 5 | 17 |
 | [`emergency-triage-red-flags.md`](emergency-triage-red-flags.md) | 21 | 85 |
 | [`evidence-to-practice-gap.md`](evidence-to-practice-gap.md) | 3 | 27 |
 | [`feline-disease-frequency.md`](feline-disease-frequency.md) | 7 | 28 |
 | [`feline-hcm-emerging-therapy.md`](feline-hcm-emerging-therapy.md) | 1 | 7 |
 | [`feline-hypertension.md`](feline-hypertension.md) | 5 | 47 |
-| [`feline-lymphoma-treatment-currency.md`](feline-lymphoma-treatment-currency.md) | 4 | 18 |
+| [`feline-lymphoma-treatment-currency.md`](feline-lymphoma-treatment-currency.md) | 5 | 22 |
 | [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md) | 54 | 174 |
 | [`gcsf-and-chemotherapy-neutropenia.md`](gcsf-and-chemotherapy-neutropenia.md) | 6 | 15 |
 | [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md) | 3 | 16 |
@@ -81,6 +82,12 @@ CKD is 25× more common than the lymphoma this repository was built around, is r
 *11 papers, 46 verbatim excerpts.*
 
 > ⚠️ **Stated gap:** Does earlier detection improve outcome? Unanswered, for the fourth time in this repository. §4 gives the specific reason it is unanswered for CKD: the…
+
+### [`does-doxorubicin-help-cats-cop-vs-chop.md`](does-doxorubicin-help-cats-cop-vs-chop.md)
+
+**Does adding doxorubicin help a cat? — the COP-versus-CHOP question, and why the dog standard may not transfer**
+
+*5 papers, 17 verbatim excerpts.*
 
 ### [`emergency-triage-red-flags.md`](emergency-triage-red-flags.md)
 
@@ -126,7 +133,7 @@ hypertension is the third member of the older-cat triad alongside chronic kidney
 
 **Feline Lymphoma Treatment — a currency check, and the 2025 options the textbooks predate**
 
-*4 papers, 18 verbatim excerpts.*
+*5 papers, 22 verbatim excerpts.*
 
 ### [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md)
 

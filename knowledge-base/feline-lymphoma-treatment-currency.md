@@ -41,7 +41,8 @@ Feline **CNS lymphoma** has historically had little to guide treatment. A 2025 r
 | Drug (form) | Reference value, exactly as published | Feline source |
 |---|---|---|
 | **Doxorubicin** (IV) | 30 mg/m² BSA every 21 days, to a cumulative dose of 300 mg/m² | O'Keefe 1993, PMID 8263850 |
-| **Lomustine** (oral) | approximately 40 mg/m², orally, at 21-day intervals | Gieger 2020, PMID 32996835 |
+| **Lomustine** (oral) | approximately 40 mg/m², orally, at 21-day intervals *(with abdominal RT)* | Gieger 2020, PMID 32996835 |
+| **Lomustine** (oral) | 10 mg/cat every 3 weeks *(first-line, with prednisolone, intermediate-to-large-cell lymphoma)* | Kim 2026, PMID 41897966 |
 | **Prednisolone** (oral) | 5 mg PO q24h *(as used in that protocol)* | Gieger 2020, PMID 32996835 |
 | **Cobalamin** (supportive) | 250 µg/week SC | Gieger 2020, PMID 32996835 |
 | **Abdominal RT** | 8 Gy total in four 2 Gy fractions *(2025, small-cell/CIE)*; or 8 Gy in two 4 Gy fractions 21 days apart *(2020, large-cell)* | Gieger 2025 PMID 40726309 · Gieger 2020 PMID 32996835 |
@@ -67,6 +68,7 @@ Feline **CNS lymphoma** has historically had little to guide treatment. A 2025 r
 - Pauciulo C, et al. The combination of lomustine and corticosteroids is a valid chemotherapeutic option in cats with presumptive central nervous system lymphoma. *J Am Vet Med Assoc* 2025;264(2):211-217. PMID 41072475. [DOI](https://doi.org/10.2460/javma.25.07.0486)
 - Gieger TL, et al. Treatment of feline gastrointestinal intermediate- or large-cell lymphoma with lomustine chemotherapy and 8 Gy abdominal cavity radiation therapy. *J Feline Med Surg* 2020;23(6):469-476. PMID 32996835. [DOI](https://doi.org/10.1177/1098612X20959602)
 - O'Keefe DA, et al. Systemic toxicity associated with doxorubicin administration in cats. *J Vet Intern Med* 1993 (dose/toxicity source for §2). PMID 8263850.
+- Kim HJ, Heo R, Choi EW. A Retrospective Investigation of 28 Cats with Intermediate- to Large-Cell Lymphoma Treated with Lomustine and Prednisolone as a First-Line Chemotherapy. *Animals (Basel)* 2026;16(6):989. PMID 41897966. [DOI](https://doi.org/10.3390/ani16060989)
 - Core protocols, toxicity and the small-cell/large-cell prognostic divide are sourced in [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md) §3 (incl. Lai 2025, PMID 40443182) and [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md).
 
 ---
@@ -98,6 +100,12 @@ Feline **CNS lymphoma** has historically had little to guide treatment. A 2025 r
 > Six cats had a partial response to treatment and three had stable disease based on ultrasound at day 21 (50% overall response rate).
 > The median overall survival time was 101 days (95% confidence interval [CI] 9-240).
 > Oncological outcomes reported herein are comparable to those achieved with multiagent injectable chemotherapy (eg, CHOP).
+
+**PMID 41897966** · Kim HJ 2026
+> Twenty-eight cats with cytologically or histopathologically confirmed lymphoma received lomustine (10 mg/cat every 3 weeks) and prednisolone until disease progression or unacceptable toxicity.
+> Treatment responses included complete response (CR, 5/28), partial response (5/28), stable disease (11/28), and progressive disease (7/28).
+> The median PFI for all cats was 51 days, and the median survival time was not reached during the study period.
+> Cats achieving CR showed significantly prolonged PFI compared with cats with other responses (median, 561 vs. 42 days; p = 0.0004), and overall survival was also significantly longer (p = 0.0009).
 
 **PMID 8263850** · O'Keefe DA 1993
 > The systemic toxicity of doxorubicin, 30 mg/m2 body surface area (BSA) every 21 days to a cumulative dose of 300 mg/m2, was evaluated in six cats.
