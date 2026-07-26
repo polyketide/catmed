@@ -98,6 +98,15 @@
 | `穿刺` `活检` `病理` | 细针穿刺 / 活检 / 组织病理 | |
 | `大颗粒` `LGL` | 大颗粒淋巴细胞型 | 预后较差亚型 → `feline-oncology-literature-survey.md` §3 |
 | `大细胞` / `小细胞` | 高级别 / 低级别 | ⚠️ **预后相差约一个数量级**，是最该问清的一件事 |
+| `肾淋巴瘤` `胃淋巴瘤` `肠大颗粒` `鼻淋` `纵隔` | 解剖亚型的连写形式 | 主人常把部位与细胞型连写（如 `肠大颗粒` = 肠道大颗粒淋巴细胞型）→ `feline-oncology-literature-survey.md` §3 |
+
+### 治疗方式（非化疗）
+
+| 社群写法 | 标准术语 | 路由 |
+|---|---|---|
+| `电化疗` `ECT` | **电化学疗法**（electrochemotherapy）——⚠️ **不是"电疗"，也不是化疗的一种口服/静脉给法** | `feline-oncology-literature-survey.md`：注射部位肉瘤（切缘不净时的选项）、鼻平面/皮肤鳞癌（早期可治愈手段之一；局部晚期 21 例 ORR 100%） |
+| `放疗` `消融` | 放射治疗 / 消融 | `feline-lymphoma-treatment-currency.md`（小细胞腹腔低剂量放疗）、`feline-oncology-literature-survey.md` §5 |
+| `小唾液腺` | 小唾液腺（癌） | ⚠️ 知识库暂无专门条目，agent 应据此拒答 |
 
 ---
 

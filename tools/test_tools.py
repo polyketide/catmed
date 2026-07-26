@@ -29,6 +29,8 @@ Standard library only (unittest). No pytest, no new dependencies.
 from __future__ import annotations
 
 import contextlib
+import os
+import re
 import sys
 import tempfile
 import unittest
@@ -682,6 +684,69 @@ class TestDocsXref(Fixture):
                 "See `knowledge-base/planned.md`.", encoding="utf-8")
             self.assertEqual(
                 hygiene.check_docs_xref({"knowledge-base/planned.md"}), [])
+
+
+class TestCorpusWatch(Fixture):
+    """corpus_watch.py — the guards matter more than the counting.
+
+    This tool reads a private support-group export. Its counting being wrong
+    wastes a session; its containment being wrong publishes people's private
+    conversations about a dying animal."""
+
+    def setUp(self):
+        super().setUp()
+        import corpus_watch
+        self.cw = corpus_watch
+
+    def test_refuses_a_corpus_inside_the_repository(self):
+        """THE safety property. A corpus inside the repo is one `git add -A`
+        from being published, and nothing downstream undoes that."""
+        with self.assertRaises(SystemExit):
+            self.cw.corpus_path(str(self.cw.REPO / "knowledge-base"))
+
+    def test_refuses_when_no_corpus_is_given(self):
+        """No default path exists, deliberately — a default invites someone to
+        drop the export in the repo."""
+        old = os.environ.pop("CATMED_CORPUS", None)
+        try:
+            with self.assertRaises(SystemExit):
+                self.cw.corpus_path(None)
+        finally:
+            if old is not None:
+                os.environ["CATMED_CORPUS"] = old
+
+    def test_speaker_names_are_excluded_from_term_output(self):
+        """REGRESSION, 2026-07-27, found on the tool's FIRST real run: the
+        unknown-term monitor printed members' display names, a cat's name and
+        the group's own name to stdout, ranked by frequency. Output is a
+        publication surface too. If this regresses, the tool leaks exactly what
+        the corpus rules exist to protect."""
+        # ⚠️ Fabricated display names. Using real ones from the corpus would put
+        # members' nicknames into a public repository via the test file — which
+        # is the very leak this test exists to prevent, committed one layer down.
+        text = ("## 2026-07-19 16:07:40 虚构甲乙\n"
+                "内容一\n"
+                "## 2026-07-19 16:08:00 测试用丙\n"
+                "内容二\n")
+        frags = self.cw.speaker_fragments(text)
+        self.assertIn("虚构甲乙", frags)
+        self.assertIn("虚构甲", frags)     # windows, not only whole names
+        self.assertIn("构甲乙", frags)
+
+    def test_every_divergence_points_at_a_file_that_exists(self):
+        """The registry is a router. A row pointing at a missing file would send
+        the agent to evidence that is not there — the inverse of the pipeline."""
+        for d in self.cw.DIVERGENCES:
+            self.assertTrue((self.cw.KB / d["kb"]).exists(),
+                            f"{d['key']} points at missing {d['kb']}")
+
+    def test_divergence_patterns_compile_and_match_something_plausible(self):
+        """Catches a regex typo silently disabling a watch row."""
+        for d in self.cw.DIVERGENCES:
+            re.compile(d["pattern"])
+        hit = [d for d in self.cw.DIVERGENCES
+               if re.search(d["pattern"], "今天打了升白针", re.I)]
+        self.assertTrue(hit, "the G-CSF row should match a plain sentence")
 
 
 if __name__ == "__main__":
