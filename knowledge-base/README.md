@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**20 files, 184 papers, 680 verbatim excerpts**, every one
+**21 files, 185 papers, 685 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -33,6 +33,7 @@ more than anything written here.
 
 | File | Papers | Excerpts |
 |---|---|---|
+| [`acid-suppression-omeprazole-in-cats.md`](acid-suppression-omeprazole-in-cats.md) | 1 | 5 |
 | [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md) | 1 | 10 |
 | [`assisted-feeding-and-feeding-tubes.md`](assisted-feeding-and-feeding-tubes.md) | 3 | 16 |
 | [`blood-types-and-transfusion-compatibility.md`](blood-types-and-transfusion-compatibility.md) | 6 | 16 |
@@ -55,6 +56,12 @@ more than anything written here.
 | [`upper-airway-response-marker-validity.md`](upper-airway-response-marker-validity.md) | 27 | 81 |
 
 ## The files
+
+### [`acid-suppression-omeprazole-in-cats.md`](acid-suppression-omeprazole-in-cats.md)
+
+**Acid suppression in cats — once-daily omeprazole did not beat placebo**
+
+*1 papers, 5 verbatim excerpts.*
 
 ### [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md)
 
