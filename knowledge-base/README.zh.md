@@ -51,6 +51,7 @@
 | [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 5 | 16 |
 | [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md) | 11 | 28 |
 | [`targeted-and-immunotherapy-evidence.md`](targeted-and-immunotherapy-evidence.md) | 1 | 4 |
+| [`treatment-related-harm-and-the-tradeoff.md`](treatment-related-harm-and-the-tradeoff.md) | 4 | 10 |
 | [`upper-airway-response-marker-validity.md`](upper-airway-response-marker-validity.md) | 27 | 81 |
 
 每份文件的英文摘要、以及它自陈的空白，见 [`README.md`](README.md)。

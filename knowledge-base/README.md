@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**17 files, 169 papers, 634 verbatim excerpts**, every one
+**18 files, 173 papers, 644 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -49,6 +49,7 @@ more than anything written here.
 | [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 5 | 16 |
 | [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md) | 11 | 28 |
 | [`targeted-and-immunotherapy-evidence.md`](targeted-and-immunotherapy-evidence.md) | 1 | 4 |
+| [`treatment-related-harm-and-the-tradeoff.md`](treatment-related-harm-and-the-tradeoff.md) | 4 | 10 |
 | [`upper-airway-response-marker-validity.md`](upper-airway-response-marker-validity.md) | 27 | 81 |
 
 ## The files
@@ -166,6 +167,12 @@ these are the two commonest chronic diseases of older cats, they occur together,
 **Feline Lymphoma · Evidence Map for Targeted Therapy and Immunotherapy (veterinary knowledge base)**
 
 *1 papers, 4 verbatim excerpts.*
+
+### [`treatment-related-harm-and-the-tradeoff.md`](treatment-related-harm-and-the-tradeoff.md)
+
+**Treatment-Related Harm — why "how many cats die from the treatment" is the least-measured number in feline oncology**
+
+*4 papers, 10 verbatim excerpts.*
 
 ### [`upper-airway-response-marker-validity.md`](upper-airway-response-marker-validity.md)
 
