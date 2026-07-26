@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**14 files, 155 papers, 587 verbatim excerpts**, every one
+**15 files, 161 papers, 602 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -43,6 +43,7 @@ more than anything written here.
 | [`feline-hypertension.md`](feline-hypertension.md) | 5 | 47 |
 | [`feline-lymphoma-treatment-currency.md`](feline-lymphoma-treatment-currency.md) | 4 | 18 |
 | [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md) | 54 | 174 |
+| [`gcsf-and-chemotherapy-neutropenia.md`](gcsf-and-chemotherapy-neutropenia.md) | 6 | 15 |
 | [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md) | 3 | 16 |
 | [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md) | 11 | 28 |
 | [`targeted-and-immunotherapy-evidence.md`](targeted-and-immunotherapy-evidence.md) | 1 | 4 |
@@ -123,6 +124,12 @@ hypertension is the third member of the older-cat triad alongside chronic kidney
 **Feline Oncology: A Panoramic Survey of Recent Literature (veterinary knowledge base)**
 
 *54 papers, 174 verbatim excerpts.*
+
+### [`gcsf-and-chemotherapy-neutropenia.md`](gcsf-and-chemotherapy-neutropenia.md)
+
+**G-CSF (升白针) in Cats — why repeated *human* G-CSF can cause the neutropenia it is given to fix**
+
+*6 papers, 15 verbatim excerpts.*
 
 ### [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md)
 
