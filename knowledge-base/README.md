@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**19 files, 182 papers, 673 verbatim excerpts**, every one
+**20 files, 184 papers, 680 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -47,6 +47,7 @@ more than anything written here.
 | [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md) | 54 | 174 |
 | [`gcsf-and-chemotherapy-neutropenia.md`](gcsf-and-chemotherapy-neutropenia.md) | 6 | 15 |
 | [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md) | 3 | 16 |
+| [`parr-clonality-what-a-negative-means.md`](parr-clonality-what-a-negative-means.md) | 2 | 7 |
 | [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 5 | 16 |
 | [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md) | 14 | 36 |
 | [`targeted-and-immunotherapy-evidence.md`](targeted-and-immunotherapy-evidence.md) | 1 | 4 |
@@ -156,6 +157,12 @@ these are the two commonest chronic diseases of older cats, they occur together,
 *3 papers, 16 verbatim excerpts.*  ·  **中文版: [`hyperthyroidism-and-kidney-disease.zh.md`](hyperthyroidism-and-kidney-disease.zh.md)**
 
 > ⚠️ **Stated gap:** Whether earlier detection of masked CKD changes outcomes, rather than merely predicting them. No study here tests that.
+
+### [`parr-clonality-what-a-negative-means.md`](parr-clonality-what-a-negative-means.md)
+
+**A negative PARR does not mean "not lymphoma" — what clonality testing can and cannot rule out in cats**
+
+*2 papers, 7 verbatim excerpts.*
 
 ### [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md)
 
