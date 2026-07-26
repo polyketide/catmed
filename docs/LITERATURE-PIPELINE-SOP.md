@@ -466,6 +466,32 @@ The corpus method above ranks topics by **frequency**. It is blind to the topic 
 5. **Refuse to adjudicate what has no head-to-head, and say so in the file.** Two treatment philosophies were described (fewest effective exposures vs add-an-agent with growth-factor support). **No comparative feline study was located.** Record the absence; do not let a preference — the owner's, the professor's, or the agent's — become a conclusion.
 6. **⛔ The deliverable is a better question, never a different decision.** Both entries state explicitly that nothing in them supports an owner overriding, delaying or re-ordering a protocol, and both end in questions to put to the attending clinician. **An owner armed with a sharper question is the goal; an owner armed with a counter-argument to their oncologist is a failure mode**, and the entry must say which one it is for.
 
+### ⭐ The translation layer — evidence the agent holds but cannot reach is evidence it does not have
+
+Both methods above find *what to research*. Neither finds the failure recorded here: **a knowledge base that answers a question it cannot parse.**
+
+**Measured 2026-07-27.** Owners write `我家cop6门1洛2，neu 0.44要不要打瑞白`. Grepped against the corpus, the load-bearing terms — `结疗`, `网织`, `强饲`, `帕拉丁`, `仑伐` — returned **zero hits**. A concrete casualty: a community member stated the "结疗率" is about 1%; the knowledge base holds the figures that refute it (CR 76% low-grade, ORR 85.7% small-cell, 66% high-grade), **but the agent did not know the word and so could not connect question to evidence.** The bottleneck was not knowledge. It was language.
+
+The fix was `owner-vernacular-lexicon.zh.md`: shorthand → standard term → the file that covers it. Written **in Chinese**, because its subject is Chinese and translating it would destroy it — a deliberate exception to the English-notes convention, stated in the file.
+
+**Rules.**
+1. **A routing table is not evidence, and must be built so it cannot be mistaken for evidence.** No doses, no conclusions, no PMIDs, and deliberately **no `## 原文摘录` section** — it asserts nothing needing a source. If a lexicon starts carrying clinical claims, it has become an unverified knowledge file wearing a glossary's clothes.
+2. **Mark genuinely ambiguous shorthand as ambiguous and make the agent ask.** Three abbreviations (`培N` / `花N` / `尼N`) could not be resolved — `花` also appears in cat names, so it reads as a drug only inside a protocol string, and `尼N` could not be resolved at all. **Same flag-don't-guess discipline as the star markers.**
+3. **Some vocabulary changes the register, not the content.** `喵星` / `返航` / `🌈` / a trailing star mean **the cat has died**. That is wired into the restricted agent as a hard rule: switch to condolence, stop all medical advice. **Mistaking a status marker for decoration and continuing to discuss protocols is the highest-cost error in this work.**
+4. **⭐ Test end-to-end with the real sentence, not with a tidy paraphrase.** The lexicon was verified by putting the raw owner sentence to the restricted agent. It parsed every abbreviation, echoed them back for correction, ran the emergency screen first, refused to make the treatment decision, surfaced the §3h dose blank *and explained that the vet's uncertainty was the literature's gap rather than that clinic's failing*, and connected `洛2` to the delayed 7–28 day nadir. **Every figure it quoted was then checked against the source files: zero fabrication.** A checker that only tests the tooling never tests whether a human's actual sentence gets an answer.
+
+### ⚠️ Working from a private community — the constraint tightens, it does not relax
+
+Raised 2026-07-27 by a domain colleague, unprompted, and recorded because it is the correct instinct and it arrived from outside this project: *"talk to the group less — there is personal privacy involved."* They also named plainly what the corpus work makes of a support group: *"it has purely become my training data."*
+
+**That framing deserves to be uncomfortable, and the discomfort is the safeguard.** People in that group are describing a dying animal to other owners, not contributing to a dataset. Nothing about the analysis being aggregate, de-identified or well-intentioned changes what it is.
+
+**Rules.**
+1. **The privacy line is drawn at the dataset, not only at the name.** §7a already forbids chat text, display names, cat names and cities in the repository. This adds: **do not publish a specific community's cohort as a study of that community** — no per-case rows, no group identity, no city-level breakdown, and coarse aggregates only. What may cross into a public file is **practice-pattern context** ("owners in Chinese-speaking communities commonly describe X"), which is general and non-identifying, plus the medical literature that context pointed at.
+2. **Prefer the artifact over the repository for anything that reads as a study of people.** The 493-cat cohort visualisation stayed a private artifact for exactly this reason. `chinese-practice-context.zh.md` is the publishable residue: what an agent needs to *understand a user*, with the study-of-people stripped out.
+3. **Do not let observed practice become a verdict on practitioners.** The corpus shows patterns whose causes are unknowable from the data — access, cost, local convention, case mix, or commercial pressure are all live explanations and the data cannot separate them. **Record the pattern and the evidence it diverges from; do not adjudicate why, and never name or grade a clinician.**
+4. **Extraction is not participation.** A community is not a data source that happens to have feelings. If the work would embarrass the people in it were they to read the file, the file is wrong — and they should be able to read it.
+
 ## 8. Before building — open questions
 
 1. ~~Is the node free?~~ **Resolved 2026-07-20 by measurement**: compute idle (0% utilisation), ~10.8 GB VRAM headroom, no competing job. Re-check before each run — and per §4a, distinguish *measured idle* from *failed to measure*.
