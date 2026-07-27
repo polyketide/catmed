@@ -57,6 +57,7 @@
 > 正文中的表述仅为解读；**如需引用，请引用下方原文条目**。
 > 非英文文献保留其原始语言标题并标注语种。
 
+- Blake MK, et al. Hypersensitivity reactions associated with L-asparaginase administration in 142 dogs and 68 cats with lymphoid malignancies: 2007-2012. *Can Vet J* 2016;57(2):176-82. PMID 26834270.
 - Inazumi H, et al. Efficacy and adverse events of L-Asparaginase administration as a first-line treatment for feline large-cell gastrointestinal lymphoma. *J Vet Med Sci* 2024;86(7):727-736. PMID 38825481. [DOI](https://doi.org/10.1292/jvms.23-0453)
 
 ---
@@ -81,4 +82,10 @@
 > ⚠️ **FALSE POSITIVE resolved 2026-07-20**: the figure `197` was flagged here. It belongs to **Blake 2016 (PMID 26834270)** — "197 doses in cats, 0 HSR" — cited in the same body line as this paper. Sentence-level attribution again.
 > This study included 43 cats.
 > Plasma phosphate concentrations were also significantly increased (P<0.001) within 24 hr after the first dose.
-> ⚠️ The figures `197, 1996, 2016, 8947875, 26834270` cited in the body **do not appear in the abstract text** — they may come from the full text (which the abstract does not contain), or may be erroneous; **retrieve the full text and verify before citing**. (Note: this check misses figures that the source spells out as English words.)
+> ⚠️ **FLAG CLOSED 2026-07-27 — and it never needed a full text.** The flag listed `197, 1996, 2016, 8947875, 26834270`, and every token is accounted for **without leaving the archived abstracts**: `197` is Blake 2016's dose count, now given its own excerpt block below and verified verbatim; `8947875` and `26834270` are **PMIDs**, `1996` and `2016` **citation years** — none of them are data. The full text of this paper was retrieved anyway (2026-07-20, see above) and `197` **is not in it**, which is the confirmation that matters: the number was never this paper's to carry. ⚠️ **The flag survived seven days after the line above had already resolved it**, because the two notes sat in the same block and nothing reconciled them — see §3k of the SOP.
+
+**PMID 26834270** · Blake MK 2016
+> A total of 197 doses were administered to the cats, with 33 of 68 cats receiving multiple doses, and no cats experiencing an HSR.
+> Hypersensitivity reactions were documented in 4.2% of dogs, and in association with 1.6% of L-asparaginase doses administered.
+> These results show that HSRs occur uncommonly among dogs and cats, even with repeated dosing.
+> ⚠️ **Added 2026-07-27 to close a gap that had been *moved* rather than closed.** `197` was cited in the body against Blake and flagged against Inazumi, and for seven days this paper — the one that actually holds the number — **had no excerpt block at all**. The rate itself is a **dog** figure: 4.2% of dogs, and **zero of 68 cats across 197 doses**. ⚠️ The feline result is an *absence of events*, not a measured rate — 0/68 cats is consistent with a true frequency well above zero, so this supports *"HSR to L-asparaginase is uncommon in cats"* and **cannot** support *"it does not happen"*.

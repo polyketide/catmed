@@ -465,7 +465,7 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 > This simple therapeutic technique, single myringotomy procedure and mild ear flushing, offers a practical, safe and efficient first-line treatment of suppurative OM with an intact tympanum in cats with or without neurological signs.
 > ⚠️ The `27` previously flagged here was a percentage computed in the body from 7/26; the source states the fraction, not the percentage. Not a gap.
 > Clinical signs included head tilt (13/26), otalgia (9/26), Horner's syndrome (7/26), external ear discharge (5/26), and nystagmus and facial paralysis (1/26).
-> ⚠️ The figure `27` cited in the body **does not appear in the abstract text** — it may come from the full text (which the abstract does not contain), or may be erroneous; **retrieve the full text and verify before citing**. (Note: this check misses figures that the source spells out as English words.)
+> ⚠️ **STALE FLAG REMOVED 2026-07-27.** The open-flag template above ("retrieve the full text and verify before citing") sat directly under the note resolving it, and the two were never reconciled — so this paper stayed on the full-text work list for a week after the question had been answered. **The line above is the verbatim source sentence: `7/26` is stated, `27%` is arithmetic performed in this repository.** ⚠️ **A percentage this project computed is not a quoted figure** and must never be presented as one; the body carries both forms for exactly that reason. See SOP §3k.
 
 **PMID 39552196** · Poirier VJ 2024
 > With steroids, VPTE decreased in 15/34 (44%) and increasedin 6/34 (18%) (median VPTE diff: -60%) compared to no steroids (median VPTE diff: +25%).

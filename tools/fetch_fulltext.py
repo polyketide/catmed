@@ -43,10 +43,21 @@ UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
 YEAR = re.compile(r"^(19|20)\d\d$")
 
 
+# The wording the open-flag template emits. A note that *resolves* a flag quotes
+# the same figures in the same backticks, so matching on the figures alone makes
+# the work list re-report every gap that has already been closed — measured
+# 2026-07-27, when all 3 remaining "unblocked" PMIDs turned out to be this.
+OPEN_FLAG = "retrieve the full text and verify before citing"
+
+
 def needed_pmids() -> dict[str, str]:
     """PMIDs the knowledge base has flagged as citing figures absent from the
     abstract. These are exactly the cases where a full text would settle
-    something, so they are the sensible default work list."""
+    something, so they are the sensible default work list.
+
+    **A resolution note is not a flag.** Only lines carrying the open-flag
+    wording count; `FALSE POSITIVE resolved`/`ATTRIBUTION CORRECTED`/`FLAG
+    CLOSED` notes quote the same figures and must not re-enter the work list."""
     out: dict[str, str] = {}
     for f in sorted(KB.glob("*.md")):
         text = f.read_text(encoding="utf-8")
@@ -57,6 +68,8 @@ def needed_pmids() -> dict[str, str]:
             m = re.match(r"\*\*PMID\s+(\d+)\*\*", line.strip())
             if m:
                 current = m.group(1)
+                continue
+            if OPEN_FLAG not in line:
                 continue
             g = re.search(r"The figures? `([^`]+)`", line)
             if g and current:

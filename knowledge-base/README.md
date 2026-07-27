@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**21 files, 185 papers, 685 verbatim excerpts**, every one
+**21 files, 186 papers, 688 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -34,7 +34,7 @@ more than anything written here.
 | File | Papers | Excerpts |
 |---|---|---|
 | [`acid-suppression-omeprazole-in-cats.md`](acid-suppression-omeprazole-in-cats.md) | 1 | 5 |
-| [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md) | 1 | 10 |
+| [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md) | 2 | 13 |
 | [`assisted-feeding-and-feeding-tubes.md`](assisted-feeding-and-feeding-tubes.md) | 3 | 16 |
 | [`blood-types-and-transfusion-compatibility.md`](blood-types-and-transfusion-compatibility.md) | 6 | 16 |
 | [`chronic-kidney-disease.md`](chronic-kidney-disease.md) | 11 | 46 |
@@ -67,7 +67,7 @@ more than anything written here.
 
 **Toxicity Profiles of Antineoplastic and Supportive Drugs in Cats (veterinary knowledge base)**
 
-*1 papers, 10 verbatim excerpts.*
+*2 papers, 13 verbatim excerpts.*
 
 ### [`assisted-feeding-and-feeding-tubes.md`](assisted-feeding-and-feeding-tubes.md)
 

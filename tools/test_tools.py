@@ -794,5 +794,53 @@ class TestSearchLog(Fixture):
             self.assertIn(k, self.sl.REQUIRED)
 
 
+# =============================================================================
+# fetch_fulltext.py — the full-text work list must not re-report closed gaps
+#
+# Measured 2026-07-27: the list held 10 PMIDs and **9 of them were already
+# resolved.** A note that closes a flag quotes the same figures in the same
+# backticks as the flag itself, so matching on the figures alone made every
+# resolution look like a fresh gap — and sent a week of work back to the queue.
+# =============================================================================
+
+class TestFullTextWorkList(Fixture):
+
+    OPEN = ("> ⚠️ The figure `197` cited in the body **does not appear in the "
+            "abstract text** — retrieve the full text and verify before citing.")
+
+    def _needed(self):
+        import fetch_fulltext
+        orig = fetch_fulltext.KB
+        fetch_fulltext.KB = self.dir
+        self.addCleanup(lambda: setattr(fetch_fulltext, "KB", orig))
+        return fetch_fulltext.needed_pmids()
+
+    def test_open_flag_is_reported(self):
+        self.write("a.md", "## 原文摘录\n\n**PMID 12345678** · X 2020\n" + self.OPEN + "\n")
+        self.assertEqual(self._needed(), {"12345678": "197"})
+
+    def test_resolution_note_is_not_a_flag(self):
+        """The regression. Each of these quotes figures in backticks and none
+        is a request for a full text."""
+        for note in (
+            "> ⚠️ **FALSE POSITIVE, resolved.** The figures `50, 87` were flagged here.",
+            "> ⚠️ **ATTRIBUTION CORRECTED.** The figure `2609` was flagged against this paper.",
+            "> ⚠️ **FLAG CLOSED.** The flag listed `197` and every token is accounted for.",
+        ):
+            with self.subTest(note=note[:40]):
+                self.write("a.md", "## 原文摘录\n\n**PMID 12345678** · X 2020\n" + note + "\n")
+                self.assertEqual(self._needed(), {},
+                                 "a closed gap was put back on the work list")
+
+    def test_resolution_directly_under_a_stale_flag_still_reports(self):
+        """Honest about what this fix does NOT do: if the stale open-flag line
+        survives beside its resolution, the paper stays on the list. That is
+        why both stale flags were edited out of the corpus rather than being
+        filtered around — the fix is the wording, not a heuristic."""
+        self.write("a.md", "## 原文摘录\n\n**PMID 12345678** · X 2020\n"
+                   "> ⚠️ Resolved: `197` belongs to another paper.\n" + self.OPEN + "\n")
+        self.assertEqual(self._needed(), {"12345678": "197"})
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
