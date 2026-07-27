@@ -226,7 +226,8 @@
 > Median serum AGP and SAA concentrations were 269.85 µg/mL (range, very low or undetectable to 536.20 µg/mL) and 0.10 µg/mL (range, very low or undetectable to 0.96 µg/mL), respectively.
 > Median serum AGP and SAA concentrations were 832.60 µg/mL (range, 50.00 to 2,825.40 µg/mL) and 1.03 µg/mL (range, undetectable to 18.80 µg/mL), respectively.
 > Median serum AGP and SAA concentrations were significantly (P < 0.001 and P = 0.003, respectively) higher in cats with lymphoma at the time of diagnosis than in the control group.
-> Serum AGP concentration returned to a value comparable with that of the control group by 12 weeks of treatment.
+> Serum AGP concentration returned to a value comparable with that of the control group by 12 weeks of treatment (P = 0.06).
+> ⚠️ **`(P = 0.06)` restored 2026-07-27 by full-text verification (§3l).** The excerpt had been transcribed up to "treatment" and closed with a full stop, dropping the parenthetical — **and the parenthetical is the part that decides how the sentence reads.** P = 0.06 does not clear the conventional threshold, so "returned to a comparable value" is a trend, not a demonstrated normalisation. Truncating before a statistic makes a result look cleaner than the source states it.
 > The first consisted of 25 healthy adult (≥ 1 years old) privately owned cats and was used as a control group.
 > The second group consisted of 16 cats with lymphoma undergoing antineoplastic treatment.
 > ⚠️ Gap closed 2026-07-20. `270, 832` were flagged unverified and **were a real gap** — the values are 269.85 and 832.60, rounded in the body. Verified verbatim above.

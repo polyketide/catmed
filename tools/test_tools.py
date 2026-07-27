@@ -842,5 +842,63 @@ class TestFullTextWorkList(Fixture):
         self.assertEqual(self._needed(), {"12345678": "197"})
 
 
+# =============================================================================
+# dr_drill.py Leg 5 — full-text excerpt verification
+#
+# The matcher has to bridge a Markdown excerpt and `pdftotext` output, which
+# differ in ways that are NOT the excerpt's fault. These tests pin both halves:
+# the tolerances that must exist, and the drift that must still fail.
+# =============================================================================
+
+class TestLeg5Matching(Fixture):
+
+    def setUp(self):
+        super().setUp()
+        import dr_drill
+        self.dr = dr_drill
+
+    def test_hyphenation_across_a_line_break_is_rejoined(self):
+        pdf = "cats with lym-\nphoma were enrolled"
+        self.assertIn(self.dr.norm("cats with lymphoma were enrolled"),
+                      self.dr.norm_pdf(pdf))
+
+    def test_alnum_fallback_tolerates_punctuation_only(self):
+        """A dropped parenthetical still matches; it is a truncation, not drift."""
+        pdf = "treatment (P = 0.06). Because most"
+        self.assertIn(self.dr.alnum_only("treatment"), self.dr.alnum_only(pdf))
+
+    def test_alnum_fallback_does_not_tolerate_a_changed_word(self):
+        """The regression that matters. A dropped word — the one real
+        transcription error Leg 5 found on its first run — must still fail."""
+        pdf = "the free roaming lifestyle typical of the majority of UK cats"
+        self.assertNotIn(
+            self.dr.alnum_only("the free roaming lifestyle of the majority of UK cats"),
+            self.dr.alnum_only(pdf))
+
+    def test_alnum_fallback_does_not_tolerate_a_changed_digit(self):
+        pdf = "median survival was 16.7 months"
+        self.assertNotIn(self.dr.alnum_only("median survival was 16.9 months"),
+                         self.dr.alnum_only(pdf))
+
+    def test_known_font_artefact_repair_is_declared_not_silent(self):
+        """`¼` for `=` is a real publisher font-map fault, repaired only on
+        retry — so the count of papers needing it stays visible."""
+        self.assertTrue(any(("¼", "=") in pairs for pairs in self.dr.PDF_REPAIRS))
+
+
+class TestFullTextExtraction(Fixture):
+
+    def test_min_chars_guards_against_treating_a_scan_as_empty(self):
+        import fulltext_text
+        self.assertGreaterEqual(fulltext_text.MIN_CHARS, 200)
+
+    def test_text_and_pdf_stay_outside_the_repository(self):
+        """Third-party article PDFs must never land in a public repo."""
+        import fulltext_text
+        repo = Path(__file__).resolve().parent.parent
+        for p in (fulltext_text.FULLTEXT, fulltext_text.TEXTDIR):
+            self.assertNotIn(repo, p.parents, f"{p} is inside the repository")
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)

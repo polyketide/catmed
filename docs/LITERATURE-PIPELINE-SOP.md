@@ -205,6 +205,40 @@ Everything in this pipeline was built to discipline **positives**. Every excerpt
 3. **Before retrieving a full text, look for the figure in the abstract of the paper it actually belongs to.** Nine of ten needed no retrieval at all, and the tenth needed a different paper's abstract. Retrieval is the expensive step and it was being triggered by a formatting artefact.
 4. **⚠️ A percentage this project computed is not a quoted figure.** `7/26` is the source; `27%` is ours. Carry the source's own form, and never let a derived number be read as verbatim (cf. §3d: the same discipline that forbids typing a reference list).
 
+## 3l. ⭐ When the full text is obtainable, the abstract is not the source — and reading it deeper required building the verification first
+
+Standing instruction, 2026-07-27: **wherever a full-text PDF can be obtained, read it, and take the load-bearing results in depth — do not stop at the abstract.** The reading rules are adopted from the sibling project's `docs/GPU-LITERATURE-READING-SOP.md`, which binds any model or frontend, and are restated here in the form this repository needs.
+
+**The rules carried over, unchanged in substance.**
+1. **Text-first.** A text-bearing PDF is read through `pdftotext`, and the **text** is what gets read — never PDF-image vision tokens. Here the text is also **archived**, which is the addition: it turns a reading into something a later run can check.
+2. **⛔ Scanned → OCR, not guessed.** Under 200 characters means there is no text layer. Such a file is reported for OCR and never treated as an empty document — the failure mode being an empty extraction that makes every excerpt "unverifiable" while reading as though nothing were wrong.
+3. **flag-not-invent.** Missing information is written as missing. This is the same rule as §3h (a dose is written only when a record states it verbatim) arriving from the other project's wording.
+4. **Provenance is recorded, not assumed.** Each extraction stores what produced it, when, and the SHA-256 of the PDF — so a re-download that changes the file cannot leave a stale extraction looking current.
+5. **Nothing lands in the repository.** The PDFs and their text live in the archive outside it (§3). They are third-party copyrighted articles and this repository is public. A unit test asserts both paths are outside the repo rather than trusting the convention.
+
+**⭐ But the instruction could not simply be adopted, because the pipeline was not able to check the result.** Leg 1 compares every excerpt against the archived PubMed **abstract**. An excerpt taken from a full text is correctly absent from it, so Leg 1 has always *skipped* those: **82 of 908 excerpts, measured the same day — 9% of the corpus standing outside the discipline the whole project is built on.** Reading more full texts makes that fraction grow. So `fulltext_text.py` (extract + archive) and **Leg 5** (verify) were built before the policy was adopted, not after.
+
+**What Leg 5 found on its first run, out of 23 newly reachable excerpts.**
+
+| | |
+|---|---|
+| **18** | exact match |
+| **1** | matched only after repairing a broken publisher font map — Baez 2007 extracts every `=` as `¼` (24 occurrences) and drops `±` entirely |
+| **3** | matched modulo punctuation — the excerpt had been **truncated before a parenthetical** and closed with a full stop |
+| **1** | ⭐ **a genuine transcription error: a dropped word** |
+
+⚠️ **The dropped word had been in the knowledge base unnoticed** — "the free roaming indoor-outdoor lifestyle **of** the majority of UK cats", where the source reads "lifestyle **typical of** the majority". No abstract-level check could ever have caught it, because the sentence is not in the abstract.
+
+⚠️ **And the truncations were not cosmetic.** One read *"Serum AGP concentration returned to a value comparable with that of the control group by 12 weeks of treatment."* — the source ends `(P = 0.06)`. **Cutting before the statistic makes a trend read as a demonstrated result.** All four were corrected against the source.
+
+**Rules.**
+1. **⛔ A full-text excerpt is only admissible if its source text is archived.** Otherwise it is an unverifiable quotation wearing the same formatting as a verified one — which is worse than no quotation, because the block it sits in advertises byte-exactness.
+2. **⚠️ Never truncate before a parenthetical.** A P value, a confidence interval, a citation marker: quote the sentence the source wrote or quote a shorter clause honestly, but do not end a quotation where the qualifier begins. This is the excerpt-level form of §3h.
+3. **A repaired match is reported as repaired, never as clean.** Extraction is lossy in ways that are not the excerpt's fault, so the matcher tolerates de-hyphenation, a known font artefact, and punctuation — **and each tolerance is counted separately in the verdict line**, so "18 exact, 1 repaired, 4 lossy" can never collapse into "23 fine". A tolerance that stops being visible becomes folklore.
+4. **⚠️ The tolerances must not tolerate drift, and that is tested, not assumed.** Regression tests assert that a changed word and a changed digit still FAIL the most permissive fallback — pinned against the real dropped word this leg found.
+5. **State what is still unreachable.** 13 papers carrying 59 full-text excerpts have no held PDF, so Leg 5 cannot see them and says so in its own verdict line (cf. §3i rule 3: a check should name the gap it did *not* close).
+6. **⚠️ A watermark is licence evidence.** Three extracted texts carry `Brought to you by University of Tokyo | Unauthenticated`, and all three have no redistribution licence. **Held for reading is not cleared for sharing** — the sharing decision is the licence, checked per paper, never the fact that a file was obtainable.
+
 ## 3d. ⚠️ Reference lists are generated, never typed — and Leg 1 does not cover them
 
 `rebuild_references.py` exists precisely because hand-maintained reference lists drift, and its own docstring says of the metadata: *"Fetch it with a tool, never from memory."*

@@ -11,6 +11,9 @@ Leg 1 — archive rebuild. Rebuild from the repository's committed PMID list alo
         for word, in the re-fetched record. This tests the cache-not-truth split
         (SOP section 3) and the frozen-baseline invariant (section 4) at once.
 
+Leg 5 — full-text excerpts. The excerpts Leg 1 structurally cannot reach, checked
+        against `pdftotext` output archived by fulltext_text.py. See SOP section 3l.
+
 Self-test — corrupt a record in a scratch copy on purpose and assert Leg 1 fails.
         A detector never shown a fault has not been shown to work, so `--self-test`
         is not optional garnish; a PASS without it means little.
@@ -22,11 +25,13 @@ Usage:
   dr_drill.py leg1 [--archive DIR] [-v]
   dr_drill.py leg2 [--count N] [--batch N]
   dr_drill.py leg4 [--archive DIR] [-v]
+  dr_drill.py leg5 [-v]
   dr_drill.py self-test [--archive DIR]
 """
 from __future__ import annotations
 
 import argparse
+import functools
 import html
 import json
 import re
@@ -245,7 +250,7 @@ def leg1(arc: Path, verbose: bool = False) -> tuple[str, str, set]:
 
     detail = (f"{len(excerpts)} PMIDs, {checked} abstract-sourced excerpts checked, "
               f"{len(unmatched)} unmatched, {len(missing_records)} records missing, "
-              f"{skipped_fulltext} full-text excerpts not verifiable here")
+              f"{skipped_fulltext} full-text excerpts deferred to leg5")
     if rejected:
         detail += f", {len(rejected)} records rejected by the grade gate"
     # Findings are keyed by (pmid, what-was-found). A gate rejection is a finding
@@ -265,6 +270,99 @@ def cmd_leg1(args) -> int:
     verdict, detail, _ = leg1(arc, args.verbose)
     print(f"DR_LEG1: {verdict} ({detail})")
     return 0 if verdict == "PASS" else 1
+
+
+# --- Leg 5: the excerpts Leg 1 structurally cannot reach -------------------
+#
+# Leg 1 compares against the archived PubMed **abstract**, so an excerpt taken
+# from a full text is correctly absent from it and has always been skipped: 82
+# of 908 excerpts, measured 2026-07-27 — the fraction of the corpus standing
+# outside the discipline the project is built on. This leg closes that for every
+# paper whose PDF is held, by comparing against `pdftotext` output archived by
+# `fulltext_text.py`.
+#
+# ⚠️ Extraction is lossy in ways that are NOT the excerpt's fault, and pretending
+# otherwise would produce exactly the false accusation this project is built to
+# avoid. Two repairs, both observed live on the first run:
+#   * words hyphenated across a line break rejoin;
+#   * some publisher PDFs carry a broken font map — Baez 2007 extracts every "="
+#     as "¼" (24 occurrences) and drops "±" entirely.
+# A repaired match is reported as REPAIRED, never silently as a clean match, so
+# the count of papers needing repair stays visible rather than becoming folklore.
+
+PDF_REPAIRS = ((("¼", "="),), )      # (from, to) pairs applied only on retry
+
+
+def norm_pdf(s: str) -> str:
+    """Leg 1's `norm`, plus the de-hyphenation a page layout forces."""
+    return norm(re.sub(r"-\s*\n\s*", "", s))
+
+
+def alnum_only(s: str) -> str:
+    """Last resort: letters and digits. Punctuation, symbols and spacing survive
+    extraction unreliably; a changed word or digit still fails this."""
+    return re.sub(r"[^0-9a-zÀ-ɏ]+", "", norm(s))
+
+
+def leg5(verbose: bool = False) -> tuple[str, str, set]:
+    try:
+        sys.path.insert(0, str(Path(__file__).resolve().parent))
+        import fulltext_text
+    except Exception as exc:                                  # pragma: no cover
+        return "SKIP", f"fulltext_text unavailable ({exc})", set()
+
+    excerpts = excerpts_from_kb()
+    exact = repaired = lossy = 0
+    unreachable: set[str] = set()
+    unmatched: list[tuple[str, str, str]] = []
+
+    for pmid, items in sorted(excerpts.items()):
+        rows = [(f, s) for f, s, o in items if o == "fulltext"]
+        if not rows:
+            continue
+        body = fulltext_text.load_text(pmid)
+        if body is None:
+            unreachable.add(pmid)
+            continue
+        hay = norm_pdf(body)
+        forms = [functools.reduce(lambda t, kv: t.replace(*kv), pairs, body)
+                 for pairs in PDF_REPAIRS]
+        hay_repaired = [norm_pdf(f) for f in forms]
+        # The repairs must reach the fallback too, or a document needing one is
+        # denied both routes: NFKC expands "¼" to "1⁄4", so the stray digits
+        # survive into the alphanumeric form and corrupt it there as well.
+        hay_alnum = [alnum_only(t) for t in [body] + forms]
+        for src_file, sentence in rows:
+            needle = norm(sentence)
+            if needle in hay:
+                exact += 1
+            elif any(needle in h for h in hay_repaired):
+                repaired += 1
+            elif any(alnum_only(sentence) in h for h in hay_alnum):
+                lossy += 1
+            else:
+                unmatched.append((pmid, src_file, sentence))
+
+    if verbose:
+        for pmid, src, sent in unmatched:
+            print(f"  UNMATCHED {pmid} ({src}): {sent[:110]}"
+                  f"{'...' if len(sent) > 110 else ''}")
+        for pmid in sorted(unreachable):
+            print(f"  NO-FULLTEXT {pmid} (PDF not held; run fetch_fulltext.py)")
+
+    total = exact + repaired + lossy + len(unmatched)
+    detail = (f"{total} full-text excerpts checked, {exact} exact, "
+              f"{repaired} matched after repairing a known PDF font artefact, "
+              f"{lossy} matched modulo lossy punctuation, {len(unmatched)} unmatched; "
+              f"{len(unreachable)} paper(s) still have no held PDF")
+    keys = {(p, s) for p, _f, s in unmatched}
+    return ("FAIL" if unmatched else "PASS"), detail, keys
+
+
+def cmd_leg5(args) -> int:
+    verdict, detail, _ = leg5(args.verbose)
+    print(f"DR_LEG5: {verdict} ({detail})")
+    return 0 if verdict in ("PASS", "SKIP") else 1
 
 
 def cmd_self_test(args) -> int:
@@ -590,6 +688,9 @@ def main() -> int:
     p4.add_argument("--archive")
     p4.add_argument("-v", "--verbose", action="store_true")
     p4.set_defaults(fn=cmd_leg4)
+    p5 = sub.add_parser("leg5")
+    p5.add_argument("-v", "--verbose", action="store_true")
+    p5.set_defaults(fn=cmd_leg5)
     p3.set_defaults(fn=cmd_leg2)
     args = ap.parse_args()
     return args.fn(args)

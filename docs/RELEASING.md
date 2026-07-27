@@ -64,7 +64,9 @@ commit you are about to tag:
 python3 tools/check_kb_hygiene.py     # 10 checks incl. PII, staleness, generated artifacts, docs cross-refs, search log
 python3 tools/test_tools.py           # unit tests for the checkers
 python3 tools/pubmed_archive.py fetch # rebuild the archive from cited PMIDs
-python3 tools/dr_drill.py leg1        # every excerpt vs its source
+python3 tools/fulltext_text.py extract # pdftotext held PDFs into the archive
+python3 tools/dr_drill.py leg1        # every abstract-sourced excerpt vs its source
+python3 tools/dr_drill.py leg5        # every full-text excerpt vs the archived PDF text
 python3 tools/dr_drill.py self-test   # prove the checker can still fail
 ```
 

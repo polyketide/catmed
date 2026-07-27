@@ -146,6 +146,14 @@ by other tables, but those two specific numbers are unverified until their full-
 - orphans: 41111634 — reference-list entry in feline-lymphoma-all-types-owner-guide.zh.md; see the note above.
 - orphans: 41742593 — reference-list entry in feline-lymphoma-all-types-owner-guide.zh.md; see the note above.
 
+## docs-xref
+
+A filename referenced in `docs/` that resolves to no file here. Almost always a
+rename that left a pointer behind — record an entry only when the target is
+genuinely and permanently outside this tree.
+
+- docs-xref: docs/GPU-LITERATURE-READING-SOP.md — **lives in the sibling project, not here.** SOP §3l adopts its reading rules and cites it by path so the origin is traceable; the file itself is on the operator's Ai4Science machine and is deliberately not vendored (§7 keeps the two projects isolated). ⚠️ The check flagged this correctly on the first run — a cross-repository citation looks exactly like a stale local one, and only a human can tell them apart.
+
 ## empty-blocks
 
 An excerpt block with no quoted source text. Prefer the in-file declaration —

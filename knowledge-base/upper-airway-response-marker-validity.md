@@ -418,7 +418,7 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 > Environmental HRI was recorded as a trigger for the remaining 20/104 (19.6%) dogs, and for all cats (n = 6), guinea pigs (n = 7), rabbits (n = 2) and the ferret (n = 1).
 > The feline HRI cases were aged 0.4-19 years old (median = 10.4 years, IQR = 4.6-14.2 years).
 > Cats aged over 15 years old comprised 25% of the HRI cases, and the majority of events did not indicate the inciting trigger.
-> Only environmental HRI triggers were reported for all other species, although 62.5% of cats had no reported trigger, likely reflecting the free roaming indoor-outdoor lifestyle of the majority of UK cats.
+> Only environmental HRI triggers were reported for all other species, although 62.5% of cats had no reported trigger, likely reflecting the free roaming indoor-outdoor lifestyle typical of the majority of UK cats.
 > ⚠️ Gap closed 2026-07-20. `10, 62.5` were flagged unverified and **were a real gap** — not one of that day's misattributions. The full text carries both verbatim. The denominator "16 cats" had already been verified from the abstract; the numerator now is too.
 > ⚠️ **Table 4 records the feline presenting signs (n = 14 cats with signs recorded), and they inverse the canine pattern**: lethargy 10, abnormal breathing 6, vomit 3, diarrhoea 1, hypersalivation 1, ataxia 1, haemorrhagic diarrhoea 1. In dogs the order is abnormal breathing 72, lethargy 55, collapsed 46. Tabulated data, not a prose sentence. Cited in the body accordingly.
 

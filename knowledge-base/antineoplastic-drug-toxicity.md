@@ -78,7 +78,7 @@
 > The median overall survival of all cats was 150 days (range, 5-1,065 days), and the median progression-free survival was 104 days (range, 2-978 days).
 > RR was significantly higher in cases with primary gastric lesions (64.3%) than in those with primary intestinal lesions (24.1%) (P=0.018), and it was also higher in cases without anemia (57.1%) than those with anemia (15.0%) (P=0.009).
 > **【Publisher full text retrieved and checked 2026-07-20 — source: publisher PDF】**
-> When cats with LCGIL were treated by various chemotherapy, their median overall survival (OS) was reported to be 65-157 days.
+> When cats with LCGIL were treated by various chemotherapy, their median overall survival (OS) was reported to be 65–157 days [2, 7, 20].
 > ⚠️ **FALSE POSITIVE resolved 2026-07-20**: the figure `197` was flagged here. It belongs to **Blake 2016 (PMID 26834270)** — "197 doses in cats, 0 HSR" — cited in the same body line as this paper. Sentence-level attribution again.
 > This study included 43 cats.
 > Plasma phosphate concentrations were also significantly increased (P<0.001) within 24 hr after the first dose.
