@@ -304,6 +304,35 @@ def alnum_only(s: str) -> str:
     return re.sub(r"[^0-9a-zÀ-ɏ]+", "", norm(s))
 
 
+EXCEPTIONS_DOC = Path(__file__).resolve().parent.parent / "docs" / "kb-exceptions.md"
+LEG5_EXCEPTION = re.compile(r'^-\s*leg5:\s*(\d{7,8})\s+"([^"]+)"\s*—')
+
+
+def leg5_exceptions() -> list[tuple[str, str]]:
+    """(pmid, normalised excerpt prefix) pairs from docs/kb-exceptions.md.
+
+    ⚠️ **Every entry here is a claim that the EXTRACTOR failed, never that the
+    excerpt is exempt from being right.** The four originals are inline
+    superscript reference numbers glued into the sentence ("hypertensive
+    cats,7,20,57,66,67 including…"), a figure caption inserted mid-sentence, and
+    a two-column passage that both pdftotext modes shred. Adding a tolerance for
+    any of those would mean ignoring digits inside a sentence — in a corpus whose
+    whole point is that the digits are right. So the artefact is named, per
+    excerpt, and counted in its own bucket rather than folded into a pass.
+
+    Keyed on PMID **plus a prefix**, so an exception can never quietly cover a
+    second excerpt of the same paper.
+    """
+    if not EXCEPTIONS_DOC.exists():
+        return []
+    out = []
+    for line in EXCEPTIONS_DOC.read_text(encoding="utf-8").splitlines():
+        m = LEG5_EXCEPTION.match(line.strip())
+        if m:
+            out.append((m.group(1), norm(m.group(2))))
+    return out
+
+
 def leg5(verbose: bool = False) -> tuple[str, str, set]:
     try:
         sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -312,36 +341,44 @@ def leg5(verbose: bool = False) -> tuple[str, str, set]:
         return "SKIP", f"fulltext_text unavailable ({exc})", set()
 
     excerpts = excerpts_from_kb()
-    exact = repaired = lossy = 0
+    exceptions = leg5_exceptions()
+    exact = repaired = lossy = excepted = 0
     unreachable: set[str] = set()
     unmatched: list[tuple[str, str, str]] = []
+    unused_exceptions = set(exceptions)
 
     for pmid, items in sorted(excerpts.items()):
         rows = [(f, s) for f, s, o in items if o == "fulltext"]
         if not rows:
             continue
-        body = fulltext_text.load_text(pmid)
-        if body is None:
+        bodies = fulltext_text.load_texts(pmid)
+        if not bodies:
             unreachable.add(pmid)
             continue
-        hay = norm_pdf(body)
-        forms = [functools.reduce(lambda t, kv: t.replace(*kv), pairs, body)
-                 for pairs in PDF_REPAIRS]
+        hay = [norm_pdf(b) for b in bodies]
+        forms = [functools.reduce(lambda t, kv: t.replace(*kv), pairs, b)
+                 for b in bodies for pairs in PDF_REPAIRS]
         hay_repaired = [norm_pdf(f) for f in forms]
         # The repairs must reach the fallback too, or a document needing one is
         # denied both routes: NFKC expands "¼" to "1⁄4", so the stray digits
         # survive into the alphanumeric form and corrupt it there as well.
-        hay_alnum = [alnum_only(t) for t in [body] + forms]
+        hay_alnum = [alnum_only(t) for t in bodies + forms]
         for src_file, sentence in rows:
             needle = norm(sentence)
-            if needle in hay:
+            if any(needle in h for h in hay):
                 exact += 1
             elif any(needle in h for h in hay_repaired):
                 repaired += 1
             elif any(alnum_only(sentence) in h for h in hay_alnum):
                 lossy += 1
             else:
-                unmatched.append((pmid, src_file, sentence))
+                hit = [e for e in exceptions
+                       if e[0] == pmid and needle.startswith(e[1])]
+                if hit:
+                    excepted += 1
+                    unused_exceptions.discard(hit[0])
+                else:
+                    unmatched.append((pmid, src_file, sentence))
 
     if verbose:
         for pmid, src, sent in unmatched:
@@ -350,11 +387,21 @@ def leg5(verbose: bool = False) -> tuple[str, str, set]:
         for pmid in sorted(unreachable):
             print(f"  NO-FULLTEXT {pmid} (PDF not held; run fetch_fulltext.py)")
 
-    total = exact + repaired + lossy + len(unmatched)
+    # ⚠️ A stale exception is a dead hatch pointing the other way: it says a
+    # problem is known when it no longer exists, and the next real one inherits
+    # the excuse. Report it rather than letting the list rot silently.
+    if verbose:
+        for pmid, prefix in sorted(unused_exceptions):
+            print(f"  STALE-EXCEPTION {pmid}: no longer matches anything — remove it")
+
+    total = exact + repaired + lossy + excepted + len(unmatched)
     detail = (f"{total} full-text excerpts checked, {exact} exact, "
               f"{repaired} matched after repairing a known PDF font artefact, "
-              f"{lossy} matched modulo lossy punctuation, {len(unmatched)} unmatched; "
-              f"{len(unreachable)} paper(s) still have no held PDF")
+              f"{lossy} matched modulo lossy punctuation, "
+              f"{excepted} excepted as extraction artefacts, "
+              f"{len(unmatched)} unmatched; "
+              f"{len(unreachable)} paper(s) still have no held PDF, "
+              f"{len(unused_exceptions)} stale exception(s)")
     keys = {(p, s) for p, _f, s in unmatched}
     return ("FAIL" if unmatched else "PASS"), detail, keys
 

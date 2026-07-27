@@ -880,6 +880,20 @@ class TestLeg5Matching(Fixture):
         self.assertNotIn(self.dr.alnum_only("median survival was 16.9 months"),
                          self.dr.alnum_only(pdf))
 
+    def test_the_exception_hatch_actually_parses(self):
+        """**Test the escape hatch, not just the alarm.** This repository has
+        already shipped four suppression hatches that silently did nothing while
+        the failure message told the user to write exactly that line."""
+        entries = self.dr.leg5_exceptions()
+        self.assertTrue(entries, "no leg5 exception parsed — the hatch is dead")
+        self.assertTrue(all(p.isdigit() and pref for p, pref in entries))
+
+    def test_an_exception_is_keyed_on_more_than_a_pmid(self):
+        """A bare PMID would silently cover every other excerpt of that paper."""
+        for _pmid, prefix in self.dr.leg5_exceptions():
+            self.assertGreater(len(prefix.split()), 3,
+                               "prefix too short to identify one excerpt")
+
     def test_known_font_artefact_repair_is_declared_not_silent(self):
         """`¼` for `=` is a real publisher font-map fault, repaired only on
         retry — so the count of papers needing it stays visible."""

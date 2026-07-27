@@ -367,7 +367,8 @@
 **PMID 34579716** · Wang L 2021
 > ROC analysis revealed an area under the curve (AUC) of 0.98 with a sensitivity of 0.83 and a specificity of 0.95 for felines with lymphoma.
 > **【PMC full text retrieved and checked】**
-> ROC (receiver operating characteristic) analysis showed an AUC (area under the curve) value of 0.98 (< 0.0001) for the lymphoma group and 0.86 (< 0.001) for the solid tumor group, at 95% confidence interval.
+> ROC (receiver operating characteristic) analysis showed an AUC (area under the curve) value of 0.98 (p < 0.0001) for the lymphoma group and 0.86 (p < 0.001) for the solid tumor group, at 95% confidence interval.
+> ⚠️ **`p` restored twice, 2026-07-27, by full-text verification (§3l).** The excerpt read `(< 0.0001)` and `(< 0.001)` where the source writes `(p < 0.0001)` and `(p < 0.001)`. **A parenthetical inequality with no statistic named is not a weaker quotation — it is an unreadable one**, and it sat beside an AUC, which is the kind of neighbourhood where a bare `< 0.001` invites being read as a confidence bound. Second genuine transcription error Leg 5 has found; both were invisible to every abstract-level check because neither sentence is in the abstract.
 > At the chosen cutoff value the sensitivity was 0.83 and the specificity was 0.95 for lymphoma.
 > ⚠️ Check passed: AUC 0.98, sensitivity 0.83 and specificity 0.95 all match the body text.
 

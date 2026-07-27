@@ -146,6 +146,26 @@ by other tables, but those two specific numbers are unverified until their full-
 - orphans: 41111634 — reference-list entry in feline-lymphoma-all-types-owner-guide.zh.md; see the note above.
 - orphans: 41742593 — reference-list entry in feline-lymphoma-all-types-owner-guide.zh.md; see the note above.
 
+## leg5
+
+A full-text excerpt `dr_drill.py leg5` cannot locate in the archived `pdftotext`
+output. ⛔ **Every entry here asserts that the EXTRACTOR failed — never that the
+excerpt is excused from being correct.** Each is keyed on PMID *plus* an opening
+prefix, so it can never quietly cover a second excerpt of the same paper, and
+excepted excerpts are counted in their own bucket in the verdict line rather than
+folded into a pass. Leg 5 also reports entries that no longer match anything: a
+stale exception is a dead hatch pointing the other way.
+
+⚠️ **Adding a matcher tolerance instead was considered and rejected.** All four
+below would need the matcher to ignore digits sitting inside a sentence — in a
+corpus whose entire premise is that the digits are right.
+
+- leg5: 28245741 "Studies have reported neurological signs in 15-46%" — inline superscript reference numbers are extracted as text: the source reads `hypertensive cats,7,20,57,66,67 including disorientation`. The excerpt correctly omits them.
+- leg5: 28245741 "These studies also highlight the lability of feline BP" — same artefact: `a simulated clinic visit,16 showing the potential magnitude`.
+- leg5: 28245741 "Given that the IRIS group suggests the risk of TOD" — same artefact, mid-sentence.
+- leg5: 34579716 "ROC (receiver operating characteristic) analysis showed an AUC" — a **figure caption is injected mid-sentence** by extraction, between `0.86 (p < 0.001)` and `for the solid tumor group`. ⚠️ This excerpt *also* had a genuine error (two dropped `p`s), corrected 2026-07-27 — the exception covers the artefact only, and was added after the correction, not instead of it.
+- leg5: 39523636 "Another study found none of 212 RCT abstracts fulfilled" — a two-column passage that **both** pdftotext modes shred, with a running footer (`3264 BLOCK`) landing inside the sentence.
+
 ## docs-xref
 
 A filename referenced in `docs/` that resolves to no file here. Almost always a

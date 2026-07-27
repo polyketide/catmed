@@ -43,6 +43,15 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 MIN_CHARS = 200          # below this there is no text layer — OCR, do not guess
+
+# ⚠️ Column ordering is a heuristic and NEITHER mode is right for every paper, so
+# both are extracted and an excerpt may match either. Measured 2026-07-27: the
+# default mode shreds a two-column JVIM perspective by interleaving the columns
+# line by line — "…which is sup-  emphases. EQUATOR, an excellent resource…" —
+# turning 10 correctly transcribed excerpts into 10 apparent failures. `-raw`
+# follows the content stream and reads that paper correctly; it is not a
+# universal improvement, which is exactly why the choice is not made here.
+MODES = {"flow": (), "raw": ("-raw",)}
 FULLTEXT = Path(os.path.expanduser("~/.catmed-archive/fulltext"))
 TEXTDIR = Path(os.path.expanduser("~/.catmed-archive/fulltext-txt"))
 
@@ -70,32 +79,49 @@ def extract_one(pdf: Path, force: bool = False) -> tuple[str, str]:
         if prev.get("pdf_sha256") == digest:
             return "skip", "already extracted, PDF unchanged"
         return "stale-ok", "PDF changed since extraction — re-extracting"
-    try:
-        out = subprocess.run(["pdftotext", "-q", str(pdf), "-"],
-                             capture_output=True, timeout=180)
-    except FileNotFoundError:
-        return "error", "pdftotext not installed (brew install poppler)"
-    except subprocess.TimeoutExpired:
-        return "error", "pdftotext timed out"
-    body = out.stdout.decode("utf-8", errors="replace")
+    bodies = {}
+    for mode, flags in MODES.items():
+        try:
+            out = subprocess.run(["pdftotext", "-q", *flags, str(pdf), "-"],
+                                 capture_output=True, timeout=180)
+        except FileNotFoundError:
+            return "error", "pdftotext not installed (brew install poppler)"
+        except subprocess.TimeoutExpired:
+            return "error", f"pdftotext timed out in {mode} mode"
+        bodies[mode] = out.stdout.decode("utf-8", errors="replace")
+    body = bodies["flow"]
     if len(body.strip()) < MIN_CHARS:
         return "ocr", f"no text layer ({len(body.strip())} chars) — needs OCR"
     TEXTDIR.mkdir(parents=True, exist_ok=True)
     txt.write_text(body, encoding="utf-8")
+    (TEXTDIR / f"{pmid}.raw.txt").write_text(bodies["raw"], encoding="utf-8")
     meta.write_text(json.dumps({
         "pmid": pmid,
         "pdf_sha256": digest,
-        "chars": len(body),
+        "chars": {k: len(v) for k, v in bodies.items()},
         "extracted_by": "pdftotext",
+        "modes": {k: " ".join(v) or "(default)" for k, v in MODES.items()},
         "extracted_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }, ensure_ascii=False, sort_keys=True) + "\n", encoding="utf-8")
     return "ok", f"{len(body)} chars"
 
 
 def load_text(pmid: str) -> str | None:
-    """The extracted text for one PMID, or None. Used by dr_drill Leg 1."""
+    """The default-mode text for one PMID, or None."""
     p = TEXTDIR / f"{pmid}.txt"
     return p.read_text(encoding="utf-8") if p.exists() else None
+
+
+def load_texts(pmid: str) -> list[str]:
+    """Every extracted rendering of one PDF. Leg 5 accepts a match in any of
+    them: a column-order difference is the extractor's artefact, not drift, and
+    no word or digit can differ between renderings of the same page."""
+    out = []
+    for name in (f"{pmid}.txt", f"{pmid}.raw.txt"):
+        p = TEXTDIR / name
+        if p.exists():
+            out.append(p.read_text(encoding="utf-8"))
+    return out
 
 
 def cmd_extract(args) -> int:
@@ -121,7 +147,8 @@ def cmd_extract(args) -> int:
 
 def cmd_status(args) -> int:
     pdfs = {p.stem for p in FULLTEXT.glob("*.pdf")} if FULLTEXT.is_dir() else set()
-    txts = {p.stem for p in TEXTDIR.glob("*.txt")} if TEXTDIR.is_dir() else set()
+    txts = {p.stem for p in TEXTDIR.glob("*.txt")
+            if not p.name.endswith(".raw.txt")} if TEXTDIR.is_dir() else set()
     print(f"PDFs held      : {len(pdfs)}")
     print(f"text extracted : {len(txts)}")
     missing = sorted(pdfs - txts)
