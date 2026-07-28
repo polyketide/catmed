@@ -46,12 +46,12 @@
 | [`feline-disease-frequency.md`](feline-disease-frequency.md) | 7 | 28 |
 | [`feline-hcm-emerging-therapy.md`](feline-hcm-emerging-therapy.md) | 1 | 7 |
 | [`feline-hypertension.md`](feline-hypertension.md) | 5 | 47 |
-| [`feline-lymphoma-treatment-currency.md`](feline-lymphoma-treatment-currency.md) | 5 | 22 |
+| [`feline-lymphoma-treatment-currency.md`](feline-lymphoma-treatment-currency.md) | 8 | 36 |
 | [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md) | 54 | 174 |
 | [`gcsf-and-chemotherapy-neutropenia.md`](gcsf-and-chemotherapy-neutropenia.md) | 6 | 15 |
 | [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md) · [中文版](hyperthyroidism-and-kidney-disease.zh.md) | 3 | 16 |
 | [`parr-clonality-what-a-negative-means.md`](parr-clonality-what-a-negative-means.md) | 2 | 7 |
-| [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 5 | 16 |
+| [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 7 | 24 |
 | [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md) | 14 | 36 |
 | [`targeted-and-immunotherapy-evidence.md`](targeted-and-immunotherapy-evidence.md) | 1 | 4 |
 | [`treatment-related-harm-and-the-tradeoff.md`](treatment-related-harm-and-the-tradeoff.md) | 4 | 10 |

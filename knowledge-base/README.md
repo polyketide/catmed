@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**21 files, 186 papers, 688 verbatim excerpts**, every one
+**21 files, 191 papers, 710 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -44,12 +44,12 @@ more than anything written here.
 | [`feline-disease-frequency.md`](feline-disease-frequency.md) | 7 | 28 |
 | [`feline-hcm-emerging-therapy.md`](feline-hcm-emerging-therapy.md) | 1 | 7 |
 | [`feline-hypertension.md`](feline-hypertension.md) | 5 | 47 |
-| [`feline-lymphoma-treatment-currency.md`](feline-lymphoma-treatment-currency.md) | 5 | 22 |
+| [`feline-lymphoma-treatment-currency.md`](feline-lymphoma-treatment-currency.md) | 8 | 36 |
 | [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md) | 54 | 174 |
 | [`gcsf-and-chemotherapy-neutropenia.md`](gcsf-and-chemotherapy-neutropenia.md) | 6 | 15 |
 | [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md) | 3 | 16 |
 | [`parr-clonality-what-a-negative-means.md`](parr-clonality-what-a-negative-means.md) | 2 | 7 |
-| [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 5 | 16 |
+| [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 7 | 24 |
 | [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md) | 14 | 36 |
 | [`targeted-and-immunotherapy-evidence.md`](targeted-and-immunotherapy-evidence.md) | 1 | 4 |
 | [`treatment-related-harm-and-the-tradeoff.md`](treatment-related-harm-and-the-tradeoff.md) | 4 | 10 |
@@ -141,7 +141,7 @@ hypertension is the third member of the older-cat triad alongside chronic kidney
 
 **Feline Lymphoma Treatment — a currency check, and the 2025 options the textbooks predate**
 
-*5 papers, 22 verbatim excerpts.*
+*8 papers, 36 verbatim excerpts.*
 
 ### [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md)
 
@@ -175,7 +175,7 @@ these are the two commonest chronic diseases of older cats, they occur together,
 
 **Judging "Response" and "Resistance" — what the criteria actually cover, and where a drug gets written off too early**
 
-*5 papers, 16 verbatim excerpts.*
+*7 papers, 24 verbatim excerpts.*
 
 ### [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md)
 

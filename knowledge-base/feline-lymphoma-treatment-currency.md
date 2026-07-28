@@ -54,6 +54,58 @@ Feline **CNS lymphoma** has historically had little to guide treatment. A 2025 r
 
 ---
 
+## 2b. How long, and how often — the part owners are told least about
+
+Owners are usually handed a schedule, not a rationale. Two questions come up constantly and both have evidence: **does treatment have to continue after remission**, and **does dosing have to be weekly**. They have different answers.
+
+### 2b.1 Maintenance after remission: not shown to help, in the largest comparison available
+
+The clearest data are canine, and the comparison is unusually direct — **the same induction protocol, with and without a two-year maintenance phase**:
+
+> *"There was **no significant difference between the two protocols** (P=0.291 for ST, P=0.071 for DFR)."*
+> *"This study **supports the use of a discontinuous protocol** for canine multicentric lymphoma."* (Lautscham 2017, n=408 dogs, PMID 28100766)
+
+Maintenance arm 216 / 375 days (DFR / ST) versus 184 / 304 without. ⚠️ **Canine, retrospective, non-randomised, sequential cohorts** — the maintenance cohort was treated first, so era effects are not excluded. But n=408 makes it the largest such comparison, and it is the reason discontinuous protocols became standard.
+
+**In cats, short maintenance-free protocols perform respectably:**
+
+> *"a **10-week maintenance-free** COP (COP-10) protocol"* … *"For cats achieving complete remission, the median progression-free interval and the median lymphoma-specific survival time were **both 1,139 days**."* … *"Treatment with the short protocol COP-10 resulted in remission rates and durable first remissions … **comparable to responses seen with longer-duration chemotherapy protocols**."* (Larsen 2024, n=27, PMID 39113405)
+
+⚠️ n=27, single institution, retrospective, and **67% were stage I–II** — a favourable-stage cohort. Also see Limmer 2014 (12-week maintenance-free, PMID 24548273) in [`treatment-related-harm-and-the-tradeoff.md`](treatment-related-harm-and-the-tradeoff.md).
+
+> **⭐ Read the same paper for its other half: complete remission 1,139 days versus partial remission 53 / 210 days — roughly a twentyfold gap.** What the protocol has to achieve is remission. What it does *after* that is where the evidence stops supporting more.
+
+### 2b.2 Why intensive induction is nonetheless defensible
+
+The mirror-image finding, also canine and also direct — an 8-week COP-based protocol with maintenance versus a 19-week doxorubicin-containing protocol:
+
+> Median first remission 94 days versus **174 days** (P<.01); hazard ratio for death **1.9** (95% CI 1.1–3.4, P=.03) for the non-doxorubicin arm.
+> *"The severity of **neutropenia and gastrointestinal toxicoses** were significantly higher in the UW-19 group."* (Hosoya 2007, n=101 dogs, PMID 18196747)
+
+**So the intensity argument is not clinician conservatism.** Four reasons a weekly schedule is the default:
+
+1. **Induction has to reach complete remission**, and CR is the variable carrying the twentyfold difference.
+2. **Regrowth between doses** — the longer the gap, the more of it.
+3. **⭐ Without individualised monitoring, weekly is the safer default.** Stretching an interval is only safe if something can detect regrowth. Absent that, the schedule is the only control left.
+4. **Published protocols carry outcome data; improvised ones do not.**
+
+⚠️ And the cost is real and measured: significantly worse neutropenia and GI toxicity in the intensive arm.
+
+### 2b.3 ⛔ The distinction that makes this actionable — induction is not maintenance
+
+An owner who hears that another animal is dosed every three weeks may reasonably ask for the same. **The inference does not hold if the two animals are at different stages.**
+
+| | Induction | Post-remission |
+|---|---|---|
+| Goal | **reach** complete remission | **hold** it |
+| Stretching the interval risks | **failing to achieve CR** — the twentyfold variable | relapse, detectable if monitored |
+
+**The answerable question is therefore not "can we dose less often" but "can the interval be individualised, given what we can actually monitor in this animal".** Where regrowth can be tracked — a palpable mass, an accessible ultrasound window, awake radiography — that question can be put to the oncologist with something behind it. Where it cannot, the schedule is doing the monitoring's job, and stretching it trades a known risk for an unmeasured one.
+
+⚠️ This section describes what the evidence supports asking. **Interval, dose and sequencing are the attending oncologist's decisions**, and nothing here is a reason to alter a schedule without them.
+
+---
+
 ## 3. At the decision moment
 
 - **A shared protocol matching the textbook backbone is reassuring, not sufficient.** Check it on three cat-specific axes it commonly fails (prednisolone vs prednisone; doxorubicin-as-nephrotoxin; pre-dose CBC) — all in [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md) — and, where a value is published, against the reference doses in §2. Then ask the oncologist whether anything **newer** applies to *this* cat's form. As of 2025 that "newer" list includes abdominal RT for the small-cell/CIE end (§1.1) and lomustine + corticosteroids for the CNS form (§1.2).
@@ -69,6 +121,9 @@ Feline **CNS lymphoma** has historically had little to guide treatment. A 2025 r
 - Gieger TL, et al. Treatment of feline gastrointestinal intermediate- or large-cell lymphoma with lomustine chemotherapy and 8 Gy abdominal cavity radiation therapy. *J Feline Med Surg* 2020;23(6):469-476. PMID 32996835. [DOI](https://doi.org/10.1177/1098612X20959602)
 - O'Keefe DA, et al. Systemic toxicity associated with doxorubicin administration in cats. *J Vet Intern Med* 1993 (dose/toxicity source for §2). PMID 8263850.
 - Kim HJ, Heo R, Choi EW. A Retrospective Investigation of 28 Cats with Intermediate- to Large-Cell Lymphoma Treated with Lomustine and Prednisolone as a First-Line Chemotherapy. *Animals (Basel)* 2026;16(6):989. PMID 41897966. [DOI](https://doi.org/10.3390/ani16060989)
+- Larsen MME, Andersson AM, Arendt M. Outcome of treatment with a 10-week COP protocol in cats with intermediate or large cell lymphoma: 27 cases (2014-2023). *J Small Anim Pract* 2024;65(11):807-816. PMID 39113405. [DOI](https://doi.org/10.1111/jsap.13772)
+- Lautscham EM, Kessler M, Ernst T, Willimzig L, Neiger R. Comparison of a CHOP-LAsp-based protocol with and without maintenance for canine multicentric lymphoma. *Vet Rec* 2017;180(12):303. PMID 28100766. [DOI](https://doi.org/10.1136/vr.104077) — **canine**
+- Hosoya K, et al. Comparison of COAP and UW-19 protocols for dogs with multicentric lymphoma. *J Vet Intern Med* 2007;21(6):1355-63. PMID 18196747. [DOI](https://doi.org/10.1892/06-284.1) — **canine**
 - Core protocols, toxicity and the small-cell/large-cell prognostic divide are sourced in [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md) §3 (incl. Lai 2025, PMID 40443182) and [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md).
 
 ---
@@ -111,3 +166,26 @@ Feline **CNS lymphoma** has historically had little to guide treatment. A 2025 r
 > The systemic toxicity of doxorubicin, 30 mg/m2 body surface area (BSA) every 21 days to a cumulative dose of 300 mg/m2, was evaluated in six cats.
 > Echocardiographic changes consistent with doxorubicin-induced cardiomyopathy occurred in four cats after cumulative doses of 170 to 240 mg/m2 BSA.
 > At necropsy, all cats had histological evidence of renal disease.
+
+**PMID 39113405** · Larsen MME 2024 (feline — short maintenance-free protocol)
+> The aim of this retrospective clinical study was to evaluate and report response to treatment with a 10-week maintenance-free COP (COP-10) protocol in a cohort of 27 cats with intermediate or large cell lymphoma.
+> The median age was 10 years, 67% of the cats were in stages I to II and the most common anatomical location was alimentary (37%).
+> The overall response rate was 65%, with 38% of cats achieving complete remission and 27% partial remission.
+> For cats achieving complete remission, the median progression-free interval and the median lymphoma-specific survival time were both 1,139 days.
+> For cats in partial remission, the median progression-free interval and the median lymphoma-specific survival time were 53 and 210 days, respectively.
+> Treatment with the short protocol COP-10 resulted in remission rates and durable first remissions for cats achieving complete remission comparable to responses seen with longer-duration chemotherapy protocols.
+> The results from this study may impact economic and logistic decisions for owners, as well as the quality of life for patients in the future.
+> ⚠️ n=27, single institution, retrospective, and 67% stage I–II — a favourable-stage cohort. Cited in §2b.1 for protocol duration, and for the CR-versus-PR gap, not as an expected outcome.
+
+**PMID 28100766** · Lautscham EM 2017 (⚠️ canine — maintenance versus no maintenance)
+> 408 dogs were treated with a CHOP-LAsp (C=cyclophosphamide; H=hydroxydaunorubicin; O=Oncovin; P=prednisolone; LAsp=l-asparaginase)-based 28-week induction protocol.
+> Median DFR and ST in cohort 1 were 216 and 375 days and 184 and 304 days in cohort 2.
+> There was no significant difference between the two protocols (P=0.291 for ST, P=0.071 for DFR).
+> This study supports the use of a discontinuous protocol for canine multicentric lymphoma.
+> ⚠️ Canine, retrospective, and the two cohorts were sequential rather than randomised (maintenance first, n=75; discontinued after, n=333) — era effects are not excluded. Cited as the largest available direct comparison, not as feline evidence.
+
+**PMID 18196747** · Hosoya K 2007 (⚠️ canine — intensity has a measured cost)
+> The median duration of the first remission for the COAP and UW-19 groups were 94 days (range, 6-356 days) and 174 days (28-438 days), respectively (P < .01).
+> Dogs in the COAP group had a hazard ratio of 1.9 (95% CI 1.1-3.4) for death relative to the UW-19 group (P = .03), after controlling for the confounders (World Health Organization clinical stage, age, sex, use of doxorubicin during reinduction).
+> The severity of neutropenia and gastrointestinal toxicoses were significantly higher in the UW-19 group than in the COAP group (P = .01 and P < .01, respectively).
+> ⚠️ Canine, retrospective. Cited in §2b.2 for the direction of the intensity trade-off — longer first remission, worse toxicity — not for feline dosing.

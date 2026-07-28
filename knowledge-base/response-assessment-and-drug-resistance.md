@@ -55,6 +55,54 @@ In a canine lymphoid cell line made resistant by prolonged **doxorubicin** expos
 
 ---
 
+## 2b. When serial imaging is off the table — reading one scan, and what replaces it
+
+Repeat imaging is frequently unavailable in practice: it needs anaesthesia, and for a patient with airway compromise, cardiac disease or a previous anaesthetic event, that is a real risk rather than an inconvenience. Cost removes it for others. **The diagnostic scan then has to do a different job than it was ordered for**, and something has to take over the monitoring.
+
+> ⚠️ **This section is reasoning and clinical practice, not a sourced feline finding.** No study was located validating palpation or awake radiography as response measures in feline lymphoma. It is recorded as *how to structure the question for the oncologist*, not as evidence that these substitutes work.
+
+### 2b.1 Bulk and prognosis are different axes
+
+The number an owner fixes on is the largest diameter. **It is usually not the feature carrying the risk.** More decision-relevant, read off the same report:
+
+| Feature | Why it matters more than the diameter |
+|---|---|
+| **Bone lysis at a skull-base foramen** | A foramen transmits a nerve; enlargement suggests perineural extension toward the cranial vault — a route, not just erosion |
+| **Airway or oesophageal compromise** | The thing that kills first, and on a timescale of hours |
+| **Adherence to a named vessel** | Converts any future sampling or surgery into a bleeding question |
+| **A node with an indistinct border against the mass** | May be contiguous rather than a separate station — changes what a sample from "the node" even means |
+| **"No obvious intracranial extension"** | ⚠️ Is *not seen*, not *excluded* — a monitoring instruction, not a reassurance |
+
+**⭐ And bulk means different things for different tumours.** A large chemo-sensitive lymphoma can collapse within days to weeks; a carcinoma of the same size in the same location often cannot be reduced at all. Reading "large" as "hopeless" imports a prognosis from the wrong tumour type. ⚠️ The converse also holds — chemo-sensitivity is an expectation, not an entitlement, and only observed response confirms it in a given animal.
+
+### 2b.2 A layered read, because the layers move at different speeds
+
+Bundling everything into one worry loses the distinction between what needs an emergency call tonight and what needs a question at the next appointment.
+
+| Layer | Question | Timescale |
+|---|---|---|
+| **1** | Is the airway (or other immediately life-limiting structure) failing? | hours–days — **the only emergency axis** |
+| **2** | Is the lesion responding? | weeks — the surrogates below |
+| **3** | Is it extending along the route the imaging identified? | weeks–months — **new neurological signs**, not size |
+| **4** | Was complete remission achieved? | months — the variable carrying the prognosis (§2) |
+
+**Layer 3 is not theoretical when the imaging shows a skull-base route.** Two feline middle-ear lymphoma reports illustrate the endpoint: one cat died on day 228 after generalised seizures (Takahashi 2023, PMID 37756106); another *"lost ventilatory drive after induction for anesthesia"* with suspected brain herniation (Kerns 2018, PMID 29487747). Both are single cases — cited to show the pathway exists, not to assign probability.
+
+### 2b.3 What can replace serial imaging, and its limits
+
+Whatever is used, the point is that **layer 2 needs something, and the oncologist should be the one to specify it**:
+
+- **A palpable mass**, measured the same way each time, by the same person. ⚠️ Unblinded and subjective; an owner wants it smaller.
+- **Awake radiography** where the relevant structure is visible — no anaesthesia required.
+- **An accessible ultrasound window**, where anatomy allows.
+- **A site-specific external sign** (visible protrusion, discharge from an involved ear canal) — ⚠️ interpret only as an asymmetric indicator: improvement is meaningful, absence of improvement often is not.
+
+**⚠️ The confounder that spoils all of them: concurrent corticosteroids.** Steroids reduce peritumoural oedema without reducing tumour, so a lesion can palpate smaller and an airway can open while tumour burden is unchanged. **Record the steroid dose on the same axis as the measurement**, or the two effects cannot be separated later.
+
+**⭐ Why this matters beyond monitoring:** individualising a dosing interval requires being able to detect regrowth (see [`feline-lymphoma-treatment-currency.md`](feline-lymphoma-treatment-currency.md) §2b.3). An animal with a usable surrogate can have that conversation; one without it cannot, and the fixed schedule is doing the monitoring's job.
+
+---
+
 ## 3. At the decision moment
 
 - **Ask what the response judgement was measured on.** Nodal, imaged, or an extranodal lesion? At what interval? A judgement resting on one extranodal lesion at one early timepoint is the weakest configuration, per §0.1 — and it is worth saying so out loud to the oncologist, as a question rather than a challenge.
@@ -107,3 +155,17 @@ In a canine lymphoid cell line made resistant by prolonged **doxorubicin** expos
 > Of the 31 cases, 24 (80%) and 7 (22%) were positive for Pgp and p53, respectively.
 > The Pgp protein expression and DOR and survival was not statistically significant.
 > Expression of p53 was statistically correlated with survival.
+
+**PMID 37756106** · Takahashi T 2023 (feline middle-ear lymphoma, n=1)
+> She was diagnosed with B-cell lymphoma of the right middle ear after otoscopic sampling, which showed evidence of the filling of bilateral tympanic bullae on computed tomography.
+> On day 176, magnetic resonance imaging and computed tomography were performed at checkup, revealing tumor invasion into the nasopharyngeal region and the recurrence of hepatic lesions without any brain abnormality.
+> Nasal congestion then worsened, and the patient died on day 228 after presenting with generalized seizures.
+> Clinicians should be mindful of middle ear lymphoma as a differential diagnosis in cats who present with a sign of otitis media, especially whose condition does respond to corticosteroid treatment.
+> ⚠️ Single case report. Cited in §2b.2 only to show that the skull-base/intracranial route is a real endpoint, not to assign probability. Note also the corticosteroid-responsiveness observation, which bears on the steroid confounder in §2b.3.
+
+**PMID 29487747** · Kerns AT 2018 (feline middle-ear lymphoma, n=1)
+> A 9-year-old spayed female domestic shorthair cat with clinical signs suggestive of chronic recurrent otitis media and recent seizures was presented with multifocal nervous system disease, including bilateral central and/or peripheral vestibular, cerebellar and forebrain deficits.
+> The following morning the cat's mentation worsened, and the cat lost ventilatory drive after induction for anesthesia in preparation for MRI.
+> A brain herniation event was suspected, and the cat was euthanized prior to further diagnostics.
+> Neoplasia should be considered in cases of middle-ear effusion that do not improve adequately with appropriate antimicrobial therapy.
+> ⚠️ Single case report; the tumour was non-B, non-T and PARR failed to amplify. Cited in §2b.2 for the anaesthetic endpoint that motivates §2b entirely — imaging under anaesthesia is not a neutral act in these patients.
