@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**21 files, 191 papers, 710 verbatim excerpts**, every one
+**21 files, 192 papers, 715 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -46,7 +46,7 @@ more than anything written here.
 | [`feline-hypertension.md`](feline-hypertension.md) | 5 | 47 |
 | [`feline-lymphoma-treatment-currency.md`](feline-lymphoma-treatment-currency.md) | 8 | 36 |
 | [`feline-oncology-literature-survey.md`](feline-oncology-literature-survey.md) | 54 | 174 |
-| [`gcsf-and-chemotherapy-neutropenia.md`](gcsf-and-chemotherapy-neutropenia.md) | 6 | 15 |
+| [`gcsf-and-chemotherapy-neutropenia.md`](gcsf-and-chemotherapy-neutropenia.md) | 7 | 20 |
 | [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md) | 3 | 16 |
 | [`parr-clonality-what-a-negative-means.md`](parr-clonality-what-a-negative-means.md) | 2 | 7 |
 | [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 7 | 24 |
@@ -153,7 +153,7 @@ hypertension is the third member of the older-cat triad alongside chronic kidney
 
 **G-CSF (升白针) in Cats — why repeated *human* G-CSF can cause the neutropenia it is given to fix**
 
-*6 papers, 15 verbatim excerpts.*
+*7 papers, 20 verbatim excerpts.*
 
 ### [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md)
 

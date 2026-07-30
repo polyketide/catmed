@@ -59,6 +59,54 @@ In a randomized controlled trial comparing feline G-CSF, pegylated feline G-CSF 
 
 ---
 
+## 4. Febrile neutropenia — when it happens, and why the timing matters to an owner
+
+§3 ends by calling fever-plus-neutropenia an emergency. It does not say **when** it
+tends to happen, and that gap costs owners the one inference they can make at home
+at 2am: *which injection could this even be?*
+
+The only feline series on this is small (22 events in 20 cats, eight institutions,
+retrospective) but it is directly on point.
+
+**Timing.** Median days between chemotherapy administration and onset was **5
+(range 4–25)**. So a fever starting **within 24 hours of an injection is outside the
+reported window** and points away from that particular dose — while a fever at
+day 5–7 sits squarely in it. ⚠️ **The range is wide (4–25 days) and n is small; this
+orders suspicion, it does not exclude anything.** Two drugs given a week apart can
+both be inside the window at once.
+
+**Which drugs.** Lymphoma was the commonest diagnosis, and **lomustine and vinca
+alkaloids** (vincristine, vinblastine) were the most frequently implicated agents.
+
+**What it looked like on presentation.** Median temperature **40.0 °C (range
+39.5–40.6)**, median absolute neutrophil count **246** (range 0–1600). Presenting
+signs were decreased appetite, lethargy, vomiting and diarrhoea.
+
+⚠️ **Unit note.** The PubMed abstract renders that count as `246 mL`, which is a lost
+`µL` — the excerpt below is quoted exactly as the record reads, errors included.
+Check the published paper before using the figure.
+
+**Outcome.** All but one cat received intravenous fluids and broad-spectrum
+antibiotics; **fevers resolved in all cases** and neutrophil counts returned to
+normal in 19. This is treatable — the thing that has to happen is the CBC.
+
+### What this does and does not let an owner conclude
+
+- ✅ It gives a **prior**, not an answer. A fever the day after an injection and a
+  fever a week after are not equally likely to be this.
+- ❌ It does **not** let anyone rule febrile neutropenia in or out at home. The
+  median neutrophil count above is far below any reference range, and **nothing
+  visible from outside the cat distinguishes it from a tumour fever or an
+  infection.** Only a CBC does.
+- ⛔ **A normal CBC from before the fever does not clear the cat.** Counts can fall
+  within a day or two, and the pre-treatment sample was drawn before the drug
+  that matters was even given.
+- ⇒ The output of this section is a **question for the clinic**, never a decision to
+  wait: *the cat is febrile at day N after drug X — can we have a CBC with
+  differential today?*
+
+---
+
 ## References
 
 - Coleman JK, et al. Pegylated feline granulocyte colony-stimulating factor increases neutrophil levels in cats. *Vet J* 2014;200(1):44-50. PMID 24662027. [DOI](https://doi.org/10.1016/j.tvjl.2014.01.019)
@@ -67,6 +115,7 @@ In a randomized controlled trial comparing feline G-CSF, pegylated feline G-CSF 
 - Dascalu MA, et al. Filgrastim Efficiency in Cats Naturally Infected with Feline Panleukopenia Virus. *Animals (Basel)* 2024;14(24):3582. PMID 39765486. [DOI](https://doi.org/10.3390/ani14243582)
 - Tüfekçi E, et al. Comparison of the Efficacy of Filgrastim and an Inactivated Paraimmune Activator in Naturally Infected Cats with Feline Panleukopenia. *Animals (Basel)* 2026;16(7):1066. PMID 41976045. [DOI](https://doi.org/10.3390/ani16071066)
 - Klar L. Filgrastim Use in the Treatment of Azathioprine-Induced Myelosuppression Toxicity After Prescription Error in the Feline. *J Am Anim Hosp Assoc* 2024;60(3):105-108. PMID 38662994. [DOI](https://doi.org/10.5326/JAAHA-MS-7409)
+- Pierro J, Krick E, Flory A, et al. Febrile neutropenia in cats treated with chemotherapy. *Vet Comp Oncol* 2016;15(2):550-556. PMID 27094020. [DOI](https://doi.org/10.1111/vco.12198)
 
 ---
 
@@ -86,6 +135,13 @@ In a randomized controlled trial comparing feline G-CSF, pegylated feline G-CSF 
 
 **PMID 34509747** · Chi HJ 2021
 > Off-label use of a human granulocyte colony stimulating factor (hG-CSF) has been allowed to treat dogs and cats with neutropenia. However, repeated administration of hG-CSF induces undesirable anti-drug antibody (ADA) responses, implying the necessity of animal-derived G-CSF as a therapeutic reagent, preferably with a long-acting capability.
+
+**PMID 27094020** · Pierro J 2016
+> Lymphoma was the most common cancer diagnosis; lomustine and vinca alkaloids were the most frequently implicated causative agents.
+> Presenting clinical signs included decreased appetite, lethargy, vomiting and diarrhoea.
+> Median number of days between chemotherapy administration and FN onset was 5 (range: 4-25 days).
+> All but one cat were treated with intravenous fluids and broad spectrum antibiotics.
+> Fevers resolved in all cases and absolute neutrophil counts returned to normal in 19 cats.
 
 **PMID 34967142** · Kim KB 2021
 > Two weeks after completion of granulocyte colony-stimulating factor therapy, the cat developed severe thrombocytopenia, with the granulocyte colony-stimulating factor therapy considered to be the most likely cause.
