@@ -226,6 +226,54 @@ def check_pii(exc: set[str] | None = None) -> list[str]:
 
 AGENT = REPO / ".claude" / "agents" / "medical.md"
 
+def check_scope(exc: set[str] | None = None) -> list[str]:
+    """Assert the checks above actually had input to read.
+
+    Four checks in this file — pii, stale-pdf, stale-translation, docs-xref —
+    return an empty problem list when their directory is empty or missing, and
+    main() prints PASS for an empty list. So a run against a partial checkout, a
+    renamed directory, or a wrong working directory reports all-green having
+    opened nothing.
+
+    `pii` is the one that matters. This repository is public. A silent pii PASS
+    reads as "no identifying information found" when it can equally mean "no
+    files were read", and the two are indistinguishable in the output.
+
+    This is the defect named at the top of this module — the checker was silent,
+    not failing — turned on the checkers themselves. Added 2026-07-30. The
+    failure mode is not hypothetical: a checker of this shape can exclude every
+    file through one path-matching mistake and still print a clean report over
+    zero files, and such a report reads as evidence for as long as nobody
+    notices that no count was ever shown. Printing the count is what makes the
+    difference visible.
+
+    Counts are asserted as non-zero, never against a fixed expected number: a
+    hardcoded total would fail every time the corpus grows, and would be edited
+    away rather than believed.
+    """
+    problems = []
+    for label, path, pattern in (
+        ("knowledge-base", KB, "*.md"),
+        ("guides", REPO / "guides", "*.md"),
+        ("docs", REPO / "docs", "*.md"),
+    ):
+        if not path.is_dir():
+            problems.append(f"{label}: directory missing at {path} — every check "
+                            f"over it passes vacuously")
+            continue
+        if not list(path.glob(pattern)):
+            problems.append(f"{label}: no files match {pattern} — every check over "
+                            f"it passes vacuously")
+
+    scannable = [f for f in scannable_files()
+                 if f.is_file() and f.suffix in SCAN_SUFFIXES]
+    if not scannable:
+        problems.append("pii: 0 scannable files — a PASS from the pii check would "
+                        "mean nothing was read, not that nothing was found")
+    return problems
+
+
+
 
 def check_coverage(exc: set[str]) -> list[str]:
     """The agent's scope boundary names the files it may advise from. A hardcoded
@@ -491,6 +539,7 @@ def check_search_log(exc: set[str]) -> list[str]:
 
 
 CHECKS = {
+    "scope": lambda e: check_scope(e.get("scope", set())),
     "orphans": lambda e: check_orphans(e["orphans"]),
     "empty-blocks": lambda e: check_empty_blocks(e["empty-blocks"]),
     "coverage": lambda e: check_coverage(e.get("coverage", set())),

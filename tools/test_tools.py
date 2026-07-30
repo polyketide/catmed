@@ -914,5 +914,46 @@ class TestFullTextExtraction(Fixture):
             self.assertNotIn(repo, p.parents, f"{p} is inside the repository")
 
 
+
+# =============================================================================
+# check_kb_hygiene.py — scope assertion (a PASS must rest on files actually read)
+# =============================================================================
+
+class TestScope(Fixture):
+    """The scope check exists because four checks in check_kb_hygiene return an
+    empty problem list on empty input, and an empty list prints PASS. These tests
+    pin the distinction between 'looked and found nothing' and 'looked at
+    nothing', which is invisible in the output without them."""
+
+    def _run(self, root):
+        with contextlib.ExitStack() as stack:
+            stack.enter_context(_patched(hygiene, REPO=root, KB=root / "knowledge-base"))
+            return hygiene.check_scope(set())
+
+    def test_missing_directories_fail(self):
+        problems = self._run(self.dir)
+        self.assertTrue(problems)
+        self.assertTrue(any("guides" in p for p in problems))
+        self.assertTrue(any("docs" in p for p in problems))
+
+    def test_empty_kb_fails_rather_than_passing_vacuously(self):
+        (self.dir / "knowledge-base").mkdir()
+        problems = self._run(self.dir)
+        self.assertTrue(any("knowledge-base" in p and "no files match" in p
+                            for p in problems))
+
+    def test_no_scannable_files_flags_pii_as_meaningless(self):
+        problems = self._run(self.dir)
+        self.assertTrue(any(p.startswith("pii:") for p in problems),
+                        "a pii PASS over zero files must be reported, since it is "
+                        "indistinguishable from a clean result")
+
+    def test_populated_tree_passes(self):
+        for d in ("knowledge-base", "guides", "docs"):
+            (self.dir / d).mkdir()
+            (self.dir / d / "a.md").write_text("text\n", encoding="utf-8")
+        self.assertEqual(self._run(self.dir), [])
+
+
 if __name__ == "__main__":
     unittest.main(verbosity=2)
