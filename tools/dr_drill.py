@@ -12,7 +12,9 @@ Leg 1 — archive rebuild. Rebuild from the repository's committed PMID list alo
         (SOP section 3) and the frozen-baseline invariant (section 4) at once.
 
 Leg 5 — full-text excerpts. The excerpts Leg 1 structurally cannot reach, checked
-        against `pdftotext` output archived by fulltext_text.py. See SOP section 3l.
+        against the text archived by fulltext_text.py — `pdftotext` output for a
+        held PDF, or the JATS body for a full text fetched from Europe PMC. The
+        sidecar records which, under `extracted_by`. See SOP section 3l.
 
 Self-test — corrupt a record in a scratch copy on purpose and assert Leg 1 fails.
         A detector never shown a fault has not been shown to work, so `--self-test`
@@ -278,8 +280,11 @@ def cmd_leg1(args) -> int:
 # from a full text is correctly absent from it and has always been skipped: 82
 # of 908 excerpts, measured 2026-07-27 — the fraction of the corpus standing
 # outside the discipline the project is built on. This leg closes that for every
-# paper whose PDF is held, by comparing against `pdftotext` output archived by
-# `fulltext_text.py`.
+# paper whose full text is held, by comparing against the text archived by
+# `fulltext_text.py` — `pdftotext` output for a PDF, or the JATS body for XML
+# fetched from Europe PMC. Which one produced a given file is recorded in that
+# file's sidecar rather than inferred, because the two have different loss
+# profiles and the repairs below were tuned against only one of them.
 #
 # ⚠️ Extraction is lossy in ways that are NOT the excerpt's fault, and pretending
 # otherwise would produce exactly the false accusation this project is built to
