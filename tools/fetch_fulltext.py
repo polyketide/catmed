@@ -20,6 +20,19 @@ requests has nothing to do with licence:
 So a `gold` status is necessary but not sufficient. The tool tries, and does not
 pretend a failure was a licence problem when it was a bot check.
 
+Resolution order (2026-07-30):
+  1. Europe PMC JATS XML   open access only; EPMC enforces the licence itself,
+                           returning 404 for anything else. Structured, and not
+                           subject to the interstitials above. Tried first.
+  2. Unpaywall PDF links   licence status from Unpaywall, never assumed.
+  3. reported for manual retrieval, with the reason separated: not open access,
+     versus open access but blocked by a bot check, versus genuinely absent.
+
+Deliberately absent: Sci-Hub, LibGen, and any CAPTCHA or bot-detection
+circumvention. They would fetch more papers. They also make this tool something
+that cannot be run at an institution, and the corpus is meant to be checkable by
+the people it is written for.
+
 Usage:
   fetch_fulltext.py <PMID> [PMID ...] [--out DIR]
   fetch_fulltext.py --needed [--out DIR]     # every PMID the knowledge base flags
@@ -31,6 +44,8 @@ import json
 import re
 import sys
 import time
+import urllib.error
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -78,6 +93,67 @@ def needed_pmids() -> dict[str, str]:
                 if real:
                     out[current] = ",".join(real)
     return out
+
+
+EPMC = "https://www.ebi.ac.uk/europepmc/webservices/rest"
+
+
+def epmc_info(pmid: str) -> dict:
+    """Europe PMC's view of one article. Returns {} when it knows nothing.
+
+    Two facts are reported separately and must not be conflated:
+
+      inEPMC        a full text exists in Europe PMC
+      isOpenAccess  we are licensed to take it
+
+    They diverge often. A PubMed/PMC full-text call can hand back an empty body
+    for an article whose full text is plainly on the web, because those calls
+    serve the open-access subset; the empty field is a licence statement wearing
+    the costume of an absence. Keeping the two apart is what lets this tool say
+    "exists, not ours to take — use institutional access" instead of the much
+    less useful "not found".
+    """
+    url = (f"{EPMC}/search?query=EXT_ID:{urllib.parse.quote(pmid)}"
+           f"&format=json&resultType=core")
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    with urllib.request.urlopen(req, timeout=25) as r:
+        results = json.load(r).get("resultList", {}).get("result", [])
+    if not results:
+        return {}
+    a = results[0]
+    return {
+        "pmcid": a.get("pmcid") or "",
+        "in_epmc": a.get("inEPMC") == "Y",
+        "is_oa": a.get("isOpenAccess") == "Y",
+    }
+
+
+def epmc_fulltext(pmcid: str, dest: Path) -> tuple[bool, str]:
+    """Fetch the structured JATS full text. Europe PMC enforces the licence
+    itself — open access returns the document, anything else returns 404 — so
+    this path cannot be used to reach past a paywall.
+
+    That makes a bare 404 ambiguous between "not open access" and "no such
+    article", which is why callers must consult epmc_info() first rather than
+    inferring absence from the status code.
+
+    XML rather than PDF on purpose: it is the machine-readable form, and it
+    arrives without the bot checks and JS interstitials that block publisher
+    PDF links even for gold OA.
+    """
+    url = f"{EPMC}/{pmcid}/fullTextXML"
+    req = urllib.request.Request(url, headers={"User-Agent": UA})
+    try:
+        with urllib.request.urlopen(req, timeout=60) as r:
+            body = r.read()
+    except urllib.error.HTTPError as exc:
+        return False, f"Europe PMC returned HTTP {exc.code}"
+    except Exception as exc:
+        return False, f"Europe PMC error ({type(exc).__name__})"
+    if b"<article" not in body[:4000]:
+        return False, "Europe PMC response was not JATS XML"
+    dest.write_bytes(body)
+    return True, str(dest)
 
 
 def oa_info(doi: str) -> tuple[str, list[str]]:
@@ -142,13 +218,40 @@ def main() -> int:
             manual.append((pmid, "no DOI in record", ""))
             continue
         dest = out / f"{pmid}.pdf"
-        if dest.exists():
-            got.append((pmid, "already held", str(dest)))
+        xml_dest = out / f"{pmid}.xml"
+        if dest.exists() or xml_dest.exists():
+            held = dest if dest.exists() else xml_dest
+            got.append((pmid, "already held", str(held)))
             continue
+
+        # Europe PMC first: it serves structured JATS and is not behind the bot
+        # checks that block publisher PDF links even for gold OA. A failure here
+        # is not fatal — the Unpaywall path below still runs.
+        try:
+            epmc = epmc_info(pmid)
+        except Exception:
+            epmc = {}
+        if epmc.get("is_oa") and epmc.get("pmcid"):
+            ok, detail = epmc_fulltext(epmc["pmcid"], xml_dest)
+            if ok:
+                got.append((pmid, "open access — Europe PMC JATS XML", detail))
+                time.sleep(0.5)
+                continue
+
         try:
             status, urls = oa_info(doi)
         except Exception as exc:
             manual.append((pmid, f"Unpaywall error ({type(exc).__name__})", ""))
+            continue
+        if not urls and epmc.get("in_epmc") and not epmc.get("is_oa"):
+            # The distinction worth reporting: a full text demonstrably exists,
+            # and we are simply not licensed to take it. Saying "not found" here
+            # would send the operator looking for something that is right there.
+            manual.append((pmid,
+                           f"{status} — full text exists in Europe PMC "
+                           f"({epmc['pmcid']}) but is not open access; "
+                           f"use institutional access",
+                           f"https://europepmc.org/article/MED/{pmid}"))
             continue
         if not urls:
             manual.append((pmid, f"{status} — needs institutional access",

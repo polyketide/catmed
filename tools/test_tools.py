@@ -32,6 +32,9 @@ import contextlib
 import os
 import re
 import sys
+import io
+import json
+import urllib.error
 import tempfile
 import unittest
 from pathlib import Path
@@ -41,6 +44,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import attribution_candidates as attrib   # noqa: E402
 import build_site                          # noqa: E402
 import check_kb_hygiene as hygiene         # noqa: E402
+import fetch_fulltext                      # noqa: E402
 
 
 # --------------------------------------------------------------- test scaffolding
@@ -953,6 +957,80 @@ class TestScope(Fixture):
             (self.dir / d).mkdir()
             (self.dir / d / "a.md").write_text("text\n", encoding="utf-8")
         self.assertEqual(self._run(self.dir), [])
+
+
+
+# =============================================================================
+# fetch_fulltext.py — Europe PMC layer (offline; no network in tests)
+# =============================================================================
+
+class TestEpmcLayer(Fixture):
+    """The layer exists because 'no full text' and 'not licensed to us' arrive
+    looking identical — an empty body, or a bare 404. These tests pin them apart,
+    because conflating them sends the operator hunting for a paper that is
+    sitting in plain sight."""
+
+    def _fake_urlopen(self, payload: bytes, status: int = 200):
+        class R:
+            def __enter__(s): return s
+            def __exit__(s, *a): return False
+            def read(s): return payload
+        def opener(req, timeout=None):
+            if status != 200:
+                raise urllib.error.HTTPError(
+                    "u", status, "err", None, io.BytesIO(b""))
+            return R()
+        return opener
+
+    def test_open_access_article_reports_both_flags(self):
+        body = json.dumps({"resultList": {"result": [
+            {"pmcid": "PMC1", "inEPMC": "Y", "isOpenAccess": "Y"}]}}).encode()
+        with _patched(fetch_fulltext.urllib.request,
+                      urlopen=self._fake_urlopen(body)):
+            info = fetch_fulltext.epmc_info("1")
+        self.assertEqual(info, {"pmcid": "PMC1", "in_epmc": True, "is_oa": True})
+
+    def test_present_but_not_open_access_is_distinguishable(self):
+        """inEPMC=Y with isOpenAccess=N is the case that must not read as absent."""
+        body = json.dumps({"resultList": {"result": [
+            {"pmcid": "PMC2", "inEPMC": "Y", "isOpenAccess": "N"}]}}).encode()
+        with _patched(fetch_fulltext.urllib.request,
+                      urlopen=self._fake_urlopen(body)):
+            info = fetch_fulltext.epmc_info("2")
+        self.assertTrue(info["in_epmc"])
+        self.assertFalse(info["is_oa"])
+
+    def test_unknown_article_returns_empty(self):
+        body = json.dumps({"resultList": {"result": []}}).encode()
+        with _patched(fetch_fulltext.urllib.request,
+                      urlopen=self._fake_urlopen(body)):
+            self.assertEqual(fetch_fulltext.epmc_info("3"), {})
+
+    def test_fulltext_404_is_reported_not_raised(self):
+        with _patched(fetch_fulltext.urllib.request,
+                      urlopen=self._fake_urlopen(b"", status=404)):
+            ok, why = fetch_fulltext.epmc_fulltext("PMC9", self.dir / "x.xml")
+        self.assertFalse(ok)
+        self.assertIn("404", why)
+        self.assertFalse((self.dir / "x.xml").exists())
+
+    def test_non_jats_response_is_rejected(self):
+        """A login page or interstitial returns 200. Writing it as if it were the
+        article is how a corpus acquires files that verify nothing."""
+        with _patched(fetch_fulltext.urllib.request,
+                      urlopen=self._fake_urlopen(b"<html>sign in</html>")):
+            ok, why = fetch_fulltext.epmc_fulltext("PMC9", self.dir / "y.xml")
+        self.assertFalse(ok)
+        self.assertIn("not JATS", why)
+        self.assertFalse((self.dir / "y.xml").exists())
+
+    def test_jats_response_is_written(self):
+        body = b'<?xml version="1.0"?><article><body/></article>'
+        with _patched(fetch_fulltext.urllib.request,
+                      urlopen=self._fake_urlopen(body)):
+            ok, where = fetch_fulltext.epmc_fulltext("PMC9", self.dir / "z.xml")
+        self.assertTrue(ok)
+        self.assertEqual((self.dir / "z.xml").read_bytes(), body)
 
 
 if __name__ == "__main__":
