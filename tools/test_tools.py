@@ -45,6 +45,7 @@ import attribution_candidates as attrib   # noqa: E402
 import build_site                          # noqa: E402
 import check_kb_hygiene as hygiene         # noqa: E402
 import fetch_fulltext                      # noqa: E402
+import fulltext_text                       # noqa: E402
 
 
 # --------------------------------------------------------------- test scaffolding
@@ -1031,6 +1032,75 @@ class TestEpmcLayer(Fixture):
             ok, where = fetch_fulltext.epmc_fulltext("PMC9", self.dir / "z.xml")
         self.assertTrue(ok)
         self.assertEqual((self.dir / "z.xml").read_bytes(), body)
+
+
+
+# =============================================================================
+# fulltext_text.py — JATS extraction (offline)
+# =============================================================================
+
+JATS = b"""<article>
+  <front><journal-meta><journal-title>Journal of Cats</journal-title></journal-meta>
+    <article-meta><contrib-group><contrib><name><surname>Ng</surname></name>
+    </contrib></contrib-group></article-meta></front>
+  <body>
+    <sec><title>Methods</title>
+      <p>Exclusion was based on previous therapy.</p>
+      <table-wrap><label>Table 1</label><table><tr><td>99</td></tr></table></table-wrap>
+    </sec>
+    <sec><title>Results</title><p>The rate was 74%.</p></sec>
+    <supplementary-material><p>Supplemental material, sj-docx-1 for A Title
+      by Ng in Journal of Cats</p></supplementary-material>
+  </body>
+</article>"""
+
+
+class TestJatsText(Fixture):
+    """Extraction feeds excerpt verification, so anything in the output that the
+    authors did not write in the prose is a false comparison target."""
+
+    def test_body_prose_is_kept(self):
+        out = fulltext_text.jats_text(JATS)
+        self.assertIn("Exclusion was based on previous therapy.", out)
+        self.assertIn("The rate was 74%.", out)
+        self.assertIn("Methods", out)
+
+    def test_front_metadata_is_not_swept_in(self):
+        out = fulltext_text.jats_text(JATS)
+        self.assertNotIn("Ng", out)
+
+    def test_supplementary_boilerplate_is_excluded(self):
+        """Found by testing, not by reading the spec: this boilerplate lives
+        inside <body>, so walking the body alone does not exclude it, and it
+        carries the journal name and author list into the prose."""
+        out = fulltext_text.jats_text(JATS)
+        self.assertNotIn("Supplemental material", out)
+        self.assertNotIn("Journal of Cats", out)
+        self.assertNotIn("sj-docx", out)
+
+    def test_table_contents_dropped_label_kept(self):
+        out = fulltext_text.jats_text(JATS)
+        self.assertIn("Table 1", out)
+        self.assertNotIn("99", out)
+
+    def test_missing_body_yields_empty(self):
+        self.assertEqual(fulltext_text.jats_text(b"<article><front/></article>"), "")
+
+    def test_metadata_only_stub_is_not_written(self):
+        with _patched(fulltext_text, FULLTEXT=self.dir, TEXTDIR=self.dir / "t"):
+            src = self.dir / "1.xml"
+            src.write_bytes(b"<article><body/></article>")
+            state, _ = fulltext_text.extract_one_xml(src)
+        self.assertEqual(state, "short")
+        self.assertFalse((self.dir / "t" / "1.txt").exists())
+
+    def test_unparseable_xml_is_an_error_not_a_crash(self):
+        with _patched(fulltext_text, FULLTEXT=self.dir, TEXTDIR=self.dir / "t"):
+            src = self.dir / "2.xml"
+            src.write_bytes(b"<article><body>")
+            state, why = fulltext_text.extract_one_xml(src)
+        self.assertEqual(state, "error")
+        self.assertIn("not parseable", why)
 
 
 if __name__ == "__main__":
