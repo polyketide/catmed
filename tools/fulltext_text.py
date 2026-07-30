@@ -110,39 +110,51 @@ def extract_one(pdf: Path, force: bool = False) -> tuple[str, str]:
 def jats_text(xml_bytes: bytes) -> str:
     """Readable text from a JATS article, in document order.
 
-    Element-by-element rather than a bare itertext() over the root: the latter
-    also sweeps up <front> metadata — journal titles, affiliations, funding —
-    which would put strings in the extracted text that are not in the article's
-    prose. An excerpt check comparing against that is comparing against the
-    wrong bytes.
+    The target is **equivalence with the pdftotext path**, not some ideal of
+    what counts as prose. Leg 5 compares excerpts against whichever text is
+    archived, and every one of its repairs and exceptions was calibrated against
+    pdftotext output. Text that a PDF extraction would contain and this one drops
+    does not read as a gap — it reads as an excerpt that cannot be verified, i.e.
+    a false accusation against the corpus.
 
-    <sec> boundaries become blank lines so paragraphs stay separable, and
-    <title> keeps its heading on its own line. Tables and figure graphics are
-    skipped: their captions are kept, their contents are not text.
+    Two categories were lost by a first version that walked <body> alone, both
+    found by re-running Leg 5 over papers it already passed on PDFs:
 
-    <supplementary-material> is skipped too, and that one was found by testing
-    rather than by reading the spec. Its boilerplate — "Supplemental material,
-    sj-docx-N-… for <title> by <authors> in <journal>" — sits inside <body>, not
-    <front>, so restricting the walk to the body does not exclude it. Left in,
-    it puts the journal name and the full author list into what is supposed to
-    be article prose, and an excerpt check would then be comparing against
-    strings the authors never wrote in the text.
+      <abstract>  pdftotext takes the whole document, abstract included, and six
+                  excerpts marked full-text-sourced turn out to quote it. It
+                  lives under <front>, so a body-only walk drops them.
+      <table>     one excerpt quotes a results table. Dropping cell contents was
+                  a judgement about what is "really" text; pdftotext makes no
+                  such judgement, so neither can this.
+
+    Still excluded, because pdftotext would not produce them either as running
+    prose: journal and contributor metadata from <front>, and
+    <supplementary-material> boilerplate ("Supplemental material, sj-docx-N-…
+    for <title> by <authors> in <journal>"), which sits inside <body> and would
+    otherwise put the author list into the article's text.
     """
     root = ET.fromstring(xml_bytes)
-    body = root.find(".//body")
-    if body is None:
-        return ""
-    supp = {id(d) for s in body.iter("supplementary-material") for d in s.iter()}
     parts: list[str] = []
-    for el in body.iter():
-        if id(el) in supp:
-            continue
-        if el.tag in ("table", "graphic", "inline-formula", "disp-formula"):
-            continue
-        if el.tag in ("title", "p", "label"):
-            chunk = " ".join("".join(el.itertext()).split())
-            if chunk:
-                parts.append(chunk + ("\n" if el.tag == "title" else ""))
+
+    def walk(node) -> None:
+        supp = {id(d) for s in node.iter("supplementary-material") for d in s.iter()}
+        for el in node.iter():
+            if id(el) in supp:
+                continue
+            if el.tag in ("graphic", "inline-formula", "disp-formula", "media"):
+                continue
+            if el.tag in ("title", "p", "label", "td", "th", "caption"):
+                chunk = " ".join("".join(el.itertext()).split())
+                if chunk:
+                    parts.append(chunk + ("\n" if el.tag == "title" else ""))
+
+    for abstract in root.iter("abstract"):
+        walk(abstract)
+    body = root.find(".//body")
+    if body is not None:
+        walk(body)
+    if not parts:
+        return ""
     return "\n\n".join(parts).strip() + "\n"
 
 

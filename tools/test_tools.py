@@ -1042,11 +1042,13 @@ class TestEpmcLayer(Fixture):
 JATS = b"""<article>
   <front><journal-meta><journal-title>Journal of Cats</journal-title></journal-meta>
     <article-meta><contrib-group><contrib><name><surname>Ng</surname></name>
-    </contrib></contrib-group></article-meta></front>
+    </contrib></contrib-group>
+    <abstract><p>Abstract sentence about 43 cats.</p></abstract>
+    </article-meta></front>
   <body>
     <sec><title>Methods</title>
       <p>Exclusion was based on previous therapy.</p>
-      <table-wrap><label>Table 1</label><table><tr><td>99</td></tr></table></table-wrap>
+      <table-wrap><label>Table 1</label><table><tr><td>Placebo (n = 115)</td></tr></table></table-wrap>
     </sec>
     <sec><title>Results</title><p>The rate was 74%.</p></sec>
     <supplementary-material><p>Supplemental material, sj-docx-1 for A Title
@@ -1078,10 +1080,19 @@ class TestJatsText(Fixture):
         self.assertNotIn("Journal of Cats", out)
         self.assertNotIn("sj-docx", out)
 
-    def test_table_contents_dropped_label_kept(self):
+    def test_abstract_is_included(self):
+        """pdftotext takes the whole document. Six excerpts marked full-text-
+        sourced turn out to quote the abstract, and a body-only walk reported
+        them unverifiable — a false accusation, not a gap."""
+        out = fulltext_text.jats_text(JATS)
+        self.assertIn("Abstract sentence about 43 cats.", out)
+
+    def test_table_cell_contents_are_kept(self):
+        """Dropping cells was a judgement about what is 'really' text. pdftotext
+        makes no such judgement, and one excerpt quotes a results table."""
         out = fulltext_text.jats_text(JATS)
         self.assertIn("Table 1", out)
-        self.assertNotIn("99", out)
+        self.assertIn("Placebo (n = 115)", out)
 
     def test_missing_body_yields_empty(self):
         self.assertEqual(fulltext_text.jats_text(b"<article><front/></article>"), "")
