@@ -237,6 +237,20 @@ Human measurements show strong co-occurrence of stridor with dysphagia (36% vs 1
 
 ---
 
+## 6b. Site-specific prognosis anchors — what the laryngeal numbers can and cannot carry (added 2026-09-06)
+
+Four anchors that get borrowed into upper-airway prognosis conversations, each with its load limit:
+
+**(1) The 909-day laryngeal/tracheal series is grade-biased, and quoting it for a high-grade case overreaches.** The only dedicated feline laryngeal/tracheal lymphoma series (23 cats) reports median PFS and OS of 909 days — but where grade was reviewed, nine of eleven were **low** grade and two intermediate; **not one confirmed high-grade case is in the reviewed subset** (Rodriguez-Piza 2023, PMID 36655881, full text — excerpted below). For a confirmed large-cell/high-grade tumour at this site, 909 days is a different population's number. What does transfer: the site is B-cell-dominated and, when disease is controlled, capable of long survival.
+
+**(2) Skull-base bone lysis is the strongest negative direction that can be imported — from a different site and modality.** In nasal lymphoma treated with radiation ± chemotherapy, *"The only variable found to have a significant negative impact on survival was destruction of the cribriform plate before therapy (P= 0.002)"* (Sfiligoi 2007, PMID 17691642); in an SBRT cohort, cribriform lysis meant MST 121 vs 876 days and intracalvarial involvement 100 vs 438 days (Reczynska 2022, PMID 35188694). ⚠️ Nasal site, radiation cohorts — **import the direction (a breached skull base worsens outcome markedly), never the day-counts.** The same SBRT cohort is also the practical datum that single-fraction treatment was not inferior to multi-fraction (MST 427 vs 123 days, P = 0.88) — relevant wherever every anaesthetic episode is itself a risk.
+
+**(3) Permanent tracheostomy is not the fallback it sounds like.** In 21 cats with upper airway obstruction, overall median survival after permanent tracheostomy was **20.5 days**, with frequent stoma obstruction by mucous plugs and most in-series deaths early (Stepnik 2009, PMID 19250043). An airway-crisis plan built on "worst case, a tracheostomy" is built on a 3-week median.
+
+**(4) Symptom-based CR judgement at inaccessible sites is the literature's own norm — not a local improvisation.** In the largest recent Dutch cohort, nasopharyngeal complete remissions were mainly judged on resolution of clinical signs rather than imaging ⚠️ 【full-text methods, not abstract — verify】, and those symptom-judged CR cats had the longest disease-free periods (median DFP 763 days across CR cats; nasopharyngeal among the longest) (Versteegh 2023, PMID 37627457). ⭐ Read jointly with §0 and the PLTL authors' own caution (§1): **symptom-based response assessment is both standard practice and systematically softer than measurement** — which is exactly why a single awake ultrasound that pins a residual lesion's size is worth disproportionately much at these sites.
+
+---
+
 ## 7. Representative claims judged OVERSTATED in this verification round (cautionary record)
 
 | Original claim | Problem | Direction of correction |
@@ -305,6 +319,10 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 - [No author listed]. Surveillance of heat-related illness in small animals presenting to veterinary practices in the UK between 2013 and 2018. **. PMID 35342739. [DOI](https://doi.org/10.5455/OVJ.2022.v12.i1.2)
 - Hall EJ, et al. Risk Factors for Severe and Fatal Heat-Related Illness in UK Dogs-A VetCompass Study. *Vet Sci* 2022;9(5). PMID 35622759. [DOI](https://doi.org/10.3390/vetsci9050231)
 - Rodriguez-Piza I, et al. Clinical presentation, treatment and outcome in 23 cats with laryngeal or tracheal lymphoma. *J Feline Med Surg* 2023;25(1):1098612X221143769. PMID 36655881. [DOI](https://doi.org/10.1177/1098612X221143769)
+- Sfiligoi G, et al. Response of nineteen cats with nasal lymphoma to radiation therapy and chemotherapy. *Vet Radiol Ultrasound* 2007;48(4):388-93. PMID 17691642. [DOI](https://doi.org/10.1111/j.1740-8261.2007.00262.x)
+- Reczynska AI, et al. Outcome of stereotactic body radiation for treatment of nasal and nasopharyngeal lymphoma in 32 cats. *J Vet Intern Med* 2022;36(2):733-742. PMID 35188694. [DOI](https://doi.org/10.1111/jvim.16388)
+- Stepnik MW, et al. Outcome of permanent tracheostomy for treatment of upper airway obstruction in cats: 21 cases (1990-2007). *J Am Vet Med Assoc* 2009;234(5):638-43. PMID 19250043. [DOI](https://doi.org/10.2460/javma.234.5.638)
+- Versteegh H, et al. Feline Lymphoma: Patient Characteristics and Response Outcome of the COP-Protocol in Cats with Malignant Lymphoma in The Netherlands. *Animals (Basel)* 2023;13(16):2667. PMID 37627457. [DOI](https://doi.org/10.3390/ani13162667)
 - Kanemoto H, et al. Retrospective study of feline tracheal mass lesions. *J Feline Med Surg* 2023;25(5):1098612X231164611. PMID 37199684. [DOI](https://doi.org/10.1177/1098612X231164611)
 - Kang DJ, et al. Case report: Villaret's syndrome caused by middle ear adenocarcinoma in a cat. *Front Vet Sci* 2023;10:1225567. PMID 37576831. [DOI](https://doi.org/10.3389/fvets.2023.1225567)
 - Fruchter B, et al. Clinicopathological findings in cats with haws syndrome. *Vet Rec* 2024;195(10):e4646. PMID 39267365. [DOI](https://doi.org/10.1002/vetr.4646)
@@ -483,3 +501,21 @@ Of these, **van den Broek 1987 carries two key assertions — that miosis is the
 > Decreases in tumor volumes occurred in approximately 25% of gliomas.
 > Peritumoral brain edema was decreased in 50%-60% of gliomas and meningiomas in dogs at follow-up, and amelioration of edema often was accompanied by improved neurological signs and QOL.
 > ⚠️ Canine data (dogs with gliomas/meningiomas), not feline. The packet lists no specific body-claim sentence for this citation beyond the reference entry itself; these excerpts cover the paper's principal quantitative findings for routing/verification purposes.
+
+**PMID 17691642** · Sfiligoi G 2007
+> The median progression-free interval for all cats was 945 days (31 months).
+> The only variable found to have a significant negative impact on survival was destruction of the cribriform plate before therapy (P= 0.002).
+
+**PMID 35188694** · Reczynska AI 2022
+> Progression free survival was 225 days (95% CI 98-514) and median survival time (MST) was 365 days (95% CI 123-531).
+> No significant difference in survival was identified between cats that received 1 versus greater than 1 fraction (MST 427 vs. 123 days, P = 0.88).
+> Negative prognostic factors included cribriform lysis (MST 121 vs. 876 days, P = 0.0009) and intracalvarial involvement (MST 100 vs. 438 days, P = 0.0007).
+> No cats developed acute adverse effects.
+
+**PMID 19250043** · Stepnik MW 2009
+> Overall, median survival time for the 20 cats for which information was available was 20.5 days (range, 1 day to 5 years).
+> Fourteen cats had dyspnea in the immediate postoperative period; dyspnea most often resulted from mucous plugs at the stoma or elsewhere in the respiratory tract.
+
+**PMID 37627457** · Versteegh H 2023
+> Sixty-six of the one hundred and ten cats (60%) went into complete remission, (CR) resulting in a median disease-free period (DFP) of 763 days, with nasopharyngeal and mediastinal having the longest DFP.
+> ⚠️ The statement that nasopharyngeal CR was judged mainly on resolution of clinical signs is from the full-text methods, not the abstract.

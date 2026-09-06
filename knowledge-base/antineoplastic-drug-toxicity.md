@@ -29,6 +29,18 @@
 1. **The current L-asparaginase + prednisolone + nebulisation regimen is the lowest-toxicity combination available** — none of the three causes the organ failures feared here, and L-asparaginase is essentially non-myelosuppressive (a decisive advantage in a febrile patient). "Watch the breathing; continue if it works" holds up on the toxicity axis.
 2. **No myelosuppressive chemotherapy (lomustine and doxorubicin above all) should be started in the present setting of a 40 °C fever plus suspected aspiration pneumonia** — control the infection, bring the fever down, and obtain a baseline renal panel first. This principle was highly consistent across the checks on all 8 drugs.
 
+## 2b. Platelet counts under chemotherapy — grading, artefact, and the missing consensus threshold (added 2026-09-06)
+
+A falling platelet count mid-protocol triggers more alarm per unit of evidence than almost any other number on a feline CBC. Three findings put it in proportion:
+
+**(1) The grading scale is generous, and the field has no dosing threshold.** Under VCOG-CTCAE v2 (LeBlanc 2021, PMID 33427378), thrombocytopenia without clinical bleeding only begins at grade 1 below 100 ×10³/µL ⚠️ 【grading thresholds are in the full-text table, not the abstract — verify against the original】. And **no formal, evidence-graded platelet threshold for administering chemotherapy exists in veterinary oncology** — that is a state-of-the-field finding, not a search failure. What circulates is expert-opinion tier: a protocol rule of >50 ×10⁹/L in one prospective feline study (Horta 2021, PMID 32684120) and a stated personal cutoff of 75 ×10⁹/L in a narrative review (MacDonald 2009, PMID 19721789) ⚠️ 【both figures from full texts; the review has no abstract at all — see `docs/kb-exceptions.md`】. A count comfortably above those lines does not become a stop-signal by being lower than last week's.
+
+**(2) In cats, a low automated count is usually an artefact.** In 359 feline samples, *"Platelet counts obtained with an impedance counter (Minos Vet, Abx Hematologie) were &lt;200X10(9) cells/L in 256 samples (71%)"* — yet on blood-smear estimation *"only 11 samples (3.1%) had platelet counts of &lt;200X10(9) cells/L"* (Norman 2001, PMID 12024313). Modern laser analysers narrow but do not close the gap: adding CTAD to EDTA reduced clumping and raised measured counts (medians 225.5 vs 249.0 ×10⁹/L; P = 0.007) (Granat 2011, PMID 22079363). ⭐ **The asymmetry is the useful part: aggregation only lowers a reading, never raises it.** A suspicious drop has a zero-cost first response — ask the laboratory for a smear estimate and aggregation score on the retained sample — and a cheap second one — CTAD-supplemented or immediately analysed tubes next draw.
+
+**(3) The drug-specific feline data are thinner than assumed.** Single-agent vincristine thrombocytopenia rates in cats: **no study located** (negative result). The nearest multidrug numbers come with heavy caveats — 21/21 cats developed some-grade thrombocytopenia on LOPH, but 90.5% of that cohort was persistently FeLV-viraemic and the protocol contained lomustine and doxorubicin, so it is an upper bound, not a COP expectation (Horta 2021). And in dogs, vincristine is actually used to *raise* platelet counts in immune-mediated thrombocytopenia — the vincristine+prednisone arm reached ≥40,000/µl faster than prednisone alone (Rozanski 2002, PMID 11860242) ⚠️ canine, ITP, single dose — a mechanism direction, not a chemotherapy safety claim.
+
+> ⛔ Nothing here supports an owner second-guessing a clinician who pauses for a platelet count — bleeding risk assessment belongs to the person who can examine the patient. What it supports is two questions: *"was the count smear-verified?"* and *"which threshold are we using, and where does it come from?"*
+
 ## 3. Key sources (PMID)
 - L-asparaginase: Inazumi 2024 (PMID 38825481; 43 cats; neutropenia 0/43; hyperammonemia in 10 of 12 cases with paired pre/post plasma ammonia; plasma phosphate significantly increased, P<0.001); Blake 2016 (26834270; 197 doses in cats, 0 HSR); Calia 1996 (8947875; TLS case report in a cat).
 - Prednisolone: Nerhagen 2020 (32716236; PIDM 9.7%); Lowe 2008 (18552328; glycogen hepatopathy); Ployngam 2006 (16579749; plasma volume +13.4%).
@@ -89,3 +101,26 @@
 > Hypersensitivity reactions were documented in 4.2% of dogs, and in association with 1.6% of L-asparaginase doses administered.
 > These results show that HSRs occur uncommonly among dogs and cats, even with repeated dosing.
 > ⚠️ **Added 2026-07-27 to close a gap that had been *moved* rather than closed.** `197` was cited in the body against Blake and flagged against Inazumi, and for seven days this paper — the one that actually holds the number — **had no excerpt block at all**. The rate itself is a **dog** figure: 4.2% of dogs, and **zero of 68 cats across 197 doses**. ⚠️ The feline result is an *absence of events*, not a measured rate — 0/68 cats is consistent with a true frequency well above zero, so this supports *"HSR to L-asparaginase is uncommon in cats"* and **cannot** support *"it does not happen"*.
+
+**PMID 33427378** · LeBlanc AK 2021
+> The updated VCOG-CTCAE v2 guidelines contain several important updates and additions since the last update (v1.1) was released in 2011 and published within Veterinary and Comparative Oncology in 2016.
+> ⚠️ The thrombocytopenia and neutropenia grade boundaries cited in §2b are in the full-text grading table (PMC8248125), not the abstract.
+
+**PMID 12024313** · Norman EJ 2001
+> True thrombocytopenia is uncommon in cats; however, low platelet counts frequently are found using automated cell counters.
+> Platelet counts obtained with an impedance counter (Minos Vet, Abx Hematologie) were &lt;200X10(9) cells/L in 256 samples (71%) and &lt;50X10(9) cells/L in 43 samples (12%).
+> However, based on estimation of platelet numbers from blood smears, only 11 samples (3.1%) had platelet counts of &lt;200X10(9) cells/L and 9 samples (2.5%) had counts of &lt;50X10(9) cells/L.
+> Disorders associated with thrombocytopenia included neoplasia, cytotoxic chemotherapy, and infectious diseases.
+
+**PMID 22079363** · Granat F 2011
+> False thrombocytopenia may result from platelet aggregation, especially in feline ethylenediamine tetra-acetic acid (EDTA) blood specimens.
+> Platelet aggregation score was &gt;2 in 11/46 EDTA tubes and only in one EDTA+CTAD specimen.
+> The platelet count was higher in all CTAD-supplemented tubes except one, medians measured by cytometry being 225.5 × 10(9)/l and 249.0 × 10(9)/l in EDTA and EDTA+CTAD, respectively (P = 0.007).
+> Addition of CTAD to EDTA when sampling feline blood is a useful option to reduce platelet clumping.
+
+**PMID 32684120** · Horta RS 2021
+> Hematologic toxicity was found in 100% of the cats at some point during their treatment, but it was mostly grade I or II. Neutropenia, thrombocytopenia and anemia occurred in 16/21, 21/21 and 15/21 cats, respectively.
+> ⚠️ The protocol's dosing rule (chemotherapy given if neutrophils >1.5 × 10⁹/l and platelets >50 × 10⁹/l) is in the full-text methods, not the abstract. 90.5% of the cohort was persistently FeLV-viraemic and the protocol contained lomustine and doxorubicin — an upper bound for COP-type expectations, not an estimate.
+
+**PMID 11860242** · Rozanski EA 2002
+> Dogs that received prednisone and vincristine had a significantly faster increase in platelet count to &gt; or = 40,000 platelets/microl than dogs that received prednisone alone (mean +/- SD, 4.9 +/- 1.1 vs 6.8 +/- 4.5 days, respectively).

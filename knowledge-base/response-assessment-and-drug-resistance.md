@@ -45,6 +45,8 @@ In a canine lymphoid cell line made resistant by prolonged **doxorubicin** expos
 
 > **So P-gp is not a clean predictor and must not be used as one.** It is present at baseline in most cases and did not predict remission duration or survival. **The mechanism is real; its prognostic value in an individual patient is not established.** Any reasoning of the form "drug A selected for resistance, therefore drug B will fail" is a hypothesis to raise with an oncologist, not a conclusion to act on.
 
+**Longitudinal confirmation in patients (added 2026-09-06).** The cell-line result has a within-patient counterpart: in canine lymphoma, Pgp expression *"was greater after relapse compared with pretreatment samples [C494 83% vs. 25%; P=0.012 and C219 73% vs. 27%; P=0.04]"* (Lee 1996, PMID 8646690) — the relapsed clone is measurably more efflux-competent than the clone that was first treated. And in 63 dogs followed through a doxorubicin-based protocol, drug resistance occurred in 35/63 (55.6%) and was associated with upregulated ABCB1 and ABCG2 mRNA; notably, *"Glucocorticoids had no effect on ABC transporter mRNA expression"* (Zandvliet 2015, PMID 25475167) — a direct counter-datum to the common assumption that steroid exposure itself drives pump-mediated resistance. ⚠️ Both canine; the direction (relapse ⇒ more resistant) is the transferable part, the percentages are not.
+
 ---
 
 ## 2. What is actually established about early response
@@ -103,6 +105,43 @@ Whatever is used, the point is that **layer 2 needs something, and the oncologis
 
 ---
 
+## 2c. If treatment stops working — how fast does regrowth come, and what "untreated survival" actually rests on
+
+Two numbers circulate in owner conversations, and neither survives sourcing:
+
+**"An untreated cat lives 4–6 weeks" has no locatable feline primary source.** A dedicated search (2026-08-22, repeated with multiple strategies) found no feline untreated-control cohort behind the figure; it appears to be textbook-level consensus. What primary data exist are adjacent, and they are worth having instead, because they all land in the same order of magnitude:
+
+| Closest primary datum | Setting | Source |
+|---|---|---|
+| Minimal response to chemotherapy → median survival **1.5 months** | 103 cats, 1977–81 (⚠️ FeLV-era cohort) | Mooney 1989, PMID 2925488 |
+| Corticosteroids alone → median **50 days** (vs 203 days L-CHOP; P = 0.753, small groups) | 27 cats, renal lymphoma (⚠️ site-specific) | Williams 2021, PMID 33464143 |
+| Prednisolone alone → median **27 days** | 7 dogs ≥14 y (⚠️ canine, tiny group) | Moore & Frimberger 2018, PMID 29553895 |
+
+> ⭐ **The qualitative conclusion is stable — when drugs are not controlling a high-grade lymphoma, the clock runs in weeks — but no single citable feline "untreated median" exists, and quoting one with a reference attached would be manufacturing evidence.**
+
+**"How long until it grows back" has never been directly measured — in any species.** No study tracks time-to-baseline-volume after a partial response fails. What can be bracketed:
+
+- The proliferative ceiling: in high-malignancy human NHL, *"a potential tumour doubling time of 40.5 h"* (Lang 1980, PMID 7456330) — ⚠️ potential doubling time ignores cell loss; real volumetric doubling is slower. It establishes capability (days-scale), not a prediction.
+- The clinical floor, from relapsed/resistant cohorts: median progression-free survival **61 days** on a feline lomustine-based rescue (Smallwood 2021, PMID 33176543) and **29.5 days** on canine second-rescue vinblastine (Lenz 2016, PMID 27251593) — with *"Duration of first remission was identified as a positive predictor of outcome"* (Lenz 2016).
+- ⭐ Bracketed together: **clinically apparent regrowth in a failing course tends to declare itself on a 2–8-week horizon** — an inference from adjacent cohorts, not a measurement, and stated here so that the absence of a direct study is visible rather than papered over.
+
+## 2d. CR versus PR carries almost all of the survival difference
+
+Across four decades and independent cohorts on different protocols, the gap between complete and partial response is the most reproducible number in feline lymphoma:
+
+| Cohort | CR | PR | No/minimal response |
+|---|---|---|---|
+| Mooney 1989 (103 cats, FeLV era, PMID 2925488) | 7 months | 2.5 months | 1.5 months |
+| Collette 2016 (119 cats, CHOP-type, PMID 26109275) | PFI 205 d / MST 318 d | 54 / 85 d | 21 / 27 d |
+| Limmer 2016 (26 cats, 12-week protocol, PMID 24548273) | first CR 394 d / survival 454 d | 41 / 82 d | — |
+| Krupa 2022 (56 cats, pegaspargase-COP, PMID 35748790) | DFS >1273 d | 77 d | — |
+| Larsen 2024 (27 cats, COP-10, PMID 39113405) | PFI = survival 1139 d | 53 / 210 d | — |
+
+> ⭐ **A ratio of roughly 4–20× separates CR from PR in every one of these.** Which makes the *quality of the response assessment itself* a prognosis-scale variable: a palpation-based ">30% smaller" clears the PR bar but cannot distinguish PR from near-CR — and those two readings sit on opposite sides of the largest survival divide in the disease. Pinning down whether a response is complete (measured, repeatable, ideally imaged awake) is not pedantry; per these cohorts it is the single most informative act of measurement available.
+> ⚠️ Caveats that travel with the table: CR definitions differ across cohorts (some symptom-based — see [`upper-airway-response-marker-validity.md`](upper-airway-response-marker-validity.md)); no cohort reports a pharyngolaryngeal subgroup; and response quality is partly a *marker* of favourable biology, not only a cause of longer survival — the table shows association, and "push every PR to CR at any cost" does not follow from it.
+
+---
+
 ## 3. At the decision moment
 
 - **Ask what the response judgement was measured on.** Nodal, imaged, or an extranodal lesion? At what interval? A judgement resting on one extranodal lesion at one early timepoint is the weakest configuration, per §0.1 — and it is worth saying so out loud to the oncologist, as a question rather than a challenge.
@@ -120,6 +159,18 @@ Whatever is used, the point is that **layer 2 needs something, and the oncologis
 - Musciano AR, et al. Clinical and histopathological classification of feline intraocular lymphoma. *Vet Ophthalmol* 2020;23(1):77-89. PMID 31328872. [DOI](https://doi.org/10.1111/vop.12692)
 - Zandvliet M, et al. Multi-drug resistance in a canine lymphoid cell line due to increased P-glycoprotein expression. *Toxicol In Vitro* 2014;28(8):1498-506. PMID 24975508. [DOI](https://doi.org/10.1016/j.tiv.2014.06.004)
 - Dhaliwal RS, et al. Clinicopathologic significance of histologic grade, pgp, and p53 expression in canine lymphoma. *J Am Anim Hosp Assoc* 2013;49(3):175-84. PMID 23535752. [DOI](https://doi.org/10.5326/JAAHA-MS-5843)
+- Lee JJ, et al. P-glycoprotein expression in canine lymphoma: a relevant, intermediate model of multidrug resistance. *Cancer* 1996;77(9):1892-8. PMID 8646690. [DOI](https://doi.org/10.1002/(SICI)1097-0142(19960501)77:9<1892::AID-CNCR20>3.0.CO;2-U)
+- Zandvliet M, et al. A longitudinal study of ABC transporter expression in canine multicentric lymphoma. *Vet J* 2015;205(2):263-71. PMID 25475167. [DOI](https://doi.org/10.1016/j.tvjl.2014.11.002)
+- Mooney SC, et al. Treatment and prognostic factors in lymphoma in cats: 103 cases (1977-1981). *J Am Vet Med Assoc* 1989;194(5):696-702. PMID 2925488.
+- Williams AG, et al. Incidence and treatment of feline renal lymphoma: 27 cases. *J Feline Med Surg* 2021;23(10):936-944. PMID 33464143. [DOI](https://doi.org/10.1177/1098612X20984363)
+- Moore AS, Frimberger AE. Usefulness of chemotherapy for the treatment of very elderly dogs with multicentric lymphoma. *J Am Vet Med Assoc* 2018;252(7):852-859. PMID 29553895. [DOI](https://doi.org/10.2460/javma.252.7.852)
+- Lang W, et al. Proliferation kinetics of malignant non-Hodgkin's lymphomas related to histopathology of lymph node biopsies. *Virchows Arch A Pathol Anat Histol* 1980;389(3):397-407. PMID 7456330. [DOI](https://doi.org/10.1007/BF00430662)
+- Smallwood K, et al. Lomustine, methotrexate and cytarabine chemotherapy as a rescue treatment for feline lymphoma. *J Feline Med Surg* 2021;23(8):722-729. PMID 33176543. [DOI](https://doi.org/10.1177/1098612X20972066)
+- Lenz JA, et al. Vinblastine as a second rescue for the treatment of canine multicentric lymphoma in 39 cases (2005 to 2014). *J Small Anim Pract* 2016;57(8):429-34. PMID 27251593. [DOI](https://doi.org/10.1111/jsap.12500)
+- Collette SA, et al. Treatment of feline intermediate- to high-grade lymphoma with a modified university of Wisconsin-Madison protocol: 119 cases (2004-2012). *Vet Comp Oncol* 2016;14 Suppl 1:136-46. PMID 26109275. [DOI](https://doi.org/10.1111/vco.12158)
+- Limmer S, et al. Treatment of feline lymphoma using a 12-week, maintenance-free combination chemotherapy protocol in 26 cats. *Vet Comp Oncol* 2016;14 Suppl 1:21-31. PMID 24548273. [DOI](https://doi.org/10.1111/vco.12082)
+- Krupa A, et al. Pegylated asparaginase in feline high-grade lymphoma: clinical results of single injection and continued incorporation into a modified COP regimen. *J Feline Med Surg* 2022;24(8):e203-e213. PMID 35748790. [DOI](https://doi.org/10.1177/1098612X221101533)
+- Larsen MME, et al. Outcome of treatment with a 10-week COP protocol in cats with intermediate or large cell lymphoma: 27 cases (2014-2023). *J Small Anim Pract* 2024;65(11):807-816. PMID 39113405. [DOI](https://doi.org/10.1111/jsap.13772)
 
 ---
 
@@ -169,3 +220,52 @@ Whatever is used, the point is that **layer 2 needs something, and the oncologis
 > A brain herniation event was suspected, and the cat was euthanized prior to further diagnostics.
 > Neoplasia should be considered in cases of middle-ear effusion that do not improve adequately with appropriate antimicrobial therapy.
 > ⚠️ Single case report; the tumour was non-B, non-T and PARR failed to amplify. Cited in §2b.2 for the anaesthetic endpoint that motivates §2b entirely — imaging under anaesthesia is not a neutral act in these patients.
+
+**PMID 8646690** · Lee JJ 1996
+> Pgp expression was greater after relapse compared with pretreatment samples [C494 83% vs. 25%; P=0.012 and C219 73% vs. 27%; P=0.04].
+> Pretreatment Pgp expression was an independent negative predictor of overall survival (median=225d vs. 367d; P=0.02).
+
+**PMID 25475167** · Zandvliet M 2015
+> Drug resistance occurred in 35/63 (55.6%) dogs and was associated with increased ABCB1 mRNA expression in a subset of dogs with B cell lymphoma, and with increased ABCG2 and decreased ABCB8, ABCC1 and ABCC3 mRNA expression in T cell lymphomas.
+> ABC transporter expression in the pre-treatment sample was not predictive of the length of the first disease-free period or overall survival.
+> Glucocorticoids had no effect on ABC transporter mRNA expression.
+
+**PMID 2925488** · Mooney SC 1989
+> Sixty-four cats (62%) had a complete response to chemotherapy (median survival time, 7 months); 21 cats (20%) had a partial response (median survival time, 2.5 months); and 18 cats had a minimal response (median survival time, 1.5 months).
+> Stage of disease was significantly (P = 0.009) related to response to treatment, and stage of disease and FeLV status were both significantly (P = 0.002 and P less than 0.001, respectively) related to survival.
+
+**PMID 33464143** · Williams AG 2021
+> Median survival (range) for cats receiving corticosteroids alone compared with those receiving an L-CHOP (L-asparaginase, vincristine, cyclophosphamide, doxorubicin, prednisolone)-based protocol was 50 days (20-1027 days) in the corticosteroid group and 203 days (44-2364 days) for the L-CHOP group (P = 0.753) for cats that died secondary to lymphoma.
+> Neither clinical stage nor other factors were predictive of survival.
+
+**PMID 29553895** · Moore AS 2018
+> The 7 (24%) dogs that received prednisolone alone had a median survival time of 27 days and were excluded from further analysis.
+
+**PMID 7456330** · Lang W 1980
+> On the other hand, lymphomas of high malignancy showed a labelling index of 16.7%, a mitosis index of 0.7% and a potential tumour doubling time of 40.5 h.
+
+**PMID 33176543** · Smallwood K 2021
+> The median progression-free survival was 61 days (range 16-721 days).
+
+**PMID 27251593** · Lenz JA 2016
+> Duration of first remission was identified as a positive predictor of outcome.
+> Single-agent vinblastine is well tolerated in dogs with relapsed or refractory lymphoma.
+> Responses were incomplete and short-lasting.
+
+**PMID 26109275** · Collette SA 2016
+> The Kaplan-Meier median progression-free interval (PFI) and survival time (MST) were 56 and 97 (range 2-2019) days, respectively.
+> Cats assessed as having a complete response (CR) to therapy had significantly longer PFI and MST than those with partial or no response
+
+**PMID 24548273** · Limmer S 2016
+> Median duration of first CR was 394 days compared with a median PR duration of 41 days.
+> Median survival in CR cats was 454 days and in PR cats was 82 days.
+> In cats achieving CR, maintenance-free chemotherapy may be sufficient to attain long-term remission and survival.
+
+**PMID 35748790** · Krupa A 2022
+> Of these, 31 cats (92%) achieved complete remission with a median duration of the first remission (disease-free survival [DFS]) of 816 days.
+> Response to the initial pegaspargase injection before COP initiation was significantly associated with DFS (P = 0.04) and OST (P = 0.001).
+
+**PMID 39113405** · Larsen MME 2024
+> For cats achieving complete remission, the median progression-free interval and the median lymphoma-specific survival time were both 1,139 days.
+> For cats in partial remission, the median progression-free interval and the median lymphoma-specific survival time were 53 and 210 days, respectively.
+> Treatment with the short protocol COP-10 resulted in remission rates and durable first remissions for cats achieving complete remission comparable to responses seen with longer-duration chemotherapy protocols.
