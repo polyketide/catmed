@@ -7,7 +7,7 @@ they carry verbatim source excerpts, and they state explicitly where the
 evidence runs out. For owner-facing material see [`../guides/`](../guides/) or
 the [published site](https://polyketide.github.io/catmed/).
 
-**21 files, 192 papers, 715 verbatim excerpts**, every one
+**23 files, 230 papers, 802 verbatim excerpts**, every one
 re-checked byte-for-byte against its archived PubMed record on every commit.
 
 ## If you are a veterinarian or a researcher
@@ -34,7 +34,7 @@ more than anything written here.
 | File | Papers | Excerpts |
 |---|---|---|
 | [`acid-suppression-omeprazole-in-cats.md`](acid-suppression-omeprazole-in-cats.md) | 1 | 5 |
-| [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md) | 2 | 13 |
+| [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md) | 7 | 24 |
 | [`assisted-feeding-and-feeding-tubes.md`](assisted-feeding-and-feeding-tubes.md) | 3 | 16 |
 | [`blood-types-and-transfusion-compatibility.md`](blood-types-and-transfusion-compatibility.md) | 6 | 16 |
 | [`chronic-kidney-disease.md`](chronic-kidney-disease.md) | 11 | 46 |
@@ -49,11 +49,13 @@ more than anything written here.
 | [`gcsf-and-chemotherapy-neutropenia.md`](gcsf-and-chemotherapy-neutropenia.md) | 7 | 20 |
 | [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md) | 3 | 16 |
 | [`parr-clonality-what-a-negative-means.md`](parr-clonality-what-a-negative-means.md) | 2 | 7 |
-| [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 7 | 24 |
+| [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 19 | 49 |
+| [`reticulocyte-hemoglobin-and-iron-in-cats.md`](reticulocyte-hemoglobin-and-iron-in-cats.md) | 7 | 19 |
+| [`steroid-duration-in-feline-lymphoma-protocols.md`](steroid-duration-in-feline-lymphoma-protocols.md) | 10 | 23 |
 | [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md) | 14 | 36 |
 | [`targeted-and-immunotherapy-evidence.md`](targeted-and-immunotherapy-evidence.md) | 1 | 4 |
 | [`treatment-related-harm-and-the-tradeoff.md`](treatment-related-harm-and-the-tradeoff.md) | 4 | 10 |
-| [`upper-airway-response-marker-validity.md`](upper-airway-response-marker-validity.md) | 27 | 81 |
+| [`upper-airway-response-marker-validity.md`](upper-airway-response-marker-validity.md) | 31 | 90 |
 
 ## The files
 
@@ -67,7 +69,7 @@ more than anything written here.
 
 **Toxicity Profiles of Antineoplastic and Supportive Drugs in Cats (veterinary knowledge base)**
 
-*2 papers, 13 verbatim excerpts.*
+*7 papers, 24 verbatim excerpts.*
 
 ### [`assisted-feeding-and-feeding-tubes.md`](assisted-feeding-and-feeding-tubes.md)
 
@@ -175,7 +177,19 @@ these are the two commonest chronic diseases of older cats, they occur together,
 
 **Judging "Response" and "Resistance" — what the criteria actually cover, and where a drug gets written off too early**
 
-*7 papers, 24 verbatim excerpts.*
+*19 papers, 49 verbatim excerpts.*
+
+### [`reticulocyte-hemoglobin-and-iron-in-cats.md`](reticulocyte-hemoglobin-and-iron-in-cats.md)
+
+**Reticulocyte Hemoglobin and Iron in Cats — a cutoff that belongs to a different analyzer, and supplementation that rests on tradition**
+
+*7 papers, 19 verbatim excerpts.*
+
+### [`steroid-duration-in-feline-lymphoma-protocols.md`](steroid-duration-in-feline-lymphoma-protocols.md)
+
+**Steroid Duration in Feline Lymphoma Protocols — designed in advance, never decided by response, and what stopping abruptly actually risks**
+
+*10 papers, 23 verbatim excerpts.*
 
 ### [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md)
 
@@ -199,7 +213,7 @@ these are the two commonest chronic diseases of older cats, they occur together,
 
 **Feline Upper-Airway Tumours: Validity of Response Markers, and the Recovery Kinetics of Voice Loss and Nictitating Membrane Protrusion**
 
-*27 papers, 81 verbatim excerpts.*
+*31 papers, 90 verbatim excerpts.*
 
 > ⚠️ **Stated gap:** The independent effect of humidity (no search returned quantitative data)
 

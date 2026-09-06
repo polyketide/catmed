@@ -193,3 +193,4 @@ locally before every commit.
 *(No entries. The one e-mail address in the tree, required by the Unpaywall API,
 is allow-listed in the script itself.)*
 
+- orphans: 19721789 — MacDonald V 2009 (*Can Vet J*, PMC2684058) is a narrative review with **no abstract in the PubMed record**, so no abstract-sourced excerpt block is possible. Cited in `antineoplastic-drug-toxicity.md` §2b only as the source of an explicitly expert-opinion-tier platelet cutoff (75 ×10⁹/L), flagged in-text as a full-text figure to verify against the original.

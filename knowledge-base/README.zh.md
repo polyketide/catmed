@@ -36,7 +36,7 @@
 | 文件 | 论文数 | 逐字摘录 |
 |---|---|---|
 | [`acid-suppression-omeprazole-in-cats.md`](acid-suppression-omeprazole-in-cats.md) | 1 | 5 |
-| [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md) | 2 | 13 |
+| [`antineoplastic-drug-toxicity.md`](antineoplastic-drug-toxicity.md) | 7 | 24 |
 | [`assisted-feeding-and-feeding-tubes.md`](assisted-feeding-and-feeding-tubes.md) | 3 | 16 |
 | [`blood-types-and-transfusion-compatibility.md`](blood-types-and-transfusion-compatibility.md) | 6 | 16 |
 | [`chronic-kidney-disease.md`](chronic-kidney-disease.md) | 11 | 46 |
@@ -51,10 +51,12 @@
 | [`gcsf-and-chemotherapy-neutropenia.md`](gcsf-and-chemotherapy-neutropenia.md) | 7 | 20 |
 | [`hyperthyroidism-and-kidney-disease.md`](hyperthyroidism-and-kidney-disease.md) · [中文版](hyperthyroidism-and-kidney-disease.zh.md) | 3 | 16 |
 | [`parr-clonality-what-a-negative-means.md`](parr-clonality-what-a-negative-means.md) | 2 | 7 |
-| [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 7 | 24 |
+| [`response-assessment-and-drug-resistance.md`](response-assessment-and-drug-resistance.md) | 19 | 49 |
+| [`reticulocyte-hemoglobin-and-iron-in-cats.md`](reticulocyte-hemoglobin-and-iron-in-cats.md) | 7 | 19 |
+| [`steroid-duration-in-feline-lymphoma-protocols.md`](steroid-duration-in-feline-lymphoma-protocols.md) | 10 | 23 |
 | [`supportive-and-palliative-care.md`](supportive-and-palliative-care.md) | 14 | 36 |
 | [`targeted-and-immunotherapy-evidence.md`](targeted-and-immunotherapy-evidence.md) | 1 | 4 |
 | [`treatment-related-harm-and-the-tradeoff.md`](treatment-related-harm-and-the-tradeoff.md) | 4 | 10 |
-| [`upper-airway-response-marker-validity.md`](upper-airway-response-marker-validity.md) | 27 | 81 |
+| [`upper-airway-response-marker-validity.md`](upper-airway-response-marker-validity.md) | 31 | 90 |
 
 每份文件的英文摘要、以及它自陈的空白，见 [`README.md`](README.md)。

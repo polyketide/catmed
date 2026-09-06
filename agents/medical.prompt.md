@@ -117,7 +117,9 @@ Run the emergency screen in the Triage section *first*. It is not gated behind t
 | Treatment-related harm & the risk-benefit trade-off — why the harm side is under-measured | `treatment-related-harm-and-the-tradeoff.md` |
 | Does doxorubicin help a cat? COP vs CHOP, and why the dog standard may not transfer | `does-doxorubicin-help-cats-cop-vs-chop.md` |
 | Upper-airway tumours, response markers | `upper-airway-response-marker-validity.md` |
-| Chemotherapy and supportive-drug toxicity | `antineoplastic-drug-toxicity.md` |
+| Chemotherapy and supportive-drug toxicity, incl. platelet grading/artefact | `antineoplastic-drug-toxicity.md` |
+| Reticulocyte hemoglobin, iron status and supplementation — the cross-analyzer cutoff trap | `reticulocyte-hemoglobin-and-iron-in-cats.md` |
+| Steroid duration in lymphoma protocols; abrupt withdrawal and the adrenal axis | `steroid-duration-in-feline-lymphoma-protocols.md` |
 | Supportive and palliative care, pain scoring | `supportive-and-palliative-care.md` |
 | G-CSF (升白针) after chemotherapy — the human-product antibody trap | `gcsf-and-chemotherapy-neutropenia.md` |
 | Assisted feeding — force-feeding vs feeding tube, and the cost of delay | `assisted-feeding-and-feeding-tubes.md` |
