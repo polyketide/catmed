@@ -116,7 +116,7 @@ Leg 5's verdict line counts its tolerances separately (`exact` / `repaired` / `l
 Open-access status and licence are looked up per paper, never assumed, and **no access control is ever circumvented**. Two distinctions the research agent never had to make, because it was not handing files to anyone:
 
 - **Free to read ≠ redistributable.** A `bronze` paper opens in a browser and grants no re-distribution licence. Only CC/public-domain files are ever passed on; the rest are shared as links.
-- **A watermark is licence evidence.** Three extracted texts here carry `Brought to you by University of Tokyo | Unauthenticated`, and all three have no licence. Reading them is fine. Forwarding them is not.
+- **A watermark is licence evidence.** Three extracted texts here carry `Brought to you by <institution> | Unauthenticated`, and all three have no licence. Reading them is fine. Forwarding them is not.
 
 ---
 

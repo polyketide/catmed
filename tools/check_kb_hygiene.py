@@ -54,9 +54,10 @@ EXCEPTIONS = REPO / "docs" / "kb-exceptions.md"
 EXCERPT_HEADING = "## 原文摘录"
 NO_SOURCE_MARKER = "no source text available"
 
-# The maintainer's contact address, required by the Unpaywall API and
-# deliberately public. Any OTHER address in the tree is a finding.
-ALLOWED_EMAILS = {"wamphetamine@gmail.com"}
+# No address is allowed in the tree. The Unpaywall contact address is read from
+# the UNPAYWALL_EMAIL environment variable (tools/fetch_fulltext.py), so any
+# address that appears in a scanned file is a finding.
+ALLOWED_EMAILS: set[str] = set()
 
 EMAIL_RE = re.compile(r"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}")
 PRIVATE_IP_RE = re.compile(r"\b(?:10\.\d{1,3}|192\.168|172\.(?:1[6-9]|2\d|3[01]))\.\d{1,3}\.\d{1,3}\b")

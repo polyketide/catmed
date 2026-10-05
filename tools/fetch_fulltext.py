@@ -41,6 +41,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -52,7 +53,9 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from pubmed_archive import KB, archive_dir, trimmed_view  # noqa: E402
 
-EMAIL = "wamphetamine@gmail.com"          # Unpaywall requires a contact address
+# Unpaywall requires a contact address. It is read from the environment so that no
+# personal address is committed: `export UNPAYWALL_EMAIL=<your contact address>`.
+EMAIL = os.environ.get("UNPAYWALL_EMAIL", "").strip()
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/126.0 Safari/537.36")
 YEAR = re.compile(r"^(19|20)\d\d$")
@@ -158,6 +161,8 @@ def epmc_fulltext(pmcid: str, dest: Path) -> tuple[bool, str]:
 
 def oa_info(doi: str) -> tuple[str, list[str]]:
     """(status, candidate PDF urls) from Unpaywall. Never guesses a licence."""
+    if not EMAIL:
+        return "skipped: UNPAYWALL_EMAIL not set", []
     url = f"https://api.unpaywall.org/v2/{doi}?email={EMAIL}"
     with urllib.request.urlopen(url, timeout=25) as r:
         d = json.load(r)
@@ -190,6 +195,9 @@ def try_download(urls: list[str], dest: Path) -> tuple[bool, str]:
 
 
 def main() -> int:
+    if not EMAIL:
+        print("note: UNPAYWALL_EMAIL is not set; Unpaywall lookups are skipped "
+              "(Europe PMC still runs).", file=sys.stderr)
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("pmids", nargs="*")
