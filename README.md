@@ -11,7 +11,7 @@
 > CI starts with no literature archive at all, rebuilds it from the PMIDs the corpus
 > cites, and requires each quoted sentence to be a byte-exact substring of the
 > record — then corrupts one on purpose to prove the checker can still fail.
-> Currently **229 papers, 823 verbatim excerpts checked, 0 unmatched** across the
+> Currently **261 papers, 938 verbatim excerpts checked, 0 unmatched** across the
 > knowledge base and the owner guides alike. (A further 82 excerpts come from full
 > text rather than abstracts and are marked as not verifiable in CI, rather than
 > counted as passing.)
@@ -30,12 +30,12 @@ guides/                    # THE PRODUCT — owner-facing, Chinese, Markdown + P
   ├── feline-lymphoma-all-types-owner-guide.zh.{md,pdf}
   └── feline-nasal-lymphoma-owner-guide.zh.{md,pdf}
 
-knowledge-base/            # 21 analysis files, English + some 中文, each with verbatim excerpts
+knowledge-base/            # 27 files on 26 topics, English + some 中文, each with verbatim excerpts
   ├── README.md / README.zh.md   # ← GENERATED clinician index. Start here if you are a vet.
   └── …                          # topics listed below
 
 .claude/agents/            # agent definitions (source of truth)
-  ├── medical.md                 # research agent: full tools, unrestricted topics
+  ├── medical.md                 # research agent: full tools; its topic limit is prose only (see below)
   └── cat-owner-triage.md        # owner-facing: `tools: Read, Grep, Glob` — CANNOT search
                                  #   literature, must answer from the KB or decline
 agents/                    # generated platform-neutral exports of the above
@@ -46,14 +46,14 @@ docs/                      # engineering SOPs — the methodology record
 tools/                     # standard library only, Python 3.9+, nothing to install
   ├── pubmed_archive.py          # fetch / verify the raw record archive
   ├── dr_drill.py                # every excerpt vs its source, + a self-test that must fail
-  ├── check_kb_hygiene.py        # 10 structural checks (orphans, staleness, PII, xrefs…)
+  ├── check_kb_hygiene.py        # 11 structural checks (scope, orphans, staleness, PII, xrefs…)
   ├── search_log.py              # record what was searched and rejected, so a NEGATIVE claim has evidence
   ├── corpus_watch.py            # watch a private owner-community corpus for coverage gaps
   ├── build_kb_index.py          # regenerate the clinician index
   ├── build_site.py              # static site
   ├── export_agents.py           # regenerate the portable agent prompts
   ├── rebuild_references.py · extract_source_excerpts.py · attribution_candidates.py
-  ├── fetch_fulltext.py · screen.py · render_markdown.py
+  ├── fetch_fulltext.py · fulltext_text.py · screen.py · render_markdown.py
   ├── lab_reference_plot.py      # labs vs reference range; ships with no data
   └── test_tools.py              # unit tests for the checkers themselves
 .github/                   # CI, plus issue templates: challenge a figure · clinical review · propose coverage
@@ -71,9 +71,9 @@ this is the shape of it:
 
 | | Files |
 |---|---|
-| **Oncology** | lymphoma treatment currency · does doxorubicin help cats (COP vs CHOP) · antineoplastic drug toxicity · targeted & immunotherapy evidence · G-CSF and chemotherapy neutropenia · response assessment & drug resistance · treatment-related harm and the trade-off · PARR clonality: what a negative means · upper-airway response-marker validity · oncology literature survey |
+| **Oncology** | lymphoma treatment currency · does doxorubicin help cats (COP vs CHOP) · steroid duration in lymphoma protocols · antineoplastic drug toxicity · targeted & immunotherapy evidence · G-CSF and chemotherapy neutropenia · response assessment & drug resistance · treatment-related harm and the trade-off · PARR clonality: what a negative means · upper-airway response-marker validity · oncology literature survey |
 | **Common chronic disease** | chronic kidney disease · hyperthyroidism × kidney disease (EN + 中文) · feline hypertension · HCM emerging therapy |
-| **Acute & supportive** | emergency triage red flags · supportive and palliative care · assisted feeding and feeding tubes · acid suppression (omeprazole) · blood types and transfusion compatibility |
+| **Acute & supportive** | emergency triage red flags · supportive and palliative care · assisted feeding and feeding tubes · acid suppression (omeprazole) · blood types and transfusion compatibility · reticulocyte haemoglobin and iron |
 | **How the field and owners actually work** | feline disease frequency · evidence-to-practice gap · working with a specialist (中文) · owner vernacular lexicon (中文) · Chinese practice context (中文) |
 
 ---
@@ -118,7 +118,7 @@ the local cache is disposable and checks the excerpts against what PubMed serves
 python3 tools/test_tools.py             # unit tests for the checkers themselves
 python3 tools/build_kb_index.py --check # the clinician index still matches the corpus
 python3 tools/export_agents.py --check  # portable agent prompts have not drifted
-python3 tools/check_kb_hygiene.py       # 10 checks: orphan citations, empty blocks,
+python3 tools/check_kb_hygiene.py       # 11 checks: scope, orphan citations, empty blocks,
                                         #   coverage, stale PDF, stale translation,
                                         #   agent sync, index, PII, doc xrefs, search log
 python3 tools/pubmed_archive.py fetch   # rebuild the archive from the cited PMIDs
@@ -168,7 +168,7 @@ The tooling enforces it:
 | `search_log.py` | Records what was searched and what was rejected, so that a **negative** claim ("no feline study exists") carries evidence rather than an assumption. |
 | `render_markdown.py` | Standard-library Markdown → print-ready HTML with GitHub-compatible anchors, for PDF via headless Chrome. No toolchain to install. |
 
-**What this actually caught**, on a corpus that is now ~229 papers:
+**What this actually caught**, on a corpus that is now ~261 papers:
 
 - A **PMID pointing at an unrelated dental-informatics paper**, used as the source for a rescue-chemotherapy protocol. Every figure attached to it was correct; only the identifier was wrong. Nothing short of returning to the source would have surfaced this.
 - A **percentage attributed to the wrong clinical sign** — a cough frequency recorded as a dysphonia frequency, shifting a reported range by half.
@@ -181,7 +181,7 @@ The point is not that these were careless mistakes. It is that reading carefully
 
 ### Reusing the agents
 
-Drop `.claude/agents/medical.md` into any project's `.claude/agents/`. It expects the bio-research MCP servers (PubMed, ClinicalTrials, ChEMBL, Consensus) and loads them on demand. Platform-neutral exports for other agentic tools live in `agents/`.
+Drop `.claude/agents/medical.md` into any project's `.claude/agents/`. It expects the bio-research MCP servers (PubMed, ClinicalTrials, ChEMBL, Consensus, bioRxiv) and loads them on demand. Platform-neutral exports for other agentic tools live in `agents/`.
 
 ⛔ **Before deploying `cat-owner-triage`, read the host requirement at the top of `agents/cat-owner-triage.prompt.md`.** Its safety property is the *tool restriction*, not the prose — the same rule written as prose failed twice on the same test. A platform that cannot restrict tools must not present that prompt to cat owners.
 
@@ -220,7 +220,7 @@ The agents' own rules are in those files. In brief: search rather than recall fo
 | `search_log.py` | 何を検索し何を棄却したかを記録する。これにより「猫での報告は存在しない」という**否定的主張**が、思い込みではなく証拠を伴う。 |
 | `render_markdown.py` | 標準ライブラリのみで Markdown → 印刷用 HTML（GitHub 互換アンカー付き）。headless Chrome で PDF 化。追加インストール不要。 |
 
-**現在約 229 件の文献からなるコーパスに適用して、実際に検出されたもの：**
+**現在約 261 件の文献からなるコーパスに適用して、実際に検出されたもの：**
 
 - 救援化学療法プロトコルの出典として記載されていた **PMID が、無関係な歯科情報学の論文を指していた**。付随する数値はすべて正しく、識別子のみが誤り。原文に戻る以外に発見手段はなかった。
 - **臨床徴候の取り違え** — 咳嗽の頻度を発声障害の頻度として記録しており、報告範囲が半分ずれていた。
@@ -233,7 +233,7 @@ The agents' own rules are in those files. In brief: search rather than recall fo
 
 ### エージェントの再利用
 
-`.claude/agents/medical.md` を任意のプロジェクトの `.claude/agents/` に置くだけで動作します。bio-research 系 MCP サーバ（PubMed / ClinicalTrials / ChEMBL / Consensus）を必要時に読み込みます。他の agentic ツール向けの汎用エクスポートは `agents/` にあります。
+`.claude/agents/medical.md` を任意のプロジェクトの `.claude/agents/` に置くだけで動作します。bio-research 系 MCP サーバ（PubMed / ClinicalTrials / ChEMBL / Consensus / bioRxiv）を必要時に読み込みます。他の agentic ツール向けの汎用エクスポートは `agents/` にあります。
 
 ⛔ **`cat-owner-triage` を配備する前に、`agents/cat-owner-triage.prompt.md` 冒頭のホスト要件を必ず読んでください。** その安全性は散文ではなく**ツール制限**によって担保されています（同じ規則を散文で書いた場合、同一のテストで 2 回とも失敗しました）。ツールを制限できないプラットフォームで、このプロンプトを飼い主に提示してはなりません。
 
@@ -272,7 +272,7 @@ The agents' own rules are in those files. In brief: search rather than recall fo
 | `search_log.py` | 记录检索了什么、排除了什么，让**否定式结论**（"猫身上没有这方面研究"）也带着证据，而不是一个假设。 |
 | `render_markdown.py` | 纯标准库 Markdown → 印刷级 HTML（GitHub 兼容锚点），配 headless Chrome 出 PDF。零依赖安装。 |
 
-**在目前约 229 篇文献的语料上实际抓到的：**
+**在目前约 261 篇文献的语料上实际抓到的：**
 
 - 一个**指向无关牙科信息学论文的 PMID**，却被当作救援化疗方案的出处。挂在它名下的数据**全部正确**，只有编号错了。不回原文永远发现不了。
 - 一处**临床征象张冠李戴**——把咳嗽的发生率记成了发声障碍的发生率，导致报告区间整体偏移一半。
@@ -285,7 +285,7 @@ The agents' own rules are in those files. In brief: search rather than recall fo
 
 ### 复用这两个 agent
 
-把 `.claude/agents/medical.md` 放进任意项目的 `.claude/agents/` 即可。它按需加载 bio-research 系列 MCP 工具（PubMed / ClinicalTrials / ChEMBL / Consensus）。给其他 agentic 工具用的通用版导出在 `agents/`。
+把 `.claude/agents/medical.md` 放进任意项目的 `.claude/agents/` 即可。它按需加载 bio-research 系列 MCP 工具（PubMed / ClinicalTrials / ChEMBL / Consensus / bioRxiv）。给其他 agentic 工具用的通用版导出在 `agents/`。
 
 ⛔ **部署 `cat-owner-triage` 之前，务必先读 `agents/cat-owner-triage.prompt.md` 顶部的宿主要求。** 它的安全性来自**工具限制**而不是文字——同一条规则写成文字时，在同一个测试上**失败了两次**。无法限制工具的平台，不得把该提示词提供给猫主人。
 
@@ -295,6 +295,6 @@ The agents' own rules are in those files. In brief: search rather than recall fo
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE). To cite the project, see [CITATION.cff](CITATION.cff); to cite a figure, cite its paper (PMID inline).
 
 Literature quoted in this repository belongs to its respective publishers; excerpts are limited to the sentences needed to verify a specific claim, each attributed with PMID and DOI.
